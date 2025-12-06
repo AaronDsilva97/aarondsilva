@@ -9,7 +9,18 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.13.8"
+    "@astrojs/partytown": "^2.1.4",
+    "@astrojs/react": "^4.3.1",
+    "@astrojs/sitemap": "^3.6.0",
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/react": "^19.1.13",
+    "@types/react-dom": "^19.1.9",
+    "astro": "^5.13.8",
+    "astro-seo": "^0.8.4",
+    "motion": "^12.23.14",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.13"
   },
   "packageManager": "pnpm@9.15.2+sha512.93e57b0126f0df74ce6bff29680394c0ba54ec47246b9cf321f0121d8d9bb03f750a705f24edc3c1180853afd7c2c3b94196d0a3d53d3e069d9e2793ef11f321"
 }

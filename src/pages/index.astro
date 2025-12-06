@@ -1,11 +1,37 @@
 ---
-import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BentoGrid from '../components/BentoGrid.astro';
+import HeroIntro from '../components/HeroIntro.tsx';
+import AvailabilityWidget from '../components/AvailabilityWidget.tsx';
+import CommandHint from '../components/CommandHint.astro';
+import CurrentProject from '../components/CurrentProject.tsx';
+import GitHubStats from '../components/GitHubStats.tsx';
+import RecentProjects from '../components/RecentProjects.tsx';
+import TechStack from '../components/TechStack.astro';
+import RecentPosts from '../components/RecentPosts.astro';
+import NowPlaying from '../components/NowPlaying.tsx';
+import CommandPalette from '../components/CommandPalette.tsx';
+import MetricsCard from '../components/MetricsCard.tsx';
+import InvestmentThesis from '../components/InvestmentThesis.tsx';
+import TestimonialsCard from '../components/TestimonialsCard.tsx';
+import InteractiveBackground from '../components/InteractiveBackground.tsx';
 ---
 
 <Layout>
-	<Welcome />
+  <InteractiveBackground client:load />
+  <BentoGrid>
+    <HeroIntro slot="hero" client:load />
+    <AvailabilityWidget slot="availability" client:load />
+    <CommandHint slot="command-hint" />
+    <CurrentProject slot="current-project" client:load />
+    <GitHubStats slot="github-stats" client:load />
+    <RecentProjects slot="recent-projects" client:load data-section="projects" />
+    <TechStack slot="tech-stack" />
+    <RecentPosts slot="recent-posts" />
+    <NowPlaying slot="now-playing" client:load />
+    <MetricsCard slot="metrics" client:load />
+    <InvestmentThesis slot="investment" client:load />
+    <TestimonialsCard slot="testimonials" client:load />
+  </BentoGrid>
+  <CommandPalette client:load />
 </Layout>

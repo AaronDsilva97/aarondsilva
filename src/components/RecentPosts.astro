@@ -1,0 +1,58 @@
+---
+const recentPosts = [
+  {
+    title: "The State of AI Development in 2025",
+    excerpt: "Where we are and where we're heading with AI tools",
+    date: "2 days ago",
+    readTime: "6 min",
+    url: "#"
+  },
+  {
+    title: "Local-First: Why Your Data Should Stay Yours",
+    excerpt: "Building applications that respect user privacy",
+    date: "1 week ago",
+    readTime: "4 min",
+    url: "#"
+  }
+];
+---
+
+<div class="flex flex-col h-full">
+  <div class="flex items-center justify-between mb-4">
+    <div class="flex items-center gap-2">
+      <span class="text-lg">✍️</span>
+      <h3 class="font-semibold text-white">Recent Posts</h3>
+    </div>
+  </div>
+
+  <div class="space-y-4 flex-1">
+    {recentPosts.map((post) => (
+      <article class="group cursor-pointer">
+        <div class="space-y-2">
+          <h4 class="text-sm font-medium text-white group-hover:text-emerald-400 transition-colors leading-tight">
+            {post.title}
+          </h4>
+
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            {post.excerpt}
+          </p>
+
+          <div class="flex items-center gap-2 text-xs text-zinc-600">
+            <span>{post.date}</span>
+            <span>•</span>
+            <span>{post.readTime} read</span>
+          </div>
+        </div>
+      </article>
+    ))}
+  </div>
+
+  <div class="pt-3 mt-auto border-t border-zinc-800">
+    <a
+      href="#blog"
+      class="text-xs text-zinc-500 hover:text-emerald-400 transition-colors"
+    >
+      All posts →
+    </a>
+  </div>
+</div>

@@ -1,0 +1,294 @@
+---
+---
+
+<div class="container mx-auto px-4 py-8 max-w-6xl sm:px-6 lg:px-8">
+  <div class="bento-grid">
+    <!-- Hero/Intro Section -->
+    <div class="bento-item hero">
+      <slot name="hero" />
+    </div>
+
+    <!-- Availability Widget -->
+    <div class="bento-item availability">
+      <slot name="availability" />
+    </div>
+
+    <!-- Command Palette Hint -->
+    <div class="bento-item command-hint">
+      <slot name="command-hint" />
+    </div>
+
+    <!-- Current Project -->
+    <div class="bento-item current-project">
+      <slot name="current-project" />
+    </div>
+
+    <!-- GitHub Stats -->
+    <div class="bento-item github-stats">
+      <slot name="github-stats" />
+    </div>
+
+    <!-- Recent Projects -->
+    <div class="bento-item recent-projects">
+      <slot name="recent-projects" />
+    </div>
+
+    <!-- Tech Stack -->
+    <div class="bento-item tech-stack">
+      <slot name="tech-stack" />
+    </div>
+
+    <!-- Recent Posts -->
+    <div class="bento-item recent-posts">
+      <slot name="recent-posts" />
+    </div>
+
+    <!-- Now Playing -->
+    <div class="bento-item now-playing">
+      <slot name="now-playing" />
+    </div>
+
+    <!-- Metrics -->
+    <div class="bento-item metrics">
+      <slot name="metrics" />
+    </div>
+
+    <!-- Investment Thesis -->
+    <div class="bento-item investment">
+      <slot name="investment" />
+    </div>
+
+    <!-- Testimonials -->
+    <div class="bento-item testimonials">
+      <slot name="testimonials" />
+    </div>
+  </div>
+</div>
+
+<style>
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 1.5rem;
+    grid-template-areas:
+      "hero hero availability command-hint"
+      "metrics investment investment github-stats"
+      "current-project current-project current-project now-playing"
+      "testimonials testimonials recent-projects now-playing"
+      "tech-stack recent-posts recent-posts now-playing";
+  }
+
+  .bento-item {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    backdrop-filter: blur(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bento-item:hover {
+    border-color: rgba(139, 92, 246, 0.4);
+    background: rgba(30, 41, 59, 0.6);
+    transform: translateY(-4px) scale(1.01);
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(139, 92, 246, 0.2);
+  }
+
+  .bento-item::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(236, 72, 153, 0.04) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .bento-item:hover::before {
+    opacity: 1;
+  }
+
+  .bento-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.05), transparent);
+    transition: left 0.6s ease;
+    pointer-events: none;
+  }
+
+  .bento-item:hover::after {
+    left: 100%;
+  }
+
+  .hero {
+    grid-area: hero;
+    min-height: 120px;
+  }
+
+  .availability {
+    grid-area: availability;
+    min-height: 120px;
+  }
+
+  .command-hint {
+    grid-area: command-hint;
+    min-height: 120px;
+  }
+
+  .current-project {
+    grid-area: current-project;
+    min-height: 200px;
+  }
+
+  .github-stats {
+    grid-area: github-stats;
+    min-height: 200px;
+  }
+
+  .recent-projects {
+    grid-area: recent-projects;
+    min-height: 250px;
+  }
+
+  .tech-stack {
+    grid-area: tech-stack;
+    min-height: 150px;
+  }
+
+  .recent-posts {
+    grid-area: recent-posts;
+    min-height: 150px;
+  }
+
+  .now-playing {
+    grid-area: now-playing;
+    min-height: 400px;
+  }
+
+  .metrics {
+    grid-area: metrics;
+    min-height: 120px;
+  }
+
+  .investment {
+    grid-area: investment;
+    min-height: 200px;
+  }
+
+  .testimonials {
+    grid-area: testimonials;
+    min-height: 250px;
+  }
+
+  /* Responsive Design */
+  @media (max-width: 1200px) {
+    .bento-grid {
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.25rem;
+      grid-template-areas:
+        "hero hero availability metrics"
+        "current-project current-project github-stats command-hint"
+        "recent-projects recent-projects investment investment"
+        "testimonials testimonials now-playing now-playing"
+        "tech-stack recent-posts recent-posts recent-posts";
+    }
+
+    .now-playing {
+      min-height: 300px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .bento-grid {
+      grid-template-columns: 1fr;
+      grid-template-areas:
+        "hero"
+        "availability"
+        "metrics"
+        "command-hint"
+        "current-project"
+        "github-stats"
+        "investment"
+        "testimonials"
+        "recent-projects"
+        "tech-stack"
+        "recent-posts"
+        "now-playing";
+      gap: 1rem;
+    }
+
+    .bento-item {
+      padding: 1rem;
+      min-height: auto !important;
+    }
+
+    .hero {
+      min-height: 200px;
+    }
+
+    .availability {
+      min-height: 180px;
+    }
+
+    .command-hint {
+      min-height: 80px;
+    }
+
+    .current-project {
+      min-height: 200px;
+    }
+
+    .github-stats {
+      min-height: 250px;
+    }
+
+    .recent-projects {
+      min-height: 300px;
+    }
+
+    .tech-stack {
+      min-height: 120px;
+    }
+
+    .recent-posts {
+      min-height: 150px;
+    }
+
+    .now-playing {
+      min-height: 200px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    .bento-grid {
+      gap: 0.75rem;
+    }
+
+    .bento-item {
+      padding: 0.75rem;
+      border-radius: 12px;
+    }
+
+    .hero {
+      min-height: 180px;
+    }
+
+    .availability {
+      min-height: 160px;
+    }
+  }
+</style>
