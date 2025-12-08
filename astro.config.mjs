@@ -10,6 +10,9 @@ import partytown from '@astrojs/partytown';
 export default defineConfig({
   site: 'https://aarondsilva.me',
   output: 'static',
+  image: {
+    service: { entrypoint: 'astro/assets/services/noop' }
+  },
   integrations: [react(), mdx(), sitemap(), partytown()],
   vite: {
     plugins: [tailwindcss()]
