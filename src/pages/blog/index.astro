@@ -1,0 +1,210 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf());
+
+const formatDate = (date: Date) => {
+  return date.toLocaleDateString('en-US', {
+    year: 'numeric',
+    month: 'short',
+    day: 'numeric'
+  });
+};
+
+// Group posts by category based on tags
+const categories = [
+  { name: 'AI & LLM', tags: ['AI', 'RAG', 'LLM'] },
+  { name: 'AWS & Cloud', tags: ['AWS', 'cloud', 'serverless'] },
+  { name: 'Healthcare & Compliance', tags: ['healthcare', 'HIPAA', 'compliance', 'SOC2'] },
+  { name: 'Mobile Development', tags: ['react-native', 'flutter', 'mobile-development'] },
+  { name: 'Security', tags: ['security'] },
+  { name: 'Architecture', tags: ['enterprise-architecture', 'togaf'] },
+];
+
+const getPostCategory = (post: typeof posts[0]) => {
+  for (const cat of categories) {
+    if (post.data.tags.some(tag => cat.tags.includes(tag.toLowerCase()))) {
+      return cat.name;
+    }
+  }
+  return 'Other';
+};
+
+const tagColors: Record<string, string> = {
+  'AI': 'bg-purple-500/20 text-purple-300 border-purple-500/30',
+  'AWS': 'bg-orange-500/20 text-orange-300 border-orange-500/30',
+  'healthcare': 'bg-emerald-500/20 text-emerald-300 border-emerald-500/30',
+  'security': 'bg-red-500/20 text-red-300 border-red-500/30',
+  'compliance': 'bg-blue-500/20 text-blue-300 border-blue-500/30',
+  'HIPAA': 'bg-blue-500/20 text-blue-300 border-blue-500/30',
+  'default': 'bg-slate-500/20 text-slate-300 border-slate-500/30',
+};
+
+const getTagColor = (tag: string) => {
+  return tagColors[tag] || tagColors['default'];
+};
+---
+
+<Layout
+  title="Blog | Aaron D'silva"
+  description="Technical blog on healthcare tech, AWS, AI integration, and security compliance from real production experience."
+>
+  <div class="container mx-auto px-4 py-8 max-w-5xl sm:px-6 lg:px-8">
+    <!-- Header -->
+    <div class="mb-12">
+      <a href="/" class="inline-flex items-center gap-2 text-slate-400 hover:text-purple-400 transition-colors mb-6 group">
+        <svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+        Back to Home
+      </a>
+
+      <div class="bento-card p-8">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4">
+          <span class="bg-gradient-to-r from-purple-400 via-pink-400 to-purple-400 bg-clip-text text-transparent">
+            Blog
+          </span>
+        </h1>
+        <p class="text-lg text-slate-400 max-w-2xl">
+          Practical insights on healthcare tech, AWS, AI integration, and security compliance.
+          Real lessons from building systems that serve 100+ hospitals.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-6">
+          <span class="px-3 py-1 text-xs rounded-full bg-purple-500/20 text-purple-300 border border-purple-500/30">
+            {posts.length} Articles
+          </span>
+          <span class="px-3 py-1 text-xs rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">
+            Healthcare Tech
+          </span>
+          <span class="px-3 py-1 text-xs rounded-full bg-orange-500/20 text-orange-300 border border-orange-500/30">
+            AWS
+          </span>
+          <span class="px-3 py-1 text-xs rounded-full bg-blue-500/20 text-blue-300 border border-blue-500/30">
+            Compliance
+          </span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blog Posts Grid -->
+    <div class="grid gap-6">
+      {posts.map((post, index) => (
+        <a
+          href={`/blog/${post.slug}`}
+          class="bento-card p-6 group block"
+          style={`animation-delay: ${index * 50}ms`}
+        >
+          <div class="flex flex-col md:flex-row md:items-start gap-4">
+            <div class="flex-1">
+              <div class="flex items-center gap-3 mb-3">
+                <span class="text-xs text-slate-500 font-mono">
+                  {formatDate(post.data.publishDate)}
+                </span>
+                <span class="w-1 h-1 rounded-full bg-slate-600"></span>
+                <span class="text-xs text-purple-400">
+                  {getPostCategory(post)}
+                </span>
+              </div>
+
+              <h2 class="text-xl md:text-2xl font-semibold text-slate-100 group-hover:text-purple-300 transition-colors mb-3">
+                {post.data.title}
+              </h2>
+
+              <p class="text-slate-400 text-sm md:text-base line-clamp-2 mb-4">
+                {post.data.description}
+              </p>
+
+              <div class="flex flex-wrap gap-2">
+                {post.data.tags.slice(0, 4).map((tag) => (
+                  <span class={`px-2 py-0.5 text-xs rounded-full border ${getTagColor(tag)}`}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div class="hidden md:flex items-center justify-center w-12 h-12 rounded-full bg-slate-800/50 group-hover:bg-purple-500/20 transition-colors">
+              <svg class="w-5 h-5 text-slate-400 group-hover:text-purple-400 group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    <!-- Footer CTA -->
+    <div class="mt-12 bento-card p-8 text-center">
+      <h3 class="text-xl font-semibold text-slate-100 mb-2">Want to work together?</h3>
+      <p class="text-slate-400 mb-4">I help companies build secure healthcare systems and integrate AI responsibly.</p>
+      <a
+        href="mailto:contact@aarondsilva.me"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-medium hover:opacity-90 transition-opacity"
+      >
+        Get in Touch
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .bento-card {
+    background: rgba(30, 41, 59, 0.4);
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    border-radius: 16px;
+    backdrop-filter: blur(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bento-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(139, 92, 246, 0.08) 0%, rgba(236, 72, 153, 0.04) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+  }
+
+  .bento-card:hover {
+    border-color: rgba(139, 92, 246, 0.4);
+    background: rgba(30, 41, 59, 0.6);
+    transform: translateY(-2px);
+    box-shadow:
+      0 20px 40px rgba(0, 0, 0, 0.3),
+      0 0 20px rgba(139, 92, 246, 0.15);
+  }
+
+  .bento-card:hover::before {
+    opacity: 1;
+  }
+
+  a.bento-card {
+    animation: fadeInUp 0.5s ease-out both;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

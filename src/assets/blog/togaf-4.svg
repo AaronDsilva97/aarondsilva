@@ -1,0 +1,170 @@
+<svg viewBox="0 0 1100 950" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1100" height="950" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="550" y="35" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="bold">Modern Healthcare Technology Stack</text>
+
+  <!-- Application Layer (Top) -->
+  <g>
+    <rect x="50" y="70" width="1000" height="100" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="80" y="100" fill="#8b5cf6" font-size="14" font-weight="bold">Application Layer</text>
+
+    <rect x="100" y="115" width="200" height="40" rx="5" fill="#8b5cf6" opacity="0.8"/>
+    <text x="200" y="140" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Vendor EHR</text>
+
+    <rect x="330" y="115" width="200" height="40" rx="5" fill="#8b5cf6" opacity="0.8"/>
+    <text x="430" y="140" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Custom Patient Portal</text>
+
+    <rect x="560" y="115" width="200" height="40" rx="5" fill="#8b5cf6" opacity="0.8"/>
+    <text x="660" y="140" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Analytics Platform</text>
+
+    <rect x="790" y="115" width="210" height="40" rx="5" fill="#8b5cf6" opacity="0.8"/>
+    <text x="895" y="140" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Clinical Decision Support</text>
+  </g>
+
+  <!-- Integration Layer -->
+  <g>
+    <rect x="50" y="200" width="1000" height="100" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="80" y="230" fill="#10b981" font-size="14" font-weight="bold">Integration Layer</text>
+
+    <rect x="100" y="245" width="280" height="40" rx="5" fill="#10b981" opacity="0.8"/>
+    <text x="240" y="270" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">FHIR Server (R4)</text>
+
+    <rect x="410" y="245" width="280" height="40" rx="5" fill="#10b981" opacity="0.8"/>
+    <text x="550" y="270" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">HL7 Interface Engine</text>
+
+    <rect x="720" y="245" width="280" height="40" rx="5" fill="#10b981" opacity="0.8"/>
+    <text x="860" y="270" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">API Management Gateway</text>
+  </g>
+
+  <!-- Platform Layer -->
+  <g>
+    <rect x="50" y="330" width="1000" height="100" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="80" y="360" fill="#3b82f6" font-size="14" font-weight="bold">Platform Layer</text>
+
+    <rect x="100" y="375" width="200" height="40" rx="5" fill="#3b82f6" opacity="0.8"/>
+    <text x="200" y="400" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Kubernetes (EKS/AKS)</text>
+
+    <rect x="330" y="375" width="200" height="40" rx="5" fill="#3b82f6" opacity="0.8"/>
+    <text x="430" y="400" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">API Gateway</text>
+
+    <rect x="560" y="375" width="200" height="40" rx="5" fill="#3b82f6" opacity="0.8"/>
+    <text x="660" y="400" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Message Broker</text>
+
+    <rect x="790" y="375" width="210" height="40" rx="5" fill="#3b82f6" opacity="0.8"/>
+    <text x="895" y="400" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Service Mesh (Istio)</text>
+  </g>
+
+  <!-- Foundation Layer -->
+  <g>
+    <rect x="50" y="460" width="1000" height="120" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <text x="80" y="490" fill="#ec4899" font-size="14" font-weight="bold">Foundation Layer: Multi-Cloud</text>
+
+    <rect x="100" y="505" width="280" height="60" rx="5" fill="#ec4899" opacity="0.8"/>
+    <text x="240" y="525" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">AWS</text>
+    <text x="240" y="542" text-anchor="middle" fill="#e2e8f0" font-size="9">EHR vendor hosted</text>
+    <text x="240" y="557" text-anchor="middle" fill="#94a3b8" font-size="9">VPC, Transit Gateway, KMS</text>
+
+    <rect x="410" y="505" width="280" height="60" rx="5" fill="#ec4899" opacity="0.8"/>
+    <text x="550" y="525" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">Azure</text>
+    <text x="550" y="542" text-anchor="middle" fill="#e2e8f0" font-size="9">PACS &amp; imaging</text>
+    <text x="550" y="557" text-anchor="middle" fill="#94a3b8" font-size="9">VNet, Azure AD, Key Vault</text>
+
+    <rect x="720" y="505" width="280" height="60" rx="5" fill="#ec4899" opacity="0.8"/>
+    <text x="860" y="525" text-anchor="middle" fill="#fff" font-size="11" font-weight="bold">GCP</text>
+    <text x="860" y="542" text-anchor="middle" fill="#e2e8f0" font-size="9">Analytics &amp; ML</text>
+    <text x="860" y="557" text-anchor="middle" fill="#94a3b8" font-size="9">VPC, IAM, Cloud KMS</text>
+  </g>
+
+  <!-- Security Layer (Left side, cross-cutting) -->
+  <g>
+    <rect x="50" y="610" width="480" height="280" rx="8" fill="#1e293b" stroke="#ef4444" stroke-width="2"/>
+    <text x="80" y="640" fill="#ef4444" font-size="14" font-weight="bold">Security Layer (Cross-cutting)</text>
+
+    <g transform="translate(80, 660)">
+      <rect x="0" y="0" width="430" height="35" rx="4" fill="#ef4444" opacity="0.2" stroke="#ef4444" stroke-width="1"/>
+      <text x="10" y="22" fill="#e2e8f0" font-size="11" font-weight="bold">Zero Trust Network</text>
+      <text x="350" y="22" fill="#94a3b8" font-size="9">Verify everything</text>
+    </g>
+
+    <g transform="translate(80, 705)">
+      <rect x="0" y="0" width="430" height="35" rx="4" fill="#ef4444" opacity="0.2" stroke="#ef4444" stroke-width="1"/>
+      <text x="10" y="22" fill="#e2e8f0" font-size="11" font-weight="bold">PHI Encryption</text>
+      <text x="280" y="22" fill="#94a3b8" font-size="9">AES-256 at rest, TLS 1.3 in transit</text>
+    </g>
+
+    <g transform="translate(80, 750)">
+      <rect x="0" y="0" width="430" height="35" rx="4" fill="#ef4444" opacity="0.2" stroke="#ef4444" stroke-width="1"/>
+      <text x="10" y="22" fill="#e2e8f0" font-size="11" font-weight="bold">Audit Logging</text>
+      <text x="280" y="22" fill="#94a3b8" font-size="9">SIEM integration, tamper-proof logs</text>
+    </g>
+
+    <g transform="translate(80, 795)">
+      <rect x="0" y="0" width="430" height="35" rx="4" fill="#ef4444" opacity="0.2" stroke="#ef4444" stroke-width="1"/>
+      <text x="10" y="22" fill="#e2e8f0" font-size="11" font-weight="bold">Compliance Monitoring</text>
+      <text x="280" y="22" fill="#94a3b8" font-size="9">HIPAA, HITECH automated checks</text>
+    </g>
+
+    <g transform="translate(80, 840)">
+      <rect x="0" y="0" width="430" height="35" rx="4" fill="#ef4444" opacity="0.2" stroke="#ef4444" stroke-width="1"/>
+      <text x="10" y="22" fill="#e2e8f0" font-size="11" font-weight="bold">Network Segmentation</text>
+      <text x="280" y="22" fill="#94a3b8" font-size="9">Micro-segmentation, firewalls</text>
+    </g>
+  </g>
+
+  <!-- Monitoring Layer (Right side, cross-cutting) -->
+  <g>
+    <rect x="560" y="610" width="490" height="130" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="590" y="640" fill="#f59e0b" font-size="14" font-weight="bold">Monitoring Layer (Cross-cutting)</text>
+
+    <g transform="translate(590, 660)">
+      <rect x="0" y="0" width="430" height="35" rx="4" fill="#f59e0b" opacity="0.2" stroke="#f59e0b" stroke-width="1"/>
+      <text x="10" y="22" fill="#e2e8f0" font-size="11" font-weight="bold">Application Monitoring</text>
+      <text x="280" y="22" fill="#94a3b8" font-size="9">APM, distributed tracing</text>
+    </g>
+
+    <g transform="translate(590, 705)">
+      <rect x="0" y="0" width="430" height="35" rx="4" fill="#f59e0b" opacity="0.2" stroke="#f59e0b" stroke-width="1"/>
+      <text x="10" y="22" fill="#e2e8f0" font-size="11" font-weight="bold">Infrastructure Monitoring</text>
+      <text x="280" y="22" fill="#94a3b8" font-size="9">Metrics, logs, alerts</text>
+    </g>
+  </g>
+
+  <!-- Disaster Recovery (Bottom right) -->
+  <g>
+    <rect x="560" y="770" width="490" height="120" rx="8" fill="#1e293b" stroke="#06b6d4" stroke-width="2"/>
+    <text x="590" y="800" fill="#06b6d4" font-size="14" font-weight="bold">Disaster Recovery</text>
+
+    <g transform="translate(590, 820)">
+      <rect x="0" y="0" width="200" height="55" rx="4" fill="#06b6d4" opacity="0.2" stroke="#06b6d4" stroke-width="1"/>
+      <text x="10" y="20" fill="#e2e8f0" font-size="11" font-weight="bold">Hot Standby Sites</text>
+      <text x="10" y="37" fill="#94a3b8" font-size="9">Active-active failover</text>
+      <text x="10" y="50" fill="#10b981" font-size="9">RTO: 4 hours</text>
+    </g>
+
+    <g transform="translate(810, 820)">
+      <rect x="0" y="0" width="210" height="55" rx="4" fill="#06b6d4" opacity="0.2" stroke="#06b6d4" stroke-width="1"/>
+      <text x="10" y="20" fill="#e2e8f0" font-size="11" font-weight="bold">Continuous Backup</text>
+      <text x="10" y="37" fill="#94a3b8" font-size="9">Point-in-time recovery</text>
+      <text x="10" y="50" fill="#10b981" font-size="9">RPO: 1 hour</text>
+    </g>
+  </g>
+
+  <!-- Data flow arrows showing cross-cutting concerns -->
+  <defs>
+    <marker id="arrow-sec" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto">
+      <polygon points="0 0, 8 4, 0 8" fill="#64748b" opacity="0.5"/>
+    </marker>
+  </defs>
+
+  <!-- Security arrows pointing to all layers -->
+  <line x1="290" y1="610" x2="290" y2="170" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.5" marker-end="url(#arrow-sec)"/>
+  <line x1="290" y1="610" x2="290" y2="300" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.5" marker-end="url(#arrow-sec)"/>
+  <line x1="290" y1="610" x2="290" y2="430" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.5" marker-end="url(#arrow-sec)"/>
+
+  <!-- Monitoring arrows -->
+  <line x1="805" y1="610" x2="805" y2="170" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.5" marker-end="url(#arrow-sec)"/>
+  <line x1="805" y1="610" x2="805" y2="300" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.5" marker-end="url(#arrow-sec)"/>
+  <line x1="805" y1="610" x2="805" y2="430" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="5,5" opacity="0.5" marker-end="url(#arrow-sec)"/>
+</svg>

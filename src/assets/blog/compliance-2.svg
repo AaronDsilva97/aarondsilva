@@ -1,0 +1,156 @@
+<svg width="1000" height="700" viewBox="0 0 1000 700" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="700" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="500" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#e2e8f0" text-anchor="middle">
+    HIPAA Applicability Flowchart
+  </text>
+
+  <!-- Define arrow marker -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <!-- Start -->
+  <rect x="375" y="80" width="250" height="60" rx="30" fill="#3b82f6" stroke="#3b82f6" stroke-width="2"/>
+  <text x="500" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#0f172a" text-anchor="middle">
+    Do you handle health
+  </text>
+  <text x="500" y="135" font-family="system-ui, -apple-system, sans-serif" font-size="16" font-weight="600" fill="#0f172a" text-anchor="middle">
+    information?
+  </text>
+
+  <!-- Arrow down -->
+  <line x1="500" y1="140" x2="500" y2="180" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Decision 1: Is it PHI? -->
+  <path d="M 500 180 L 650 230 L 500 280 L 350 230 Z" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="500" y="225" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#e2e8f0" text-anchor="middle">
+    Is it Protected Health
+  </text>
+  <text x="500" y="245" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#e2e8f0" text-anchor="middle">
+    Information (PHI)?
+  </text>
+
+  <!-- No arrow left -->
+  <line x1="350" y1="230" x2="200" y2="230" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="275" y="220" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#10b981">
+    NO
+  </text>
+
+  <!-- Outcome: Doesn't Apply (left) -->
+  <rect x="50" y="200" width="150" height="60" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="125" y="225" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#10b981" text-anchor="middle">
+    HIPAA doesn't
+  </text>
+  <text x="125" y="245" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#10b981" text-anchor="middle">
+    apply
+  </text>
+
+  <!-- Yes arrow down -->
+  <line x1="500" y1="280" x2="500" y2="320" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="520" y="305" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">
+    YES
+  </text>
+
+  <!-- Decision 2: Are you a covered entity? -->
+  <path d="M 500 320 L 670 380 L 500 440 L 330 380 Z" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="500" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#e2e8f0" text-anchor="middle">
+    Are you a covered entity
+  </text>
+  <text x="500" y="390" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">
+    (hospital, insurer, provider)?
+  </text>
+
+  <!-- Yes arrow right -->
+  <line x1="670" y1="380" x2="800" y2="380" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="735" y="370" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">
+    YES
+  </text>
+
+  <!-- Outcome: Covered Entity Applies -->
+  <rect x="800" y="350" width="170" height="60" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="3"/>
+  <text x="885" y="375" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#ec4899" text-anchor="middle">
+    HIPAA applies
+  </text>
+  <text x="885" y="395" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">
+    You're a covered
+  </text>
+  <text x="885" y="410" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">
+    entity
+  </text>
+
+  <!-- No arrow down -->
+  <line x1="500" y1="440" x2="500" y2="480" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="520" y="465" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">
+    NO
+  </text>
+
+  <!-- Decision 3: Do you process PHI on behalf? -->
+  <path d="M 500 480 L 680 545 L 500 610 L 320 545 Z" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="500" y="535" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="600" fill="#e2e8f0" text-anchor="middle">
+    Do you process PHI on
+  </text>
+  <text x="500" y="555" font-family="system-ui, -apple-system, sans-serif" font-size="13" fill="#94a3b8" text-anchor="middle">
+    behalf of a covered entity?
+  </text>
+
+  <!-- Yes arrow right -->
+  <line x1="680" y1="545" x2="800" y2="545" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="740" y="535" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#e2e8f0">
+    YES
+  </text>
+
+  <!-- Outcome: Business Associate Applies -->
+  <rect x="800" y="515" width="170" height="60" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="3"/>
+  <text x="885" y="540" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="700" fill="#ec4899" text-anchor="middle">
+    HIPAA applies
+  </text>
+  <text x="885" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">
+    You're a business
+  </text>
+  <text x="885" y="575" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">
+    associate (need BAA)
+  </text>
+
+  <!-- No arrow left -->
+  <line x1="320" y1="545" x2="200" y2="545" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="260" y="535" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#10b981">
+    NO
+  </text>
+
+  <!-- Outcome: Likely Doesn't Apply -->
+  <rect x="50" y="515" width="150" height="60" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+  <text x="125" y="540" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#10b981" text-anchor="middle">
+    HIPAA likely
+  </text>
+  <text x="125" y="560" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="600" fill="#10b981" text-anchor="middle">
+    doesn't apply
+  </text>
+
+  <!-- Legend -->
+  <g id="legend">
+    <rect x="50" y="630" width="900" height="50" rx="8" fill="#1e293b" opacity="0.5"/>
+
+    <!-- Decision symbol -->
+    <path d="M 70 650 L 85 655 L 70 660 L 55 655 Z" fill="#1e293b" stroke="#8b5cf6" stroke-width="1.5"/>
+    <text x="95" y="660" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#94a3b8">
+      Decision Point
+    </text>
+
+    <!-- Applies symbol -->
+    <rect x="220" y="645" width="30" height="20" rx="3" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <text x="260" y="660" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#94a3b8">
+      HIPAA Applies
+    </text>
+
+    <!-- Doesn't apply symbol -->
+    <rect x="400" y="645" width="30" height="20" rx="3" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="440" y="660" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#94a3b8">
+      HIPAA Doesn't Apply
+    </text>
+  </g>
+</svg>

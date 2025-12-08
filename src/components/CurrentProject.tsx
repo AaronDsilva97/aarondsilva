@@ -8,22 +8,20 @@ interface ProjectProgress {
 
 export default function CurrentProject() {
   const [project] = useState({
-    name: 'MediTrack Pro',
-    description: 'Co-founded healthcare startup enabling doctors to track patient outcomes 10x faster. Led technical development from MVP to 15K+ medical professionals using the platform.',
-    status: 'Series A Raised',
+    name: 'The Lean Product Studio',
+    description: 'Co-founded product studio building mobile, web & cloud products. Leading a distributed team of 10 engineers across multiple client projects.',
+    status: 'Active',
     progress: 100,
-    demoUrl: 'https://meditrak.com',
-    githubUrl: '#',
-    tech: ['React Native', 'Node.js', 'PostgreSQL', 'AWS', 'HIPAA Compliant'],
-    metrics: {
-      users: 15200,
-      revenue: 480000,
-      valuation: 12000000,
-    },
+    tech: ['Flutter', 'React Native', 'Node.js', 'Laravel', 'AWS'],
+    highlights: [
+      { label: 'Products Shipped', value: '5' },
+      { label: 'Team Size', value: '10' },
+      { label: 'Markets', value: 'US, UK, India' },
+    ],
     updates: [
-      { date: '3w ago', update: 'Closed $2.5M Series A funding round' },
-      { date: '2m ago', update: 'Reached $480K ARR milestone' },
-      { date: '4m ago', update: 'Onboarded 10,000th medical professional' },
+      { date: 'Current', update: 'Building AI features with RAG pipelines & LLM APIs' },
+      { date: 'Recent', update: 'Reduced client AWS costs by 33% ($1M savings)' },
+      { date: 'Ongoing', update: 'Healthcare & security compliance projects' },
     ]
   });
 
@@ -62,18 +60,12 @@ export default function CurrentProject() {
         </div>
 
         <div className="grid grid-cols-3 gap-4 py-2">
-          <div className="text-center">
-            <div className="text-lg font-bold text-white">{project.metrics.users.toLocaleString()}</div>
-            <div className="text-xs text-zinc-500">Medical Pros</div>
-          </div>
-          <div className="text-center">
-            <div className="text-lg font-bold text-emerald-400">${(project.metrics.revenue / 1000).toFixed(0)}K</div>
-            <div className="text-xs text-zinc-500">ARR</div>
-          </div>
-          <div className="text-center">
-            <div className="text-lg font-bold text-purple-400">${(project.metrics.valuation / 1000000).toFixed(1)}M</div>
-            <div className="text-xs text-zinc-500">Valuation</div>
-          </div>
+          {project.highlights.map((highlight, index) => (
+            <div key={index} className="text-center">
+              <div className="text-lg font-bold text-white">{highlight.value}</div>
+              <div className="text-xs text-zinc-500">{highlight.label}</div>
+            </div>
+          ))}
         </div>
 
         <div className="space-y-2">
@@ -92,13 +84,13 @@ export default function CurrentProject() {
 
       <div className="flex gap-2 pt-3 mt-auto">
         <button
-          onClick={() => window.open('mailto:contact@aarondsilva.dev?subject=Partnership Opportunity', '_blank')}
+          onClick={() => window.open('mailto:contact@aarondsilva.me?subject=Project Inquiry', '_blank')}
           className="flex-1 px-3 py-2 bg-emerald-600 hover:bg-emerald-700 text-white text-sm font-medium rounded-md transition-colors"
         >
-          Partner with Me
+          Get in Touch
         </button>
         <button
-          onClick={() => window.open('https://linkedin.com/in/aarondsilva97', '_blank')}
+          onClick={() => window.open('https://www.linkedin.com/in/aaronxdsilva/', '_blank')}
           className="px-3 py-2 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 text-sm font-medium rounded-md transition-colors border border-zinc-700"
         >
           <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">

@@ -1,0 +1,111 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .title { fill: #e2e8f0; font-family: 'Arial', sans-serif; font-size: 24px; font-weight: bold; }
+      .subtitle { fill: #cbd5e1; font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; }
+      .text { fill: #e2e8f0; font-family: 'Arial', sans-serif; font-size: 14px; }
+      .small-text { fill: #cbd5e1; font-family: 'Arial', sans-serif; font-size: 12px; }
+      .box-admin { fill: #8b5cf6; stroke: #a78bfa; stroke-width: 2; }
+      .box-physical { fill: #10b981; stroke: #34d399; stroke-width: 2; }
+      .box-technical { fill: #3b82f6; stroke: #60a5fa; stroke-width: 2; }
+      .box-dev { fill: #ec4899; stroke: #f472b6; stroke-width: 2; }
+      .box-org { fill: #f59e0b; stroke: #fbbf24; stroke-width: 2; }
+      .line { stroke: #64748b; stroke-width: 2; fill: none; }
+      .arrow { fill: #64748b; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1200" height="800"/>
+
+  <!-- Title -->
+  <text class="title" x="600" y="40" text-anchor="middle">HIPAA Security Rule Requirements for Developers</text>
+
+  <!-- Main Categories -->
+
+  <!-- Administrative Safeguards -->
+  <rect class="box-admin" x="50" y="100" width="340" height="280" rx="8"/>
+  <text class="subtitle" x="220" y="130" text-anchor="middle">Administrative Safeguards</text>
+
+  <text class="text" x="70" y="165" text-anchor="start">• Security Management Process</text>
+  <text class="small-text" x="85" y="185" text-anchor="start">Risk assessments &amp; mitigation</text>
+
+  <text class="text" x="70" y="215" text-anchor="start">• Security Training</text>
+  <text class="small-text" x="85" y="235" text-anchor="start">Regular employee education</text>
+
+  <text class="text" x="70" y="265" text-anchor="start">• Incident Response Plan</text>
+  <text class="small-text" x="85" y="285" text-anchor="start">Breach detection &amp; response</text>
+
+  <text class="text" x="70" y="315" text-anchor="start">• Contingency Planning</text>
+  <text class="small-text" x="85" y="335" text-anchor="start">Disaster recovery &amp; backups</text>
+
+  <rect class="box-org" x="70" y="345" width="300" height="25" rx="4"/>
+  <text class="small-text" x="220" y="362" text-anchor="middle" fill="#0f172a" font-weight="bold">ORGANIZATIONAL RESPONSIBILITY</text>
+
+  <!-- Physical Safeguards -->
+  <rect class="box-physical" x="430" y="100" width="340" height="280" rx="8"/>
+  <text class="subtitle" x="600" y="130" text-anchor="middle">Physical Safeguards</text>
+
+  <text class="text" x="450" y="165" text-anchor="start">• Facility Access Controls</text>
+  <text class="small-text" x="465" y="185" text-anchor="start">Secure building access</text>
+
+  <text class="text" x="450" y="215" text-anchor="start">• Workstation Security</text>
+  <text class="small-text" x="465" y="235" text-anchor="start">Lock screens, clean desk policy</text>
+
+  <text class="text" x="450" y="265" text-anchor="start">• Device &amp; Media Controls</text>
+  <text class="small-text" x="465" y="285" text-anchor="start">Secure disposal &amp; data removal</text>
+
+  <text class="text" x="450" y="315" text-anchor="start">• Workstation Use Policies</text>
+  <text class="small-text" x="465" y="335" text-anchor="start">Authorized access only</text>
+
+  <rect class="box-org" x="450" y="345" width="300" height="25" rx="4"/>
+  <text class="small-text" x="600" y="362" text-anchor="middle" fill="#0f172a" font-weight="bold">ORGANIZATIONAL RESPONSIBILITY</text>
+
+  <!-- Technical Safeguards -->
+  <rect class="box-technical" x="810" y="100" width="340" height="280" rx="8"/>
+  <text class="subtitle" x="980" y="130" text-anchor="middle">Technical Safeguards</text>
+
+  <text class="text" x="830" y="165" text-anchor="start">• Access Control</text>
+  <text class="small-text" x="845" y="185" text-anchor="start">Authentication, MFA, RBAC</text>
+
+  <text class="text" x="830" y="215" text-anchor="start">• Audit Controls</text>
+  <text class="small-text" x="845" y="235" text-anchor="start">Logging all PHI access</text>
+
+  <text class="text" x="830" y="265" text-anchor="start">• Integrity Controls</text>
+  <text class="small-text" x="845" y="285" text-anchor="start">Prevent unauthorized changes</text>
+
+  <text class="text" x="830" y="315" text-anchor="start">• Transmission Security</text>
+  <text class="small-text" x="845" y="335" text-anchor="start">Encryption in transit (TLS)</text>
+
+  <rect class="box-dev" x="830" y="345" width="300" height="25" rx="4"/>
+  <text class="small-text" x="980" y="362" text-anchor="middle" fill="#0f172a" font-weight="bold">DEVELOPER IMPLEMENTS</text>
+
+  <!-- Developer Implementation Details -->
+  <rect class="box-dev" x="150" y="450" width="900" height="300" rx="8"/>
+  <text class="subtitle" x="600" y="485" text-anchor="middle">What Developers Actually Build</text>
+
+  <!-- Two columns of implementation details -->
+  <text class="text" x="180" y="525" text-anchor="start" font-weight="bold">Authentication &amp; Authorization:</text>
+  <text class="small-text" x="195" y="545" text-anchor="start">• Multi-factor authentication (MFA)</text>
+  <text class="small-text" x="195" y="565" text-anchor="start">• Role-based access control (RBAC)</text>
+  <text class="small-text" x="195" y="585" text-anchor="start">• Session management &amp; auto-logout</text>
+
+  <text class="text" x="180" y="625" text-anchor="start" font-weight="bold">Encryption:</text>
+  <text class="small-text" x="195" y="645" text-anchor="start">• TLS 1.2+ for data in transit</text>
+  <text class="small-text" x="195" y="665" text-anchor="start">• Database encryption at rest</text>
+  <text class="small-text" x="195" y="685" text-anchor="start">• Key management (KMS/Vault)</text>
+  <text class="small-text" x="195" y="705" text-anchor="start">• Secure mobile storage (Keychain)</text>
+
+  <text class="text" x="620" y="525" text-anchor="start" font-weight="bold">Audit Logging:</text>
+  <text class="small-text" x="635" y="545" text-anchor="start">• Log all PHI access attempts</text>
+  <text class="small-text" x="635" y="565" text-anchor="start">• Track modifications &amp; permissions</text>
+  <text class="small-text" x="635" y="585" text-anchor="start">• 6+ year retention policy</text>
+  <text class="small-text" x="635" y="605" text-anchor="start">• Tamper-evident storage</text>
+
+  <text class="text" x="620" y="645" text-anchor="start" font-weight="bold">Data Integrity &amp; Security:</text>
+  <text class="small-text" x="635" y="665" text-anchor="start">• Backup encryption &amp; testing</text>
+  <text class="small-text" x="635" y="685" text-anchor="start">• Screenshot prevention (mobile)</text>
+  <text class="small-text" x="635" y="705" text-anchor="start">• Certificate pinning</text>
+  <text class="small-text" x="635" y="725" text-anchor="start">• BAA verification for all vendors</text>
+</svg>

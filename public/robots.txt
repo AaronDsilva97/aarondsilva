@@ -2,7 +2,7 @@ User-agent: *
 Allow: /
 
 # Sitemaps
-Sitemap: https://aarondsilva.dev/sitemap-index.xml
+Sitemap: https://aarondsilva.me/sitemap-index.xml
 
 # Crawl-delay for polite crawling
 Crawl-delay: 1

@@ -1,0 +1,193 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.2" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:0.2" />
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="900" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#e2e8f0" text-anchor="middle">Serverless Audit &amp; Logging Architecture</text>
+
+  <!-- Main Container -->
+  <rect x="50" y="80" width="1100" height="760" rx="10" fill="url(#grad1)" stroke="#475569" stroke-width="2"/>
+
+  <!-- CloudTrail Section -->
+  <rect x="80" y="110" width="520" height="280" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="2" filter="url(#glow)"/>
+  <text x="340" y="145" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#ec4899" text-anchor="middle">CloudTrail - API Audit Logging</text>
+
+  <!-- CloudTrail Details -->
+  <rect x="100" y="165" width="480" height="205" rx="5" fill="#334155"/>
+
+  <text x="115" y="190" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#10b981">Captures:</text>
+  <text x="125" y="210" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• All AWS API calls (IAM, Lambda, DynamoDB, S3, etc.)</text>
+  <text x="125" y="227" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Who made the call (IAM principal)</text>
+  <text x="125" y="244" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• When it was made (timestamp)</text>
+  <text x="125" y="261" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Source IP address</text>
+  <text x="125" y="278" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Request parameters and response</text>
+
+  <text x="115" y="305" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#ec4899">Storage:</text>
+  <text x="125" y="325" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Dedicated audit AWS account (read-only for devs)</text>
+  <text x="125" y="342" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• S3 bucket with object lock enabled</text>
+  <text x="125" y="359" font-family="Arial, sans-serif" font-size="10" fill="#10b981">• 7-year retention (HIPAA compliant)</text>
+
+  <!-- CloudWatch Logs Section -->
+  <rect x="80" y="410" width="520" height="280" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2" filter="url(#glow)"/>
+  <text x="340" y="445" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6" text-anchor="middle">CloudWatch Logs - Application Logging</text>
+
+  <!-- CloudWatch Details -->
+  <rect x="100" y="465" width="480" height="205" rx="5" fill="#334155"/>
+
+  <text x="115" y="490" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#10b981">Captures:</text>
+  <text x="125" y="510" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Lambda function logs (all console output)</text>
+  <text x="125" y="527" font-family="Arial, sans-serif" font-size="10" fill="#ec4899">• PHI access logs: who, what, when, why</text>
+  <text x="125" y="544" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Application errors and warnings</text>
+  <text x="125" y="561" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Performance metrics</text>
+  <text x="125" y="578" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Custom business events</text>
+
+  <text x="115" y="605" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#3b82f6">Storage:</text>
+  <text x="125" y="625" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Separate log groups per Lambda with restricted access</text>
+  <text x="125" y="642" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Encrypted at rest with KMS</text>
+  <text x="125" y="659" font-family="Arial, sans-serif" font-size="10" fill="#10b981">• Extended retention policies</text>
+
+  <!-- X-Ray Section -->
+  <rect x="620" y="110" width="510" height="200" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2" filter="url(#glow)"/>
+  <text x="875" y="145" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#10b981" text-anchor="middle">X-Ray - Request Flow Tracing</text>
+
+  <!-- X-Ray Details -->
+  <rect x="640" y="165" width="470" height="125" rx="5" fill="#334155"/>
+
+  <text x="655" y="190" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#10b981">Captures:</text>
+  <text x="665" y="210" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• End-to-end request flow across services</text>
+  <text x="665" y="227" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• API Gateway → Lambda → DynamoDB/Aurora → S3</text>
+  <text x="665" y="244" font-family="Arial, sans-serif" font-size="10" fill="#ec4899">• Every system that touched patient record</text>
+  <text x="665" y="261" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Latency breakdown by service</text>
+  <text x="665" y="278" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Enabled on all Lambda functions and API Gateway</text>
+
+  <!-- EventBridge + Security Section -->
+  <rect x="620" y="330" width="510" height="180" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" filter="url(#glow)"/>
+  <text x="875" y="365" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#8b5cf6" text-anchor="middle">EventBridge - Security Events</text>
+
+  <!-- EventBridge Details -->
+  <rect x="640" y="385" width="470" height="105" rx="5" fill="#334155"/>
+
+  <text x="655" y="410" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#10b981">Monitors:</text>
+  <text x="665" y="430" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Failed authentication attempts</text>
+  <text x="665" y="447" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Unauthorized access attempts (403s, 401s)</text>
+  <text x="665" y="464" font-family="Arial, sans-serif" font-size="10" fill="#ec4899">• Security group changes, IAM policy modifications</text>
+  <text x="665" y="481" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Triggers automated alerts to security team</text>
+
+  <!-- GuardDuty Section -->
+  <rect x="620" y="530" width="240" height="160" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="2" filter="url(#glow)"/>
+  <text x="740" y="565" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ec4899" text-anchor="middle">GuardDuty</text>
+  <text x="740" y="585" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle">Threat Detection</text>
+
+  <rect x="635" y="600" width="210" height="75" rx="5" fill="#334155"/>
+  <text x="645" y="620" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• ML-based threat detection</text>
+  <text x="645" y="637" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Unusual API activity</text>
+  <text x="645" y="654" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Compromised credentials</text>
+  <text x="645" y="671" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">• Crypto mining detection</text>
+
+  <!-- AWS Config Section -->
+  <rect x="890" y="530" width="240" height="160" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2" filter="url(#glow)"/>
+  <text x="1010" y="565" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#10b981" text-anchor="middle">AWS Config</text>
+  <text x="1010" y="585" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle">Compliance Rules</text>
+
+  <rect x="905" y="600" width="210" height="75" rx="5" fill="#334155"/>
+  <text x="915" y="620" font-family="Arial, sans-serif" font-size="10" fill="#10b981">• Verify encryption enabled</text>
+  <text x="915" y="637" font-family="Arial, sans-serif" font-size="10" fill="#10b981">• Check backups running</text>
+  <text x="915" y="654" font-family="Arial, sans-serif" font-size="10" fill="#10b981">• Validate VPC config</text>
+  <text x="915" y="671" font-family="Arial, sans-serif" font-size="10" fill="#ec4899">• Continuous compliance</text>
+
+  <!-- Lifecycle & Retention Section -->
+  <rect x="80" y="710" width="1050" height="110" rx="8" fill="#1e293b" stroke="#6366f1" stroke-width="2"/>
+  <text x="605" y="745" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#6366f1" text-anchor="middle">Log Lifecycle &amp; Retention Policies</text>
+
+  <rect x="100" y="760" width="1010" height="45" rx="5" fill="#334155"/>
+
+  <!-- Lifecycle Steps -->
+  <g>
+    <rect x="115" y="770" width="220" height="25" rx="3" fill="#3b82f6"/>
+    <text x="225" y="788" font-family="Arial, sans-serif" font-size="9" fill="#fff" text-anchor="middle">CloudWatch Logs (30 days)</text>
+  </g>
+
+  <text x="345" y="785" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8">→</text>
+
+  <g>
+    <rect x="365" y="770" width="220" height="25" rx="3" fill="#10b981"/>
+    <text x="475" y="788" font-family="Arial, sans-serif" font-size="9" fill="#fff" text-anchor="middle">S3 Standard (1 year)</text>
+  </g>
+
+  <text x="595" y="785" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8">→</text>
+
+  <g>
+    <rect x="615" y="770" width="220" height="25" rx="3" fill="#6366f1"/>
+    <text x="725" y="788" font-family="Arial, sans-serif" font-size="9" fill="#fff" text-anchor="middle">S3 Glacier (7 years)</text>
+  </g>
+
+  <text x="845" y="785" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8">→</text>
+
+  <g>
+    <rect x="865" y="770" width="220" height="25" rx="3" fill="#475569"/>
+    <text x="975" y="788" font-family="Arial, sans-serif" font-size="9" fill="#fff" text-anchor="middle">Delete (after 7 years)</text>
+  </g>
+
+  <!-- Athena Query Section -->
+  <rect x="80" y="730" width="200" height="50" rx="5" fill="#ec4899"/>
+  <text x="180" y="752" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">Athena</text>
+  <text x="180" y="768" font-family="Arial, sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">Query logs via SQL</text>
+
+  <!-- Automated Verification -->
+  <rect x="930" y="730" width="200" height="50" rx="5" fill="#10b981"/>
+  <text x="1030" y="752" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#fff" text-anchor="middle">Lambda Monitor</text>
+  <text x="1030" y="768" font-family="Arial, sans-serif" font-size="9" fill="#e2e8f0" text-anchor="middle">Verify retention monthly</text>
+
+  <!-- Arrows between sections -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#94a3b8" />
+    </marker>
+  </defs>
+
+  <!-- CloudTrail to S3 -->
+  <line x1="340" y1="390" x2="340" y2="710" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="355" y="550" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8">To S3</text>
+
+  <!-- CloudWatch to Lifecycle -->
+  <line x1="450" y1="690" x2="450" y2="710" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- EventBridge to GuardDuty -->
+  <line x1="740" y1="510" x2="740" y2="530" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- EventBridge to Config -->
+  <line x1="1010" y1="510" x2="1010" y2="530" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Retention Label -->
+  <rect x="450" y="850" width="300" height="30" rx="5" fill="#ec4899"/>
+  <text x="600" y="872" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">7-Year Retention Requirement (HIPAA)</text>
+
+  <!-- Legend -->
+  <text x="80" y="880" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e2e8f0">Key:</text>
+
+  <rect x="140" y="870" width="12" height="12" fill="#ec4899"/>
+  <text x="160" y="880" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">Audit Logs</text>
+
+  <rect x="260" y="870" width="12" height="12" fill="#3b82f6"/>
+  <text x="280" y="880" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">Application Logs</text>
+
+  <rect x="410" y="870" width="12" height="12" fill="#10b981"/>
+  <text x="430" y="880" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">Tracing &amp; Compliance</text>
+
+  <rect x="580" y="870" width="12" height="12" fill="#8b5cf6"/>
+  <text x="600" y="880" font-family="Arial, sans-serif" font-size="10" fill="#e2e8f0">Security Monitoring</text>
+</svg>

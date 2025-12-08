@@ -1,0 +1,118 @@
+---
+interface Project {
+  name: string;
+  description: string;
+  tech: string[];
+  status: 'live' | 'archived' | 'wip';
+  compliance?: string[];
+  market?: string;
+}
+
+const projects: Project[] = [
+  {
+    name: 'Healthcare Platform',
+    description: 'Full-stack healthcare system serving 100+ hospitals with patient data, appointments & medical workflows',
+    tech: ['React Native', 'Flask', 'AWS', 'PostgreSQL'],
+    status: 'live',
+    compliance: ['HIPAA', 'SOC2', 'ISO 27001'],
+    market: 'US, India'
+  },
+  {
+    name: 'Breast Cancer Screening App',
+    description: 'Mobile app rebuilt from ground up with multi-language support, significantly faster than v1',
+    tech: ['Flutter', 'Dart', 'AWS'],
+    status: 'live',
+    compliance: ['GDPR'],
+    market: 'UK'
+  },
+  {
+    name: 'Security Management System',
+    description: 'Enterprise security application with custom workflows and audit systems',
+    tech: ['Laravel', 'PostgreSQL', 'AWS'],
+    status: 'live',
+    compliance: ['ISO 27001'],
+    market: 'Global'
+  },
+  {
+    name: 'Multi-Vendor Marketplace',
+    description: 'Reselling platform with multi-vendor operations and real-time inventory management',
+    tech: ['Node.js', 'Flutter', 'AWS'],
+    status: 'live',
+    market: 'India'
+  }
+];
+
+const statusConfig = {
+  live: { label: '🟢 Live', color: 'text-emerald-400' },
+  wip: { label: '🔧 Building', color: 'text-yellow-400' },
+  archived: { label: '📦 Archived', color: 'text-zinc-500' }
+};
+---
+
+<div class="flex flex-col h-full">
+  <div class="flex items-center justify-between mb-4">
+    <h3 class="font-semibold text-slate-100">Featured Work</h3>
+    <span class="text-xs text-slate-500">Professional Projects</span>
+  </div>
+
+  <div class="space-y-4 flex-1 overflow-y-auto">
+    {projects.map((project) => (
+      <div class="group interactive-card glass-effect rounded-lg p-3 border border-slate-700/30">
+        <div class="space-y-3">
+          <div class="flex items-start justify-between">
+            <div class="flex-1">
+              <div class="flex items-center gap-2 mb-1">
+                <h4 class="font-mono text-sm text-slate-200 group-hover:text-purple-400 transition-colors">
+                  {project.name}
+                </h4>
+                {project.market && (
+                  <span class="text-xs text-slate-500">
+                    {project.market}
+                  </span>
+                )}
+              </div>
+              <p class="text-xs text-slate-400 leading-relaxed">
+                {project.description}
+              </p>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-between">
+            <div class="flex flex-wrap gap-1">
+              {project.tech.slice(0, 3).map((tech) => (
+                <span
+                  class="px-2 py-0.5 bg-slate-800/50 text-slate-300 text-xs rounded-md border border-slate-600/30 font-mono"
+                >
+                  {tech}
+                </span>
+              ))}
+              {project.tech.length > 3 && (
+                <span class="px-2 py-0.5 bg-slate-800/50 text-slate-400 text-xs rounded-md border border-slate-600/30">
+                  +{project.tech.length - 3}
+                </span>
+              )}
+            </div>
+
+            <div class="flex items-center gap-2">
+              <span class={`text-xs font-medium ${statusConfig[project.status].color}`}>
+                {statusConfig[project.status].label}
+              </span>
+            </div>
+          </div>
+
+          {project.compliance && project.compliance.length > 0 && (
+            <div class="flex gap-2 pt-1">
+              {project.compliance.map((cert) => (
+                <span
+                  class="px-2 py-0.5 bg-emerald-900/30 text-emerald-400 text-xs rounded border border-emerald-700/30 font-medium"
+                >
+                  {cert}
+                </span>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    ))}
+  </div>
+</div>

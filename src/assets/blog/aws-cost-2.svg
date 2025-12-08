@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .text-primary { fill: #e2e8f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+      .text-secondary { fill: #94a3b8; }
+      .title { font-size: 24px; font-weight: 600; }
+      .subtitle { font-size: 16px; }
+      .label { font-size: 14px; }
+      .value { font-size: 14px; font-weight: 600; }
+      .bar { fill: #10b981; }
+      .bar-bg { fill: #1e293b; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="800" height="500" rx="8"/>
+
+  <!-- Title -->
+  <text class="text-primary title" x="400" y="40" text-anchor="middle">Quick Wins</text>
+  <text class="text-secondary subtitle" x="400" y="65" text-anchor="middle">$420K Savings in 30 Days</text>
+
+  <!-- Chart Area -->
+  <g transform="translate(100, 120)">
+    <!-- Scheduling Non-prod: $280K -->
+    <text class="text-primary label" x="0" y="15">Scheduling Non-prod</text>
+    <rect class="bar-bg" x="200" y="0" width="500" height="35" rx="4"/>
+    <rect class="bar" x="200" y="0" width="389" height="35" rx="4"/>
+    <text class="text-primary value" x="600" y="22">$280K</text>
+
+    <!-- Right-sizing EC2: $180K -->
+    <text class="text-primary label" x="0" y="85">Right-sizing EC2</text>
+    <rect class="bar-bg" x="200" y="70" width="500" height="35" rx="4"/>
+    <rect class="bar" x="200" y="70" width="250" height="35" rx="4"/>
+    <text class="text-primary value" x="600" y="92">$180K</text>
+
+    <!-- Savings Plans: $180K -->
+    <text class="text-primary label" x="0" y="155">Savings Plans</text>
+    <rect class="bar-bg" x="200" y="140" width="500" height="35" rx="4"/>
+    <rect class="bar" x="200" y="140" width="250" height="35" rx="4"/>
+    <text class="text-primary value" x="600" y="162">$180K</text>
+
+    <!-- EBS Cleanup: $35K -->
+    <text class="text-primary label" x="0" y="225">EBS Cleanup</text>
+    <rect class="bar-bg" x="200" y="210" width="500" height="35" rx="4"/>
+    <rect class="bar" x="200" y="210" width="49" height="35" rx="4"/>
+    <text class="text-primary value" x="600" y="232">$35K</text>
+  </g>
+
+  <!-- Total Savings Badge -->
+  <g transform="translate(400, 420)">
+    <rect x="-120" y="-25" width="240" height="50" fill="#1e293b" rx="8" stroke="#10b981" stroke-width="2"/>
+    <text class="text-secondary label" x="0" y="-5" text-anchor="middle">Total Annual Savings</text>
+    <text class="text-primary title" x="0" y="20" text-anchor="middle" fill="#10b981">$675K</text>
+  </g>
+</svg>

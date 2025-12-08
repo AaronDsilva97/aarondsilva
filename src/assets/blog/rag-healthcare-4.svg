@@ -1,0 +1,404 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1000">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10b981" />
+    </marker>
+    <marker id="red-arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#dc2626" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="1000" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="700" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    RAG Security Architecture for Healthcare
+  </text>
+  <text x="700" y="65" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">
+    Defense-in-Depth Security Model with HIPAA Compliance
+  </text>
+
+  <!-- INTERNET LAYER -->
+  <rect x="50" y="100" width="1300" height="80" fill="#450a0a" stroke="#dc2626" stroke-width="3" rx="10"/>
+  <text x="70" y="130" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#fca5a5">
+    INTERNET (Untrusted Zone)
+  </text>
+  <text x="70" y="155" font-family="Arial, sans-serif" font-size="12" fill="#fca5a5">
+    External traffic, potential threats, DDoS, unauthorized access attempts
+  </text>
+
+  <!-- External Users -->
+  <circle cx="150" cy="145" r="25" fill="#1e293b" stroke="#dc2626" stroke-width="2"/>
+  <text x="150" y="152" font-family="Arial, sans-serif" font-size="12" fill="#dc2626" text-anchor="middle" font-weight="bold">
+    USER
+  </text>
+
+  <!-- External LLM API Icon -->
+  <rect x="1180" y="120" width="130" height="50" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" rx="6"/>
+  <text x="1245" y="142" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#8b5cf6" text-anchor="middle">
+    External LLM
+  </text>
+  <text x="1245" y="158" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    OpenAI/Anthropic
+  </text>
+
+  <!-- API GATEWAY LAYER -->
+  <rect x="50" y="210" width="1300" height="90" fill="#0c4a6e" stroke="#3b82f6" stroke-width="3" rx="10"/>
+  <text x="70" y="240" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#60a5fa">
+    API Gateway &amp; Edge Security
+  </text>
+
+  <!-- WAF -->
+  <rect x="80" y="255" width="140" height="35" fill="#1e293b" stroke="#3b82f6" stroke-width="2" rx="6"/>
+  <text x="150" y="278" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    WAF / Firewall
+  </text>
+
+  <!-- Rate Limiting -->
+  <rect x="240" y="255" width="140" height="35" fill="#1e293b" stroke="#3b82f6" stroke-width="2" rx="6"/>
+  <text x="310" y="278" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Rate Limiting
+  </text>
+
+  <!-- TLS Termination -->
+  <rect x="400" y="255" width="140" height="35" fill="#1e293b" stroke="#10b981" stroke-width="2" rx="6"/>
+  <text x="470" y="278" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    TLS 1.3
+  </text>
+
+  <!-- DDoS Protection -->
+  <rect x="560" y="255" width="140" height="35" fill="#1e293b" stroke="#3b82f6" stroke-width="2" rx="6"/>
+  <text x="630" y="278" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    DDoS Protection
+  </text>
+
+  <!-- APPLICATION VPC -->
+  <rect x="50" y="330" width="1300" height="290" fill="none" stroke="#10b981" stroke-width="4" stroke-dasharray="10,5" rx="10"/>
+  <text x="70" y="320" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#10b981">
+    APPLICATION VPC (Private Network)
+  </text>
+
+  <!-- Authentication Layer -->
+  <rect x="80" y="350" width="280" height="90" fill="#1e293b" stroke="#ec4899" stroke-width="2" rx="8"/>
+  <text x="220" y="375" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ec4899" text-anchor="middle">
+    Authentication
+  </text>
+  <text x="220" y="395" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle">
+    OAuth 2.0 / SAML
+  </text>
+  <text x="220" y="412" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    Integration with Hospital SSO
+  </text>
+  <text x="220" y="426" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    MFA Required • Session Management
+  </text>
+
+  <!-- Authorization Layer -->
+  <rect x="390" y="350" width="280" height="90" fill="#1e293b" stroke="#ec4899" stroke-width="2" rx="8"/>
+  <text x="530" y="375" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ec4899" text-anchor="middle">
+    Authorization (RBAC)
+  </text>
+  <text x="530" y="395" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle">
+    Role Definitions:
+  </text>
+  <text x="530" y="410" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Physician (full clinical access)
+  </text>
+  <text x="530" y="422" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Nurse (protocols + assigned patients)
+  </text>
+  <text x="530" y="434" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Patient (own records only) • Admin
+  </text>
+
+  <!-- Application Services -->
+  <rect x="700" y="350" width="280" height="90" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+  <text x="840" y="375" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#8b5cf6" text-anchor="middle">
+    Application Services
+  </text>
+  <text x="840" y="395" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle">
+    RAG Query Engine
+  </text>
+  <text x="840" y="410" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Retrieval Service
+  </text>
+  <text x="840" y="423" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • De-identification Service
+  </text>
+  <text x="840" y="436" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Response Handler
+  </text>
+
+  <!-- Secrets Management -->
+  <rect x="1010" y="350" width="280" height="90" fill="#1e293b" stroke="#f59e0b" stroke-width="2" rx="8"/>
+  <text x="1150" y="375" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f59e0b" text-anchor="middle">
+    Secrets Management
+  </text>
+  <text x="1150" y="395" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle">
+    AWS Secrets Manager /
+  </text>
+  <text x="1150" y="410" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle">
+    HashiCorp Vault
+  </text>
+  <text x="1150" y="427" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    API keys • DB credentials
+  </text>
+
+  <!-- De-identification Service (Security Boundary) -->
+  <rect x="80" y="470" width="590" height="130" fill="#1e293b" stroke="#f59e0b" stroke-width="3" rx="8"/>
+  <text x="375" y="495" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#f59e0b" text-anchor="middle">
+    De-identification Service (Security Boundary)
+  </text>
+  <text x="375" y="515" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    PHI Removal Layer - Nothing Beyond This Point Contains Real PHI
+  </text>
+
+  <rect x="100" y="530" width="160" height="55" fill="#0f172a" stroke="#dc2626" stroke-width="2" rx="6"/>
+  <text x="180" y="548" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">
+    INPUT: With PHI
+  </text>
+  <text x="180" y="562" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">
+    Names, MRNs, DOB,
+  </text>
+  <text x="180" y="574" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">
+    Visit dates, Phone #
+  </text>
+
+  <text x="275" y="560" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#f59e0b">
+    →
+  </text>
+
+  <rect x="300" y="530" width="150" height="55" fill="#0f172a" stroke="#f59e0b" stroke-width="2" rx="6"/>
+  <text x="375" y="548" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#f59e0b" text-anchor="middle">
+    NLP Processor
+  </text>
+  <text x="375" y="562" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">
+    Detect &amp; Replace
+  </text>
+  <text x="375" y="574" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">
+    18 HIPAA identifiers
+  </text>
+
+  <text x="465" y="560" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#10b981">
+    →
+  </text>
+
+  <rect x="490" y="530" width="160" height="55" fill="#0f172a" stroke="#10b981" stroke-width="2" rx="6"/>
+  <text x="570" y="548" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#10b981" text-anchor="middle">
+    OUTPUT: Safe
+  </text>
+  <text x="570" y="562" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">
+    [PATIENT], [ID], [DATE],
+  </text>
+  <text x="570" y="574" font-family="Arial, sans-serif" font-size="8" fill="#94a3b8" text-anchor="middle">
+    [PHONE] tokens
+  </text>
+
+  <!-- Audit Logging Service -->
+  <rect x="700" y="470" width="280" height="130" fill="#1e293b" stroke="#ec4899" stroke-width="2" rx="8"/>
+  <text x="840" y="495" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ec4899" text-anchor="middle">
+    Audit Logging Service
+  </text>
+  <text x="840" y="515" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle">
+    Immutable Event Log
+  </text>
+  <text x="840" y="535" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    Captures every interaction:
+  </text>
+  <text x="840" y="550" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • User ID • Timestamp • Action
+  </text>
+  <text x="840" y="563" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Query • Documents accessed
+  </text>
+  <text x="840" y="576" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Response • IP address
+  </text>
+  <text x="840" y="591" font-family="Arial, sans-serif" font-size="8" fill="#ec4899" text-anchor="middle">
+    ✓ HIPAA compliance • SOC2 audit trail
+  </text>
+
+  <!-- mTLS Connection -->
+  <rect x="1010" y="470" width="280" height="60" fill="#0f172a" stroke="#10b981" stroke-width="2" rx="6"/>
+  <text x="1150" y="493" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#10b981" text-anchor="middle">
+    mTLS (Mutual TLS)
+  </text>
+  <text x="1150" y="510" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    Encrypted service-to-service
+  </text>
+  <text x="1150" y="523" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    communication within VPC
+  </text>
+
+  <!-- External LLM Connection -->
+  <rect x="1010" y="545" width="280" height="55" fill="#0f172a" stroke="#8b5cf6" stroke-width="2" rx="6"/>
+  <text x="1150" y="565" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#8b5cf6" text-anchor="middle">
+    External LLM API Call
+  </text>
+  <text x="1150" y="582" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    TLS 1.3 • BAA signed • No training
+  </text>
+  <text x="1150" y="594" font-family="Arial, sans-serif" font-size="9" fill="#10b981" text-anchor="middle">
+    Only de-identified data crosses boundary
+  </text>
+
+  <!-- DATABASE VPC -->
+  <rect x="50" y="650" width="1300" height="200" fill="none" stroke="#3b82f6" stroke-width="4" stroke-dasharray="10,5" rx="10"/>
+  <text x="70" y="640" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#3b82f6">
+    DATABASE VPC (Isolated Network)
+  </text>
+
+  <!-- Vector Database -->
+  <rect x="80" y="670" width="280" height="160" fill="#1e293b" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="220" y="695" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6" text-anchor="middle">
+    Vector Database
+  </text>
+  <text x="220" y="715" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">
+    pgvector / PostgreSQL
+  </text>
+  <rect x="110" y="730" width="220" height="85" fill="#0f172a" stroke="#10b981" stroke-width="1" rx="4"/>
+  <text x="220" y="748" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#10b981" text-anchor="middle">
+    Encryption at Rest (AES-256)
+  </text>
+  <text x="220" y="763" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Encrypted EBS volumes
+  </text>
+  <text x="220" y="776" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Database-level encryption
+  </text>
+  <text x="220" y="789" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Column-level for sensitive fields
+  </text>
+  <text x="220" y="802" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Encrypted backups
+  </text>
+
+  <!-- Document Storage -->
+  <rect x="390" y="670" width="280" height="160" fill="#1e293b" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="530" y="695" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#3b82f6" text-anchor="middle">
+    Document Storage
+  </text>
+  <text x="530" y="715" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">
+    S3 / Object Storage
+  </text>
+  <rect x="420" y="730" width="220" height="85" fill="#0f172a" stroke="#10b981" stroke-width="1" rx="4"/>
+  <text x="530" y="748" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#10b981" text-anchor="middle">
+    Encryption at Rest (AES-256)
+  </text>
+  <text x="530" y="763" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • SSE-KMS encryption
+  </text>
+  <text x="530" y="776" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Versioning enabled
+  </text>
+  <text x="530" y="789" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Private buckets (no public access)
+  </text>
+  <text x="530" y="802" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Lifecycle policies for retention
+  </text>
+
+  <!-- Audit Log Database -->
+  <rect x="700" y="670" width="280" height="160" fill="#1e293b" stroke="#ec4899" stroke-width="2" rx="8"/>
+  <text x="840" y="695" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ec4899" text-anchor="middle">
+    Audit Log Database
+  </text>
+  <text x="840" y="715" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">
+    Immutable Log Storage
+  </text>
+  <rect x="730" y="730" width="220" height="85" fill="#0f172a" stroke="#ec4899" stroke-width="1" rx="4"/>
+  <text x="840" y="748" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#ec4899" text-anchor="middle">
+    Append-Only • Tamper-Proof
+  </text>
+  <text x="840" y="763" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Write-once storage
+  </text>
+  <text x="840" y="776" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • 7-year retention (HIPAA)
+  </text>
+  <text x="840" y="789" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Cryptographic hashing
+  </text>
+  <text x="840" y="802" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Regular compliance exports
+  </text>
+
+  <!-- Network Isolation -->
+  <rect x="1010" y="670" width="280" height="160" fill="#1e293b" stroke="#10b981" stroke-width="2" rx="8"/>
+  <text x="1150" y="695" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981" text-anchor="middle">
+    Network Isolation
+  </text>
+  <text x="1150" y="715" font-family="Arial, sans-serif" font-size="11" fill="#e2e8f0" text-anchor="middle">
+    Database VPC Security:
+  </text>
+  <text x="1150" y="738" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Private subnets only
+  </text>
+  <text x="1150" y="753" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • No internet gateway
+  </text>
+  <text x="1150" y="768" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Security groups restrict access
+  </text>
+  <text x="1150" y="783" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • VPC peering to App VPC only
+  </text>
+  <text x="1150" y="798" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Network ACLs for defense
+  </text>
+  <text x="1150" y="813" font-family="Arial, sans-serif" font-size="9" fill="#10b981" text-anchor="middle">
+    ✓ Zero external database access
+  </text>
+
+  <!-- Arrows -->
+  <line x1="150" y1="180" x2="150" y2="210" stroke="#dc2626" stroke-width="3" marker-end="url(#red-arrow)"/>
+  <line x1="1245" y1="170" x2="1245" y2="210" stroke="#8b5cf6" stroke-width="3"/>
+
+  <line x1="450" y1="300" x2="450" y2="330" stroke="#10b981" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+  <line x1="840" y1="440" x2="840" y2="620" stroke="#10b981" stroke-width="3"/>
+  <line x1="840" y1="620" x2="840" y2="650" stroke="#10b981" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+  <line x1="1150" y1="530" x2="1150" y2="545" stroke="#8b5cf6" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="1150" y1="440" x2="1150" y2="470" stroke="#10b981" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+  <line x1="980" y1="557" x2="690" y2="557" stroke="#8b5cf6" stroke-width="3"/>
+  <line x1="690" y1="557" x2="690" y2="180" stroke="#8b5cf6" stroke-width="3"/>
+  <line x1="690" y1="180" x2="1180" y2="180" stroke="#8b5cf6" stroke-width="3"/>
+  <line x1="1180" y1="180" x2="1180" y2="145" stroke="#8b5cf6" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+  <!-- Encryption Key Labels -->
+  <rect x="100" y="880" width="35" height="35" fill="#10b981" stroke="#10b981" stroke-width="2" rx="4"/>
+  <text x="117" y="903" font-family="Arial, sans-serif" font-size="20" fill="#0f172a" text-anchor="middle" font-weight="bold">
+    🔒
+  </text>
+  <text x="150" y="903" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0">
+    All encryption points (TLS in-transit, AES-256 at-rest)
+  </text>
+
+  <rect x="520" y="880" width="35" height="35" fill="#ec4899" stroke="#ec4899" stroke-width="2" rx="4"/>
+  <text x="537" y="903" font-family="Arial, sans-serif" font-size="20" fill="#0f172a" text-anchor="middle" font-weight="bold">
+    🛡
+  </text>
+  <text x="570" y="903" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0">
+    Access control gates (Auth, RBAC, De-ID)
+  </text>
+
+  <rect x="900" y="880" width="35" height="35" fill="#dc2626" stroke="#dc2626" stroke-width="2" rx="4"/>
+  <text x="917" y="903" font-family="Arial, sans-serif" font-size="20" fill="#0f172a" text-anchor="middle" font-weight="bold">
+    ⚠
+  </text>
+  <text x="950" y="903" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0">
+    Security boundary (No PHI beyond this point)
+  </text>
+
+  <!-- Footer -->
+  <rect x="50" y="935" width="1300" height="50" fill="#1e293b" stroke="#475569" stroke-width="1" rx="8"/>
+  <text x="700" y="958" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#10b981" text-anchor="middle">
+    Defense-in-Depth Strategy: Multiple security layers ensure no single point of failure
+  </text>
+  <text x="700" y="975" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    HIPAA-compliant • SOC2 Type II • Zero-trust architecture • Data encrypted at rest and in transit • Audit logging for all access
+  </text>
+</svg>

@@ -1,76 +1,101 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-const testimonials = [
+const certifications = [
   {
-    quote: "Aaron thinks like a founder, not just a developer. Best technical hire we've made.",
-    author: "Sarah Chen",
-    role: "CEO, GrowthMetrics",
-    rating: 5
+    name: 'Professional Scrum Master I',
+    issuer: 'Scrum.org',
+    icon: '🏅',
+    status: 'Certified',
+    url: 'https://www.credly.com/badges/59b7db24-3ce5-4040-b386-df0530e0bd3e'
   },
   {
-    quote: "Delivered our MVP 2 weeks ahead of schedule. We raised $500K seed round 2 months later.",
-    author: "Mike Rodriguez",
-    role: "Co-Founder, FitTracker",
-    rating: 5
+    name: 'Software Engineering for Cloud, Blockchain & IoT',
+    issuer: 'Advanced Certification',
+    icon: '☁️',
+    status: 'Certified',
+    url: 'https://olympus1.mygreatlearning.com/certificate/JOHMAJBX'
   },
   {
-    quote: "Aaron's technical leadership helped us scale from 0 to 25K users in 6 months.",
-    author: "Lisa Park",
-    role: "CTO, MediSync",
-    rating: 5
+    name: 'AWS Solutions Architect',
+    issuer: 'Amazon Web Services',
+    icon: '🎯',
+    status: 'In Progress',
+    url: null
   }
 ];
 
 export default function TestimonialsCard() {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonial(prev => (prev + 1) % testimonials.length);
-    }, 4000);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  const testimonial = testimonials[currentTestimonial];
+  const [activeCert, setActiveCert] = useState(0);
 
   return (
     <div className="flex flex-col h-full">
       <div className="mb-4">
         <div className="flex items-center gap-2 mb-2">
-          <span className="text-lg">💬</span>
-          <h3 className="font-semibold text-white">What Co-Founders Say</h3>
+          <span className="text-lg">🎓</span>
+          <h3 className="font-semibold text-white">Certifications</h3>
         </div>
-        <div className="flex gap-1">
-          {[...Array(5)].map((_, i) => (
-            <svg key={i} className="w-4 h-4 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-              <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-            </svg>
-          ))}
-        </div>
+        <p className="text-xs text-slate-400">Professional credentials</p>
       </div>
 
-      <div className="flex-1 flex flex-col justify-center">
-        <blockquote className="text-sm text-slate-300 leading-relaxed mb-4 italic">
-          "{testimonial.quote}"
-        </blockquote>
+      <div className="flex-1 space-y-3">
+        {certifications.map((cert, index) => {
+          const content = (
+            <div className="flex items-start gap-3">
+              <span className="text-xl">{cert.icon}</span>
+              <div className="flex-1 min-w-0">
+                <div className="text-sm font-medium text-white truncate">{cert.name}</div>
+                <div className="text-xs text-slate-400">{cert.issuer}</div>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className={`text-xs px-2 py-0.5 rounded ${
+                  cert.status === 'Certified'
+                    ? 'bg-emerald-900/30 text-emerald-400 border border-emerald-700/30'
+                    : 'bg-yellow-900/30 text-yellow-400 border border-yellow-700/30'
+                }`}>
+                  {cert.status}
+                </span>
+                {cert.url && (
+                  <svg className="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                )}
+              </div>
+            </div>
+          );
 
-        <div className="space-y-1">
-          <div className="font-medium text-white text-sm">{testimonial.author}</div>
-          <div className="text-xs text-slate-400">{testimonial.role}</div>
-        </div>
+          const className = `w-full text-left p-3 rounded-lg transition-all duration-200 ${
+            activeCert === index
+              ? 'bg-purple-600/20 border border-purple-400/40'
+              : 'bg-slate-800/30 border border-slate-700/30 hover:bg-slate-700/30'
+          }`;
+
+          return cert.url ? (
+            <a
+              key={index}
+              href={cert.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`block ${className}`}
+              onMouseEnter={() => setActiveCert(index)}
+            >
+              {content}
+            </a>
+          ) : (
+            <button
+              key={index}
+              onClick={() => setActiveCert(index)}
+              className={className}
+            >
+              {content}
+            </button>
+          );
+        })}
       </div>
 
-      <div className="flex gap-1 pt-2">
-        {testimonials.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentTestimonial(index)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              index === currentTestimonial ? 'bg-purple-400' : 'bg-slate-600'
-            }`}
-          />
-        ))}
+      <div className="pt-3 mt-auto border-t border-slate-700/30">
+        <div className="text-xs text-slate-400 text-center">
+          Compliance expertise: <span className="text-emerald-400">HIPAA, SOC2, GDPR, ISO 27001</span>
+        </div>
       </div>
     </div>
   );

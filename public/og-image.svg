@@ -1,0 +1,79 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a"/>
+      <stop offset="50%" style="stop-color:#1e1b4b"/>
+      <stop offset="100%" style="stop-color:#0f172a"/>
+    </linearGradient>
+    <linearGradient id="purpleGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b5cf6"/>
+      <stop offset="100%" style="stop-color:#ec4899"/>
+    </linearGradient>
+    <linearGradient id="textGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f1f5f9"/>
+      <stop offset="100%" style="stop-color:#cbd5e1"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="630" fill="url(#bgGradient)"/>
+
+  <!-- Decorative blobs -->
+  <circle cx="100" cy="100" r="200" fill="#8b5cf6" opacity="0.1" filter="blur(60px)"/>
+  <circle cx="1100" cy="530" r="250" fill="#ec4899" opacity="0.1" filter="blur(60px)"/>
+  <circle cx="600" cy="315" r="300" fill="#3b82f6" opacity="0.05" filter="blur(80px)"/>
+
+  <!-- Grid pattern -->
+  <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+    <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#334155" stroke-width="0.5" opacity="0.3"/>
+  </pattern>
+  <rect width="1200" height="630" fill="url(#grid)"/>
+
+  <!-- Main content container -->
+  <rect x="60" y="60" width="1080" height="510" rx="24" fill="#1e293b" opacity="0.6" stroke="#334155" stroke-width="1"/>
+
+  <!-- Profile circle placeholder -->
+  <circle cx="180" cy="200" r="60" fill="#334155" stroke="url(#purpleGradient)" stroke-width="3"/>
+  <text x="180" y="210" text-anchor="middle" fill="#8b5cf6" font-family="system-ui, -apple-system, sans-serif" font-size="40">AD</text>
+
+  <!-- Name -->
+  <text x="280" y="185" fill="url(#textGradient)" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="700">Aaron D'silva</text>
+
+  <!-- Title -->
+  <text x="280" y="230" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="24">Senior Full Stack Developer</text>
+
+  <!-- Divider -->
+  <rect x="100" y="280" width="1000" height="2" fill="url(#purpleGradient)" opacity="0.3" rx="1"/>
+
+  <!-- Tagline -->
+  <text x="600" y="350" text-anchor="middle" fill="#e2e8f0" font-family="system-ui, -apple-system, sans-serif" font-size="32" font-weight="600">Building Secure Healthcare Systems</text>
+  <text x="600" y="400" text-anchor="middle" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="24">AWS • React Native • Flutter • AI/RAG • HIPAA Compliance</text>
+
+  <!-- Stats -->
+  <g transform="translate(150, 450)">
+    <rect width="200" height="80" rx="12" fill="#334155" opacity="0.5"/>
+    <text x="100" y="35" text-anchor="middle" fill="#10b981" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700">$1M+</text>
+    <text x="100" y="60" text-anchor="middle" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="14">Client Savings</text>
+  </g>
+
+  <g transform="translate(400, 450)">
+    <rect width="200" height="80" rx="12" fill="#334155" opacity="0.5"/>
+    <text x="100" y="35" text-anchor="middle" fill="#3b82f6" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700">15+</text>
+    <text x="100" y="60" text-anchor="middle" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="14">Products Shipped</text>
+  </g>
+
+  <g transform="translate(650, 450)">
+    <rect width="200" height="80" rx="12" fill="#334155" opacity="0.5"/>
+    <text x="100" y="35" text-anchor="middle" fill="#8b5cf6" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700">7+</text>
+    <text x="100" y="60" text-anchor="middle" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="14">Years Experience</text>
+  </g>
+
+  <g transform="translate(900, 450)">
+    <rect width="200" height="80" rx="12" fill="#334155" opacity="0.5"/>
+    <text x="100" y="35" text-anchor="middle" fill="#ec4899" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700">33%</text>
+    <text x="100" y="60" text-anchor="middle" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif" font-size="14">AWS Costs Cut</text>
+  </g>
+
+  <!-- Website URL -->
+  <text x="600" y="600" text-anchor="middle" fill="#64748b" font-family="system-ui, -apple-system, sans-serif" font-size="18">aarondsilva.me</text>
+</svg>

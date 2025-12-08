@@ -1,0 +1,215 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" style="background-color: #0f172a;">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 24px; font-weight: 700; fill: #e2e8f0; }
+      .header { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; font-weight: 700; fill: #e2e8f0; }
+      .cell-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 12px; fill: #e2e8f0; }
+      .cell-note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 10px; fill: #cbd5e1; }
+      .impact-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; fill: #e2e8f0; }
+      .strong { fill: #10b981; }
+      .adequate { fill: #f59e0b; }
+      .weak { fill: #ef4444; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="700" y="40" text-anchor="middle" class="title">Security Features Comparison: React Native vs Flutter</text>
+  <text x="700" y="65" text-anchor="middle" class="cell-note" style="font-size: 12px; font-style: italic;">Healthcare Apps Security &amp; Compliance Matrix</text>
+
+  <!-- Table Header -->
+  <g transform="translate(50, 100)">
+    <!-- Header Row Background -->
+    <rect x="0" y="0" width="300" height="60" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <rect x="300" y="0" width="340" height="60" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <rect x="640" y="0" width="340" height="60" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+    <rect x="980" y="0" width="320" height="60" fill="#1e293b" stroke="#475569" stroke-width="2"/>
+
+    <!-- Header Text -->
+    <text x="150" y="38" text-anchor="middle" class="header">Security Feature</text>
+    <text x="470" y="38" text-anchor="middle" class="header">React Native</text>
+    <text x="810" y="38" text-anchor="middle" class="header">Flutter</text>
+    <text x="1140" y="38" text-anchor="middle" class="header">Healthcare Impact</text>
+
+    <!-- Row 1: Secure Storage -->
+    <rect x="0" y="60" width="300" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <rect x="300" y="60" width="340" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <rect x="640" y="60" width="340" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <rect x="980" y="60" width="320" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+
+    <text x="150" y="95" text-anchor="middle" class="cell-text" font-weight="600">Secure Storage</text>
+
+    <text x="320" y="95" class="cell-text">react-native-keychain</text>
+    <text x="320" y="115" class="cell-note">(Mature, 3rd party)</text>
+    <circle cx="600" cy="105" r="8" class="strong"/>
+    <text x="615" y="110" class="cell-note">Strong</text>
+
+    <text x="660" y="95" class="cell-text">flutter_secure_storage</text>
+    <text x="660" y="115" class="cell-note">(Native implementation)</text>
+    <circle cx="940" cy="105" r="8" class="strong"/>
+    <text x="955" y="110" class="cell-note">Strong</text>
+
+    <text x="1000" y="95" class="impact-text">Critical for PHI</text>
+    <text x="1000" y="110" class="impact-text">(Protected Health</text>
+    <text x="1000" y="125" class="impact-text">Information) at rest</text>
+
+    <!-- Row 2: Biometric Auth -->
+    <rect x="0" y="160" width="300" height="100" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="300" y="160" width="340" height="100" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="640" y="160" width="340" height="100" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="980" y="160" width="320" height="100" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+
+    <text x="150" y="195" text-anchor="middle" class="cell-text" font-weight="600">Biometric</text>
+    <text x="150" y="210" text-anchor="middle" class="cell-text" font-weight="600">Authentication</text>
+
+    <text x="320" y="195" class="cell-text">react-native-biometrics</text>
+    <text x="320" y="215" class="cell-note">(3rd party library)</text>
+    <circle cx="600" cy="205" r="8" class="adequate"/>
+    <text x="615" y="210" class="cell-note">Adequate</text>
+
+    <text x="660" y="195" class="cell-text">local_auth</text>
+    <text x="660" y="215" class="cell-note">(Official Flutter plugin)</text>
+    <circle cx="940" cy="205" r="8" class="strong"/>
+    <text x="955" y="210" class="cell-note">Strong</text>
+
+    <text x="1000" y="195" class="impact-text">Required for HIPAA</text>
+    <text x="1000" y="210" class="impact-text">access control and</text>
+    <text x="1000" y="225" class="impact-text">user authentication</text>
+
+    <!-- Row 3: Encryption Libraries -->
+    <rect x="0" y="260" width="300" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <rect x="300" y="260" width="340" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <rect x="640" y="260" width="340" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <rect x="980" y="260" width="320" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+
+    <text x="150" y="295" text-anchor="middle" class="cell-text" font-weight="600">Encryption</text>
+    <text x="150" y="310" text-anchor="middle" class="cell-text" font-weight="600">Libraries</text>
+
+    <text x="320" y="295" class="cell-text">Multiple options:</text>
+    <text x="320" y="315" class="cell-note">crypto-js, native modules</text>
+    <circle cx="600" cy="305" r="8" class="adequate"/>
+    <text x="615" y="310" class="cell-note">Adequate</text>
+
+    <text x="660" y="295" class="cell-text">dart:crypto</text>
+    <text x="660" y="315" class="cell-note">(Built-in standard library)</text>
+    <circle cx="940" cy="305" r="8" class="strong"/>
+    <text x="955" y="310" class="cell-note">Strong</text>
+
+    <text x="1000" y="295" class="impact-text">PHI encryption</text>
+    <text x="1000" y="310" class="impact-text">requirements for</text>
+    <text x="1000" y="325" class="impact-text">data in transit/rest</text>
+
+    <!-- Row 4: SSL Pinning -->
+    <rect x="0" y="360" width="300" height="100" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="300" y="360" width="340" height="100" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="640" y="360" width="340" height="100" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="980" y="360" width="320" height="100" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+
+    <text x="150" y="395" text-anchor="middle" class="cell-text" font-weight="600">SSL Pinning</text>
+
+    <text x="320" y="395" class="cell-text">react-native-ssl-pinning</text>
+    <text x="320" y="415" class="cell-note">(3rd party, manual setup)</text>
+    <circle cx="600" cy="405" r="8" class="adequate"/>
+    <text x="615" y="410" class="cell-note">Adequate</text>
+
+    <text x="660" y="395" class="cell-text">Built-in support</text>
+    <text x="660" y="415" class="cell-note">(Native HttpClient)</text>
+    <circle cx="940" cy="405" r="8" class="strong"/>
+    <text x="955" y="410" class="cell-note">Strong</text>
+
+    <text x="1000" y="395" class="impact-text">Prevent MITM attacks</text>
+    <text x="1000" y="410" class="impact-text">on patient data</text>
+    <text x="1000" y="425" class="impact-text">transmission</text>
+
+    <!-- Row 5: Code Obfuscation -->
+    <rect x="0" y="460" width="300" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <rect x="300" y="460" width="340" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <rect x="640" y="460" width="340" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <rect x="980" y="460" width="320" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+
+    <text x="150" y="495" text-anchor="middle" class="cell-text" font-weight="600">Code</text>
+    <text x="150" y="510" text-anchor="middle" class="cell-text" font-weight="600">Obfuscation</text>
+
+    <text x="320" y="495" class="cell-text">ProGuard/R8</text>
+    <text x="320" y="515" class="cell-note">(Manual configuration)</text>
+    <circle cx="600" cy="505" r="8" class="adequate"/>
+    <text x="615" y="510" class="cell-note">Adequate</text>
+
+    <text x="660" y="495" class="cell-text">Built into build</text>
+    <text x="660" y="515" class="cell-note">(Automatic in release mode)</text>
+    <circle cx="940" cy="505" r="8" class="strong"/>
+    <text x="955" y="510" class="cell-note">Strong</text>
+
+    <text x="1000" y="495" class="impact-text">Protect healthcare</text>
+    <text x="1000" y="510" class="impact-text">logic, algorithms,</text>
+    <text x="1000" y="525" class="impact-text">and business rules</text>
+
+    <!-- Row 6: Compliance Ecosystem -->
+    <rect x="0" y="560" width="300" height="100" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="300" y="560" width="340" height="100" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="640" y="560" width="340" height="100" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+    <rect x="980" y="560" width="320" height="100" fill="#1e293b" stroke="#475569" stroke-width="1"/>
+
+    <text x="150" y="595" text-anchor="middle" class="cell-text" font-weight="600">Compliance</text>
+    <text x="150" y="610" text-anchor="middle" class="cell-text" font-weight="600">Ecosystem</text>
+
+    <text x="320" y="595" class="cell-text">Extensive HIPAA docs</text>
+    <text x="320" y="615" class="cell-note">(Mature, battle-tested)</text>
+    <circle cx="600" cy="605" r="8" class="strong"/>
+    <text x="615" y="610" class="cell-note">Strong</text>
+
+    <text x="660" y="595" class="cell-text">Growing GDPR focus</text>
+    <text x="660" y="615" class="cell-note">(Newer but improving)</text>
+    <circle cx="940" cy="605" r="8" class="adequate"/>
+    <text x="955" y="610" class="cell-note">Adequate</text>
+
+    <text x="1000" y="595" class="impact-text">Audit support and</text>
+    <text x="1000" y="610" class="impact-text">certification</text>
+    <text x="1000" y="625" class="impact-text">documentation</text>
+
+    <!-- Row 7: Security Updates -->
+    <rect x="0" y="660" width="300" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <rect x="300" y="660" width="340" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <rect x="640" y="660" width="340" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+    <rect x="980" y="660" width="320" height="100" fill="#0f172a" stroke="#475569" stroke-width="1"/>
+
+    <text x="150" y="695" text-anchor="middle" class="cell-text" font-weight="600">Security</text>
+    <text x="150" y="710" text-anchor="middle" class="cell-text" font-weight="600">Updates</text>
+
+    <text x="320" y="695" class="cell-text">Depends on RN version</text>
+    <text x="320" y="715" class="cell-note">(Community-driven)</text>
+    <circle cx="600" cy="705" r="8" class="adequate"/>
+    <text x="615" y="710" class="cell-note">Adequate</text>
+
+    <text x="660" y="695" class="cell-text">Flutter stable channel</text>
+    <text x="660" y="715" class="cell-note">(Google-backed releases)</text>
+    <circle cx="940" cy="705" r="8" class="strong"/>
+    <text x="955" y="710" class="cell-note">Strong</text>
+
+    <text x="1000" y="695" class="impact-text">Vulnerability</text>
+    <text x="1000" y="710" class="impact-text">response time and</text>
+    <text x="1000" y="725" class="impact-text">patch availability</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(100, 800)">
+    <text x="0" y="0" class="header">Status Indicators:</text>
+
+    <circle cx="150" cy="-5" r="8" class="strong"/>
+    <text x="165" y="0" class="cell-text">Strong - Fully meets healthcare security requirements</text>
+
+    <circle cx="150" cy="20" r="8" class="adequate"/>
+    <text x="165" y="25" class="cell-text">Adequate - Meets requirements with additional configuration</text>
+
+    <circle cx="150" cy="45" r="8" class="weak"/>
+    <text x="165" y="50" class="cell-text">Weak - Requires significant custom implementation</text>
+  </g>
+
+  <!-- Summary Box -->
+  <g transform="translate(900, 800)">
+    <rect x="0" y="-25" width="400" height="85" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="200" y="0" text-anchor="middle" class="header" fill="#8b5cf6">Summary</text>
+    <text x="15" y="20" class="cell-text">Flutter: Better built-in security features &amp; consistency</text>
+    <text x="15" y="40" class="cell-text">React Native: More mature HIPAA compliance ecosystem</text>
+    <text x="15" y="55" class="cell-note" style="font-style: italic;">Both frameworks can achieve full HIPAA/GDPR compliance</text>
+  </g>
+</svg>

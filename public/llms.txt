@@ -1,0 +1,58 @@
+# Aaron Dsilva - Senior Full Stack Developer
+
+> Healthcare tech, AI integration, and security compliance. I build systems that serve 100+ hospitals with full HIPAA, SOC2, and ISO 27001 compliance.
+
+I'm a senior full-stack developer with 7 years of experience building secure healthcare systems across the US, Europe, UAE, and India. I specialize in the intersection of healthcare tech, AI integration, and security compliance.
+
+## About
+
+- [Home](/): Portfolio overview, current projects, and tech stack
+- [Blog](/blog): Technical articles on healthcare tech, AWS, AI/ML, and compliance
+
+## Technical Blog
+
+Articles on healthcare tech, AWS, AI/ML, and compliance from real production experience.
+
+### AI & LLM Integration
+
+- [MCP: Model Context Protocol Guide](/blog/mcp-model-context-protocol): Building AI integrations with MCP servers
+- [RAG in Healthcare](/blog/rag-in-healthcare): Compliant RAG pipelines for healthcare systems
+
+### AWS & Cloud
+
+- [AWS Cost Optimization ($1M Saved)](/blog/aws-cost-optimization-1m-saved): Real case study of 33% cost reduction
+- [Serverless Healthcare on AWS](/blog/serverless-healthcare-aws): HIPAA-compliant serverless architecture
+
+### Healthcare Compliance
+
+- [HIPAA for Developers](/blog/hipaa-for-developers): Technical guide to HIPAA compliance
+- [SOC2 vs HIPAA vs ISO 27001](/blog/soc2-vs-hipaa-vs-iso27001): Compliance framework comparison
+- [API Security for Healthcare](/blog/api-security-healthcare-auth-vulnerable): Beyond basic authentication
+
+### Mobile Development
+
+- [React Native vs Flutter for Healthcare](/blog/react-native-vs-flutter-healthcare-apps): Real comparison from shipping both
+
+### Enterprise Architecture
+
+- [TOGAF for Healthcare](/blog/togaf-without-bureaucracy-healthcare-ea): Practical enterprise architecture
+
+### Security
+
+- [The Cost of Skipping Security](/blog/security-debt-cost): Lessons from fixing security debt
+
+## Expertise
+
+- **Languages**: Python, JavaScript, TypeScript, Dart
+- **Frameworks**: React Native, Flutter, Node.js, Flask, Laravel, Rails
+- **Cloud**: AWS (Lambda, API Gateway, DynamoDB, Aurora, S3, CloudFront)
+- **Compliance**: HIPAA, SOC2, ISO 27001, GDPR
+- **AI/ML**: RAG pipelines, LLM integration, MCP servers
+- **Healthcare**: HL7 FHIR, EHR integrations, medical imaging
+
+## Optional
+
+Additional resources and links.
+
+- [LinkedIn](https://www.linkedin.com/in/aaronxdsilva): Professional profile
+- [GitHub](https://github.com/AaronDsilva97): Code and projects

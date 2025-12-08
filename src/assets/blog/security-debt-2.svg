@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 700">
+  <defs>
+    <linearGradient id="bar1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bar2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bar3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#eab308;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ca8a04;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bar4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f97316;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ea580c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bar5" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bar6" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bar7" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#991b1b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="700" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="600" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Fix Cost Multiplier
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="65" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">
+    30-minute fix during development = 50 hours after incident
+  </text>
+
+  <!-- Grid Lines -->
+  <g stroke="#1e293b" stroke-width="1" opacity="0.5">
+    <line x1="80" y1="100" x2="80" y2="580" />
+    <line x1="80" y1="580" x2="1120" y2="580" />
+    <!-- Horizontal grid -->
+    <line x1="80" y1="460" x2="1120" y2="460" stroke-dasharray="5,5"/>
+    <line x1="80" y1="340" x2="1120" y2="340" stroke-dasharray="5,5"/>
+    <line x1="80" y1="220" x2="1120" y2="220" stroke-dasharray="5,5"/>
+  </g>
+
+  <!-- Y-axis labels -->
+  <text x="65" y="585" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="end">0x</text>
+  <text x="65" y="465" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="end">25x</text>
+  <text x="65" y="345" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="end">50x</text>
+  <text x="65" y="225" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="end">75x</text>
+  <text x="65" y="105" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="end">100x</text>
+
+  <!-- Bar 1: During Development (1x) -->
+  <rect x="100" y="575" width="120" height="5" fill="url(#bar1)" rx="2"/>
+  <text x="160" y="565" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#10b981" text-anchor="middle">1x</text>
+  <text x="160" y="605" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">During</text>
+  <text x="160" y="620" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">Development</text>
+
+  <!-- Bar 2: Code Review (2x) -->
+  <rect x="240" y="570" width="120" height="10" fill="url(#bar2)" rx="2"/>
+  <text x="300" y="560" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#22c55e" text-anchor="middle">2x</text>
+  <text x="300" y="605" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">Code</text>
+  <text x="300" y="620" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">Review</text>
+
+  <!-- Bar 3: QA/Testing (5x) -->
+  <rect x="380" y="556" width="120" height="24" fill="url(#bar3)" rx="2"/>
+  <text x="440" y="545" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#eab308" text-anchor="middle">5x</text>
+  <text x="440" y="605" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">QA/Testing</text>
+
+  <!-- Bar 4: After Deployment (15x) -->
+  <rect x="520" y="508" width="120" height="72" fill="url(#bar4)" rx="2"/>
+  <text x="580" y="495" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f97316" text-anchor="middle">15x</text>
+  <text x="580" y="605" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">After</text>
+  <text x="580" y="620" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">Deployment</text>
+
+  <!-- Bar 5: In Production 6 months (40x) -->
+  <rect x="660" y="388" width="120" height="192" fill="url(#bar5)" rx="2"/>
+  <text x="720" y="375" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f59e0b" text-anchor="middle">40x</text>
+  <text x="720" y="640" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">In Production</text>
+  <text x="720" y="655" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">6 months</text>
+
+  <!-- Bar 6: During Compliance Audit (75x) -->
+  <rect x="800" y="220" width="120" height="360" fill="url(#bar6)" rx="2"/>
+  <text x="860" y="205" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="middle">75x</text>
+  <text x="860" y="640" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">During</text>
+  <text x="860" y="655" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">Compliance</text>
+  <text x="860" y="670" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">Audit</text>
+
+  <!-- Bar 7: After Incident (100x) -->
+  <rect x="940" y="100" width="120" height="480" fill="url(#bar7)" rx="2"/>
+  <text x="1000" y="85" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#dc2626" text-anchor="middle">100x</text>
+  <text x="1000" y="640" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">After</text>
+  <text x="1000" y="655" font-family="Arial, sans-serif" font-size="12" fill="#e2e8f0" text-anchor="middle">Incident</text>
+
+  <!-- Cost annotation arrows -->
+  <g opacity="0.7">
+    <!-- Arrow from bar 1 to bar 7 -->
+    <defs>
+      <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+        <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6" />
+      </marker>
+    </defs>
+    <path d="M 220 577 Q 600 550, 940 300" fill="none" stroke="#8b5cf6" stroke-width="2" stroke-dasharray="5,5" marker-end="url(#arrowhead)" opacity="0.5"/>
+  </g>
+
+  <!-- Info box -->
+  <rect x="100" y="130" width="280" height="80" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+  <text x="240" y="155" font-family="Arial, sans-serif" font-size="13" fill="#e2e8f0" text-anchor="middle" font-weight="bold">
+    Example: SQL Injection Fix
+  </text>
+  <text x="240" y="175" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">
+    During dev: 30 minutes
+  </text>
+  <text x="240" y="192" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">
+    After incident: 50 hours + downtime
+  </text>
+  <text x="240" y="209" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">
+    + customer notifications + reputation damage
+  </text>
+</svg>

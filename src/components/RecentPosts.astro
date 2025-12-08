@@ -1,58 +1,60 @@
 ---
-const recentPosts = [
-  {
-    title: "The State of AI Development in 2025",
-    excerpt: "Where we are and where we're heading with AI tools",
-    date: "2 days ago",
-    readTime: "6 min",
-    url: "#"
-  },
-  {
-    title: "Local-First: Why Your Data Should Stay Yours",
-    excerpt: "Building applications that respect user privacy",
-    date: "1 week ago",
-    readTime: "4 min",
-    url: "#"
-  }
-];
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 3);
+
+const formatRelativeDate = (date: Date) => {
+  const now = new Date();
+  const diffInDays = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24));
+
+  if (diffInDays === 0) return 'Today';
+  if (diffInDays === 1) return 'Yesterday';
+  if (diffInDays < 7) return `${diffInDays}d ago`;
+  if (diffInDays < 30) return `${Math.floor(diffInDays / 7)}w ago`;
+  return `${Math.floor(diffInDays / 30)}mo ago`;
+};
 ---
 
-<div class="flex flex-col h-full">
-  <div class="flex items-center justify-between mb-4">
+<div class="h-full flex flex-col">
+  <div class="flex items-center justify-between mb-3">
     <div class="flex items-center gap-2">
-      <span class="text-lg">✍️</span>
-      <h3 class="font-semibold text-white">Recent Posts</h3>
+      <span class="text-lg">📝</span>
+      <h3 class="font-semibold text-white text-sm">Recent Posts</h3>
     </div>
-  </div>
-
-  <div class="space-y-4 flex-1">
-    {recentPosts.map((post) => (
-      <article class="group cursor-pointer">
-        <div class="space-y-2">
-          <h4 class="text-sm font-medium text-white group-hover:text-emerald-400 transition-colors leading-tight">
-            {post.title}
-          </h4>
-
-          <p class="text-xs text-zinc-400 leading-relaxed">
-            {post.excerpt}
-          </p>
-
-          <div class="flex items-center gap-2 text-xs text-zinc-600">
-            <span>{post.date}</span>
-            <span>•</span>
-            <span>{post.readTime} read</span>
-          </div>
-        </div>
-      </article>
-    ))}
-  </div>
-
-  <div class="pt-3 mt-auto border-t border-zinc-800">
-    <a
-      href="#blog"
-      class="text-xs text-zinc-500 hover:text-emerald-400 transition-colors"
-    >
-      All posts →
+    <a href="/blog" class="text-xs text-zinc-500 hover:text-purple-400 transition-colors">
+      View all →
     </a>
   </div>
+
+  <div class="flex-1 space-y-2">
+    {posts.map((post) => (
+      <a
+        href={`/blog/${post.slug}`}
+        class="block p-2 -mx-2 rounded-lg hover:bg-white/5 transition-colors group"
+      >
+        <div class="flex items-start justify-between gap-3">
+          <h4 class="text-sm text-zinc-200 group-hover:text-purple-300 transition-colors line-clamp-1 flex-1">
+            {post.data.title}
+          </h4>
+          <span class="text-xs text-zinc-600 whitespace-nowrap">
+            {formatRelativeDate(post.data.publishDate)}
+          </span>
+        </div>
+        <p class="text-xs text-zinc-500 mt-1 line-clamp-1">
+          {post.data.description}
+        </p>
+      </a>
+    ))}
+  </div>
 </div>
+
+<style>
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

@@ -1,0 +1,152 @@
+<svg viewBox="0 0 1000 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="1000" height="900" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="500" y="35" text-anchor="middle" fill="#e2e8f0" font-size="20" font-weight="bold">Healthcare Data Architecture</text>
+
+  <!-- Layer 4: Applications (Top) -->
+  <g>
+    <rect x="50" y="80" width="900" height="120" rx="8" fill="#1e293b" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="80" y="110" fill="#8b5cf6" font-size="14" font-weight="bold">Layer 4: Applications</text>
+
+    <rect x="100" y="125" width="200" height="55" rx="5" fill="#8b5cf6" opacity="0.8"/>
+    <text x="200" y="148" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">Patient Portal</text>
+    <text x="200" y="165" text-anchor="middle" fill="#e2e8f0" font-size="10">Self-service &amp; messaging</text>
+
+    <rect x="350" y="125" width="200" height="55" rx="5" fill="#8b5cf6" opacity="0.8"/>
+    <text x="450" y="148" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">Clinical Analytics</text>
+    <text x="450" y="165" text-anchor="middle" fill="#e2e8f0" font-size="10">BI &amp; reporting</text>
+
+    <rect x="600" y="125" width="200" height="55" rx="5" fill="#8b5cf6" opacity="0.8"/>
+    <text x="700" y="148" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">Population Health</text>
+    <text x="700" y="165" text-anchor="middle" fill="#e2e8f0" font-size="10">Care management</text>
+  </g>
+
+  <!-- Layer 3: Data Platform -->
+  <g>
+    <rect x="50" y="230" width="900" height="140" rx="8" fill="#1e293b" stroke="#3b82f6" stroke-width="2"/>
+    <text x="80" y="260" fill="#3b82f6" font-size="14" font-weight="bold">Layer 3: Data Platform</text>
+
+    <rect x="100" y="280" width="220" height="70" rx="5" fill="#3b82f6" opacity="0.8"/>
+    <text x="210" y="300" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">Clinical Data Repository</text>
+    <text x="210" y="317" text-anchor="middle" fill="#e2e8f0" font-size="10">FHIR R4 based</text>
+    <text x="210" y="332" text-anchor="middle" fill="#94a3b8" font-size="9">Encryption at rest</text>
+
+    <rect x="370" y="280" width="220" height="70" rx="5" fill="#3b82f6" opacity="0.8"/>
+    <text x="480" y="300" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">Analytics Data Lake</text>
+    <text x="480" y="317" text-anchor="middle" fill="#e2e8f0" font-size="10">De-identified data</text>
+    <text x="480" y="332" text-anchor="middle" fill="#94a3b8" font-size="9">Access control</text>
+
+    <rect x="640" y="280" width="220" height="70" rx="5" fill="#3b82f6" opacity="0.8"/>
+    <text x="750" y="300" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">Master Patient Index</text>
+    <text x="750" y="317" text-anchor="middle" fill="#e2e8f0" font-size="10">Patient matching</text>
+    <text x="750" y="332" text-anchor="middle" fill="#94a3b8" font-size="9">Audit logging</text>
+  </g>
+
+  <!-- Layer 2: Integration -->
+  <g>
+    <rect x="50" y="400" width="900" height="140" rx="8" fill="#1e293b" stroke="#10b981" stroke-width="2"/>
+    <text x="80" y="430" fill="#10b981" font-size="14" font-weight="bold">Layer 2: Integration</text>
+
+    <rect x="100" y="450" width="220" height="70" rx="5" fill="#10b981" opacity="0.8"/>
+    <text x="210" y="470" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">HL7 Interface Engine</text>
+    <text x="210" y="487" text-anchor="middle" fill="#e2e8f0" font-size="10">Message transformation</text>
+    <text x="210" y="502" text-anchor="middle" fill="#94a3b8" font-size="9">HL7 v2 → FHIR</text>
+
+    <rect x="370" y="450" width="220" height="70" rx="5" fill="#10b981" opacity="0.8"/>
+    <text x="480" y="470" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">FHIR Gateway</text>
+    <text x="480" y="487" text-anchor="middle" fill="#e2e8f0" font-size="10">API orchestration</text>
+    <text x="480" y="502" text-anchor="middle" fill="#94a3b8" font-size="9">REST APIs</text>
+
+    <rect x="640" y="450" width="220" height="70" rx="5" fill="#10b981" opacity="0.8"/>
+    <text x="750" y="470" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">Message Queue</text>
+    <text x="750" y="487" text-anchor="middle" fill="#e2e8f0" font-size="10">Async processing</text>
+    <text x="750" y="502" text-anchor="middle" fill="#94a3b8" font-size="9">Kafka/RabbitMQ</text>
+  </g>
+
+  <!-- Layer 1: Source Systems -->
+  <g>
+    <rect x="50" y="570" width="900" height="140" rx="8" fill="#1e293b" stroke="#ec4899" stroke-width="2"/>
+    <text x="80" y="600" fill="#ec4899" font-size="14" font-weight="bold">Layer 1: Source Systems</text>
+
+    <rect x="100" y="620" width="180" height="70" rx="5" fill="#ec4899" opacity="0.8"/>
+    <text x="190" y="645" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">EHR</text>
+    <text x="190" y="662" text-anchor="middle" fill="#e2e8f0" font-size="10">Clinical records</text>
+    <text x="190" y="677" text-anchor="middle" fill="#94a3b8" font-size="9">Epic/Cerner</text>
+
+    <rect x="320" y="620" width="180" height="70" rx="5" fill="#ec4899" opacity="0.8"/>
+    <text x="410" y="645" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">Lab System</text>
+    <text x="410" y="662" text-anchor="middle" fill="#e2e8f0" font-size="10">Lab results</text>
+    <text x="410" y="677" text-anchor="middle" fill="#94a3b8" font-size="9">HL7 v2 ORM/ORU</text>
+
+    <rect x="540" y="620" width="180" height="70" rx="5" fill="#ec4899" opacity="0.8"/>
+    <text x="630" y="645" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">PACS</text>
+    <text x="630" y="662" text-anchor="middle" fill="#e2e8f0" font-size="10">Medical imaging</text>
+    <text x="630" y="677" text-anchor="middle" fill="#94a3b8" font-size="9">DICOM</text>
+
+    <rect x="760" y="620" width="180" height="70" rx="5" fill="#ec4899" opacity="0.8"/>
+    <text x="850" y="645" text-anchor="middle" fill="#fff" font-size="12" font-weight="bold">Billing System</text>
+    <text x="850" y="662" text-anchor="middle" fill="#e2e8f0" font-size="10">Claims &amp; revenue</text>
+    <text x="850" y="677" text-anchor="middle" fill="#94a3b8" font-size="9">EDI 837/835</text>
+  </g>
+
+  <!-- Data Flow Arrows -->
+  <defs>
+    <marker id="arrow-up" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 10 5, 0 10" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Source to Integration -->
+  <line x1="190" y1="620" x2="210" y2="520" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-up)" opacity="0.7"/>
+  <line x1="410" y1="620" x2="480" y2="520" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-up)" opacity="0.7"/>
+  <line x1="630" y1="620" x2="750" y2="520" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-up)" opacity="0.7"/>
+  <line x1="850" y1="620" x2="480" y2="520" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-up)" opacity="0.7"/>
+
+  <!-- Integration to Data Platform -->
+  <line x1="210" y1="450" x2="210" y2="350" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-up)" opacity="0.7"/>
+  <line x1="480" y1="450" x2="480" y2="350" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-up)" opacity="0.7"/>
+  <line x1="750" y1="450" x2="750" y2="350" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-up)" opacity="0.7"/>
+
+  <!-- Data Platform to Applications -->
+  <line x1="210" y1="280" x2="200" y2="180" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-up)" opacity="0.7"/>
+  <line x1="480" y1="280" x2="450" y2="180" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-up)" opacity="0.7"/>
+  <line x1="750" y1="280" x2="700" y2="180" stroke="#64748b" stroke-width="2" marker-end="url(#arrow-up)" opacity="0.7"/>
+
+  <!-- Data Governance Box (Right side) -->
+  <g>
+    <rect x="50" y="740" width="900" height="130" rx="8" fill="#1e293b" stroke="#f59e0b" stroke-width="2"/>
+    <text x="80" y="770" fill="#f59e0b" font-size="14" font-weight="bold">Data Governance &amp; Security (Cross-cutting)</text>
+
+    <g transform="translate(100, 785)">
+      <circle cx="0" cy="0" r="4" fill="#10b981"/>
+      <text x="10" y="5" fill="#e2e8f0" font-size="11">Master Data Management: Single source of truth for patients, providers, medications</text>
+    </g>
+
+    <g transform="translate(100, 810)">
+      <circle cx="0" cy="0" r="4" fill="#3b82f6"/>
+      <text x="10" y="5" fill="#e2e8f0" font-size="11">Data Quality Rules: Validation, standardization, deduplication</text>
+    </g>
+
+    <g transform="translate(100, 835)">
+      <circle cx="0" cy="0" r="4" fill="#ec4899"/>
+      <text x="10" y="5" fill="#e2e8f0" font-size="11">Consent Management: Patient opt-in/opt-out tracking, data sharing preferences</text>
+    </g>
+
+    <g transform="translate(550, 785)">
+      <circle cx="0" cy="0" r="4" fill="#ef4444"/>
+      <text x="10" y="5" fill="#e2e8f0" font-size="11">PHI Classification: Auto-detect and tag sensitive data</text>
+    </g>
+
+    <g transform="translate(550, 810)">
+      <circle cx="0" cy="0" r="4" fill="#f59e0b"/>
+      <text x="10" y="5" fill="#e2e8f0" font-size="11">Access Control: Role-based, attribute-based policies</text>
+    </g>
+
+    <g transform="translate(550, 835)">
+      <circle cx="0" cy="0" r="4" fill="#8b5cf6"/>
+      <text x="10" y="5" fill="#e2e8f0" font-size="11">Audit Logging: Complete data lineage and access trails</text>
+    </g>
+  </g>
+</svg>

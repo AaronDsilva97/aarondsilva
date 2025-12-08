@@ -5,14 +5,14 @@ import HeroIntro from '../components/HeroIntro.tsx';
 import AvailabilityWidget from '../components/AvailabilityWidget.tsx';
 import CommandHint from '../components/CommandHint.astro';
 import CurrentProject from '../components/CurrentProject.tsx';
-import GitHubStats from '../components/GitHubStats.tsx';
-import RecentProjects from '../components/RecentProjects.tsx';
+import ConnectCard from '../components/ConnectCard.astro';
+import RecentProjects from '../components/RecentProjects.astro';
 import TechStack from '../components/TechStack.astro';
+import NowPlaying from '../components/NowPlaying.astro';
 import RecentPosts from '../components/RecentPosts.astro';
-import NowPlaying from '../components/NowPlaying.tsx';
 import CommandPalette from '../components/CommandPalette.tsx';
 import MetricsCard from '../components/MetricsCard.tsx';
-import InvestmentThesis from '../components/InvestmentThesis.tsx';
+import Specializations from '../components/Specializations.tsx';
 import TestimonialsCard from '../components/TestimonialsCard.tsx';
 import InteractiveBackground from '../components/InteractiveBackground.tsx';
 ---
@@ -24,14 +24,14 @@ import InteractiveBackground from '../components/InteractiveBackground.tsx';
     <AvailabilityWidget slot="availability" client:load />
     <CommandHint slot="command-hint" />
     <CurrentProject slot="current-project" client:load />
-    <GitHubStats slot="github-stats" client:load />
-    <RecentProjects slot="recent-projects" client:load data-section="projects" />
+    <ConnectCard slot="github-stats" />
+    <TestimonialsCard slot="recent-projects" client:load />
     <TechStack slot="tech-stack" />
+    <NowPlaying slot="now-playing" />
     <RecentPosts slot="recent-posts" />
-    <NowPlaying slot="now-playing" client:load />
     <MetricsCard slot="metrics" client:load />
-    <InvestmentThesis slot="investment" client:load />
-    <TestimonialsCard slot="testimonials" client:load />
+    <Specializations slot="investment" client:load />
+    <RecentProjects slot="testimonials" data-section="projects" />
   </BentoGrid>
   <CommandPalette client:load />
 </Layout>

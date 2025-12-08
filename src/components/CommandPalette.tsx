@@ -32,6 +32,14 @@ export default function CommandPalette() {
 
   const commands: Command[] = [
     {
+      id: 'blog',
+      title: 'Read Blog',
+      description: 'Technical articles on healthcare, AWS, AI & compliance',
+      icon: '📝',
+      action: () => window.location.href = '/blog',
+      keywords: ['blog', 'articles', 'posts', 'writing', 'healthcare', 'aws', 'ai', 'hipaa']
+    },
+    {
       id: 'github',
       title: 'View GitHub Profile',
       description: 'Open GitHub profile in new tab',
@@ -55,7 +63,7 @@ export default function CommandPalette() {
       title: 'Schedule a Meeting',
       description: 'Book time to discuss collaboration',
       icon: '📅',
-      action: () => window.open('https://calendly.com/aaron-theleanproduct/30min', '_blank'),
+      action: () => window.open('https://calendly.com/aaronxdsilva/30min', '_blank'),
       keywords: ['schedule', 'meeting', 'call', 'calendly', 'book', 'time']
     },
     {
@@ -63,7 +71,7 @@ export default function CommandPalette() {
       title: 'Partnership Inquiry',
       description: 'Discuss co-founding opportunities',
       icon: '🤝',
-      action: () => window.open('mailto:contact@aarondsilva.dev?subject=Co-founding Partnership Inquiry', '_blank'),
+      action: () => window.open('mailto:contact@aarondsilva.me?subject=Co-founding Partnership Inquiry', '_blank'),
       keywords: ['partnership', 'co-founder', 'collaborate', 'startup', 'venture']
     },
     {
@@ -71,7 +79,7 @@ export default function CommandPalette() {
       title: 'Get in Touch',
       description: 'General inquiries and networking',
       icon: '✉️',
-      action: () => window.open('mailto:contact@aarondsilva.dev', '_blank'),
+      action: () => window.open('mailto:contact@aarondsilva.me', '_blank'),
       keywords: ['contact', 'email', 'reach', 'message', 'connect']
     },
     {
@@ -87,7 +95,7 @@ export default function CommandPalette() {
       title: 'LinkedIn Profile',
       description: 'Open LinkedIn profile',
       icon: '💼',
-      action: () => window.open('https://linkedin.com/in/aarondsilva97', '_blank'),
+      action: () => window.open('https://www.linkedin.com/in/aaronxdsilva/', '_blank'),
       keywords: ['linkedin', 'professional', 'network', 'profile']
     },
     {
@@ -96,7 +104,7 @@ export default function CommandPalette() {
       description: 'Copy email to clipboard',
       icon: '📋',
       action: () => {
-        navigator.clipboard.writeText('contact@aarondsilva.dev');
+        navigator.clipboard.writeText('contact@aarondsilva.me');
         // Could add a toast notification here
       },
       keywords: ['copy', 'email', 'clipboard', 'address']

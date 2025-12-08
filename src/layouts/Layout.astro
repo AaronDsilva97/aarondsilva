@@ -12,7 +12,7 @@ export interface Props {
 const {
   title = "Aaron D'silva • Technical Co-Founder",
   description = "Technical Co-Founder & Product Builder. Helping ambitious founders build and scale mobile products from zero to Series A. 3 startups co-founded, 2 successful exits.",
-  image = "/og-image.jpg",
+  image = "/og-image.svg",
   type = "website"
 } = Astro.props;
 
@@ -85,9 +85,9 @@ const socialImage = new URL(image, Astro.site);
 			"@graph": [
 				{
 					"@type": "Person",
-					"@id": "https://aarondsilva.dev/#person",
+					"@id": "https://aarondsilva.me/#person",
 					"name": "Aaron D'silva",
-					"url": "https://aarondsilva.dev",
+					"url": "https://aarondsilva.me",
 					"image": {
 						"@type": "ImageObject",
 						"url": socialImage.href,
@@ -111,17 +111,17 @@ const socialImage = new URL(image, Astro.site);
 					],
 					"sameAs": [
 						"https://github.com/AaronDsilva97",
-						"https://linkedin.com/in/aarondsilva97"
+						"https://www.linkedin.com/in/aaronxdsilva/"
 					]
 				},
 				{
 					"@type": "WebSite",
-					"@id": "https://aarondsilva.dev/#website",
-					"url": "https://aarondsilva.dev",
+					"@id": "https://aarondsilva.me/#website",
+					"url": "https://aarondsilva.me",
 					"name": "Aaron D'silva Portfolio",
 					"description": "Portfolio website of Aaron D'silva, showcasing mobile and web development projects",
 					"publisher": {
-						"@id": "https://aarondsilva.dev/#person"
+						"@id": "https://aarondsilva.me/#person"
 					},
 					"inLanguage": "en-US"
 				},
@@ -132,10 +132,10 @@ const socialImage = new URL(image, Astro.site);
 					"name": title,
 					"description": description,
 					"isPartOf": {
-						"@id": "https://aarondsilva.dev/#website"
+						"@id": "https://aarondsilva.me/#website"
 					},
 					"about": {
-						"@id": "https://aarondsilva.dev/#person"
+						"@id": "https://aarondsilva.me/#person"
 					},
 					"datePublished": "2024-01-01T00:00:00.000Z",
 					"dateModified": new Date().toISOString(),
@@ -146,7 +146,7 @@ const socialImage = new URL(image, Astro.site);
 								"@type": "ListItem",
 								"position": 1,
 								"name": "Home",
-								"item": "https://aarondsilva.dev"
+								"item": "https://aarondsilva.me"
 							}
 						]
 					}

@@ -1,0 +1,115 @@
+<svg viewBox="0 0 800 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="800" height="900" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="600" fill="#e2e8f0" text-anchor="middle">MCP Server Setup Flow</text>
+  <text x="400" y="65" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">5-step process to build and deploy your MCP server</text>
+
+  <!-- Step 1: Install SDK -->
+  <g id="step1">
+    <rect x="200" y="120" width="400" height="120" rx="12" fill="#8b5cf6" opacity="0.2" stroke="#8b5cf6" stroke-width="3"/>
+    <circle cx="250" cy="180" r="30" fill="#8b5cf6" opacity="0.3" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="250" y="190" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#e2e8f0" text-anchor="middle">1</text>
+
+    <text x="320" y="165" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#e2e8f0">Install SDK</text>
+    <text x="320" y="190" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8">npm install @modelcontextprotocol/sdk</text>
+
+    <!-- NPM icon -->
+    <g transform="translate(530, 165)">
+      <rect x="0" y="0" width="50" height="40" rx="4" fill="#cb3837" opacity="0.8"/>
+      <text x="25" y="28" font-family="system-ui, -apple-system, sans-serif" font-size="18" font-weight="700" fill="#fff" text-anchor="middle">npm</text>
+    </g>
+  </g>
+
+  <!-- Arrow 1 -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#64748b" />
+    </marker>
+  </defs>
+  <path d="M 400 240 L 400 280" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)" stroke-dasharray="5,5"/>
+
+  <!-- Step 2: Define Tools -->
+  <g id="step2">
+    <rect x="200" y="280" width="400" height="120" rx="12" fill="#3b82f6" opacity="0.2" stroke="#3b82f6" stroke-width="3"/>
+    <circle cx="250" cy="340" r="30" fill="#3b82f6" opacity="0.3" stroke="#3b82f6" stroke-width="2"/>
+    <text x="250" y="350" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#e2e8f0" text-anchor="middle">2</text>
+
+    <text x="320" y="325" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#e2e8f0">Define Tools</text>
+    <text x="320" y="350" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8">Specify capabilities and parameters</text>
+
+    <!-- Wrench icon -->
+    <g transform="translate(545, 320)">
+      <path d="M 5 25 L 5 15 Q 5 5, 15 5 Q 20 5, 20 10 L 15 15 L 25 25 L 20 30 L 10 20 L 5 25"
+            fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="17" cy="8" r="2" fill="#3b82f6"/>
+    </g>
+  </g>
+
+  <!-- Arrow 2 -->
+  <path d="M 400 400 L 400 440" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)" stroke-dasharray="5,5"/>
+
+  <!-- Step 3: Implement Handlers -->
+  <g id="step3">
+    <rect x="200" y="440" width="400" height="120" rx="12" fill="#10b981" opacity="0.2" stroke="#10b981" stroke-width="3"/>
+    <circle cx="250" cy="500" r="30" fill="#10b981" opacity="0.3" stroke="#10b981" stroke-width="2"/>
+    <text x="250" y="510" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#e2e8f0" text-anchor="middle">3</text>
+
+    <text x="320" y="485" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#e2e8f0">Implement Handlers</text>
+    <text x="320" y="510" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8">Write async functions for each tool</text>
+
+    <!-- Code brackets icon -->
+    <g transform="translate(540, 485)">
+      <path d="M 10 0 L 5 0 L 0 15 L 5 30 L 10 30" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+      <path d="M 25 0 L 30 0 L 35 15 L 30 30 L 25 30" fill="none" stroke="#10b981" stroke-width="3" stroke-linecap="round"/>
+      <path d="M 12 10 L 23 20" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+      <path d="M 12 20 L 23 10" stroke="#10b981" stroke-width="2" stroke-linecap="round"/>
+    </g>
+  </g>
+
+  <!-- Arrow 3 -->
+  <path d="M 400 560 L 400 600" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)" stroke-dasharray="5,5"/>
+
+  <!-- Step 4: Configure Transport -->
+  <g id="step4">
+    <rect x="200" y="600" width="400" height="120" rx="12" fill="#f59e0b" opacity="0.2" stroke="#f59e0b" stroke-width="3"/>
+    <circle cx="250" cy="660" r="30" fill="#f59e0b" opacity="0.3" stroke="#f59e0b" stroke-width="2"/>
+    <text x="250" y="670" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#e2e8f0" text-anchor="middle">4</text>
+
+    <text x="320" y="645" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#e2e8f0">Configure Transport</text>
+    <text x="320" y="670" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8">Set up stdio or HTTP communication</text>
+
+    <!-- Plug icon -->
+    <g transform="translate(540, 640)">
+      <rect x="5" y="0" width="30" height="20" rx="3" fill="none" stroke="#f59e0b" stroke-width="3"/>
+      <line x1="12" y1="20" x2="12" y2="35" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+      <line x1="28" y1="20" x2="28" y2="35" stroke="#f59e0b" stroke-width="3" stroke-linecap="round"/>
+      <rect x="8" y="-8" width="7" height="8" fill="#f59e0b"/>
+      <rect x="25" y="-8" width="7" height="8" fill="#f59e0b"/>
+    </g>
+  </g>
+
+  <!-- Arrow 4 -->
+  <path d="M 400 720 L 400 760" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrow)" stroke-dasharray="5,5"/>
+
+  <!-- Step 5: Test & Deploy -->
+  <g id="step5">
+    <rect x="200" y="760" width="400" height="120" rx="12" fill="#ec4899" opacity="0.2" stroke="#ec4899" stroke-width="3"/>
+    <circle cx="250" cy="820" r="30" fill="#ec4899" opacity="0.3" stroke="#ec4899" stroke-width="2"/>
+    <text x="250" y="830" font-family="system-ui, -apple-system, sans-serif" font-size="24" font-weight="700" fill="#e2e8f0" text-anchor="middle">5</text>
+
+    <text x="320" y="805" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#e2e8f0">Test &amp; Deploy</text>
+    <text x="320" y="830" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#94a3b8">Verify functionality and go live</text>
+
+    <!-- Rocket icon -->
+    <g transform="translate(555, 795)">
+      <path d="M 10 35 L 10 20 Q 10 5, 15 0 Q 20 5, 20 20 L 20 35" fill="none" stroke="#ec4899" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="15" cy="15" r="3" fill="#ec4899"/>
+      <path d="M 5 25 L 10 30 L 10 35 L 5 32 Z" fill="#ec4899" opacity="0.6"/>
+      <path d="M 25 25 L 20 30 L 20 35 L 25 32 Z" fill="#ec4899" opacity="0.6"/>
+      <!-- Flame -->
+      <path d="M 12 35 Q 10 40, 8 42 M 15 35 L 15 43 M 18 35 Q 20 40, 22 42" stroke="#f59e0b" stroke-width="2" stroke-linecap="round" opacity="0.8"/>
+    </g>
+  </g>
+</svg>

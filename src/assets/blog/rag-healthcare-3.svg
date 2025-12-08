@@ -1,0 +1,345 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="700" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Retrieval Pipeline Components
+  </text>
+  <text x="700" y="65" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">
+    Technical Architecture of RAG Document Processing &amp; Retrieval
+  </text>
+
+  <!-- SECTION 1: Document Ingestion -->
+  <rect x="50" y="100" width="1300" height="140" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" rx="10"/>
+  <text x="70" y="125" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#8b5cf6">
+    1. Document Ingestion
+  </text>
+
+  <!-- Clinical Protocols -->
+  <rect x="80" y="140" width="180" height="80" fill="#0f172a" stroke="#10b981" stroke-width="2" rx="6"/>
+  <text x="170" y="165" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Clinical Protocols
+  </text>
+  <text x="170" y="183" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Treatment guidelines
+  </text>
+  <text x="170" y="197" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Best practices
+  </text>
+  <text x="170" y="211" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Hospital policies
+  </text>
+
+  <!-- Patient Notes -->
+  <rect x="290" y="140" width="180" height="80" fill="#0f172a" stroke="#ec4899" stroke-width="2" rx="6"/>
+  <text x="380" y="165" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Patient Notes
+  </text>
+  <text x="380" y="183" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Clinical encounters
+  </text>
+  <text x="380" y="197" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Lab results
+  </text>
+  <text x="380" y="211" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Imaging reports
+  </text>
+
+  <!-- Medical Coding -->
+  <rect x="500" y="140" width="180" height="80" fill="#0f172a" stroke="#3b82f6" stroke-width="2" rx="6"/>
+  <text x="590" y="165" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Medical Codes
+  </text>
+  <text x="590" y="183" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • ICD-10 codes
+  </text>
+  <text x="590" y="197" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • CPT codes
+  </text>
+  <text x="590" y="211" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • SNOMED CT
+  </text>
+
+  <!-- Drug Databases -->
+  <rect x="710" y="140" width="180" height="80" fill="#0f172a" stroke="#f59e0b" stroke-width="2" rx="6"/>
+  <text x="800" y="165" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Drug Databases
+  </text>
+  <text x="800" y="183" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Medication info
+  </text>
+  <text x="800" y="197" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Interactions
+  </text>
+  <text x="800" y="211" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Dosage guidelines
+  </text>
+
+  <!-- Research Papers -->
+  <rect x="920" y="140" width="180" height="80" fill="#0f172a" stroke="#8b5cf6" stroke-width="2" rx="6"/>
+  <text x="1010" y="165" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Research Papers
+  </text>
+  <text x="1010" y="183" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Clinical studies
+  </text>
+  <text x="1010" y="197" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Evidence reviews
+  </text>
+  <text x="1010" y="211" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Meta-analyses
+  </text>
+
+  <!-- EHR Data -->
+  <rect x="1130" y="140" width="180" height="80" fill="#0f172a" stroke="#ec4899" stroke-width="2" rx="6"/>
+  <text x="1220" y="165" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    EHR Data
+  </text>
+  <text x="1220" y="183" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Patient records
+  </text>
+  <text x="1220" y="197" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Visit history
+  </text>
+  <text x="1220" y="211" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • Care plans
+  </text>
+
+  <!-- SECTION 2: Chunking Strategies -->
+  <rect x="50" y="270" width="1300" height="140" fill="#1e293b" stroke="#10b981" stroke-width="2" rx="10"/>
+  <text x="70" y="295" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#10b981">
+    2. Chunking Strategies (Document-Specific)
+  </text>
+
+  <!-- Section-Based -->
+  <rect x="80" y="310" width="250" height="80" fill="#0f172a" stroke="#10b981" stroke-width="2" rx="6"/>
+  <text x="205" y="330" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Section-Based Chunking
+  </text>
+  <text x="205" y="348" font-family="Arial, sans-serif" font-size="10" fill="#10b981" text-anchor="middle">
+    For: Clinical Guidelines
+  </text>
+  <text x="205" y="363" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    Split on headers (H1, H2, H3)
+  </text>
+  <text x="205" y="376" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    Preserves protocol structure
+  </text>
+
+  <!-- Encounter-Based -->
+  <rect x="360" y="310" width="250" height="80" fill="#0f172a" stroke="#ec4899" stroke-width="2" rx="6"/>
+  <text x="485" y="330" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Encounter-Based Chunking
+  </text>
+  <text x="485" y="348" font-family="Arial, sans-serif" font-size="10" fill="#ec4899" text-anchor="middle">
+    For: Patient Notes
+  </text>
+  <text x="485" y="363" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    One chunk = one visit/encounter
+  </text>
+  <text x="485" y="376" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    Maintains clinical context
+  </text>
+
+  <!-- Code-Based -->
+  <rect x="640" y="310" width="250" height="80" fill="#0f172a" stroke="#3b82f6" stroke-width="2" rx="6"/>
+  <text x="765" y="330" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Code-Based Chunking
+  </text>
+  <text x="765" y="348" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6" text-anchor="middle">
+    For: ICD-10 / CPT Codes
+  </text>
+  <text x="765" y="363" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    Each code = own chunk
+  </text>
+  <text x="765" y="376" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    Include full definition + metadata
+  </text>
+
+  <!-- Sliding Window -->
+  <rect x="920" y="310" width="250" height="80" fill="#0f172a" stroke="#f59e0b" stroke-width="2" rx="6"/>
+  <text x="1045" y="330" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Sliding Window Chunking
+  </text>
+  <text x="1045" y="348" font-family="Arial, sans-serif" font-size="10" fill="#f59e0b" text-anchor="middle">
+    For: Long Documents
+  </text>
+  <text x="1045" y="363" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    Overlapping chunks (512 tokens)
+  </text>
+  <text x="1045" y="376" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    Overlap: 50-100 tokens
+  </text>
+
+  <!-- SECTION 3: Embedding Generation -->
+  <rect x="50" y="440" width="640" height="120" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" rx="10"/>
+  <text x="70" y="465" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#8b5cf6">
+    3. Embedding Generation
+  </text>
+
+  <rect x="80" y="480" width="280" height="60" fill="#0f172a" stroke="#8b5cf6" stroke-width="2" rx="6"/>
+  <text x="220" y="503" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Clinical-Aware Embedding Models
+  </text>
+  <text x="220" y="520" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • OpenAI text-embedding-3-large
+  </text>
+  <text x="220" y="534" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    • BioGPT / PubMedBERT (specialized)
+  </text>
+
+  <rect x="390" y="480" width="280" height="60" fill="#0f172a" stroke="#10b981" stroke-width="2" rx="6"/>
+  <text x="530" y="503" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Vector Representation
+  </text>
+  <text x="530" y="520" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    Converts text → high-dimensional vectors
+  </text>
+  <text x="530" y="534" font-family="Arial, sans-serif" font-size="10" fill="#10b981" text-anchor="middle">
+    Captures semantic meaning of medical terms
+  </text>
+
+  <!-- SECTION 4: Vector Storage -->
+  <rect x="720" y="440" width="630" height="120" fill="#1e293b" stroke="#3b82f6" stroke-width="2" rx="10"/>
+  <text x="740" y="465" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6">
+    4. Vector Storage (pgvector)
+  </text>
+
+  <rect x="750" y="480" width="280" height="60" fill="#0f172a" stroke="#3b82f6" stroke-width="2" rx="6"/>
+  <text x="890" y="498" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Vector Database Schema
+  </text>
+  <text x="890" y="513" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • embedding (vector): 1536-dim float array
+  </text>
+  <text x="890" y="526" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • content (text): original chunk text
+  </text>
+
+  <rect x="1050" y="480" width="280" height="60" fill="#0f172a" stroke="#f59e0b" stroke-width="2" rx="6"/>
+  <text x="1190" y="498" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Metadata Fields
+  </text>
+  <text x="1190" y="513" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • document_type • access_level • source
+  </text>
+  <text x="1190" y="526" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • last_updated • patient_id (encrypted)
+  </text>
+
+  <!-- SECTION 5: Hybrid Search Engine -->
+  <rect x="50" y="590" width="1300" height="120" fill="#1e293b" stroke="#ec4899" stroke-width="2" rx="10"/>
+  <text x="70" y="615" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ec4899">
+    5. Hybrid Search Engine
+  </text>
+
+  <!-- Semantic Search -->
+  <rect x="80" y="630" width="350" height="60" fill="#0f172a" stroke="#8b5cf6" stroke-width="2" rx="6"/>
+  <text x="255" y="650" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Vector / Semantic Search
+  </text>
+  <text x="255" y="667" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    Cosine similarity between query &amp; document vectors
+  </text>
+  <text x="255" y="681" font-family="Arial, sans-serif" font-size="9" fill="#8b5cf6" text-anchor="middle">
+    Finds conceptually similar content
+  </text>
+
+  <text x="450" y="665" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#e2e8f0">
+    +
+  </text>
+
+  <!-- Keyword Search -->
+  <rect x="480" y="630" width="350" height="60" fill="#0f172a" stroke="#10b981" stroke-width="2" rx="6"/>
+  <text x="655" y="650" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Keyword / Full-Text Search
+  </text>
+  <text x="655" y="667" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    PostgreSQL full-text search (ts_vector)
+  </text>
+  <text x="655" y="681" font-family="Arial, sans-serif" font-size="9" fill="#10b981" text-anchor="middle">
+    Exact matches on drug names, codes, terms
+  </text>
+
+  <text x="850" y="665" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#e2e8f0">
+    =
+  </text>
+
+  <!-- Combined Results -->
+  <rect x="890" y="630" width="420" height="60" fill="#0f172a" stroke="#ec4899" stroke-width="2" rx="6"/>
+  <text x="1100" y="650" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Combined &amp; Weighted Results
+  </text>
+  <text x="1100" y="667" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    Weighted fusion: 0.7 × semantic + 0.3 × keyword
+  </text>
+  <text x="1100" y="681" font-family="Arial, sans-serif" font-size="9" fill="#ec4899" text-anchor="middle">
+    Best of both: meaning + precision
+  </text>
+
+  <!-- SECTION 6: Ranking & Filtering -->
+  <rect x="50" y="740" width="630" height="100" fill="#1e293b" stroke="#f59e0b" stroke-width="2" rx="10"/>
+  <text x="70" y="765" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f59e0b">
+    6. Ranking &amp; Filtering
+  </text>
+
+  <rect x="80" y="780" width="280" height="50" fill="#0f172a" stroke="#f59e0b" stroke-width="2" rx="6"/>
+  <text x="220" y="800" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Relevance Score Ranking
+  </text>
+  <text x="220" y="815" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    Sort by combined similarity score
+  </text>
+  <text x="220" y="826" font-family="Arial, sans-serif" font-size="9" fill="#f59e0b" text-anchor="middle">
+    Top-K results (typically K=5-10)
+  </text>
+
+  <rect x="380" y="780" width="280" height="50" fill="#0f172a" stroke="#ec4899" stroke-width="2" rx="6"/>
+  <text x="520" y="800" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Permission Filtering
+  </text>
+  <text x="520" y="815" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    Filter by user access_level &amp; RBAC
+  </text>
+  <text x="520" y="826" font-family="Arial, sans-serif" font-size="9" fill="#ec4899" text-anchor="middle">
+    Only return authorized documents
+  </text>
+
+  <!-- SECTION 7: Context Window Management -->
+  <rect x="710" y="740" width="640" height="100" fill="#1e293b" stroke="#3b82f6" stroke-width="2" rx="10"/>
+  <text x="730" y="765" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6">
+    7. Context Window Management
+  </text>
+
+  <rect x="740" y="780" width="580" height="50" fill="#0f172a" stroke="#3b82f6" stroke-width="2" rx="6"/>
+  <text x="1030" y="798" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Fit Results into LLM Context Window
+  </text>
+  <text x="1030" y="813" font-family="Arial, sans-serif" font-size="9" fill="#94a3b8" text-anchor="middle">
+    • Prioritize by relevance score • Truncate if exceeds token limit (e.g., 8K, 16K, 128K)
+  </text>
+  <text x="1030" y="826" font-family="Arial, sans-serif" font-size="9" fill="#3b82f6" text-anchor="middle">
+    • Ensure most relevant chunks included • Add source metadata for citations
+  </text>
+
+  <!-- Arrows connecting sections -->
+  <line x1="700" y1="240" x2="700" y2="270" stroke="#8b5cf6" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="370" y1="410" x2="370" y2="440" stroke="#8b5cf6" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="690" y1="500" x2="720" y2="500" stroke="#8b5cf6" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="700" y1="560" x2="700" y2="590" stroke="#8b5cf6" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="680" y1="710" x2="680" y2="740" stroke="#8b5cf6" stroke-width="3" marker-end="url(#arrowhead)"/>
+  <line x1="1030" y1="710" x2="1030" y2="740" stroke="#8b5cf6" stroke-width="3" marker-end="url(#arrowhead)"/>
+
+  <!-- Final Output Label -->
+  <rect x="400" y="855" width="600" height="30" fill="#10b981" stroke="#10b981" stroke-width="2" rx="6"/>
+  <text x="700" y="876" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0f172a" text-anchor="middle">
+    OUTPUT: Ranked, Filtered, Context-Fitted Documents Ready for LLM Prompt
+  </text>
+</svg>

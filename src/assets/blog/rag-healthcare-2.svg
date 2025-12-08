@@ -1,0 +1,296 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6" />
+    </marker>
+    <marker id="checkpoint-arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#ec4899" />
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1400" height="900" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="700" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Data Flow with Compliance Checkpoints
+  </text>
+  <text x="700" y="65" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">
+    Journey of a Clinical Query Through a Compliant RAG System
+  </text>
+
+  <!-- START -->
+  <ellipse cx="150" cy="150" rx="100" ry="50" fill="#1e293b" stroke="#10b981" stroke-width="3"/>
+  <text x="150" y="145" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981" text-anchor="middle">
+    START
+  </text>
+  <text x="150" y="165" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">
+    User Query
+  </text>
+
+  <!-- Query Box -->
+  <rect x="300" y="110" width="280" height="80" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+  <text x="440" y="140" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    User Query Input
+  </text>
+  <text x="440" y="160" font-family="Arial, sans-serif" font-size="11" fill="#8b5cf6" text-anchor="middle">
+    "What are symptoms of condition X
+  </text>
+  <text x="440" y="178" font-family="Arial, sans-serif" font-size="11" fill="#8b5cf6" text-anchor="middle">
+    in patient file MRN 12345?"
+  </text>
+
+  <!-- STEP 1: RBAC -->
+  <rect x="650" y="100" width="260" height="100" fill="#1e293b" stroke="#ec4899" stroke-width="3" rx="8"/>
+  <text x="780" y="125" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ec4899" text-anchor="middle">
+    CHECKPOINT 1
+  </text>
+  <text x="780" y="145" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    RBAC Verification
+  </text>
+  <text x="780" y="165" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">
+    ✓ Does user have access to
+  </text>
+  <text x="780" y="182" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">
+    patient MRN 12345 records?
+  </text>
+
+  <!-- STEP 2: Vector Search -->
+  <rect x="980" y="100" width="260" height="100" fill="#1e293b" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="1110" y="125" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Step 2: Vector Search
+  </text>
+  <text x="1110" y="145" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">
+    Query vector database for
+  </text>
+  <text x="1110" y="162" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">
+    relevant document chunks
+  </text>
+  <text x="1110" y="182" font-family="Arial, sans-serif" font-size="10" fill="#3b82f6" text-anchor="middle">
+    Retrieved: 5 relevant passages
+  </text>
+
+  <!-- Retrieved Data Box -->
+  <rect x="1020" y="240" width="180" height="90" fill="#1e293b" stroke="#64748b" stroke-width="2" rx="6"/>
+  <text x="1110" y="260" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Retrieved Content
+  </text>
+  <text x="1110" y="278" font-family="Arial, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">
+    Patient: John Smith, MRN 12345
+  </text>
+  <text x="1110" y="292" font-family="Arial, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">
+    DOB: 01/15/1978, Visit: 12/01/2024
+  </text>
+  <text x="1110" y="306" font-family="Arial, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">
+    Symptoms: fever, fatigue, cough
+  </text>
+  <text x="1110" y="320" font-family="Arial, sans-serif" font-size="9" fill="#ec4899" text-anchor="middle">
+    ⚠ Contains PHI
+  </text>
+
+  <!-- STEP 3: PHI Detection -->
+  <rect x="790" y="240" width="200" height="90" fill="#1e293b" stroke="#ec4899" stroke-width="3" rx="8"/>
+  <text x="890" y="260" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ec4899" text-anchor="middle">
+    CHECKPOINT 2
+  </text>
+  <text x="890" y="280" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    PHI Detection
+  </text>
+  <text x="890" y="298" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    Scanning for protected
+  </text>
+  <text x="890" y="313" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    health information
+  </text>
+
+  <!-- STEP 4: De-identification -->
+  <rect x="560" y="240" width="200" height="90" fill="#1e293b" stroke="#ec4899" stroke-width="3" rx="8"/>
+  <text x="660" y="260" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ec4899" text-anchor="middle">
+    CHECKPOINT 3
+  </text>
+  <text x="660" y="280" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    De-identification
+  </text>
+  <text x="660" y="298" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    Replace PHI with
+  </text>
+  <text x="660" y="313" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    generic tokens
+  </text>
+
+  <!-- De-identified Data Box -->
+  <rect x="330" y="240" width="200" height="90" fill="#1e293b" stroke="#10b981" stroke-width="2" rx="6"/>
+  <text x="430" y="260" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    De-identified Data
+  </text>
+  <text x="430" y="278" font-family="Arial, sans-serif" font-size="9" fill="#10b981" text-anchor="middle">
+    Patient: [PATIENT], MRN [ID]
+  </text>
+  <text x="430" y="292" font-family="Arial, sans-serif" font-size="9" fill="#10b981" text-anchor="middle">
+    DOB: [DATE], Visit: [DATE]
+  </text>
+  <text x="430" y="306" font-family="Arial, sans-serif" font-size="9" fill="#10b981" text-anchor="middle">
+    Symptoms: fever, fatigue, cough
+  </text>
+  <text x="430" y="320" font-family="Arial, sans-serif" font-size="9" fill="#10b981" text-anchor="middle">
+    ✓ Safe for LLM
+  </text>
+
+  <!-- STEP 5: Prompt Construction -->
+  <rect x="100" y="380" width="230" height="90" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+  <text x="215" y="405" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Step 5: Prompt Build
+  </text>
+  <text x="215" y="423" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    Construct LLM prompt with
+  </text>
+  <text x="215" y="438" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    de-identified context +
+  </text>
+  <text x="215" y="453" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    safety instructions
+  </text>
+
+  <!-- STEP 6: LLM API Call -->
+  <rect x="370" y="380" width="230" height="90" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+  <text x="485" y="405" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Step 6: LLM API Call
+  </text>
+  <text x="485" y="423" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    Send sanitized prompt to
+  </text>
+  <text x="485" y="438" font-family="Arial, sans-serif" font-size="10" fill="#8b5cf6" text-anchor="middle">
+    OpenAI / Anthropic
+  </text>
+  <text x="485" y="453" font-family="Arial, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">
+    (with BAA, no training data)
+  </text>
+
+  <!-- External API Label -->
+  <rect x="350" y="485" width="270" height="30" fill="#7f1d1d" stroke="#dc2626" stroke-width="1" rx="4"/>
+  <text x="485" y="505" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#fca5a5" text-anchor="middle">
+    ⚠ EXTERNAL API CALL - No PHI Beyond This Point
+  </text>
+
+  <!-- STEP 7: Response Generation -->
+  <rect x="670" y="380" width="230" height="90" fill="#1e293b" stroke="#10b981" stroke-width="2" rx="8"/>
+  <text x="785" y="405" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Step 7: Response Gen
+  </text>
+  <text x="785" y="423" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    LLM generates answer with
+  </text>
+  <text x="785" y="438" font-family="Arial, sans-serif" font-size="10" fill="#10b981" text-anchor="middle">
+    source citations
+  </text>
+  <text x="785" y="453" font-family="Arial, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">
+    + confidence indicators
+  </text>
+
+  <!-- STEP 8: Audit Log -->
+  <rect x="970" y="380" width="230" height="90" fill="#1e293b" stroke="#ec4899" stroke-width="3" rx="8"/>
+  <text x="1085" y="400" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ec4899" text-anchor="middle">
+    CHECKPOINT 4
+  </text>
+  <text x="1085" y="420" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Audit Logging
+  </text>
+  <text x="1085" y="438" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    Log: user_id, timestamp,
+  </text>
+  <text x="1085" y="453" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    query, sources, response
+  </text>
+
+  <!-- Audit Log Storage -->
+  <rect x="1020" y="520" width="140" height="60" fill="#1e293b" stroke="#475569" stroke-width="1" rx="6"/>
+  <text x="1090" y="540" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e2e8f0" text-anchor="middle">
+    Audit Database
+  </text>
+  <text x="1090" y="556" font-family="Arial, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">
+    Immutable logs for
+  </text>
+  <text x="1090" y="570" font-family="Arial, sans-serif" font-size="9" fill="#64748b" text-anchor="middle">
+    compliance review
+  </text>
+
+  <!-- END -->
+  <ellipse cx="785" cy="650" rx="100" ry="50" fill="#1e293b" stroke="#10b981" stroke-width="3"/>
+  <text x="785" y="645" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981" text-anchor="middle">
+    END
+  </text>
+  <text x="785" y="665" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">
+    Return to User
+  </text>
+
+  <!-- Final Response Box -->
+  <rect x="570" y="700" width="430" height="80" fill="#1e293b" stroke="#10b981" stroke-width="2" rx="8"/>
+  <text x="785" y="725" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#10b981" text-anchor="middle">
+    Secure Response with Citations
+  </text>
+  <text x="785" y="745" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    "Symptoms include fever, fatigue, and cough. Based on patient record from [DATE],
+  </text>
+  <text x="785" y="760" font-family="Arial, sans-serif" font-size="10" fill="#94a3b8" text-anchor="middle">
+    these align with condition X. [Source: Clinical Note, Section 2.3]"
+  </text>
+  <text x="785" y="773" font-family="Arial, sans-serif" font-size="9" fill="#10b981" text-anchor="middle">
+    ✓ Verified • Logged • Traceable
+  </text>
+
+  <!-- Arrows -->
+  <line x1="250" y1="150" x2="300" y2="150" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="580" y1="150" x2="650" y2="150" stroke="#8b5cf6" stroke-width="2" marker-end="url(#checkpoint-arrow)"/>
+  <line x1="910" y1="150" x2="980" y2="150" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1110" y1="200" x2="1110" y2="240" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="1020" y1="285" x2="990" y2="285" stroke="#8b5cf6" stroke-width="2" marker-end="url(#checkpoint-arrow)"/>
+  <line x1="790" y1="285" x2="760" y2="285" stroke="#8b5cf6" stroke-width="2" marker-end="url(#checkpoint-arrow)"/>
+  <line x1="560" y1="285" x2="530" y2="285" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="430" y1="330" x2="430" y2="360" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="430" y1="360" x2="215" y2="360" stroke="#8b5cf6" stroke-width="2"/>
+  <line x1="215" y1="360" x2="215" y2="380" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="330" y1="425" x2="370" y2="425" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="600" y1="425" x2="670" y2="425" stroke="#8b5cf6" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="900" y1="425" x2="970" y2="425" stroke="#8b5cf6" stroke-width="2" marker-end="url(#checkpoint-arrow)"/>
+  <line x1="1085" y1="470" x2="1085" y2="520" stroke="#ec4899" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="785" y1="470" x2="785" y2="600" stroke="#10b981" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <line x1="785" y1="700" x2="785" y2="700" stroke="#10b981" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Legend -->
+  <rect x="50" y="810" width="1300" height="70" fill="#1e293b" stroke="#475569" stroke-width="1" rx="8"/>
+  <text x="60" y="835" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e2e8f0">
+    Data State Legend:
+  </text>
+
+  <rect x="180" y="820" width="15" height="15" fill="#dc2626" stroke="#dc2626" stroke-width="1"/>
+  <text x="200" y="832" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">
+    Contains PHI (High Risk)
+  </text>
+
+  <rect x="360" y="820" width="15" height="15" fill="#ec4899" stroke="#ec4899" stroke-width="2"/>
+  <text x="380" y="832" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">
+    Compliance Checkpoint
+  </text>
+
+  <rect x="560" y="820" width="15" height="15" fill="#10b981" stroke="#10b981" stroke-width="1"/>
+  <text x="580" y="832" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">
+    De-identified (Safe)
+  </text>
+
+  <rect x="750" y="820" width="15" height="15" fill="#8b5cf6" stroke="#8b5cf6" stroke-width="1"/>
+  <text x="770" y="832" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">
+    Processing Stage
+  </text>
+
+  <rect x="920" y="820" width="15" height="15" fill="#3b82f6" stroke="#3b82f6" stroke-width="1"/>
+  <text x="940" y="832" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8">
+    Data Retrieval
+  </text>
+
+  <text x="60" y="860" font-family="Arial, sans-serif" font-size="10" fill="#64748b" font-style="italic">
+    4 Compliance Checkpoints: RBAC → PHI Detection → De-identification → Audit Logging
+  </text>
+  <text x="60" y="873" font-family="Arial, sans-serif" font-size="10" fill="#64748b" font-style="italic">
+    Zero PHI leaves VPC boundary • Every interaction logged and traceable • Human verification required for clinical decisions
+  </text>
+</svg>

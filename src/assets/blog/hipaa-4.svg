@@ -1,0 +1,117 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 850">
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .title { fill: #e2e8f0; font-family: 'Arial', sans-serif; font-size: 24px; font-weight: bold; }
+      .subtitle { fill: #cbd5e1; font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; }
+      .text { fill: #e2e8f0; font-family: 'Arial', sans-serif; font-size: 14px; }
+      .small-text { fill: #cbd5e1; font-family: 'Arial', sans-serif; font-size: 12px; }
+      .box-action { fill: #8b5cf6; stroke: #a78bfa; stroke-width: 2; }
+      .box-process { fill: #3b82f6; stroke: #60a5fa; stroke-width: 2; }
+      .box-storage { fill: #10b981; stroke: #34d399; stroke-width: 2; }
+      .box-retention { fill: #f59e0b; stroke: #fbbf24; stroke-width: 2; }
+      .box-warning { fill: #dc2626; stroke: #ef4444; stroke-width: 2; }
+      .arrow { stroke: #64748b; stroke-width: 3; fill: none; marker-end: url(#arrowhead); }
+      .label-bg { fill: #1e293b; stroke: #475569; stroke-width: 1; }
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1200" height="850"/>
+
+  <!-- Title -->
+  <text class="title" x="600" y="40" text-anchor="middle">Audit Logging System: Comprehensive Activity Tracking</text>
+
+  <!-- Step 1: User Action -->
+  <rect class="box-action" x="50" y="100" width="200" height="80" rx="8"/>
+  <text class="text" x="150" y="135" text-anchor="middle">User Action</text>
+  <text class="small-text" x="150" y="155" text-anchor="middle">Login, View Record,</text>
+  <text class="small-text" x="150" y="170" text-anchor="middle">Modify Data, etc.</text>
+
+  <!-- Arrow 1 -->
+  <path class="arrow" d="M 250 140 L 340 140"/>
+  <rect class="label-bg" x="265" y="115" width="65" height="20" rx="4"/>
+  <text class="small-text" x="297" y="129" text-anchor="middle">Triggers</text>
+
+  <!-- Step 2: Event Capture -->
+  <rect class="box-process" x="340" y="100" width="200" height="80" rx="8"/>
+  <text class="text" x="440" y="125" text-anchor="middle">Capture Event Details</text>
+  <text class="small-text" x="440" y="150" text-anchor="middle" font-weight="bold">What to Log:</text>
+  <text class="small-text" x="440" y="165" text-anchor="middle">User ID, Resource ID,</text>
+  <text class="small-text" x="440" y="180" text-anchor="middle">Timestamp, IP, Action</text>
+
+  <!-- Arrow 2 -->
+  <path class="arrow" d="M 540 140 L 630 140"/>
+  <rect class="label-bg" x="555" y="115" width="65" height="20" rx="4"/>
+  <text class="small-text" x="587" y="129" text-anchor="middle">Send to</text>
+
+  <!-- Step 3: Centralized Logging -->
+  <rect class="box-process" x="630" y="100" width="200" height="80" rx="8"/>
+  <text class="text" x="730" y="125" text-anchor="middle">Centralized Logger</text>
+  <text class="small-text" x="730" y="150" text-anchor="middle">CloudWatch Logs</text>
+  <text class="small-text" x="730" y="165" text-anchor="middle">ELK Stack</text>
+  <text class="small-text" x="730" y="180" text-anchor="middle">Splunk / SIEM</text>
+
+  <!-- Arrow 3 -->
+  <path class="arrow" d="M 830 140 L 920 140"/>
+  <rect class="label-bg" x="845" y="115" width="65" height="20" rx="4"/>
+  <text class="small-text" x="877" y="129" text-anchor="middle">Store</text>
+
+  <!-- Step 4: Encrypted Storage -->
+  <rect class="box-storage" x="920" y="100" width="230" height="80" rx="8"/>
+  <text class="text" x="1035" y="125" text-anchor="middle">Encrypted Storage</text>
+  <text class="small-text" x="1035" y="150" text-anchor="middle">Write-once / Append-only</text>
+  <text class="small-text" x="1035" y="165" text-anchor="middle">Tamper-evident</text>
+  <text class="small-text" x="1035" y="180" text-anchor="middle">Cryptographic signing</text>
+
+  <!-- Arrow down from storage -->
+  <path class="arrow" d="M 1035 180 L 1035 250"/>
+
+  <!-- Step 5: Retention & Indexing -->
+  <rect class="box-retention" x="920" y="250" width="230" height="80" rx="8"/>
+  <text class="text" x="1035" y="275" text-anchor="middle">Retention &amp; Indexing</text>
+  <text class="small-text" x="1035" y="300" text-anchor="middle">6+ year retention (HIPAA)</text>
+  <text class="small-text" x="1035" y="315" text-anchor="middle">Indexed for fast search</text>
+  <text class="small-text" x="1035" y="330" text-anchor="middle">Query: "Who accessed X?"</text>
+
+  <!-- What to Log Section -->
+  <rect class="box-process" x="50" y="250" width="800" height="220" rx="8"/>
+  <text class="subtitle" x="450" y="280" text-anchor="middle">Logged Event Structure (Example)</text>
+
+  <rect class="label-bg" x="80" y="300" width="740" height="155" rx="4"/>
+  <text class="small-text" x="100" y="325" text-anchor="start" font-family="monospace" fill="#10b981">{</text>
+  <text class="small-text" x="120" y="345" text-anchor="start" font-family="monospace">  "event_id": "evt_7d8f9e0a",</text>
+  <text class="small-text" x="120" y="365" text-anchor="start" font-family="monospace">  "timestamp": "2025-12-08T14:23:11.456Z",</text>
+  <text class="small-text" x="120" y="385" text-anchor="start" font-family="monospace">  "user_id": "usr_12345",</text>
+  <text class="small-text" x="120" y="405" text-anchor="start" font-family="monospace">  "action": "VIEW_PATIENT_RECORD",</text>
+  <text class="small-text" x="120" y="425" text-anchor="start" font-family="monospace">  "resource_id": "patient_67890",</text>
+  <text class="small-text" x="120" y="445" text-anchor="start" font-family="monospace">  "ip_address": "10.0.1.15",</text>
+  <text class="small-text" x="100" y="465" text-anchor="start" font-family="monospace" fill="#10b981">}</text>
+
+  <!-- Do NOT Log Section -->
+  <rect class="box-warning" x="50" y="500" width="800" height="150" rx="8"/>
+  <text class="subtitle" x="450" y="530" text-anchor="middle">DO NOT LOG PHI</text>
+
+  <text class="small-text" x="80" y="560" text-anchor="start" fill="#fca5a5">BAD: "User updated patient John Doe's diabetes diagnosis to Type 2"</text>
+  <text class="small-text" x="80" y="590" text-anchor="start" fill="#86efac">GOOD: "User ID 12345 updated record ID 67890 at 2025-12-08T14:23:11Z"</text>
+
+  <text class="small-text" x="80" y="625" text-anchor="start">Never log: Patient names, SSNs, diagnoses, medications, addresses, phone numbers</text>
+  <text class="small-text" x="80" y="643" text-anchor="start">Always log: User IDs, Resource IDs, Actions, Timestamps, IP addresses, Success/Failure</text>
+
+  <!-- Common Events to Log -->
+  <rect class="box-storage" x="50" y="680" width="1100" height="150" rx="8"/>
+  <text class="subtitle" x="600" y="710" text-anchor="middle">Events That Must Be Logged</text>
+
+  <text class="small-text" x="80" y="740" text-anchor="start">• Authentication attempts (success + failures)</text>
+  <text class="small-text" x="80" y="760" text-anchor="start">• PHI access (view, download, print)</text>
+  <text class="small-text" x="80" y="780" text-anchor="start">• Data modifications (create, update, delete)</text>
+  <text class="small-text" x="80" y="800" text-anchor="start">• Permission/role changes</text>
+
+  <text class="small-text" x="600" y="740" text-anchor="start">• System configuration changes</text>
+  <text class="small-text" x="600" y="760" text-anchor="start">• Failed authorization attempts</text>
+  <text class="small-text" x="600" y="780" text-anchor="start">• Bulk exports or unusual patterns</text>
+  <text class="small-text" x="600" y="800" text-anchor="start">• Administrative actions</text>
+</svg>

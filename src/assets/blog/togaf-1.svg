@@ -1,0 +1,115 @@
+<svg viewBox="0 0 900 900" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="900" height="900" fill="#0f172a"/>
+
+  <!-- Title -->
+  <text x="450" y="35" text-anchor="middle" fill="#f1f5f9" font-size="20" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">TOGAF ADM Cycle for Healthcare</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Central Circle - Requirements Management -->
+  <circle cx="450" cy="450" r="90" fill="#1e293b" stroke="#8b5cf6" stroke-width="3"/>
+  <text x="450" y="435" text-anchor="middle" fill="#8b5cf6" font-size="14" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">Requirements</text>
+  <text x="450" y="455" text-anchor="middle" fill="#8b5cf6" font-size="14" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">Management</text>
+  <text x="450" y="480" text-anchor="middle" fill="#94a3b8" font-size="11" font-family="system-ui, -apple-system, sans-serif">(Continuous)</text>
+
+  <!-- Phase A: Architecture Vision (Top) -->
+  <g>
+    <ellipse cx="450" cy="140" rx="120" ry="55" fill="#8b5cf6" opacity="0.9"/>
+    <text x="450" y="125" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">A: Architecture Vision</text>
+    <text x="450" y="143" text-anchor="middle" fill="#e2e8f0" font-size="10" font-family="system-ui, -apple-system, sans-serif">Stakeholder Mapping</text>
+    <text x="450" y="158" text-anchor="middle" fill="#e2e8f0" font-size="9" font-family="system-ui, -apple-system, sans-serif">(Clinicians, IT, Compliance)</text>
+  </g>
+
+  <!-- Phase B: Business Architecture (Top Right) -->
+  <g>
+    <ellipse cx="670" cy="230" rx="120" ry="55" fill="#10b981" opacity="0.9"/>
+    <text x="670" y="215" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">B: Business Architecture</text>
+    <text x="670" y="233" text-anchor="middle" fill="#e2e8f0" font-size="10" font-family="system-ui, -apple-system, sans-serif">Patient Journey Mapping</text>
+    <text x="670" y="248" text-anchor="middle" fill="#e2e8f0" font-size="9" font-family="system-ui, -apple-system, sans-serif">Clinical Workflow Analysis</text>
+  </g>
+
+  <!-- Phase C: Information Systems (Right) -->
+  <g>
+    <ellipse cx="760" cy="450" rx="120" ry="55" fill="#3b82f6" opacity="0.9"/>
+    <text x="760" y="432" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">C: Info Systems Arch</text>
+    <text x="760" y="450" text-anchor="middle" fill="#e2e8f0" font-size="10" font-family="system-ui, -apple-system, sans-serif">Data: HL7/FHIR, PHI</text>
+    <text x="760" y="465" text-anchor="middle" fill="#e2e8f0" font-size="10" font-family="system-ui, -apple-system, sans-serif">Apps: EHR Integration</text>
+  </g>
+
+  <!-- Phase D: Technology Architecture (Bottom Right) -->
+  <g>
+    <ellipse cx="670" cy="670" rx="120" ry="55" fill="#ec4899" opacity="0.9"/>
+    <text x="670" y="655" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">D: Technology Arch</text>
+    <text x="670" y="673" text-anchor="middle" fill="#e2e8f0" font-size="10" font-family="system-ui, -apple-system, sans-serif">Cloud Infrastructure</text>
+    <text x="670" y="688" text-anchor="middle" fill="#e2e8f0" font-size="9" font-family="system-ui, -apple-system, sans-serif">HIPAA Security Controls</text>
+  </g>
+
+  <!-- Phase E: Opportunities & Solutions (Bottom) -->
+  <g>
+    <ellipse cx="450" cy="760" rx="120" ry="55" fill="#f59e0b" opacity="0.9"/>
+    <text x="450" y="745" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">E: Opportunities</text>
+    <text x="450" y="763" text-anchor="middle" fill="#e2e8f0" font-size="10" font-family="system-ui, -apple-system, sans-serif">Build vs Buy Analysis</text>
+    <text x="450" y="778" text-anchor="middle" fill="#e2e8f0" font-size="9" font-family="system-ui, -apple-system, sans-serif">Vendor Evaluation</text>
+  </g>
+
+  <!-- Phase F: Migration Planning (Bottom Left) -->
+  <g>
+    <ellipse cx="230" cy="670" rx="120" ry="55" fill="#06b6d4" opacity="0.9"/>
+    <text x="230" y="655" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">F: Migration Planning</text>
+    <text x="230" y="673" text-anchor="middle" fill="#e2e8f0" font-size="10" font-family="system-ui, -apple-system, sans-serif">Legacy Strangler Pattern</text>
+    <text x="230" y="688" text-anchor="middle" fill="#e2e8f0" font-size="9" font-family="system-ui, -apple-system, sans-serif">Phased Rollout</text>
+  </g>
+
+  <!-- Phase G: Implementation Governance (Left) -->
+  <g>
+    <ellipse cx="140" cy="450" rx="120" ry="55" fill="#ef4444" opacity="0.9"/>
+    <text x="140" y="435" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">G: Implementation</text>
+    <text x="140" y="453" text-anchor="middle" fill="#e2e8f0" font-size="10" font-family="system-ui, -apple-system, sans-serif">Lightweight Reviews</text>
+    <text x="140" y="468" text-anchor="middle" fill="#e2e8f0" font-size="9" font-family="system-ui, -apple-system, sans-serif">Compliance Automation</text>
+  </g>
+
+  <!-- Phase H: Architecture Change Management (Top Left) -->
+  <g>
+    <ellipse cx="230" cy="230" rx="120" ry="55" fill="#a855f7" opacity="0.9"/>
+    <text x="230" y="215" text-anchor="middle" fill="#ffffff" font-size="13" font-weight="bold" font-family="system-ui, -apple-system, sans-serif">H: Change Mgmt</text>
+    <text x="230" y="233" text-anchor="middle" fill="#e2e8f0" font-size="10" font-family="system-ui, -apple-system, sans-serif">Continuous Improvement</text>
+    <text x="230" y="248" text-anchor="middle" fill="#e2e8f0" font-size="9" font-family="system-ui, -apple-system, sans-serif">Feedback Loops</text>
+  </g>
+
+  <!-- Circular flow arrows -->
+  <!-- A to B -->
+  <path d="M 540 170 Q 590 190 600 210" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- B to C -->
+  <path d="M 720 280 Q 750 340 755 380" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- C to D -->
+  <path d="M 740 510 Q 720 570 695 615" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- D to E -->
+  <path d="M 590 710 Q 540 740 510 755" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- E to F -->
+  <path d="M 370 755 Q 320 740 290 710" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- F to G -->
+  <path d="M 180 615 Q 160 570 145 510" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- G to H -->
+  <path d="M 155 390 Q 170 330 195 285" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <!-- H to A -->
+  <path d="M 310 195 Q 360 170 390 160" fill="none" stroke="#64748b" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Iteration arrows to center (dashed) -->
+  <path d="M 450 200 L 450 355" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <path d="M 640 280 L 520 400" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <path d="M 660 450 L 545 450" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <path d="M 620 620 L 510 500" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <path d="M 450 700 L 450 545" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <path d="M 280 620 L 390 500" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <path d="M 240 450 L 355 450" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <path d="M 280 280 L 390 400" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,5"/>
+
+  <!-- Labels -->
+  <text x="450" y="865" text-anchor="middle" fill="#94a3b8" font-size="12" font-style="italic" font-family="system-ui, -apple-system, sans-serif">Iterative, not waterfall - each phase feeds back to Requirements Management</text>
+</svg>

@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .text-primary { fill: #e2e8f0; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; }
+      .text-secondary { fill: #94a3b8; }
+      .title { font-size: 24px; font-weight: 600; }
+      .label { font-size: 14px; }
+      .value { font-size: 16px; font-weight: 600; }
+      .percentage { font-size: 20px; font-weight: 700; }
+    </style>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="800" height="500" rx="8"/>
+
+  <!-- Title -->
+  <text class="text-primary title" x="400" y="40" text-anchor="middle">AWS Cost Breakdown</text>
+  <text class="text-secondary label" x="400" y="65" text-anchor="middle">Total: $3.2M annually</text>
+
+  <!-- Donut Chart -->
+  <g transform="translate(280, 280)">
+    <!-- EC2/ECS Compute: 44% ($1.4M) - Purple -->
+    <path d="M 0,-140 A 140,140 0 0,1 103.06,-94.62" fill="none" stroke="#8b5cf6" stroke-width="60"/>
+
+    <!-- Data Transfer: 16% ($520K) - Blue -->
+    <path d="M 103.06,-94.62 A 140,140 0 0,1 138.72,-28.40" fill="none" stroke="#3b82f6" stroke-width="60"/>
+
+    <!-- RDS/Aurora: 12% - Emerald -->
+    <path d="M 138.72,-28.40 A 140,140 0 0,1 118.08,74.90" fill="none" stroke="#10b981" stroke-width="60"/>
+
+    <!-- EBS Storage: 9% ($280K) - Pink -->
+    <path d="M 118.08,74.90 A 140,140 0 0,1 42.43,133.34" fill="none" stroke="#ec4899" stroke-width="60"/>
+
+    <!-- S3 Storage: 8% - Cyan -->
+    <path d="M 42.43,133.34 A 140,140 0 0,1 -42.43,133.34" fill="none" stroke="#06b6d4" stroke-width="60"/>
+
+    <!-- Non-prod Environments: 11% ($340K) - Orange -->
+    <path d="M -42.43,133.34 A 140,140 0 0,1 -103.06,-94.62" fill="none" stroke="#f97316" stroke-width="60"/>
+
+    <!-- Center circle -->
+    <circle cx="0" cy="0" r="80" fill="#1e293b"/>
+    <text class="text-primary value" y="-5" text-anchor="middle">$3.2M</text>
+    <text class="text-secondary label" y="15" text-anchor="middle">per year</text>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(480, 150)">
+    <!-- EC2/ECS Compute -->
+    <rect x="0" y="0" width="16" height="16" fill="#8b5cf6" rx="3"/>
+    <text class="text-primary label" x="24" y="12">EC2/ECS Compute</text>
+    <text class="text-primary percentage" x="260" y="12" text-anchor="end">44%</text>
+    <text class="text-secondary label" x="265" y="12">$1.4M</text>
+
+    <!-- Data Transfer -->
+    <rect x="0" y="35" width="16" height="16" fill="#3b82f6" rx="3"/>
+    <text class="text-primary label" x="24" y="47">Data Transfer</text>
+    <text class="text-primary percentage" x="260" y="47" text-anchor="end">16%</text>
+    <text class="text-secondary label" x="265" y="47">$520K</text>
+
+    <!-- RDS/Aurora -->
+    <rect x="0" y="70" width="16" height="16" fill="#10b981" rx="3"/>
+    <text class="text-primary label" x="24" y="82">RDS/Aurora</text>
+    <text class="text-primary percentage" x="260" y="82" text-anchor="end">12%</text>
+    <text class="text-secondary label" x="265" y="82">$384K</text>
+
+    <!-- EBS Storage -->
+    <rect x="0" y="105" width="16" height="16" fill="#ec4899" rx="3"/>
+    <text class="text-primary label" x="24" y="117">EBS Storage</text>
+    <text class="text-primary percentage" x="260" y="117" text-anchor="end">9%</text>
+    <text class="text-secondary label" x="265" y="117">$280K</text>
+
+    <!-- S3 Storage -->
+    <rect x="0" y="140" width="16" height="16" fill="#06b6d4" rx="3"/>
+    <text class="text-primary label" x="24" y="152">S3 Storage</text>
+    <text class="text-primary percentage" x="260" y="152" text-anchor="end">8%</text>
+    <text class="text-secondary label" x="265" y="152">$256K</text>
+
+    <!-- Non-prod Environments -->
+    <rect x="0" y="175" width="16" height="16" fill="#f97316" rx="3"/>
+    <text class="text-primary label" x="24" y="187">Non-prod Environments</text>
+    <text class="text-primary percentage" x="260" y="187" text-anchor="end">11%</text>
+    <text class="text-secondary label" x="265" y="187">$340K</text>
+  </g>
+</svg>

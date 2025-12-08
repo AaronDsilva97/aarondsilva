@@ -1,0 +1,160 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" style="background-color: #0f172a;">
+  <defs>
+    <style>
+      .title { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 24px; font-weight: 700; fill: #e2e8f0; }
+      .label { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 13px; font-weight: 500; fill: #e2e8f0; }
+      .legend-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 14px; font-weight: 500; fill: #e2e8f0; }
+      .note { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; fill: #94a3b8; font-style: italic; }
+      .score-text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; font-size: 11px; font-weight: 600; fill: #e2e8f0; }
+      .rn-area { fill: #3b82f6; fill-opacity: 0.2; stroke: #3b82f6; stroke-width: 3; }
+      .flutter-area { fill: #10b981; fill-opacity: 0.2; stroke: #10b981; stroke-width: 3; }
+      .grid-line { stroke: #334155; stroke-width: 1; }
+      .axis-line { stroke: #475569; stroke-width: 2; }
+    </style>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" class="title">Performance Comparison: React Native vs Flutter</text>
+  <text x="400" y="65" text-anchor="middle" class="note">Scores based on real-world healthcare app performance (hospital management &amp; screening apps)</text>
+
+  <!-- Center point -->
+  <g transform="translate(400, 420)">
+    <!-- Grid circles (10 levels) -->
+    <circle cx="0" cy="0" r="30" class="grid-line" fill="none"/>
+    <circle cx="0" cy="0" r="60" class="grid-line" fill="none"/>
+    <circle cx="0" cy="0" r="90" class="grid-line" fill="none"/>
+    <circle cx="0" cy="0" r="120" class="grid-line" fill="none"/>
+    <circle cx="0" cy="0" r="150" class="grid-line" fill="none"/>
+    <circle cx="0" cy="0" r="180" class="grid-line" fill="none"/>
+    <circle cx="0" cy="0" r="210" class="grid-line" fill="none"/>
+    <circle cx="0" cy="0" r="240" class="grid-line" fill="none"/>
+    <circle cx="0" cy="0" r="270" class="grid-line" fill="none"/>
+    <circle cx="0" cy="0" r="300" class="grid-line" fill="none"/>
+
+    <!-- Axis lines (6 dimensions at 60-degree intervals) -->
+    <!-- 1. Image Handling Performance (top) -->
+    <line x1="0" y1="0" x2="0" y2="-310" class="axis-line"/>
+
+    <!-- 2. Offline Data Sync (60 degrees clockwise from top) -->
+    <line x1="0" y1="0" x2="268" y2="-155" class="axis-line"/>
+
+    <!-- 3. Battery Efficiency (120 degrees) -->
+    <line x1="0" y1="0" x2="268" y2="155" class="axis-line"/>
+
+    <!-- 4. Cold Start Time (bottom) -->
+    <line x1="0" y1="0" x2="0" y2="310" class="axis-line"/>
+
+    <!-- 5. Memory Usage (240 degrees) -->
+    <line x1="0" y1="0" x2="-268" y2="155" class="axis-line"/>
+
+    <!-- 6. UI Rendering Consistency (300 degrees) -->
+    <line x1="0" y1="0" x2="-268" y2="-155" class="axis-line"/>
+
+    <!-- Labels for each axis -->
+    <text x="0" y="-330" text-anchor="middle" class="label">Image Handling</text>
+    <text x="0" y="-315" text-anchor="middle" class="label">Performance</text>
+
+    <text x="300" y="-165" text-anchor="start" class="label">Offline Data</text>
+    <text x="300" y="-150" text-anchor="start" class="label">Sync</text>
+
+    <text x="300" y="165" text-anchor="start" class="label">Battery</text>
+    <text x="300" y="180" text-anchor="start" class="label">Efficiency</text>
+
+    <text x="0" y="340" text-anchor="middle" class="label">Cold Start</text>
+    <text x="0" y="355" text-anchor="middle" class="label">Time</text>
+
+    <text x="-300" y="165" text-anchor="end" class="label">Memory Usage</text>
+    <text x="-300" y="180" text-anchor="end" class="label">(Large Datasets)</text>
+
+    <text x="-300" y="-165" text-anchor="end" class="label">UI Rendering</text>
+    <text x="-300" y="-150" text-anchor="end" class="label">Consistency</text>
+
+    <!-- React Native polygon (scale: 30px per point) -->
+    <!-- 1. Image Handling: 6 -> 180px up -->
+    <!-- 2. Offline: 8 -> 240px at 60° -->
+    <!-- 3. Battery: 6 -> 180px at 120° -->
+    <!-- 4. Cold Start: 7 -> 210px down -->
+    <!-- 5. Memory: 6 -> 180px at 240° -->
+    <!-- 6. UI Rendering: 7 -> 210px at 300° -->
+    <polygon points="0,-180 207.85,-120 155.88,90 0,210 -155.88,90 -181.87,-105"
+             class="rn-area"/>
+
+    <!-- Flutter polygon (scale: 30px per point) -->
+    <!-- 1. Image Handling: 9 -> 270px up -->
+    <!-- 2. Offline: 8 -> 240px at 60° -->
+    <!-- 3. Battery: 8 -> 240px at 120° -->
+    <!-- 4. Cold Start: 6 -> 180px down -->
+    <!-- 5. Memory: 8 -> 240px at 240° -->
+    <!-- 6. UI Rendering: 9 -> 270px at 300° -->
+    <polygon points="0,-270 207.85,-120 207.85,120 0,180 -207.85,120 -233.83,-135"
+             class="flutter-area"/>
+
+    <!-- Score markers for React Native -->
+    <circle cx="0" cy="-180" r="5" fill="#3b82f6"/>
+    <text x="15" y="-175" class="score-text" fill="#3b82f6">6</text>
+
+    <circle cx="207.85" cy="-120" r="5" fill="#3b82f6"/>
+    <text x="220" y="-115" class="score-text" fill="#3b82f6">8</text>
+
+    <circle cx="155.88" cy="90" r="5" fill="#3b82f6"/>
+    <text x="170" y="95" class="score-text" fill="#3b82f6">6</text>
+
+    <circle cx="0" cy="210" r="5" fill="#3b82f6"/>
+    <text x="15" y="215" class="score-text" fill="#3b82f6">7</text>
+
+    <circle cx="-155.88" cy="90" r="5" fill="#3b82f6"/>
+    <text x="-170" y="95" text-anchor="end" class="score-text" fill="#3b82f6">6</text>
+
+    <circle cx="-181.87" cy="-105" r="5" fill="#3b82f6"/>
+    <text x="-195" y="-100" text-anchor="end" class="score-text" fill="#3b82f6">7</text>
+
+    <!-- Score markers for Flutter -->
+    <circle cx="0" cy="-270" r="5" fill="#10b981"/>
+    <text x="-15" y="-265" text-anchor="end" class="score-text" fill="#10b981">9</text>
+
+    <circle cx="207.85" cy="-120" r="5" fill="#10b981"/>
+    <text x="220" y="-125" class="score-text" fill="#10b981">8</text>
+
+    <circle cx="207.85" cy="120" r="5" fill="#10b981"/>
+    <text x="220" y="125" class="score-text" fill="#10b981">8</text>
+
+    <circle cx="0" cy="180" r="5" fill="#10b981"/>
+    <text x="-15" y="185" text-anchor="end" class="score-text" fill="#10b981">6</text>
+
+    <circle cx="-207.85" cy="120" r="5" fill="#10b981"/>
+    <text x="-220" y="125" text-anchor="end" class="score-text" fill="#10b981">8</text>
+
+    <circle cx="-233.83" cy="-135" r="5" fill="#10b981"/>
+    <text x="-245" y="-130" text-anchor="end" class="score-text" fill="#10b981">9</text>
+
+    <!-- Center dot -->
+    <circle cx="0" cy="0" r="4" fill="#8b5cf6"/>
+  </g>
+
+  <!-- Legend -->
+  <g transform="translate(600, 100)">
+    <rect x="0" y="0" width="160" height="90" rx="8" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+
+    <line x1="20" y1="25" x2="50" y2="25" stroke="#3b82f6" stroke-width="3"/>
+    <circle cx="35" cy="25" r="5" fill="#3b82f6"/>
+    <text x="60" y="30" class="legend-text">React Native</text>
+
+    <line x1="20" y1="55" x2="50" y2="55" stroke="#10b981" stroke-width="3"/>
+    <circle cx="35" cy="55" r="5" fill="#10b981"/>
+    <text x="60" y="60" class="legend-text">Flutter</text>
+
+    <text x="80" y="80" text-anchor="middle" class="note">Scale: 1-10</text>
+  </g>
+
+  <!-- Key Insights Box -->
+  <g transform="translate(50, 100)">
+    <rect x="0" y="0" width="200" height="130" rx="8" fill="#1e293b" stroke="#334155" stroke-width="2"/>
+    <text x="100" y="25" text-anchor="middle" class="legend-text" fill="#8b5cf6">Key Insights</text>
+
+    <text x="15" y="50" class="note">• Flutter excels in image</text>
+    <text x="15" y="65" class="note">  handling &amp; UI consistency</text>
+    <text x="15" y="85" class="note">• React Native better</text>
+    <text x="15" y="100" class="note">  cold start performance</text>
+    <text x="15" y="120" class="note">• Both tied on offline sync</text>
+  </g>
+</svg>

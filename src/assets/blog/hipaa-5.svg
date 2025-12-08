@@ -1,0 +1,156 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 950">
+  <defs>
+    <style>
+      .bg { fill: #0f172a; }
+      .title { fill: #e2e8f0; font-family: 'Arial', sans-serif; font-size: 24px; font-weight: bold; }
+      .subtitle { fill: #cbd5e1; font-family: 'Arial', sans-serif; font-size: 16px; font-weight: bold; }
+      .text { fill: #e2e8f0; font-family: 'Arial', sans-serif; font-size: 14px; }
+      .small-text { fill: #cbd5e1; font-family: 'Arial', sans-serif; font-size: 12px; }
+      .decision { fill: #8b5cf6; stroke: #a78bfa; stroke-width: 2; }
+      .process { fill: #3b82f6; stroke: #60a5fa; stroke-width: 2; }
+      .success { fill: #10b981; stroke: #34d399; stroke-width: 2; }
+      .fail { fill: #dc2626; stroke: #ef4444; stroke-width: 2; }
+      .warning { fill: #f59e0b; stroke: #fbbf24; stroke-width: 2; }
+      .arrow-yes { stroke: #10b981; stroke-width: 3; fill: none; marker-end: url(#arrowhead-yes); }
+      .arrow-no { stroke: #dc2626; stroke-width: 3; fill: none; marker-end: url(#arrowhead-no); }
+      .arrow-neutral { stroke: #64748b; stroke-width: 3; fill: none; marker-end: url(#arrowhead-neutral); }
+      .label-bg { fill: #1e293b; stroke: #475569; stroke-width: 1; }
+    </style>
+    <marker id="arrowhead-yes" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10b981"/>
+    </marker>
+    <marker id="arrowhead-no" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#dc2626"/>
+    </marker>
+    <marker id="arrowhead-neutral" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect class="bg" width="1200" height="950"/>
+
+  <!-- Title -->
+  <text class="title" x="600" y="40" text-anchor="middle">Third-Party Integration Security Decision Tree</text>
+
+  <!-- Start -->
+  <rect class="decision" x="475" y="80" width="250" height="70" rx="8"/>
+  <text class="text" x="600" y="110" text-anchor="middle">Third-Party Service</text>
+  <text class="small-text" x="600" y="130" text-anchor="middle">SDK, API, Analytics, etc.</text>
+
+  <!-- Arrow down -->
+  <path class="arrow-neutral" d="M 600 150 L 600 200"/>
+
+  <!-- Question 1: Touches PHI? -->
+  <polygon class="decision" points="600,200 750,250 600,300 450,250" stroke="#a78bfa" stroke-width="2" fill="#8b5cf6"/>
+  <text class="text" x="600" y="245" text-anchor="middle">Does it touch</text>
+  <text class="text" x="600" y="265" text-anchor="middle">PHI?</text>
+
+  <!-- YES path -->
+  <path class="arrow-yes" d="M 750 250 L 850 250"/>
+  <rect class="label-bg" x="770" y="235" width="50" height="20" rx="4"/>
+  <text class="small-text" x="795" y="249" text-anchor="middle" fill="#10b981">YES</text>
+
+  <!-- Question 2: Can sign BAA? -->
+  <polygon class="decision" points="950,200 1100,250 950,300 800,250" stroke="#a78bfa" stroke-width="2" fill="#8b5cf6"/>
+  <text class="text" x="950" y="245" text-anchor="middle">Can they</text>
+  <text class="text" x="950" y="265" text-anchor="middle">sign BAA?</text>
+
+  <!-- BAA YES path -->
+  <path class="arrow-yes" d="M 950 300 L 950 370"/>
+  <rect class="label-bg" x="925" y="320" width="50" height="20" rx="4"/>
+  <text class="small-text" x="950" y="334" text-anchor="middle" fill="#10b981">YES</text>
+
+  <!-- Security Verification -->
+  <rect class="process" x="825" y="370" width="250" height="100" rx="8"/>
+  <text class="text" x="950" y="400" text-anchor="middle">Verify Security Practices</text>
+  <text class="small-text" x="950" y="425" text-anchor="start">• Encryption methods</text>
+  <text class="small-text" x="950" y="445" text-anchor="start">• Data storage location</text>
+  <text class="small-text" x="950" y="465" text-anchor="start">• Incident response plan</text>
+
+  <!-- Arrow down from verification -->
+  <path class="arrow-neutral" d="M 950 470 L 950 520"/>
+
+  <!-- Question 3: Passes security check? -->
+  <polygon class="decision" points="950,520 1075,565 950,610 825,565" stroke="#a78bfa" stroke-width="2" fill="#8b5cf6"/>
+  <text class="text" x="950" y="560" text-anchor="middle">Passes</text>
+  <text class="text" x="950" y="580" text-anchor="middle">checks?</text>
+
+  <!-- PASS path -->
+  <path class="arrow-yes" d="M 950 610 L 950 680"/>
+  <rect class="label-bg" x="925" y="630" width="50" height="20" rx="4"/>
+  <text class="small-text" x="950" y="644" text-anchor="middle" fill="#10b981">PASS</text>
+
+  <!-- Success: Document & Integrate -->
+  <rect class="success" x="825" y="680" width="250" height="80" rx="8"/>
+  <text class="text" x="950" y="710" text-anchor="middle" font-weight="bold">APPROVED</text>
+  <text class="small-text" x="950" y="735" text-anchor="middle">1. Get BAA signed</text>
+  <text class="small-text" x="950" y="750" text-anchor="middle">2. Document integration</text>
+
+  <!-- FAIL path from security check -->
+  <path class="arrow-no" d="M 1075 565 L 1150 565 L 1150 815 L 950 815"/>
+  <rect class="label-bg" x="1095" y="550" width="50" height="20" rx="4"/>
+  <text class="small-text" x="1120" y="564" text-anchor="middle" fill="#dc2626">FAIL</text>
+
+  <!-- BAA NO path -->
+  <path class="arrow-no" d="M 1100 250 L 1150 250 L 1150 815 L 950 815"/>
+  <rect class="label-bg" x="1110" y="235" width="40" height="20" rx="4"/>
+  <text class="small-text" x="1130" y="249" text-anchor="middle" fill="#dc2626">NO</text>
+
+  <!-- Fail: Find Alternative -->
+  <rect class="fail" x="825" y="795" width="250" height="80" rx="8"/>
+  <text class="text" x="950" y="825" text-anchor="middle" font-weight="bold">REJECTED</text>
+  <text class="small-text" x="950" y="850" text-anchor="middle">Find alternative vendor</text>
+  <text class="small-text" x="950" y="865" text-anchor="middle">OR build in-house</text>
+
+  <!-- NO PHI path -->
+  <path class="arrow-no" d="M 450 250 L 350 250"/>
+  <rect class="label-bg" x="360" y="235" width="50" height="20" rx="4"/>
+  <text class="small-text" x="385" y="249" text-anchor="middle" fill="#f59e0b">NO</text>
+
+  <!-- Safe to use (with caution) -->
+  <rect class="warning" x="100" y="210" width="250" height="80" rx="8"/>
+  <text class="text" x="225" y="240" text-anchor="middle" font-weight="bold">SAFE TO USE</text>
+  <text class="small-text" x="225" y="265" text-anchor="middle">(No BAA needed)</text>
+  <text class="small-text" x="225" y="280" text-anchor="middle">Still verify data practices</text>
+
+  <!-- SDK Evaluation Checklist -->
+  <rect class="process" x="50" y="350" width="550" height="420" rx="8"/>
+  <text class="subtitle" x="325" y="385" text-anchor="middle">SDK Evaluation Checklist</text>
+
+  <!-- Mobile SDK Risks -->
+  <text class="text" x="80" y="420" text-anchor="start" font-weight="bold">Mobile SDK Specific Risks:</text>
+  <text class="small-text" x="95" y="445" text-anchor="start">• Automatic device info collection (IMEI, IDFA, etc.)</text>
+  <text class="small-text" x="95" y="465" text-anchor="start">• Screenshot/screen recording capabilities</text>
+  <text class="small-text" x="95" y="485" text-anchor="start">• Crash logs that may contain PHI</text>
+  <text class="small-text" x="95" y="505" text-anchor="start">• Analytics events with user data</text>
+  <text class="small-text" x="95" y="525" text-anchor="start">• Background data syncing</text>
+
+  <!-- Questions to Ask -->
+  <text class="text" x="80" y="560" text-anchor="start" font-weight="bold">Questions to Ask Vendors:</text>
+  <text class="small-text" x="95" y="585" text-anchor="start">1. Can you sign a Business Associate Agreement?</text>
+  <text class="small-text" x="95" y="605" text-anchor="start">2. What data does your service collect?</text>
+  <text class="small-text" x="95" y="625" text-anchor="start">3. Where is data stored? (geographic location)</text>
+  <text class="small-text" x="95" y="645" text-anchor="start">4. How is data encrypted (at rest &amp; in transit)?</text>
+  <text class="small-text" x="95" y="665" text-anchor="start">5. What is your incident response process?</text>
+  <text class="small-text" x="95" y="685" text-anchor="start">6. Can we disable automatic data collection?</text>
+  <text class="small-text" x="95" y="705" text-anchor="start">7. Do you have SOC2/ISO 27001 certification?</text>
+
+  <!-- Common Safe Alternatives -->
+  <text class="text" x="80" y="740" text-anchor="start" font-weight="bold">Safer Alternatives:</text>
+  <text class="small-text" x="95" y="765" text-anchor="start">Instead of: Vendor SDK → Use: Proxy through your backend</text>
+  <text class="small-text" x="95" y="785" text-anchor="start">Instead of: Third-party analytics → Use: Self-hosted (e.g., Matomo)</text>
+  <text class="small-text" x="95" y="805" text-anchor="start">Instead of: Cloud crash reporting → Use: Backend error logging</text>
+
+  <!-- Warning Box -->
+  <rect class="fail" x="80" y="820" width="520" height="60" rx="4"/>
+  <text class="small-text" x="340" y="845" text-anchor="middle" font-weight="bold">WARNING: Many popular SDKs cannot sign BAAs</text>
+  <text class="small-text" x="340" y="865" text-anchor="middle">Google Analytics, Mixpanel, Segment, etc. - verify before integrating!</text>
+
+  <!-- Examples -->
+  <rect class="success" x="50" y="900" width="270" height="40" rx="4"/>
+  <text class="small-text" x="185" y="925" text-anchor="middle">BAA Available: AWS, Twilio, SendGrid</text>
+
+  <rect class="fail" x="340" y="900" width="260" height="40" rx="4"/>
+  <text class="small-text" x="470" y="925" text-anchor="middle">No BAA: Firebase, Intercom, Hotjar</text>
+</svg>

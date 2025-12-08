@@ -38,14 +38,14 @@
       <slot name="tech-stack" />
     </div>
 
-    <!-- Recent Posts -->
-    <div class="bento-item recent-posts">
-      <slot name="recent-posts" />
-    </div>
-
     <!-- Now Playing -->
     <div class="bento-item now-playing">
       <slot name="now-playing" />
+    </div>
+
+    <!-- Recent Posts -->
+    <div class="bento-item recent-posts">
+      <slot name="recent-posts" />
     </div>
 
     <!-- Metrics -->
@@ -74,9 +74,9 @@
     grid-template-areas:
       "hero hero availability command-hint"
       "metrics investment investment github-stats"
-      "current-project current-project current-project now-playing"
-      "testimonials testimonials recent-projects now-playing"
-      "tech-stack recent-posts recent-posts now-playing";
+      "current-project current-project now-playing now-playing"
+      "testimonials testimonials recent-projects recent-projects"
+      "recent-posts recent-posts tech-stack tech-stack";
   }
 
   .bento-item {
@@ -164,14 +164,14 @@
     min-height: 150px;
   }
 
+  .now-playing {
+    grid-area: now-playing;
+    min-height: 200px;
+  }
+
   .recent-posts {
     grid-area: recent-posts;
     min-height: 150px;
-  }
-
-  .now-playing {
-    grid-area: now-playing;
-    min-height: 400px;
   }
 
   .metrics {
@@ -199,11 +199,7 @@
         "current-project current-project github-stats command-hint"
         "recent-projects recent-projects investment investment"
         "testimonials testimonials now-playing now-playing"
-        "tech-stack recent-posts recent-posts recent-posts";
-    }
-
-    .now-playing {
-      min-height: 300px;
+        "recent-posts recent-posts tech-stack tech-stack";
     }
   }
 
@@ -220,8 +216,8 @@
         "investment"
         "testimonials"
         "recent-projects"
-        "tech-stack"
         "recent-posts"
+        "tech-stack"
         "now-playing";
       gap: 1rem;
     }
@@ -255,16 +251,16 @@
       min-height: 300px;
     }
 
+    .recent-posts {
+      min-height: 180px;
+    }
+
     .tech-stack {
       min-height: 120px;
     }
 
-    .recent-posts {
-      min-height: 150px;
-    }
-
     .now-playing {
-      min-height: 200px;
+      min-height: 120px;
     }
   }
 
