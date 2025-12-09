@@ -115,7 +115,13 @@ export default function CommandPalette() {
       description: 'Switch between light and dark mode',
       icon: '🌙',
       action: () => {
-        document.documentElement.classList.toggle('dark');
+        const isDark = document.documentElement.classList.toggle('dark');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        // Update theme-color meta tag
+        const metaTheme = document.querySelector('meta[name="theme-color"]');
+        if (metaTheme) {
+          metaTheme.setAttribute('content', isDark ? '#0f172a' : '#ffffff');
+        }
       },
       keywords: ['theme', 'dark', 'light', 'mode', 'toggle']
     },
@@ -222,15 +228,15 @@ export default function CommandPalette() {
         <div className="fixed inset-0 z-50 flex items-start justify-center pt-8 sm:pt-16 px-2 sm:px-4">
       {/* Backdrop */}
       <div
-        className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+        className="absolute inset-0 bg-black/30 dark:bg-black/50 backdrop-blur-sm"
         onClick={() => setIsOpen(false)}
       />
 
       {/* Command Palette */}
-      <div className="relative w-full max-w-lg bg-slate-800/95 backdrop-blur-lg rounded-xl border border-slate-700/50 shadow-2xl shadow-purple-500/10 mx-2 sm:mx-0">
+      <div className="relative w-full max-w-lg bg-white/95 dark:bg-slate-800/95 backdrop-blur-lg rounded-xl border border-slate-200 dark:border-slate-700/50 shadow-2xl shadow-purple-500/10 mx-2 sm:mx-0">
         {/* Search Input */}
-        <div className="flex items-center gap-3 p-4 border-b border-slate-700/50">
-          <svg className="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <div className="flex items-center gap-3 p-4 border-b border-slate-200 dark:border-slate-700/50">
+          <svg className="w-5 h-5 text-slate-500 dark:text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
           <input
@@ -239,13 +245,13 @@ export default function CommandPalette() {
             placeholder="Type a command or search..."
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            className="flex-1 bg-transparent text-slate-100 placeholder-slate-400 outline-none text-sm"
+            className="flex-1 bg-transparent text-slate-900 dark:text-slate-100 placeholder-slate-400 outline-none text-sm"
           />
           <div className="flex items-center gap-1">
-            <kbd className="px-2 py-1 text-xs text-slate-400 bg-slate-700/50 rounded border border-slate-600/50">
+            <kbd className="px-2 py-1 text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700/50 rounded border border-slate-200 dark:border-slate-600/50">
               {isMac ? '⌘K' : 'Ctrl+K'}
             </kbd>
-            <kbd className="px-2 py-1 text-xs text-slate-400 bg-slate-700/50 rounded border border-slate-600/50">
+            <kbd className="px-2 py-1 text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700/50 rounded border border-slate-200 dark:border-slate-600/50">
               ESC
             </kbd>
           </div>
@@ -254,7 +260,7 @@ export default function CommandPalette() {
         {/* Commands List */}
         <div className="max-h-80 overflow-y-auto py-2">
           {filteredCommands.length === 0 ? (
-            <div className="px-4 py-8 text-center text-slate-400 text-sm">
+            <div className="px-4 py-8 text-center text-slate-500 dark:text-slate-400 text-sm">
               No commands found for "{query}"
             </div>
           ) : (
@@ -270,20 +276,20 @@ export default function CommandPalette() {
                 className={`w-full flex items-center gap-3 px-4 py-3 text-left transition-colors ${
                   index === selectedIndex
                     ? 'bg-purple-600/20 border-l-2 border-purple-400'
-                    : 'hover:bg-slate-700/30'
+                    : 'hover:bg-slate-100 dark:hover:bg-slate-700/30'
                 }`}
               >
                 <span className="text-lg">{command.icon}</span>
                 <div className="flex-1 min-w-0">
-                  <div className="text-sm font-medium text-slate-100 truncate">
+                  <div className="text-sm font-medium text-slate-900 dark:text-slate-100 truncate">
                     {command.title}
                   </div>
-                  <div className="text-xs text-slate-400 truncate">
+                  <div className="text-xs text-slate-500 dark:text-slate-400 truncate">
                     {command.description}
                   </div>
                 </div>
                 {index === selectedIndex && (
-                  <kbd className="px-2 py-1 text-xs text-slate-400 bg-slate-700/50 rounded border border-slate-600/50">
+                  <kbd className="px-2 py-1 text-xs text-slate-500 dark:text-slate-400 bg-slate-100 dark:bg-slate-700/50 rounded border border-slate-200 dark:border-slate-600/50">
                     ↵
                   </kbd>
                 )}
@@ -293,16 +299,16 @@ export default function CommandPalette() {
         </div>
 
         {/* Footer */}
-        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between px-4 py-2 border-t border-slate-700/50 text-xs text-slate-400 gap-2 sm:gap-0">
+        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between px-4 py-2 border-t border-slate-200 dark:border-slate-700/50 text-xs text-slate-500 dark:text-slate-400 gap-2 sm:gap-0">
           <div className="flex items-center gap-2 sm:gap-4 flex-wrap">
             <span className="flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 bg-slate-700/50 rounded">↑</kbd>
-              <kbd className="px-1.5 py-0.5 bg-slate-700/50 rounded">↓</kbd>
+              <kbd className="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700/50 rounded">↑</kbd>
+              <kbd className="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700/50 rounded">↓</kbd>
               <span className="hidden sm:inline">to navigate</span>
               <span className="sm:hidden">navigate</span>
             </span>
             <span className="flex items-center gap-1">
-              <kbd className="px-1.5 py-0.5 bg-slate-700/50 rounded">↵</kbd>
+              <kbd className="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-700/50 rounded">↵</kbd>
               <span className="hidden sm:inline">to select</span>
               <span className="sm:hidden">select</span>
             </span>

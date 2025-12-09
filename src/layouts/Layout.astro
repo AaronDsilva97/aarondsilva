@@ -1,6 +1,7 @@
 ---
 import { SEO } from "astro-seo";
 import "../styles/global.css";
+import ThemeToggle from "../components/ThemeToggle.tsx";
 
 export interface Props {
   title?: string;
@@ -21,8 +22,24 @@ const socialImage = new URL(image, Astro.site);
 ---
 
 <!doctype html>
-<html lang="en" class="dark">
+<html lang="en">
 	<head>
+		<!-- Theme detection - runs before page renders to prevent FOUC -->
+		<script is:inline>
+			(function() {
+				const stored = localStorage.getItem('theme');
+				// Default to dark mode - only show light if explicitly set to 'light'
+				const isDark = stored !== 'light';
+				if (isDark) {
+					document.documentElement.classList.add('dark');
+				}
+				// Update theme-color meta tag
+				const metaTheme = document.querySelector('meta[name="theme-color"]');
+				if (metaTheme) {
+					metaTheme.content = isDark ? '#0f172a' : '#ffffff';
+				}
+			})();
+		</script>
 		<SEO
 			title={title}
 			description={description}
@@ -160,12 +177,12 @@ const socialImage = new URL(image, Astro.site);
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 
 	</head>
-	<body class="bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-slate-100 font-sans antialiased relative overflow-x-hidden">
+	<body class="bg-gradient-to-br from-slate-50 via-slate-100 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased relative overflow-x-hidden transition-colors duration-300">
 		<!-- Animated background elements -->
 		<div class="fixed inset-0 pointer-events-none">
-			<div class="absolute top-0 -left-4 w-72 h-72 bg-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-			<div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-			<div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
+			<div class="absolute top-0 -left-4 w-72 h-72 bg-purple-500/5 dark:bg-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
+			<div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-500/5 dark:bg-yellow-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
+			<div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500/5 dark:bg-pink-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
 		</div>
 
 		<div class="min-h-screen relative z-10">
@@ -175,9 +192,14 @@ const socialImage = new URL(image, Astro.site);
 		<!-- Command Palette -->
 		<div id="command-palette-root"></div>
 
+		<!-- Theme Toggle -->
+		<div class="fixed top-4 right-4 z-50">
+			<ThemeToggle client:load />
+		</div>
+
 		<!-- Command palette trigger hint -->
-		<div id="command-hint" class="fixed bottom-4 right-4 text-xs text-slate-400 pointer-events-none z-20 backdrop-blur-sm bg-slate-900/30 rounded-lg px-3 py-2 border border-slate-700/50 hidden md:block">
-			Press <kbd class="px-1.5 py-0.5 bg-slate-800/80 rounded border border-slate-600 text-slate-300 font-mono">⌘K</kbd> for commands
+		<div id="command-hint" class="fixed bottom-4 right-4 text-xs text-slate-500 dark:text-slate-400 pointer-events-none z-20 backdrop-blur-sm bg-white/50 dark:bg-slate-900/30 rounded-lg px-3 py-2 border border-slate-200 dark:border-slate-700/50 hidden md:block transition-colors duration-300">
+			Press <kbd class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800/80 rounded border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-mono transition-colors duration-300">⌘K</kbd> for commands
 		</div>
 
 		<!-- Dynamic keyboard shortcut detection -->
@@ -279,21 +301,34 @@ const socialImage = new URL(image, Astro.site);
 		box-shadow: var(--glow-secondary);
 	}
 
-	/* Custom scrollbar */
+	/* Custom scrollbar - Light mode */
 	::-webkit-scrollbar {
 		width: 6px;
 	}
 
 	::-webkit-scrollbar-track {
-		background: #0f172a;
+		background: #f1f5f9;
 	}
 
 	::-webkit-scrollbar-thumb {
-		background: linear-gradient(to bottom, #667eea, #764ba2);
+		background: linear-gradient(to bottom, #94a3b8, #64748b);
 		border-radius: 3px;
 	}
 
 	::-webkit-scrollbar-thumb:hover {
+		background: linear-gradient(to bottom, #64748b, #475569);
+	}
+
+	/* Custom scrollbar - Dark mode */
+	.dark ::-webkit-scrollbar-track {
+		background: #0f172a;
+	}
+
+	.dark ::-webkit-scrollbar-thumb {
+		background: linear-gradient(to bottom, #667eea, #764ba2);
+	}
+
+	.dark ::-webkit-scrollbar-thumb:hover {
 		background: linear-gradient(to bottom, #5a6fd8, #6a4190);
 	}
 
@@ -313,9 +348,11 @@ const socialImage = new URL(image, Astro.site);
 		color: #ffffff;
 	}
 
-	/* Smooth animations for theme changes */
+	/* Smooth animations for theme changes - only color properties */
 	*, *::before, *::after {
-		transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+		transition-property: color, background-color, border-color, fill, stroke, box-shadow;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-duration: 300ms;
 	}
 
 	/* Hover effects */
@@ -327,10 +364,16 @@ const socialImage = new URL(image, Astro.site);
 		box-shadow: var(--glow-primary);
 	}
 
-	/* Glass effect */
+	/* Glass effect - Light mode */
 	.glass-effect {
-		background: rgba(255, 255, 255, 0.05);
+		background: rgba(255, 255, 255, 0.7);
 		backdrop-filter: blur(10px);
+		border: 1px solid rgba(0, 0, 0, 0.1);
+	}
+
+	/* Glass effect - Dark mode */
+	.dark .glass-effect {
+		background: rgba(255, 255, 255, 0.05);
 		border: 1px solid rgba(255, 255, 255, 0.1);
 	}
 

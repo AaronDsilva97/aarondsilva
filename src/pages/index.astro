@@ -8,7 +8,7 @@ import CurrentProject from '../components/CurrentProject.tsx';
 import ConnectCard from '../components/ConnectCard.astro';
 import RecentProjects from '../components/RecentProjects.astro';
 import TechStack from '../components/TechStack.astro';
-import NowPlaying from '../components/NowPlaying.astro';
+import NowPlaying from '../components/NowPlaying.tsx';
 import RecentPosts from '../components/RecentPosts.astro';
 import CommandPalette from '../components/CommandPalette.tsx';
 import MetricsCard from '../components/MetricsCard.tsx';
@@ -27,7 +27,7 @@ import InteractiveBackground from '../components/InteractiveBackground.tsx';
     <ConnectCard slot="github-stats" />
     <TestimonialsCard slot="recent-projects" client:load />
     <TechStack slot="tech-stack" />
-    <NowPlaying slot="now-playing" />
+    <NowPlaying slot="now-playing" client:load />
     <RecentPosts slot="recent-posts" />
     <MetricsCard slot="metrics" client:load />
     <Specializations slot="investment" client:load />

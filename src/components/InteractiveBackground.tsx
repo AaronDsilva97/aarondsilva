@@ -134,22 +134,22 @@ export default function InteractiveBackground() {
   return (
     <div className="fixed inset-0 z-0 overflow-hidden">
       {/* Animated gradient orbs - scattered positions */}
-      <div className="floating-orb floating-orb-1 absolute top-20 left-1/4 w-80 h-80 bg-purple-500/40 rounded-full mix-blend-multiply filter blur-3xl pointer-events-none"></div>
-      <div className="floating-orb floating-orb-2 absolute top-32 right-1/3 w-96 h-96 bg-pink-500/35 rounded-full mix-blend-multiply filter blur-3xl pointer-events-none"></div>
-      <div className="floating-orb floating-orb-3 absolute bottom-20 left-1/2 w-72 h-72 bg-blue-500/40 rounded-full mix-blend-multiply filter blur-3xl pointer-events-none"></div>
-      <div className="floating-orb floating-orb-4 absolute top-1/2 right-20 w-88 h-88 bg-yellow-500/30 rounded-full mix-blend-multiply filter blur-3xl pointer-events-none"></div>
+      <div className="floating-orb floating-orb-1 absolute top-20 left-1/4 w-80 h-80 bg-purple-500/20 dark:bg-purple-500/40 rounded-full mix-blend-multiply filter blur-3xl pointer-events-none"></div>
+      <div className="floating-orb floating-orb-2 absolute top-32 right-1/3 w-96 h-96 bg-pink-500/15 dark:bg-pink-500/35 rounded-full mix-blend-multiply filter blur-3xl pointer-events-none"></div>
+      <div className="floating-orb floating-orb-3 absolute bottom-20 left-1/2 w-72 h-72 bg-blue-500/20 dark:bg-blue-500/40 rounded-full mix-blend-multiply filter blur-3xl pointer-events-none"></div>
+      <div className="floating-orb floating-orb-4 absolute top-1/2 right-20 w-88 h-88 bg-yellow-500/15 dark:bg-yellow-500/30 rounded-full mix-blend-multiply filter blur-3xl pointer-events-none"></div>
 
       {/* Floating particles - scattered randomly */}
-      <div className="particle absolute top-[15%] left-[20%] w-3 h-3 bg-purple-400/80 rounded-full pointer-events-none"></div>
-      <div className="particle absolute top-[65%] right-[25%] w-2 h-2 bg-pink-400/80 rounded-full pointer-events-none"></div>
-      <div className="particle absolute top-[45%] left-[70%] w-2.5 h-2.5 bg-blue-400/80 rounded-full pointer-events-none"></div>
-      <div className="particle absolute top-[25%] right-[35%] w-2 h-2 bg-yellow-400/70 rounded-full pointer-events-none"></div>
-      <div className="particle absolute bottom-[30%] left-[15%] w-3 h-3 bg-emerald-400/70 rounded-full pointer-events-none"></div>
-      <div className="particle absolute top-[80%] left-[60%] w-1.5 h-1.5 bg-cyan-400/70 rounded-full pointer-events-none"></div>
-      <div className="particle absolute top-[35%] right-[15%] w-2 h-2 bg-orange-400/70 rounded-full pointer-events-none"></div>
+      <div className="particle absolute top-[15%] left-[20%] w-3 h-3 bg-purple-400/40 dark:bg-purple-400/80 rounded-full pointer-events-none"></div>
+      <div className="particle absolute top-[65%] right-[25%] w-2 h-2 bg-pink-400/40 dark:bg-pink-400/80 rounded-full pointer-events-none"></div>
+      <div className="particle absolute top-[45%] left-[70%] w-2.5 h-2.5 bg-blue-400/40 dark:bg-blue-400/80 rounded-full pointer-events-none"></div>
+      <div className="particle absolute top-[25%] right-[35%] w-2 h-2 bg-yellow-400/35 dark:bg-yellow-400/70 rounded-full pointer-events-none"></div>
+      <div className="particle absolute bottom-[30%] left-[15%] w-3 h-3 bg-emerald-400/35 dark:bg-emerald-400/70 rounded-full pointer-events-none"></div>
+      <div className="particle absolute top-[80%] left-[60%] w-1.5 h-1.5 bg-cyan-400/35 dark:bg-cyan-400/70 rounded-full pointer-events-none"></div>
+      <div className="particle absolute top-[35%] right-[15%] w-2 h-2 bg-orange-400/35 dark:bg-orange-400/70 rounded-full pointer-events-none"></div>
 
       {/* Grid pattern overlay - using CSS pattern instead */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none" style={{
+      <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05] pointer-events-none" style={{
         backgroundImage: `radial-gradient(circle at 1px 1px, rgba(139, 92, 246, 0.8) 1px, transparent 0)`,
         backgroundSize: '30px 30px'
       }}></div>

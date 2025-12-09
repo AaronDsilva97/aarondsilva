@@ -29,8 +29,8 @@ export default function Specializations() {
   return (
     <div className="flex flex-col h-full">
       <div className="mb-4">
-        <h3 className="text-lg font-semibold text-white mb-1">Specializations</h3>
-        <p className="text-sm text-slate-400">What I build & where I excel</p>
+        <h3 className="text-lg font-semibold text-slate-900 dark:text-white mb-1">Specializations</h3>
+        <p className="text-sm text-slate-500 dark:text-slate-400">What I build & where I excel</p>
       </div>
 
       <div className="grid grid-cols-2 gap-3 flex-1">
@@ -40,20 +40,20 @@ export default function Specializations() {
             onClick={() => setActiveArea(index)}
             className={`p-3 rounded-lg text-left transition-all duration-200 ${
               activeArea === index
-                ? 'bg-purple-600/20 border-2 border-purple-400/40'
-                : 'bg-slate-800/30 border border-slate-700/30 hover:bg-slate-700/30'
+                ? 'bg-purple-100 dark:bg-purple-600/20 border-2 border-purple-300 dark:border-purple-400/40'
+                : 'bg-slate-50 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-700/30 hover:bg-slate-100 dark:hover:bg-slate-700/30'
             }`}
           >
             <div className="text-xl mb-2">{spec.icon}</div>
-            <div className="text-sm font-medium text-white mb-1">{spec.name}</div>
-            <div className="text-xs text-slate-400">{spec.description}</div>
+            <div className="text-sm font-medium text-slate-900 dark:text-white mb-1">{spec.name}</div>
+            <div className="text-xs text-slate-500 dark:text-slate-400">{spec.description}</div>
           </button>
         ))}
       </div>
 
-      <div className="pt-3 mt-3 border-t border-slate-700/30">
-        <div className="text-xs text-slate-400">
-          Markets: <span className="text-emerald-400">US, UK, Europe, UAE, India</span>
+      <div className="pt-3 mt-3 border-t border-slate-200 dark:border-slate-700/30">
+        <div className="text-xs text-slate-500 dark:text-slate-400">
+          Markets: <span className="text-emerald-600 dark:text-emerald-400">US, UK, Europe, UAE, India</span>
         </div>
       </div>
     </div>

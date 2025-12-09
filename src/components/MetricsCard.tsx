@@ -41,9 +41,9 @@ export default function MetricsCard() {
       <div className="mb-4">
         <div className="flex items-center gap-2 mb-1">
           <span className="text-lg">📊</span>
-          <h3 className="font-semibold text-white">Track Record</h3>
+          <h3 className="font-semibold text-slate-900 dark:text-white">Track Record</h3>
         </div>
-        <p className="text-xs text-slate-400">Building secure, scalable systems</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">Building secure, scalable systems</p>
       </div>
 
       <div className="grid grid-cols-2 gap-4 flex-1">
@@ -57,11 +57,11 @@ export default function MetricsCard() {
               }
               {metric.suffix}
             </div>
-            <div className="text-xs text-slate-400 leading-tight">
+            <div className="text-xs text-slate-500 dark:text-slate-400 leading-tight">
               {metric.label}
             </div>
             {'subtext' in metric && (
-              <div className="text-[10px] text-slate-500 mt-0.5">
+              <div className="text-[10px] text-slate-400 dark:text-slate-500 mt-0.5">
                 {metric.subtext}
               </div>
             )}
@@ -69,10 +69,10 @@ export default function MetricsCard() {
         ))}
       </div>
 
-      <div className="pt-3 mt-3 border-t border-slate-700/30">
+      <div className="pt-3 mt-3 border-t border-slate-200 dark:border-slate-700/30">
         <div className="text-center">
           <span className="text-xs text-slate-500">Currently leading: </span>
-          <span className="text-xs text-emerald-400 font-medium">Team of 10 engineers</span>
+          <span className="text-xs text-emerald-600 dark:text-emerald-400 font-medium">Team of 10 engineers</span>
         </div>
       </div>
     </div>

@@ -32,9 +32,9 @@ export default function TestimonialsCard() {
       <div className="mb-4">
         <div className="flex items-center gap-2 mb-2">
           <span className="text-lg">🎓</span>
-          <h3 className="font-semibold text-white">Certifications</h3>
+          <h3 className="font-semibold text-slate-900 dark:text-white">Certifications</h3>
         </div>
-        <p className="text-xs text-slate-400">Professional credentials</p>
+        <p className="text-xs text-slate-500 dark:text-slate-400">Professional credentials</p>
       </div>
 
       <div className="flex-1 space-y-3">
@@ -43,19 +43,19 @@ export default function TestimonialsCard() {
             <div className="flex items-start gap-3">
               <span className="text-xl">{cert.icon}</span>
               <div className="flex-1 min-w-0">
-                <div className="text-sm font-medium text-white truncate">{cert.name}</div>
-                <div className="text-xs text-slate-400">{cert.issuer}</div>
+                <div className="text-sm font-medium text-slate-900 dark:text-white truncate">{cert.name}</div>
+                <div className="text-xs text-slate-500 dark:text-slate-400">{cert.issuer}</div>
               </div>
               <div className="flex items-center gap-2">
                 <span className={`text-xs px-2 py-0.5 rounded ${
                   cert.status === 'Certified'
-                    ? 'bg-emerald-900/30 text-emerald-400 border border-emerald-700/30'
-                    : 'bg-yellow-900/30 text-yellow-400 border border-yellow-700/30'
+                    ? 'bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 dark:text-emerald-400 border border-emerald-200 dark:border-emerald-700/30'
+                    : 'bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400 border border-yellow-200 dark:border-yellow-700/30'
                 }`}>
                   {cert.status}
                 </span>
                 {cert.url && (
-                  <svg className="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-4 h-4 text-slate-400 dark:text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                   </svg>
                 )}
@@ -65,8 +65,8 @@ export default function TestimonialsCard() {
 
           const className = `w-full text-left p-3 rounded-lg transition-all duration-200 ${
             activeCert === index
-              ? 'bg-purple-600/20 border border-purple-400/40'
-              : 'bg-slate-800/30 border border-slate-700/30 hover:bg-slate-700/30'
+              ? 'bg-purple-100 dark:bg-purple-600/20 border border-purple-300 dark:border-purple-400/40'
+              : 'bg-slate-50 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-700/30 hover:bg-slate-100 dark:hover:bg-slate-700/30'
           }`;
 
           return cert.url ? (
@@ -92,9 +92,9 @@ export default function TestimonialsCard() {
         })}
       </div>
 
-      <div className="pt-3 mt-auto border-t border-slate-700/30">
-        <div className="text-xs text-slate-400 text-center">
-          Compliance expertise: <span className="text-emerald-400">HIPAA, SOC2, GDPR, ISO 27001</span>
+      <div className="pt-3 mt-auto border-t border-slate-200 dark:border-slate-700/30">
+        <div className="text-xs text-slate-500 dark:text-slate-400 text-center">
+          Compliance expertise: <span className="text-emerald-600 dark:text-emerald-400">HIPAA, SOC2, GDPR, ISO 27001</span>
         </div>
       </div>
     </div>
