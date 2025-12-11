@@ -3,7 +3,16 @@ import { useState, useEffect } from 'react';
 const START_YEAR = 2018;
 const yearsExperience = new Date().getFullYear() - START_YEAR;
 
-const metrics = [
+interface Metric {
+  label: string;
+  value: number;
+  prefix?: string;
+  suffix?: string;
+  color: string;
+  subtext?: string;
+}
+
+const metrics: Metric[] = [
   { label: 'Client Savings', value: 1, prefix: '$', suffix: 'M+', color: 'text-emerald-400' },
   { label: 'AWS Costs Cut', value: 33, suffix: '%', color: 'text-blue-400' },
   { label: 'Products Shipped', value: 15, suffix: '+', color: 'text-purple-400' },

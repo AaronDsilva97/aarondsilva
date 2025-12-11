@@ -58,6 +58,16 @@
       <slot name="investment" />
     </div>
 
+    <!-- Certifications -->
+    <div class="bento-item certifications">
+      <slot name="certifications" />
+    </div>
+
+    <!-- Itihaas Heritage Platform -->
+    <div class="bento-item itihaas">
+      <slot name="itihaas" />
+    </div>
+
     <!-- Testimonials -->
     <div class="bento-item testimonials">
       <slot name="testimonials" />
@@ -75,7 +85,8 @@
       "hero hero availability command-hint"
       "metrics investment investment github-stats"
       "current-project current-project now-playing now-playing"
-      "testimonials testimonials recent-projects recent-projects"
+      "testimonials testimonials certifications certifications"
+      "testimonials testimonials itihaas itihaas"
       "recent-posts recent-posts tech-stack tech-stack";
   }
 
@@ -206,6 +217,18 @@
     min-height: 200px;
   }
 
+  .certifications {
+    grid-area: certifications;
+    min-height: 140px;
+  }
+
+  .itihaas {
+    grid-area: itihaas;
+    min-height: 140px;
+    padding: 0;
+    overflow: hidden;
+  }
+
   .testimonials {
     grid-area: testimonials;
     min-height: 250px;
@@ -219,9 +242,10 @@
       grid-template-areas:
         "hero hero availability metrics"
         "current-project current-project github-stats command-hint"
-        "recent-projects recent-projects investment investment"
-        "testimonials testimonials now-playing now-playing"
-        "recent-posts recent-posts tech-stack tech-stack";
+        "investment investment certifications certifications"
+        "testimonials testimonials itihaas itihaas"
+        "recent-posts recent-posts now-playing now-playing"
+        "tech-stack tech-stack tech-stack tech-stack";
     }
   }
 
@@ -236,8 +260,9 @@
         "current-project"
         "github-stats"
         "investment"
+        "certifications"
+        "itihaas"
         "testimonials"
-        "recent-projects"
         "recent-posts"
         "tech-stack"
         "now-playing";

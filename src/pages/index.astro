@@ -13,7 +13,8 @@ import RecentPosts from '../components/RecentPosts.astro';
 import CommandPalette from '../components/CommandPalette.tsx';
 import MetricsCard from '../components/MetricsCard.tsx';
 import Specializations from '../components/Specializations.tsx';
-import TestimonialsCard from '../components/TestimonialsCard.tsx';
+import Itihaas from '../components/Itihaas.tsx';
+import CertificationsCard from '../components/CertificationsCard.tsx';
 import InteractiveBackground from '../components/InteractiveBackground.tsx';
 ---
 
@@ -25,12 +26,13 @@ import InteractiveBackground from '../components/InteractiveBackground.tsx';
     <CommandHint slot="command-hint" />
     <CurrentProject slot="current-project" client:load />
     <ConnectCard slot="github-stats" />
-    <TestimonialsCard slot="recent-projects" client:load />
+    <CertificationsCard slot="certifications" client:load />
     <TechStack slot="tech-stack" />
     <NowPlaying slot="now-playing" client:load />
     <RecentPosts slot="recent-posts" />
     <MetricsCard slot="metrics" client:load />
     <Specializations slot="investment" client:load />
+    <Itihaas slot="itihaas" client:load />
     <RecentProjects slot="testimonials" data-section="projects" />
   </BentoGrid>
   <CommandPalette client:load />
