@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="CV | Aaron Dsilva" description="Senior Full Stack Developer with 7+ years building secure healthcare systems. HIPAA, SOC2, ISO 27001 compliance expertise.">
+<Layout title="CV | Aaron Dsilva" description="Tech Lead building mission-critical healthcare systems. 10+ FDA/HIPAA apps, 100+ hospitals, 99.9% uptime. Full-stack engineer specializing in AI/RAG pipelines and security architecture.">
   <div class="container mx-auto px-4 py-12 max-w-4xl">
     <!-- Header -->
     <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
@@ -10,7 +10,8 @@ import Layout from '../layouts/Layout.astro';
         <img src="/profile.png" alt="Aaron Dsilva" class="cv-photo w-20 h-20 rounded-full object-cover border-2 border-purple-500/50" />
         <div>
           <h1 class="text-4xl font-bold text-slate-800 dark:text-slate-100">Aaron Dsilva</h1>
-          <p class="text-lg text-purple-600 dark:text-purple-400 mt-1">Senior Full Stack Developer | Mobile (React Native, Flutter) & Web (Rails, Laravel, Node) | Healthcare Tech, AI & Security | AWS + HIPAA</p>
+          <p class="text-lg text-purple-600 dark:text-purple-400 mt-1">Tech Lead | Healthcare Systems | AI & Security | Full-Stack Engineer</p>
+          <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">React Native, Flutter, Node, Rails, Laravel | RAG Pipelines (Neo4j, Pinecone, Claude API) | AWS | FDA/HIPAA Compliance</p>
         </div>
       </div>
       <button onclick="window.print()" class="print:hidden print-btn flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors shrink-0" style="display: var(--print-display, flex);">
@@ -56,13 +57,13 @@ import Layout from '../layouts/Layout.astro';
     <!-- Summary -->
     <section class="mb-10">
       <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-        I'm a senior full-stack developer who builds secure healthcare systems that actually work.
+        I architect and build mission-critical healthcare systems end-to-end. From React Native/Flutter apps to Node/Rails/Laravel backends with RAG pipelines—I code the full stack. 10+ FDA/HIPAA apps deployed to 100+ hospitals with 99.9% uptime.
       </p>
       <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-        Over the past 7 years, I've shipped production systems for healthcare and regulated industries across the US, Europe, UAE, and India. I write code, architect systems, and lead teams - usually all at once.
+        I implement security fixes from pen testing (not just reports—actual code) and build RAG systems (Neo4j, Pinecone, Claude API) into production healthcare platforms. I've worked with King's College London, Johnson & Johnson, and European hospital networks building systems that work reliably in harsh conditions.
       </p>
       <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed mb-4">
-        I specialize in the messy intersection of healthcare tech, AI integration, and security compliance. The kind of projects where you need someone who understands both the technical implementation AND the regulatory requirements. HIPAA, SOC2, GDPR, ISO 27001 - I've built systems that pass audits.
+        Over 7 years, I've shipped production systems across the US, Europe, and India. I write code, architect infrastructure, lead teams, and fix pen test findings in production. HIPAA, SOC2, GDPR, FDA, ISO 27001—I build systems that pass audits.
       </p>
       <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
         Currently pursuing AWS Solutions Architect certification. PSM I certified. Based in Pune, working with clients globally.
@@ -78,19 +79,27 @@ import Layout from '../layouts/Layout.astro';
       <ul class="achievements-list text-slate-600 dark:text-slate-300 space-y-2">
         <li class="flex items-start gap-2">
           <span class="text-purple-500 dark:text-purple-400 shrink-0">•</span>
+          <span><strong class="text-purple-600 dark:text-purple-400">10+</strong> Healthcare apps (FDA, HIPAA, GDPR compliant) serving 100+ hospitals with 99.9% uptime</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-purple-500 dark:text-purple-400 shrink-0">•</span>
+          <span><strong class="text-purple-600 dark:text-purple-400">4+</strong> Production RAG systems built with Neo4j, Pinecone, Claude API for healthcare AI</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-purple-500 dark:text-purple-400 shrink-0">•</span>
           <span><strong class="text-purple-600 dark:text-purple-400">$1M+</strong> AWS cost savings achieved through architecture optimization (33% reduction)</span>
         </li>
         <li class="flex items-start gap-2">
           <span class="text-purple-500 dark:text-purple-400 shrink-0">•</span>
-          <span><strong class="text-purple-600 dark:text-purple-400">100+</strong> Hospitals and clinics served with HIPAA-compliant healthcare platform</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-purple-500 dark:text-purple-400 shrink-0">•</span>
-          <span><strong class="text-purple-600 dark:text-purple-400">5</strong> Products shipped at The Lean Product Studio across healthcare, edutech, and e-commerce</span>
+          <span><strong class="text-purple-600 dark:text-purple-400">100%</strong> Uptime rebuilt for marketplace platform (from constant crashes to zero downtime)</span>
         </li>
         <li class="flex items-start gap-2">
           <span class="text-purple-500 dark:text-purple-400 shrink-0">•</span>
           <span><strong class="text-purple-600 dark:text-purple-400">10</strong> Engineers led in distributed team across multiple time zones</span>
+        </li>
+        <li class="flex items-start gap-2">
+          <span class="text-purple-500 dark:text-purple-400 shrink-0">•</span>
+          <span><strong class="text-purple-600 dark:text-purple-400">6</strong> Products shipped at The Lean Product Studio (healthcare, security, marketplace, research tools)</span>
         </li>
       </ul>
     </section>
@@ -115,28 +124,31 @@ import Layout from '../layouts/Layout.astro';
             <span class="text-sm text-slate-500 font-mono">Jan 2024 - Present</span>
           </div>
           <p class="text-slate-500 dark:text-slate-400 text-sm mb-3">
-            I build products from scratch and lead a distributed team of 10 engineers. Hands-on development across mobile, web, and cloud infrastructure.
+            I build products from scratch and lead a distributed team of 10 engineers. Hands-on development across mobile, web, cloud infrastructure, and AI/RAG systems.
           </p>
           <ul class="text-slate-500 dark:text-slate-400 text-sm space-y-1 list-disc list-inside mb-3">
-            <li>Shipped 5 products so far</li>
-            <li>Rebuilt a breast cancer screening app from ground up using Flutter for UK market—GDPR-compliant, multi-language support</li>
-            <li>Built security management application in Laravel for ISO 27001 compliance with custom workflows and audit systems</li>
-            <li>Developed student management platform for edutech</li>
-            <li>Created reselling marketplace with Node.js, Flutter, and AWS for multi-vendor operations</li>
-            <li>Implemented AI features using RAG pipelines for document processing and LLM APIs</li>
-            <li>Reduced AWS costs by 33% for one client ($1M annual savings) through architecture optimization</li>
+            <li>Built AI Ambient Listening RAG System: AWS Comprehend Medical + Claude API + Neo4j knowledge graphs with HIPAA-compliant PHI anonymization</li>
+            <li>Built MCP server for healthcare research enabling no-code data access and real-time analytics for researchers across US/EU</li>
+            <li>Rebuilt Women's Health Platform V2 from scratch in Flutter (UK/Africa): cycle tracking, provider connections, multi-language support, GDPR compliance</li>
+            <li>Built Security Testing Platform connecting pen testers to developers with NestJS backend—centralized workflow, regression tracking, ISO 27001 compliance</li>
+            <li>Rebuilt Multi-Vendor Marketplace V2 from scratch (Flutter + Node + MongoDB): fixed constant crashes to 100% uptime, rebuilt broken UI/UX, built admin panels</li>
+            <li>Reduced AWS costs by 33% for healthcare client ($1M annual savings) through architecture optimization</li>
           </ul>
           <div class="flex flex-wrap gap-2 text-xs">
             <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">Flutter</span>
-            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">React Native</span>
             <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">Node.js</span>
-            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">Laravel</span>
+            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">NestJS</span>
             <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">Python</span>
+            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">AWS Comprehend</span>
+            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">Claude API</span>
+            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">Neo4j</span>
+            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">Pinecone</span>
+            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">MCP</span>
+            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">MongoDB</span>
+            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">PostgreSQL</span>
             <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">AWS</span>
-            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">RAG</span>
-            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">LLMs</span>
           </div>
-          <p class="text-slate-500 text-xs mt-2">Compliance: GDPR, ISO 27001, SOC2 | Markets: US, UK, India</p>
+          <p class="text-slate-500 text-xs mt-2">Compliance: HIPAA, GDPR, ISO 27001 | Markets: US, UK, Africa, India, EU</p>
         </div>
 
         <!-- OpsFuse Technologies -->
@@ -151,22 +163,23 @@ import Layout from '../layouts/Layout.astro';
             <span class="text-sm text-slate-500 font-mono">Feb 2023 - Present</span>
           </div>
           <p class="text-slate-500 dark:text-slate-400 text-sm mb-3">
-            Building a full-stack healthcare application (mobile, backend, cloud) serving 100+ hospitals and clinics. React Native frontend, Flask backend, AWS infrastructure—fully HIPAA, SOC2, and ISO 27001 compliant.
+            Full-stack FDA/HIPAA healthcare platform serving 100+ hospitals. Led pen testing remediation, implemented all security fixes in production code. Built reliably scaling AWS infrastructure with PostgreSQL RLS for secure multi-org data isolation. Achieved 100% uptime.
           </p>
           <ul class="text-slate-500 dark:text-slate-400 text-sm space-y-1 list-disc list-inside mb-3">
-            <li>Architected for scale from day one—started with handful of clinics, now handles 100+ facilities</li>
-            <li>Compliance built into every layer: encryption, access controls, audit logging, secure data handling</li>
-            <li>Processes patient data, clinic operations, appointments, and medical workflows with zero security incidents</li>
-            <li>Manage AWS infrastructure including security configs, monitoring, cost optimization, and disaster recovery</li>
+            <li>Led pen testing remediation—implemented all security fixes in React Native and Flask codebase, saved months of effort</li>
+            <li>Built AWS infrastructure with PostgreSQL Row-Level Security (RLS) for secure organization data isolation</li>
+            <li>Achieved and maintained 100% uptime serving 100+ hospitals across US and India</li>
+            <li>Architected for scale—handles patient data, clinic operations, appointments, medical workflows with zero security incidents</li>
+            <li>Compliance built into every layer: encryption, access controls, audit logging, disaster recovery</li>
           </ul>
           <div class="flex flex-wrap gap-2 text-xs">
             <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">React Native</span>
             <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">Flask</span>
+            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">PostgreSQL (RLS)</span>
             <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">AWS</span>
-            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">PostgreSQL</span>
-            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">Healthcare APIs</span>
+            <span class="px-2 py-1 bg-slate-200/50 dark:bg-slate-800/50 text-slate-600 dark:text-slate-400 rounded">Pen Testing</span>
           </div>
-          <p class="text-slate-500 text-xs mt-2">Compliance: HIPAA, SOC2, ISO 27001 | Scale: 100+ hospitals | Markets: US, India</p>
+          <p class="text-slate-500 text-xs mt-2">Compliance: FDA, HIPAA, SOC2, ISO 27001 | Scale: 100+ hospitals, 100% uptime | Markets: US, India</p>
         </div>
 
         <!-- Avegen -->
@@ -281,15 +294,19 @@ import Layout from '../layouts/Layout.astro';
         </div>
         <div>
           <h3 class="text-slate-500 dark:text-slate-400 uppercase text-xs tracking-wider mb-2">Databases</h3>
-          <p class="text-slate-700 dark:text-slate-300">PostgreSQL, MySQL, MongoDB, DynamoDB, Redis</p>
+          <p class="text-slate-700 dark:text-slate-300">PostgreSQL (RLS), MongoDB, Neo4j (graphs), Pinecone (vector), Redis, MySQL</p>
         </div>
         <div>
-          <h3 class="text-slate-500 dark:text-slate-400 uppercase text-xs tracking-wider mb-2">Compliance</h3>
-          <p class="text-slate-700 dark:text-slate-300">HIPAA, SOC2, ISO 27001, GDPR</p>
+          <h3 class="text-slate-500 dark:text-slate-400 uppercase text-xs tracking-wider mb-2">AI & RAG</h3>
+          <p class="text-slate-700 dark:text-slate-300">Neo4j, Pinecone, LangChain, Claude API, Gemini, AWS Comprehend Medical, MCP, Embeddings</p>
         </div>
         <div>
-          <h3 class="text-slate-500 dark:text-slate-400 uppercase text-xs tracking-wider mb-2">AI/ML</h3>
-          <p class="text-slate-700 dark:text-slate-300">RAG pipelines, LLM integration</p>
+          <h3 class="text-slate-500 dark:text-slate-400 uppercase text-xs tracking-wider mb-2">Compliance & Security</h3>
+          <p class="text-slate-700 dark:text-slate-300">FDA, HIPAA, SOC2, ISO 27001, GDPR, Pen Testing, Security Architecture</p>
+        </div>
+        <div>
+          <h3 class="text-slate-500 dark:text-slate-400 uppercase text-xs tracking-wider mb-2">Specialty</h3>
+          <p class="text-slate-700 dark:text-slate-300">Healthcare Systems, Offline-First Apps, Disaster Recovery, Multi-Tenant Architecture</p>
         </div>
       </div>
     </section>

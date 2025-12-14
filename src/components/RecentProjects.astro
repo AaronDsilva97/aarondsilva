@@ -1,7 +1,8 @@
 ---
 interface Project {
   name: string;
-  description: string;
+  subtitle: string;
+  highlights: string[];
   tech: string[];
   status: 'live' | 'archived' | 'wip';
   compliance?: string[];
@@ -10,35 +11,92 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: 'Healthcare Platform',
-    description: 'Full-stack healthcare system serving 100+ hospitals with patient data, appointments & medical workflows',
+    name: 'FDA Healthcare Platform',
+    subtitle: '100% uptime serving 100+ hospitals—architected secure, scalable infrastructure',
+    highlights: [
+      'Led pen testing remediation and implemented all security fixes—saved months of effort',
+      'Built AWS infrastructure with PostgreSQL RLS for secure multi-org data isolation',
+      'Achieved 100% uptime across 100+ hospitals in US and India',
+      'FDA, HIPAA, SOC2, ISO 27001 compliant system architecture'
+    ],
     tech: ['React Native', 'Flask', 'AWS', 'PostgreSQL'],
     status: 'live',
-    compliance: ['HIPAA', 'SOC2', 'ISO 27001'],
+    compliance: ['FDA', 'HIPAA', 'SOC2', 'ISO 27001'],
     market: 'US, India'
   },
   {
-    name: 'Breast Cancer Screening App',
-    description: 'Mobile app rebuilt from ground up with multi-language support, significantly faster than v1',
+    name: 'AI Ambient Listening RAG System',
+    subtitle: 'Production RAG pipeline with HIPAA-compliant PHI anonymization',
+    highlights: [
+      'AWS Comprehend Medical for medical entity extraction from conversations',
+      'Claude API for intelligent clinical responses',
+      'Neo4j knowledge graphs for medical relationship mapping',
+      'Embeddings pipeline on medical record library',
+      'HIPAA-compliant PHI data anonymization and secure storage'
+    ],
+    tech: ['AWS Comprehend', 'Claude API', 'Neo4j', 'Python', 'React Native'],
+    status: 'live',
+    compliance: ['HIPAA'],
+    market: 'US'
+  },
+  {
+    name: 'Women\'s Health Platform V2',
+    subtitle: 'Ground-up rebuild in Flutter—UK/Africa deployment with multi-language support',
+    highlights: [
+      'Rebuilt entire mobile app from scratch using Flutter',
+      'Cycle tracking, self-testing workflows, healthcare provider connections',
+      'Multi-language support for UK and African markets',
+      'Significantly faster performance than V1',
+      'GDPR-compliant architecture'
+    ],
     tech: ['Flutter', 'Dart', 'AWS'],
     status: 'live',
     compliance: ['GDPR'],
-    market: 'UK'
+    market: 'UK, Africa'
   },
   {
-    name: 'Security Management System',
-    description: 'Enterprise security application with custom workflows and audit systems',
-    tech: ['Laravel', 'PostgreSQL', 'AWS'],
+    name: 'Security Testing Platform',
+    subtitle: 'Connects pen testers to developers—centralized workflow for security fixes',
+    highlights: [
+      'Built web application connecting penetration testers to development teams',
+      'NestJS backend on AWS for secure test communication',
+      'Regression tracking to prevent security issues from reappearing',
+      'Centralized reporting dashboard for compliance audits',
+      'Streamlined security fix workflows across teams'
+    ],
+    tech: ['NestJS', 'PostgreSQL', 'AWS', 'React'],
     status: 'live',
     compliance: ['ISO 27001'],
     market: 'Global'
   },
   {
-    name: 'Multi-Vendor Marketplace',
-    description: 'Reselling platform with multi-vendor operations and real-time inventory management',
-    tech: ['Node.js', 'Flutter', 'AWS'],
+    name: 'Multi-Vendor Marketplace V2',
+    subtitle: 'From constant downtime to 100% uptime—complete platform rebuild',
+    highlights: [
+      'Rebuilt entire platform from scratch: Flutter + Node.js + MongoDB',
+      'Fixed constant server crashes—now 100% uptime',
+      'Rebuilt broken UI/UX flows for ads, auctions, carpool, chat',
+      'Reduced bugs significantly, optimized performance',
+      'Built comprehensive admin panels for marketplace management'
+    ],
+    tech: ['Flutter', 'Node.js', 'MongoDB', 'AWS'],
     status: 'live',
     market: 'India'
+  },
+  {
+    name: 'MCP Server for Healthcare Research',
+    subtitle: 'No-code data access for researchers—real-time analytics without custom dev',
+    highlights: [
+      'Built Model Context Protocol server for healthcare datasets',
+      'Researchers access data without writing code or custom solutions',
+      'Real-time analytics and visualization capabilities',
+      'Secure query interface for HIPAA-compliant databases',
+      'Deployed across US and EU healthcare research institutions'
+    ],
+    tech: ['Python', 'MCP', 'PostgreSQL', 'AWS'],
+    status: 'live',
+    compliance: ['HIPAA'],
+    market: 'US, EU'
   }
 ];
 
@@ -61,45 +119,43 @@ const { 'data-section': dataSection } = Astro.props;
     {projects.map((project) => (
       <div class="group interactive-card glass-effect rounded-lg p-3 border border-slate-200 dark:border-slate-700/30">
         <div class="space-y-3">
-          <div class="flex items-start justify-between">
-            <div class="flex-1">
-              <div class="flex items-center gap-2 mb-1">
-                <h4 class="font-mono text-sm text-slate-700 dark:text-slate-200 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
+          <div class="flex-1">
+            <div class="flex items-start justify-between mb-2">
+              <div class="flex items-center gap-2 flex-1">
+                <h4 class="font-semibold text-base text-slate-800 dark:text-slate-100 group-hover:text-purple-600 dark:group-hover:text-purple-400 transition-colors">
                   {project.name}
                 </h4>
                 {project.market && (
-                  <span class="text-xs text-slate-500">
+                  <span class="text-xs text-slate-500 dark:text-slate-400">
                     {project.market}
                   </span>
                 )}
               </div>
-              <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
-                {project.description}
-              </p>
-            </div>
-          </div>
-
-          <div class="flex items-center justify-between">
-            <div class="flex flex-wrap gap-1">
-              {project.tech.slice(0, 3).map((tech) => (
-                <span
-                  class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800/50 text-slate-600 dark:text-slate-300 text-xs rounded-md border border-slate-200 dark:border-slate-600/30 font-mono"
-                >
-                  {tech}
-                </span>
-              ))}
-              {project.tech.length > 3 && (
-                <span class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800/50 text-slate-500 dark:text-slate-400 text-xs rounded-md border border-slate-200 dark:border-slate-600/30">
-                  +{project.tech.length - 3}
-                </span>
-              )}
-            </div>
-
-            <div class="flex items-center gap-2">
-              <span class={`text-xs font-medium ${statusConfig[project.status].color}`}>
+              <span class={`text-xs font-medium ${statusConfig[project.status].color} shrink-0 ml-2`}>
                 {statusConfig[project.status].label}
               </span>
             </div>
+            <p class="text-sm text-purple-600 dark:text-purple-400 mb-3 font-medium">
+              {project.subtitle}
+            </p>
+            <ul class="space-y-1.5 mb-3">
+              {project.highlights.map((highlight) => (
+                <li class="flex items-start gap-2 text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+                  <span class="text-purple-500 dark:text-purple-400 mt-0.5 shrink-0">•</span>
+                  <span>{highlight}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="flex flex-wrap gap-1">
+            {project.tech.map((tech) => (
+              <span
+                class="px-2 py-0.5 bg-slate-100 dark:bg-slate-800/50 text-slate-600 dark:text-slate-300 text-xs rounded-md border border-slate-200 dark:border-slate-600/30 font-mono"
+              >
+                {tech}
+              </span>
+            ))}
           </div>
 
           {project.compliance && project.compliance.length > 0 && (

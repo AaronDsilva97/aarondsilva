@@ -13,10 +13,10 @@ interface Metric {
 }
 
 const metrics: Metric[] = [
-  { label: 'Client Savings', value: 1, prefix: '$', suffix: 'M+', color: 'text-emerald-400' },
-  { label: 'AWS Costs Cut', value: 33, suffix: '%', color: 'text-blue-400' },
-  { label: 'Products Shipped', value: 15, suffix: '+', color: 'text-purple-400' },
-  { label: 'Years Experience', value: yearsExperience, suffix: '+', color: 'text-pink-400' }
+  { label: 'Healthcare Apps', value: 10, suffix: '+', color: 'text-emerald-400', subtext: 'FDA/HIPAA' },
+  { label: 'Hospitals Deployed', value: 100, suffix: '+', color: 'text-blue-400', subtext: 'US, EU, India' },
+  { label: 'RAG Systems Built', value: 4, suffix: '+', color: 'text-purple-400', subtext: 'AI-ready' },
+  { label: 'System Uptime', value: 99.9, suffix: '%', color: 'text-pink-400', subtext: 'Production SLA' }
 ];
 
 export default function MetricsCard() {
@@ -60,8 +60,12 @@ export default function MetricsCard() {
           <div key={metric.label} className="text-center">
             <div className={`text-2xl font-bold ${metric.color} mb-1`}>
               {'prefix' in metric && metric.prefix}
-              {metric.value < 10
+              {metric.value >= 10 && metric.value < 100
                 ? Math.round(animatedValues[index])
+                : metric.value >= 100
+                ? Math.round(animatedValues[index])
+                : (animatedValues[index] % 1 !== 0 && metric.value > 10)
+                ? animatedValues[index].toFixed(1)
                 : Math.round(animatedValues[index])
               }
               {metric.suffix}

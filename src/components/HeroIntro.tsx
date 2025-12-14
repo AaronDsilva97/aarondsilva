@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
 const obsessions = [
-  "healthcare tech",
-  "AI & RAG pipelines",
-  "AWS infrastructure",
-  "security compliance",
-  "full-stack development"
+  "healthcare systems",
+  "RAG pipelines & AI",
+  "security architecture",
+  "full-stack engineering",
+  "AWS infrastructure"
 ];
 
 export default function HeroIntro() {
@@ -68,18 +68,18 @@ export default function HeroIntro() {
                 Aaron Dsilva
               </h1>
               <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
-                Senior Full Stack Developer | Mobile & Web | AWS
+                Tech Lead | Healthcare Systems | AI & Security | Full-Stack Engineer
               </p>
             </div>
           </div>
 
           <div className="space-y-3">
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              I build secure healthcare systems that actually work. 7+ years shipping mobile apps (React Native, Flutter) & backend systems (Node, Laravel, Rails) on AWS.
+              I architect and build mission-critical healthcare systems end-to-end. From React Native/Flutter apps to Node/Rails/Laravel backends with RAG pipelines—I code the full stack. 10+ FDA/HIPAA apps deployed to 100+ hospitals with 99.9% uptime. I implement security fixes from pen testing (not just reports—actual code) and build RAG systems (Neo4j, Pinecone, Claude API) into production healthcare platforms.
             </p>
 
-            <div className="flex items-center gap-2 text-purple-400">
-              <span>Currently focused on</span>
+            <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-purple-400">
+              <span className="text-sm sm:text-base">Currently focused on</span>
               <span className="font-mono font-medium min-w-[160px] bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
                 {displayText}
                 <span className="animate-pulse text-purple-400">|</span>

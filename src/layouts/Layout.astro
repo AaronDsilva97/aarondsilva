@@ -196,7 +196,7 @@ const socialImage = new URL(image, Astro.site);
 		<div id="command-palette-root"></div>
 
 		<!-- Theme Toggle -->
-		<div class="fixed bottom-3 left-3 z-50 sm:top-4 sm:right-4 sm:bottom-auto sm:left-auto">
+		<div id="theme-toggle-container" class="fixed top-3 right-3 z-50 transition-opacity duration-500">
 			<ThemeToggle client:load />
 		</div>
 
@@ -224,6 +224,58 @@ const socialImage = new URL(image, Astro.site);
 						kbd.textContent = 'Ctrl+K';
 					}
 				}
+			});
+		</script>
+
+		<!-- Auto-hide controls after inactivity -->
+		<script>
+			let hideTimeout;
+			const HIDE_DELAY = 4000; // 4 seconds
+
+			function showControls() {
+				const themeToggle = document.getElementById('theme-toggle-container');
+				const searchButton = document.getElementById('search-button');
+
+				if (themeToggle) {
+					themeToggle.style.opacity = '1';
+					themeToggle.style.pointerEvents = 'auto';
+				}
+				if (searchButton) {
+					searchButton.style.opacity = '1';
+					searchButton.style.pointerEvents = 'auto';
+				}
+
+				// Clear existing timeout
+				clearTimeout(hideTimeout);
+
+				// Set new timeout to hide
+				hideTimeout = setTimeout(() => {
+					if (themeToggle) {
+						themeToggle.style.opacity = '0';
+						themeToggle.style.pointerEvents = 'none';
+					}
+					if (searchButton) {
+						searchButton.style.opacity = '0';
+						searchButton.style.pointerEvents = 'none';
+					}
+				}, HIDE_DELAY);
+			}
+
+			document.addEventListener('DOMContentLoaded', function() {
+				// Show controls initially
+				showControls();
+
+				// Show on mouse movement (desktop)
+				document.addEventListener('mousemove', showControls);
+
+				// Show on scroll
+				document.addEventListener('scroll', showControls);
+
+				// Show on touch (mobile)
+				document.addEventListener('touchstart', showControls);
+
+				// Show on keyboard activity
+				document.addEventListener('keydown', showControls);
 			});
 		</script>
 	</body>

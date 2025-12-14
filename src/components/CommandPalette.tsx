@@ -213,11 +213,12 @@ export default function CommandPalette() {
       {/* Floating Action Button for Mobile */}
       {isMobile && (
         <button
+          id="search-button"
           onClick={openCommandPalette}
-          className="fixed bottom-20 right-4 z-40 w-14 h-14 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full shadow-lg shadow-purple-500/25 flex items-center justify-center transition-all duration-200 hover:scale-105 active:scale-95"
+          className="fixed top-3 right-16 z-40 w-10 h-10 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white rounded-full shadow-lg shadow-purple-500/25 flex items-center justify-center transition-all duration-500 hover:scale-105 active:scale-95"
           aria-label="Open command palette"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
           </svg>
         </button>

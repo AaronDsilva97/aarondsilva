@@ -1,8 +1,8 @@
-# Aaron Dsilva - Senior Full Stack Developer
+# Aaron Dsilva - Tech Lead | Healthcare Systems | AI & Security
 
-> Healthcare tech, AI integration, and security compliance. I build systems that serve 100+ hospitals with full HIPAA, SOC2, and ISO 27001 compliance.
+> I architect and build mission-critical healthcare systems end-to-end. 10+ FDA/HIPAA apps deployed to 100+ hospitals with 99.9% uptime. I implement security fixes from pen testing (not just reports—actual code) and build RAG systems (Neo4j, Pinecone, Claude API) into production healthcare platforms.
 
-I'm a senior full-stack developer with 7 years of experience building secure healthcare systems across the US, Europe, UAE, and India. I specialize in the intersection of healthcare tech, AI integration, and security compliance.
+I'm a tech lead and full-stack engineer specializing in healthcare systems, AI/RAG pipelines, and security architecture. From React Native/Flutter apps to Node/Rails/Laravel backends with RAG capabilities—I code the full stack. I've worked with King's College London, Johnson & Johnson, and European hospital networks building HIPAA, GDPR, and FDA-compliant systems that work reliably in harsh conditions.
 
 ## About
 
@@ -43,16 +43,83 @@ Articles on healthcare tech, AWS, AI/ML, and compliance from real production exp
 
 ## Expertise
 
-- **Languages**: Python, JavaScript, TypeScript, Dart
-- **Frameworks**: React Native, Flutter, Node.js, Flask, Laravel, Rails
-- **Cloud**: AWS (Lambda, API Gateway, DynamoDB, Aurora, S3, CloudFront)
-- **Compliance**: HIPAA, SOC2, ISO 27001, GDPR
-- **AI/ML**: RAG pipelines, LLM integration, MCP servers
-- **Healthcare**: HL7 FHIR, EHR integrations, medical imaging
+### Healthcare Systems (10+ Apps)
+- **Deployment**: 100+ hospitals across US, EU, India
+- **Compliance**: FDA, HIPAA, GDPR, SOC2, ISO 27001 certified systems
+- **Reliability**: 99.9% uptime, offline-first architecture, disaster recovery
+- **Notable Clients**: King's College London, Johnson & Johnson, European Hospital Network
+- **Specialties**: HL7 FHIR, EHR integrations, clinical decision support, medical imaging
 
-## Optional
+### AI & RAG Engineering (4+ Production Systems)
+- **RAG Pipelines**: Pinecone (vector search), Neo4j (knowledge graphs), LangChain (orchestration)
+- **LLM Integration**: Claude API, Gemini - custom healthcare models with HIPAA compliance
+- **Embeddings**: HIPAA-compliant embedding generation, secure vector storage, semantic search
+- **Application Layer AI**: Making healthcare apps AI-ready while maintaining security & compliance
 
-Additional resources and links.
+### Security Architecture
+- **Pen Test Implementation**: Fix vulnerabilities in production code—encrypted data pipelines, secure auth flows, HIPAA-compliant APIs (not just audit reports)
+- **Compliance Engineering**: Implement FDA, HIPAA, GDPR, SOC2, ISO 27001 standards in React Native, Node, Rails, Laravel production systems
+- **Secure AI Pipelines**: Build HIPAA-compliant RAG systems—encrypted embeddings, secure vector storage in Pinecone, locked-down Neo4j graphs
+- **Production Hardening**: Code disaster recovery systems, implement encrypted backups, build secure authentication flows in live healthcare apps
+
+### Full-Stack Engineering
+- **Mobile**: React Native, Flutter - offline-first, real-time sync, harsh conditions
+- **Backend**: Node.js, NestJS, Laravel, Rails - API design, multi-tenancy, scalability
+- **Databases**: PostgreSQL, MongoDB, Neo4j (graph), Pinecone (vector)
+- **Cloud & Infrastructure**: AWS (Lambda, API Gateway, DynamoDB, Aurora, S3, CloudFront, EC2, RDS)
+- **Languages**: Python, JavaScript, TypeScript, Dart, PHP, Ruby
+
+## Key Projects
+
+### FDA Healthcare Platform (100+ Hospitals)
+Led pen testing remediation, app upgrades, and security fixes—saved months of effort. Built reliably scaling AWS infrastructure with PostgreSQL RLS for secure org data isolation. Achieved 100% uptime serving 100+ hospitals.
+
+- **Tech**: React Native, Flask, AWS, PostgreSQL (RLS)
+- **Compliance**: FDA, HIPAA, SOC2, ISO 27001
+- **Market**: US, India
+- **Impact**: 100% uptime, saved months of security work, PostgreSQL row-level security for multi-org isolation
+
+### AI Ambient Listening RAG System
+Built application-layer RAG pipeline connecting to mobile app: AWS Comprehend Medical for medical entity extraction, Claude API for intelligent responses, Neo4j for medical knowledge graphs, embeddings on medical record library. HIPAA-compliant architecture with PHI data anonymization.
+
+- **Tech**: AWS Comprehend Medical, Claude API, Neo4j, Python, React Native
+- **Compliance**: HIPAA
+- **Market**: US
+- **Impact**: Real-time medical insights, HIPAA-compliant PHI anonymization, production RAG pipeline
+
+### MCP Server for Healthcare Research
+Built Model Context Protocol (MCP) server enabling healthcare researchers to access real-time analytics and database data directly without writing code or building custom solutions. Includes data visualization and query capabilities for healthcare datasets.
+
+- **Tech**: Python, MCP, PostgreSQL, AWS
+- **Compliance**: HIPAA
+- **Market**: US, EU
+- **Impact**: No-code data access for researchers, real-time analytics, secure healthcare data queries
+
+### Women's Health Platform
+Rebuilt V2 from scratch in Flutter: cycle tracking, healthcare provider connections across UK and parts of Africa, self-testing workflows. Completely rewrote mobile app with multi-language support, significantly faster performance than V1.
+
+- **Tech**: Flutter, Dart, AWS
+- **Compliance**: GDPR
+- **Market**: UK, Africa
+- **Impact**: V2 ground-up rebuild, multi-language support, major performance improvements
+
+### Security Testing Platform
+Built web application connecting penetration testers to developers. NestJS backend on AWS for secure testing communication, regression tracking, and centralized security reporting. Streamlines security fix workflows and compliance tracking.
+
+- **Tech**: NestJS, PostgreSQL, AWS, React
+- **Compliance**: ISO 27001
+- **Market**: Global
+- **Impact**: Centralized security workflow, regression tracking, faster pen test remediation
+
+### Multi-Vendor Marketplace V2
+Rebuilt from scratch using Flutter + Node.js + MongoDB: reselling platform with advertisements, auctions, carpool features, and real-time chat. Fixed constant server downtime issues and completely broken UI/UX flows. Achieved 100% uptime, optimized UI, reduced bugs, built comprehensive admin panels.
+
+- **Tech**: Flutter, Node.js, MongoDB, AWS
+- **Market**: India
+- **Impact**: V2 from scratch, fixed server downtime (now 100% uptime), rebuilt broken UI/UX, admin panels
+
+## Contact & Links
 
 - [LinkedIn](https://www.linkedin.com/in/aaronxdsilva): Professional profile
 - [GitHub](https://github.com/AaronDsilva97): Code and projects
+- [Portfolio](https://aarondsilva.com): Full portfolio and blog

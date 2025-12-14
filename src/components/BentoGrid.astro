@@ -43,9 +43,19 @@
       <slot name="metrics" />
     </div>
 
-    <!-- Investment Thesis -->
-    <div class="bento-item investment">
-      <slot name="investment" />
+    <!-- Healthcare Expertise -->
+    <div class="bento-item healthcare-expertise">
+      <slot name="healthcare-expertise" />
+    </div>
+
+    <!-- AI Expertise -->
+    <div class="bento-item ai-expertise">
+      <slot name="ai-expertise" />
+    </div>
+
+    <!-- Security Expertise -->
+    <div class="bento-item security-expertise">
+      <slot name="security-expertise" />
     </div>
 
     <!-- Certifications -->
@@ -72,12 +82,14 @@
     grid-template-rows: auto;
     gap: 1.5rem;
     grid-template-areas:
-      "hero hero availability command-hint"
-      "metrics investment investment github-stats"
-      "current-project current-project recent-posts recent-posts"
-      "testimonials testimonials certifications certifications"
-      "testimonials testimonials itihaas itihaas"
-      "tech-stack tech-stack tech-stack tech-stack";
+      "hero hero hero metrics"
+      "healthcare-expertise healthcare-expertise ai-expertise ai-expertise"
+      "security-expertise security-expertise github-stats github-stats"
+      "testimonials testimonials testimonials testimonials"
+      "current-project current-project availability command-hint"
+      "tech-stack tech-stack certifications certifications"
+      "recent-posts recent-posts recent-posts recent-posts"
+      "itihaas itihaas itihaas itihaas";
   }
 
   /* Light mode bento item */
@@ -154,17 +166,17 @@
 
   .hero {
     grid-area: hero;
-    min-height: 120px;
+    min-height: 200px;
   }
 
   .availability {
     grid-area: availability;
-    min-height: 120px;
+    min-height: 140px;
   }
 
   .command-hint {
     grid-area: command-hint;
-    min-height: 120px;
+    min-height: 140px;
   }
 
   .current-project {
@@ -174,7 +186,7 @@
 
   .github-stats {
     grid-area: github-stats;
-    min-height: 200px;
+    min-height: 280px;
   }
 
   .tech-stack {
@@ -192,9 +204,19 @@
     min-height: 120px;
   }
 
-  .investment {
-    grid-area: investment;
-    min-height: 200px;
+  .healthcare-expertise {
+    grid-area: healthcare-expertise;
+    min-height: 280px;
+  }
+
+  .ai-expertise {
+    grid-area: ai-expertise;
+    min-height: 280px;
+  }
+
+  .security-expertise {
+    grid-area: security-expertise;
+    min-height: 280px;
   }
 
   .certifications {
@@ -211,7 +233,7 @@
 
   .testimonials {
     grid-area: testimonials;
-    min-height: 250px;
+    min-height: 400px;
   }
 
   /* Responsive Design */
@@ -220,12 +242,14 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 1.25rem;
       grid-template-areas:
-        "hero hero availability metrics"
-        "current-project current-project github-stats command-hint"
-        "investment investment certifications certifications"
-        "testimonials testimonials itihaas itihaas"
+        "hero hero hero metrics"
+        "healthcare-expertise healthcare-expertise ai-expertise ai-expertise"
+        "security-expertise security-expertise github-stats github-stats"
+        "testimonials testimonials testimonials testimonials"
+        "current-project current-project availability command-hint"
+        "tech-stack tech-stack certifications certifications"
         "recent-posts recent-posts recent-posts recent-posts"
-        "tech-stack tech-stack tech-stack tech-stack";
+        "itihaas itihaas itihaas itihaas";
     }
   }
 
@@ -234,17 +258,19 @@
       grid-template-columns: 1fr;
       grid-template-areas:
         "hero"
-        "availability"
         "metrics"
-        "command-hint"
-        "current-project"
+        "healthcare-expertise"
+        "ai-expertise"
+        "security-expertise"
         "github-stats"
-        "investment"
-        "certifications"
-        "itihaas"
+        "availability"
         "testimonials"
+        "current-project"
+        "tech-stack"
+        "certifications"
         "recent-posts"
-        "tech-stack";
+        "itihaas"
+        "command-hint";
       gap: 1rem;
     }
 
