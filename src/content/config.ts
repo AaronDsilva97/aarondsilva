@@ -9,6 +9,7 @@ const blogCollection = defineCollection({
     author: z.string().default('Aaron Dsilva'),
     tags: z.array(z.string()).default([]),
     draft: z.boolean().default(false),
+    image: z.string().optional(),
     seo: z.object({
       keywords: z.array(z.string()).optional(),
     }).optional(),

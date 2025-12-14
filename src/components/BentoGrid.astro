@@ -1,7 +1,7 @@
 ---
 ---
 
-<div class="container mx-auto px-4 py-8 max-w-6xl sm:px-6 lg:px-8">
+<div class="container mx-auto px-2 py-8 max-w-6xl sm:px-6 lg:px-8">
   <div class="bento-grid">
     <!-- Hero/Intro Section -->
     <div class="bento-item hero">
@@ -28,19 +28,9 @@
       <slot name="github-stats" />
     </div>
 
-    <!-- Recent Projects -->
-    <div class="bento-item recent-projects">
-      <slot name="recent-projects" />
-    </div>
-
     <!-- Tech Stack -->
     <div class="bento-item tech-stack">
       <slot name="tech-stack" />
-    </div>
-
-    <!-- Now Playing -->
-    <div class="bento-item now-playing">
-      <slot name="now-playing" />
     </div>
 
     <!-- Recent Posts -->
@@ -84,10 +74,10 @@
     grid-template-areas:
       "hero hero availability command-hint"
       "metrics investment investment github-stats"
-      "current-project current-project now-playing now-playing"
+      "current-project current-project recent-posts recent-posts"
       "testimonials testimonials certifications certifications"
       "testimonials testimonials itihaas itihaas"
-      "recent-posts recent-posts tech-stack tech-stack";
+      "tech-stack tech-stack tech-stack tech-stack";
   }
 
   /* Light mode bento item */
@@ -187,19 +177,9 @@
     min-height: 200px;
   }
 
-  .recent-projects {
-    grid-area: recent-projects;
-    min-height: 250px;
-  }
-
   .tech-stack {
     grid-area: tech-stack;
     min-height: 150px;
-  }
-
-  .now-playing {
-    grid-area: now-playing;
-    min-height: 200px;
   }
 
   .recent-posts {
@@ -244,7 +224,7 @@
         "current-project current-project github-stats command-hint"
         "investment investment certifications certifications"
         "testimonials testimonials itihaas itihaas"
-        "recent-posts recent-posts now-playing now-playing"
+        "recent-posts recent-posts recent-posts recent-posts"
         "tech-stack tech-stack tech-stack tech-stack";
     }
   }
@@ -264,8 +244,7 @@
         "itihaas"
         "testimonials"
         "recent-posts"
-        "tech-stack"
-        "now-playing";
+        "tech-stack";
       gap: 1rem;
     }
 
@@ -305,20 +284,16 @@
     .tech-stack {
       min-height: 120px;
     }
-
-    .now-playing {
-      min-height: 120px;
-    }
   }
 
   @media (max-width: 480px) {
     .container {
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding-left: 0.5rem;
+      padding-right: 0.5rem;
     }
 
     .bento-grid {
-      gap: 0.75rem;
+      gap: 0.5rem;
     }
 
     .bento-item {

@@ -88,13 +88,18 @@ export default function HeroIntro() {
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-6 pt-3">
-            <a
-              href="#projects"
-              className="inline-flex items-center gap-2 text-slate-800 dark:text-slate-100 hover:text-purple-600 dark:hover:text-purple-400 transition-all text-sm font-medium hover:shadow-sm hover:shadow-purple-400/20 group"
+            <button
+              onClick={() => {
+                const element = document.querySelector('[data-section="projects"]');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+              className="inline-flex items-center gap-2 text-slate-800 dark:text-slate-100 hover:text-purple-600 dark:hover:text-purple-400 transition-all text-sm font-medium hover:shadow-sm hover:shadow-purple-400/20 group cursor-pointer"
             >
               <span>→ See my work</span>
               <div className="w-1 h-1 bg-purple-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </a>
+            </button>
             <a
               href="https://github.com/AaronDsilva97"
               target="_blank"

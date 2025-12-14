@@ -76,6 +76,10 @@ const socialImage = new URL(image, Astro.site);
 			extend={{
 				link: [
 					{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
+					{ rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
+					{ rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
+					{ rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
+					{ rel: "manifest", href: "/site.webmanifest" },
 					{ rel: "sitemap", href: "/sitemap-index.xml" },
 					{ rel: "alternate", type: "application/rss+xml", href: "/rss.xml" }
 				],
@@ -83,7 +87,6 @@ const socialImage = new URL(image, Astro.site);
 					{ name: "viewport", content: "width=device-width, initial-scale=1.0" },
 					{ name: "generator", content: Astro.generator },
 					{ name: "author", content: "Aaron D'silva" },
-					{ name: "keywords", content: "React Native, Flutter, Mobile Development, Web Development, JavaScript, TypeScript, The Lean Product Studio" },
 					{ name: "theme-color", content: "#8b5cf6" },
 					{ name: "apple-mobile-web-app-capable", content: "yes" },
 					{ name: "apple-mobile-web-app-status-bar-style", content: "default" },
@@ -193,7 +196,7 @@ const socialImage = new URL(image, Astro.site);
 		<div id="command-palette-root"></div>
 
 		<!-- Theme Toggle -->
-		<div class="fixed top-4 right-4 z-50">
+		<div class="fixed bottom-3 left-3 z-50 sm:top-4 sm:right-4 sm:bottom-auto sm:left-auto">
 			<ThemeToggle client:load />
 		</div>
 

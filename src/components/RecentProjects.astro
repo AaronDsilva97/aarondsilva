@@ -47,9 +47,11 @@ const statusConfig = {
   wip: { label: '🔧 Building', color: 'text-yellow-600 dark:text-yellow-400' },
   archived: { label: '📦 Archived', color: 'text-slate-500 dark:text-zinc-500' }
 };
+
+const { 'data-section': dataSection } = Astro.props;
 ---
 
-<div class="flex flex-col h-full">
+<div class="flex flex-col h-full" data-section={dataSection}>
   <div class="flex items-center justify-between mb-4">
     <h3 class="font-semibold text-slate-900 dark:text-slate-100">Featured Work</h3>
     <span class="text-xs text-slate-500">Professional Projects</span>
