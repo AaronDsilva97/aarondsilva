@@ -16,11 +16,11 @@ const certifications = [
     url: 'https://olympus1.mygreatlearning.com/certificate/JOHMAJBX'
   },
   {
-    name: 'AWS Solutions Architect',
+    name: 'AWS Solutions Architect - Associate',
     issuer: 'Amazon Web Services',
     icon: '🎯',
-    status: 'In Progress',
-    url: null
+    status: 'Certified',
+    url: 'https://www.credly.com/badges/1b573241-4619-453f-96da-504d21e036a7/public_url'
   }
 ];
 
