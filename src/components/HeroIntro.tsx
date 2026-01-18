@@ -1,10 +1,11 @@
 import { useState, useEffect } from 'react';
 
 const obsessions = [
-  "healthcare systems",
   "RAG pipelines & AI",
   "security architecture",
   "full-stack engineering",
+  "e-commerce platforms",
+  "healthcare systems",
   "AWS infrastructure"
 ];
 
@@ -68,14 +69,14 @@ export default function HeroIntro() {
                 Aaron Dsilva
               </h1>
               <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
-                Tech Lead | Healthcare Systems | AI & Security | Full-Stack Engineer
+                Tech Lead & CTO | AI, Security & Full-Stack | Healthcare, SaaS & E-commerce
               </p>
             </div>
           </div>
 
           <div className="space-y-3">
             <p className="text-lg text-slate-600 dark:text-slate-300 leading-relaxed">
-              I architect and build mission-critical healthcare systems end-to-end. From React Native/Flutter apps to Node/Rails/Laravel backends with RAG pipelines—I code the full stack. 10+ FDA/HIPAA apps deployed to 100+ hospitals with 99.9% uptime. I implement security fixes from pen testing (not just reports—actual code) and build RAG systems (Neo4j, Pinecone, Claude API) into production healthcare platforms.
+              I build secure, AI-powered systems as a Tech Lead and CTO. Full-stack development from React Native/Flutter apps to Node/Rails/Laravel backends with RAG pipelines. 10+ production systems across healthcare (100+ hospitals, FDA/HIPAA), e-commerce (multi-vendor marketplaces), and security (ISO 27001 platforms). I implement security fixes from pen tests (actual code, not reports) and build RAG systems (Neo4j, Pinecone, Claude API) into production.
             </p>
 
             <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 text-purple-400">

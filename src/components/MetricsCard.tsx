@@ -13,10 +13,10 @@ interface Metric {
 }
 
 const metrics: Metric[] = [
-  { label: 'Healthcare Apps', value: 10, suffix: '+', color: 'text-emerald-400', subtext: 'FDA/HIPAA' },
-  { label: 'Hospitals Deployed', value: 100, suffix: '+', color: 'text-blue-400', subtext: 'US, EU, India' },
-  { label: 'RAG Systems Built', value: 4, suffix: '+', color: 'text-purple-400', subtext: 'AI-ready' },
-  { label: 'System Uptime', value: 99.9, suffix: '%', color: 'text-pink-400', subtext: 'Production SLA' }
+  { label: 'Production Systems', value: 10, suffix: '+', color: 'text-emerald-400', subtext: 'Multi-domain' },
+  { label: 'Organizations Served', value: 100, suffix: '+', color: 'text-blue-400', subtext: 'US, EU, India' },
+  { label: 'RAG Systems Built', value: 4, suffix: '+', color: 'text-purple-400', subtext: 'AI-powered' },
+  { label: 'Cost Savings', value: 1, prefix: '$', suffix: 'M+', color: 'text-pink-400', subtext: 'AWS optimization' }
 ];
 
 export default function MetricsCard() {

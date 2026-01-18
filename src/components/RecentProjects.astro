@@ -11,27 +11,42 @@ interface Project {
 
 const projects: Project[] = [
   {
-    name: 'FDA Healthcare Platform',
-    subtitle: '100% uptime serving 100+ hospitals—architected secure, scalable infrastructure',
+    name: 'Multi-Vendor Marketplace V2',
+    subtitle: 'E-commerce platform: from constant crashes to 100% uptime—complete rebuild',
     highlights: [
-      'Led pen testing remediation and implemented all security fixes—saved months of effort',
-      'Built AWS infrastructure with PostgreSQL RLS for secure multi-org data isolation',
-      'Achieved 100% uptime across 100+ hospitals in US and India',
-      'FDA, HIPAA, SOC2, ISO 27001 compliant system architecture'
+      'Rebuilt entire platform from scratch: Flutter + Node.js + MongoDB',
+      'Fixed constant server crashes—achieved 100% uptime',
+      'Rebuilt broken UI/UX flows for ads, auctions, carpool, chat',
+      'Built comprehensive admin panels for multi-vendor management',
+      'Reduced bugs significantly, optimized performance across platform'
     ],
-    tech: ['React Native', 'Flask', 'AWS', 'PostgreSQL'],
+    tech: ['Flutter', 'Node.js', 'MongoDB', 'AWS'],
     status: 'live',
-    compliance: ['FDA', 'HIPAA', 'SOC2', 'ISO 27001'],
-    market: 'US, India'
+    market: 'India'
+  },
+  {
+    name: 'Security Testing Platform',
+    subtitle: 'SaaS connecting pen testers to developers—centralized security workflow',
+    highlights: [
+      'Built web application connecting penetration testers to development teams',
+      'NestJS backend on AWS for secure vulnerability communication',
+      'Regression tracking to prevent security issues from reappearing',
+      'Centralized reporting dashboard for ISO 27001 compliance audits',
+      'Streamlined security fix workflows across distributed teams'
+    ],
+    tech: ['NestJS', 'PostgreSQL', 'AWS', 'React'],
+    status: 'live',
+    compliance: ['ISO 27001'],
+    market: 'Global'
   },
   {
     name: 'AI Ambient Listening RAG System',
-    subtitle: 'Production RAG pipeline with HIPAA-compliant PHI anonymization',
+    subtitle: 'Production RAG pipeline with intelligent medical responses and PHI anonymization',
     highlights: [
       'AWS Comprehend Medical for medical entity extraction from conversations',
-      'Claude API for intelligent clinical responses',
+      'Claude API for intelligent clinical responses and decision support',
       'Neo4j knowledge graphs for medical relationship mapping',
-      'Embeddings pipeline on medical record library',
+      'Embeddings pipeline on medical record library for context retrieval',
       'HIPAA-compliant PHI data anonymization and secure storage'
     ],
     tech: ['AWS Comprehend', 'Claude API', 'Neo4j', 'Python', 'React Native'],
@@ -40,14 +55,28 @@ const projects: Project[] = [
     market: 'US'
   },
   {
+    name: 'FDA Healthcare Platform',
+    subtitle: '100% uptime serving 100+ hospitals—architected secure, scalable infrastructure',
+    highlights: [
+      'Led pen testing remediation and implemented all security fixes—saved months of effort',
+      'Built AWS infrastructure with PostgreSQL RLS for secure multi-org data isolation',
+      'Achieved and maintained 100% uptime across 100+ hospitals in US and India',
+      'FDA, HIPAA, SOC2, ISO 27001 compliant system architecture'
+    ],
+    tech: ['React Native', 'Flask', 'AWS', 'PostgreSQL'],
+    status: 'live',
+    compliance: ['FDA', 'HIPAA', 'SOC2', 'ISO 27001'],
+    market: 'US, India'
+  },
+  {
     name: 'Women\'s Health Platform V2',
-    subtitle: 'Ground-up rebuild in Flutter—UK/Africa deployment with multi-language support',
+    subtitle: 'Ground-up Flutter rebuild—UK/Africa deployment with multi-language support',
     highlights: [
       'Rebuilt entire mobile app from scratch using Flutter',
       'Cycle tracking, self-testing workflows, healthcare provider connections',
       'Multi-language support for UK and African markets',
-      'Significantly faster performance than V1',
-      'GDPR-compliant architecture'
+      'Significantly faster performance than V1 with improved UX',
+      'GDPR-compliant architecture with data privacy controls'
     ],
     tech: ['Flutter', 'Dart', 'AWS'],
     status: 'live',
@@ -55,40 +84,11 @@ const projects: Project[] = [
     market: 'UK, Africa'
   },
   {
-    name: 'Security Testing Platform',
-    subtitle: 'Connects pen testers to developers—centralized workflow for security fixes',
-    highlights: [
-      'Built web application connecting penetration testers to development teams',
-      'NestJS backend on AWS for secure test communication',
-      'Regression tracking to prevent security issues from reappearing',
-      'Centralized reporting dashboard for compliance audits',
-      'Streamlined security fix workflows across teams'
-    ],
-    tech: ['NestJS', 'PostgreSQL', 'AWS', 'React'],
-    status: 'live',
-    compliance: ['ISO 27001'],
-    market: 'Global'
-  },
-  {
-    name: 'Multi-Vendor Marketplace V2',
-    subtitle: 'From constant downtime to 100% uptime—complete platform rebuild',
-    highlights: [
-      'Rebuilt entire platform from scratch: Flutter + Node.js + MongoDB',
-      'Fixed constant server crashes—now 100% uptime',
-      'Rebuilt broken UI/UX flows for ads, auctions, carpool, chat',
-      'Reduced bugs significantly, optimized performance',
-      'Built comprehensive admin panels for marketplace management'
-    ],
-    tech: ['Flutter', 'Node.js', 'MongoDB', 'AWS'],
-    status: 'live',
-    market: 'India'
-  },
-  {
     name: 'MCP Server for Healthcare Research',
     subtitle: 'No-code data access for researchers—real-time analytics without custom dev',
     highlights: [
       'Built Model Context Protocol server for healthcare datasets',
-      'Researchers access data without writing code or custom solutions',
+      'Researchers access data without writing code or requesting custom solutions',
       'Real-time analytics and visualization capabilities',
       'Secure query interface for HIPAA-compliant databases',
       'Deployed across US and EU healthcare research institutions'
