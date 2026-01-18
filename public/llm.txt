@@ -1,8 +1,8 @@
-# Aaron Dsilva - Tech Lead | Healthcare Systems | AI & Security
+# Aaron Dsilva - Tech Lead & CTO | AI, Security & Full-Stack | Healthcare, SaaS & E-commerce
 
-> I architect and build mission-critical healthcare systems end-to-end. 10+ FDA/HIPAA apps deployed to 100+ hospitals with 99.9% uptime. I implement security fixes from pen testing (not just reports—actual code) and build RAG systems (Neo4j, Pinecone, Claude API) into production healthcare platforms.
+> I build secure, AI-powered systems as a Tech Lead and CTO. Full-stack development across React Native/Flutter apps to Node/Rails/Laravel backends with RAG pipelines. Over 8 years shipping production systems across healthcare (100+ hospitals, FDA/HIPAA), e-commerce (multi-vendor marketplaces), and security (ISO 27001 platforms).
 
-I'm a tech lead and full-stack engineer specializing in healthcare systems, AI/RAG pipelines, and security architecture. From React Native/Flutter apps to Node/Rails/Laravel backends with RAG capabilities—I code the full stack. I've worked with King's College London, Johnson & Johnson, and European hospital networks building HIPAA, GDPR, and FDA-compliant systems that work reliably in harsh conditions.
+I write code, architect infrastructure, lead teams, and ship products that work. I implement AI/RAG systems (Neo4j, Pinecone, Claude API) into production, fix security issues from pen tests (actual code, not reports), and build systems that pass audits: HIPAA, SOC2, GDPR, FDA, ISO 27001. Worked with King's College London, Johnson & Johnson, and European hospital networks across US, Europe, and India.
 
 ## About
 
@@ -43,12 +43,13 @@ Articles on healthcare tech, AWS, AI/ML, and compliance from real production exp
 
 ## Expertise
 
-### Healthcare Systems (10+ Apps)
-- **Deployment**: 100+ hospitals across US, EU, India
-- **Compliance**: FDA, HIPAA, GDPR, SOC2, ISO 27001 certified systems
+### Multi-Domain Systems (10+ Production Systems)
+- **Healthcare**: 100+ hospitals across US, EU, India | FDA, HIPAA, SOC2, GDPR compliance
+- **E-commerce**: Multi-vendor marketplaces rebuilt from zero to 100% uptime
+- **Security & SaaS**: ISO 27001 pen testing platforms, security workflow automation
 - **Reliability**: 99.9% uptime, offline-first architecture, disaster recovery
-- **Notable Clients**: King's College London, Johnson & Johnson, European Hospital Network
-- **Specialties**: HL7 FHIR, EHR integrations, clinical decision support, medical imaging
+- **Notable Clients**: King's College London, Johnson & Johnson, European Hospital Networks
+- **Healthcare Specialties**: HL7 FHIR, EHR integrations, clinical decision support, medical imaging
 
 ### AI & RAG Engineering (4+ Production Systems)
 - **RAG Pipelines**: Pinecone (vector search), Neo4j (knowledge graphs), LangChain (orchestration)
@@ -122,4 +123,6 @@ Rebuilt from scratch using Flutter + Node.js + MongoDB: reselling platform with 
 
 - [LinkedIn](https://www.linkedin.com/in/aaronxdsilva): Professional profile
 - [GitHub](https://github.com/AaronDsilva97): Code and projects
-- [Portfolio](https://aarondsilva.com): Full portfolio and blog
+- [Portfolio](https://aarondsilva.me): Full portfolio and blog
+- Email: aaronxdsilva@gmail.com
+- Phone: +91 9730659141
