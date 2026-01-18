@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="CV | Aaron Dsilva" description="Tech Lead building mission-critical healthcare systems. 10+ FDA/HIPAA apps, 100+ hospitals, 99.9% uptime. Full-stack engineer specializing in AI/RAG pipelines and security architecture.">
+<Layout title="CV | Aaron Dsilva" description="Tech Lead & CTO with 8 years building secure, AI-powered systems across healthcare, SaaS & e-commerce. 100+ hospitals, FDA/HIPAA compliance, RAG pipelines, AWS Solutions Architect. Full-stack engineer specializing in AI/RAG and security architecture.">
   <div class="container mx-auto px-4 py-12 max-w-4xl">
     <!-- Header -->
     <header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
@@ -14,12 +14,12 @@ import Layout from '../layouts/Layout.astro';
           <p class="text-sm text-slate-600 dark:text-slate-400 mt-1">React Native, Flutter, Node, Rails, Laravel | RAG Pipelines (Neo4j, Pinecone, Claude API) | AWS | Security & Compliance</p>
         </div>
       </div>
-      <button onclick="window.print()" class="print:hidden print-btn flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors shrink-0" style="display: var(--print-display, flex);">
+      <a href="/aaron-dsilva-cv.pdf" download class="print:hidden print-btn flex items-center gap-2 px-4 py-2 bg-purple-600 hover:bg-purple-500 text-white rounded-lg transition-colors shrink-0" style="display: var(--print-display, flex);">
         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
         </svg>
         Download PDF
-      </button>
+      </a>
     </header>
 
     <!-- Contact Bar -->
@@ -79,37 +79,33 @@ import Layout from '../layouts/Layout.astro';
       <ul class="achievements-list text-slate-600 dark:text-slate-300 space-y-2">
         <li class="flex items-start gap-2">
           <span class="text-purple-500 dark:text-purple-400 shrink-0">•</span>
-          <span><strong class="text-purple-600 dark:text-purple-400">10+</strong> Production systems across healthcare, SaaS & e-commerce serving 100+ hospitals and multi-vendor marketplaces</span>
+          <span><strong class="text-purple-600 dark:text-purple-400">Healthcare:</strong> 100+ hospitals, FDA/HIPAA/SOC2, 99.9% uptime, zero security incidents</span>
         </li>
         <li class="flex items-start gap-2">
           <span class="text-purple-500 dark:text-purple-400 shrink-0">•</span>
-          <span><strong class="text-purple-600 dark:text-purple-400">$1M+</strong> AWS cost savings achieved through architecture optimization (33% reduction)</span>
+          <span><strong class="text-purple-600 dark:text-purple-400">E-commerce:</strong> Rebuilt marketplace from constant crashes to 100% uptime</span>
         </li>
         <li class="flex items-start gap-2">
           <span class="text-purple-500 dark:text-purple-400 shrink-0">•</span>
-          <span><strong class="text-purple-600 dark:text-purple-400">E-commerce:</strong> Rebuilt marketplace from constant crashes to 100% uptime with Flutter + Node + MongoDB</span>
+          <span><strong class="text-purple-600 dark:text-purple-400">Security:</strong> ISO 27001 pen testing platform, implemented fixes in production</span>
         </li>
         <li class="flex items-start gap-2">
           <span class="text-purple-500 dark:text-purple-400 shrink-0">•</span>
-          <span><strong class="text-purple-600 dark:text-purple-400">Healthcare:</strong> 100+ hospitals, FDA/HIPAA/SOC2 compliance, 99.9% uptime with zero security incidents</span>
+          <span><strong class="text-purple-600 dark:text-purple-400">AI/RAG:</strong> 4+ production systems with Neo4j, Pinecone, Claude API</span>
         </li>
         <li class="flex items-start gap-2">
           <span class="text-purple-500 dark:text-purple-400 shrink-0">•</span>
-          <span><strong class="text-purple-600 dark:text-purple-400">AI/RAG:</strong> 4+ production RAG systems with Neo4j, Pinecone, Claude API for document processing and intelligent responses</span>
+          <span><strong class="text-purple-600 dark:text-purple-400">$1M+</strong> AWS cost savings through architecture optimization (33% reduction)</span>
         </li>
         <li class="flex items-start gap-2">
           <span class="text-purple-500 dark:text-purple-400 shrink-0">•</span>
-          <span><strong class="text-purple-600 dark:text-purple-400">Security:</strong> ISO 27001 pen testing platform, implemented security fixes in production code for compliance audits</span>
-        </li>
-        <li class="flex items-start gap-2">
-          <span class="text-purple-500 dark:text-purple-400 shrink-0">•</span>
-          <span><strong class="text-purple-600 dark:text-purple-400">Leadership:</strong> Led 10 engineers across time zones, shipped 6 products (healthcare, security, e-commerce, research tools)</span>
+          <span><strong class="text-purple-600 dark:text-purple-400">Leadership:</strong> Led 10 engineers across time zones, shipped 6 products</span>
         </li>
       </ul>
     </section>
 
     <!-- Experience -->
-    <section class="mb-10">
+    <section class="mb-10 experience-section">
       <h2 class="text-lg font-semibold text-slate-800 dark:text-slate-100 mb-4 flex items-center gap-2">
         <span class="w-8 h-0.5 bg-purple-500"></span>
         Experience
@@ -288,7 +284,7 @@ import Layout from '../layouts/Layout.astro';
       <div class="grid md:grid-cols-2 gap-4 text-sm">
         <div>
           <h3 class="text-slate-500 dark:text-slate-400 uppercase text-xs tracking-wider mb-2">Top Skills</h3>
-          <p class="text-slate-700 dark:text-slate-300">PostgreSQL, Node.js, Laravel</p>
+          <p class="text-slate-700 dark:text-slate-300">Full-Stack Engineering, AWS Architecture, Security & Compliance</p>
         </div>
         <div>
           <h3 class="text-slate-500 dark:text-slate-400 uppercase text-xs tracking-wider mb-2">Languages</h3>
@@ -429,7 +425,7 @@ import Layout from '../layouts/Layout.astro';
 
     /* === HEADER === */
     header {
-      margin-bottom: 4px !important;
+      margin-bottom: 2px !important;
     }
 
     /* Profile photo */
@@ -464,8 +460,8 @@ import Layout from '../layouts/Layout.astro';
       flex-wrap: wrap !important;
       gap: 4px 12px !important;
       border-bottom: 1px solid #e5e5e5 !important;
-      padding-bottom: 6px !important;
-      margin-bottom: 8px !important;
+      padding-bottom: 4px !important;
+      margin-bottom: 4px !important;
     }
 
     .border-b.border-slate-800 a,
@@ -485,14 +481,14 @@ import Layout from '../layouts/Layout.astro';
 
     /* === SUMMARY === */
     section:first-of-type {
-      margin-bottom: 6px !important;
+      margin-bottom: 3px !important;
     }
 
     section:first-of-type p {
       font-size: 8.5pt !important;
       color: #333 !important;
-      line-height: 1.35 !important;
-      margin-bottom: 3px !important;
+      line-height: 1.3 !important;
+      margin-bottom: 2px !important;
     }
 
     section:first-of-type p:last-child {
@@ -504,7 +500,7 @@ import Layout from '../layouts/Layout.astro';
       font-size: 9pt !important;
       font-weight: 600 !important;
       color: #111 !important;
-      margin-bottom: 3px !important;
+      margin-bottom: 2px !important;
       margin-top: 0 !important;
       padding-bottom: 1px !important;
       border-bottom: 1px solid #5b21b6 !important;
@@ -519,13 +515,13 @@ import Layout from '../layouts/Layout.astro';
 
     /* === KEY ACHIEVEMENTS === */
     .achievements-section {
-      margin-bottom: 4px !important;
+      margin-bottom: 2px !important;
     }
 
     .achievements-list {
-      display: grid !important;
-      grid-template-columns: repeat(2, 1fr) !important;
-      gap: 2px 12px !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 1px !important;
       list-style: none !important;
       padding: 0 !important;
       margin: 0 !important;
@@ -697,14 +693,17 @@ import Layout from '../layouts/Layout.astro';
     /* Skill values */
     .grid.md\\:grid-cols-2 p.text-slate-300,
     .grid.md\\:grid-cols-2.gap-4.text-sm p,
-    p.text-slate-300 {
-      color: #111 !important;
+    .grid.md\\:grid-cols-2 p.text-slate-700,
+    p.text-slate-300,
+    p.text-slate-700 {
+      color: #000 !important;
       font-size: 7.5pt !important;
     }
 
     /* Force dark text on all skill items */
-    .text-slate-300 {
-      color: #111 !important;
+    .text-slate-300,
+    .text-slate-700 {
+      color: #000 !important;
     }
 
     /* === CERTIFICATIONS === */
@@ -760,7 +759,7 @@ import Layout from '../layouts/Layout.astro';
 
     /* === SECTION SPACING === */
     section.mb-10 {
-      margin-bottom: 4px !important;
+      margin-bottom: 6px !important;
     }
 
     /* === SVG DEFAULTS === */
@@ -777,6 +776,11 @@ import Layout from '../layouts/Layout.astro';
     /* Allow sections to break across pages */
     section {
       page-break-inside: auto !important;
+    }
+
+    /* CRITICAL: Prevent Experience section from starting on new page */
+    .experience-section {
+      page-break-before: avoid !important;
     }
 
     /* Only avoid breaking individual job entries */

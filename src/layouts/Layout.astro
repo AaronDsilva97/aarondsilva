@@ -11,8 +11,8 @@ export interface Props {
 }
 
 const {
-  title = "Aaron D'silva • Technical Co-Founder",
-  description = "Technical Co-Founder & Product Builder. Helping ambitious founders build and scale mobile products from zero to Series A. 3 startups co-founded, 2 successful exits.",
+  title = "Aaron Dsilva • Tech Lead & CTO | AI, Security & Full-Stack",
+  description = "Tech Lead & CTO building secure, AI-powered systems across healthcare, SaaS & e-commerce. 8 years shipping production systems with FDA/HIPAA compliance, RAG pipelines, and AWS infrastructure. 100+ hospitals, multi-vendor marketplaces, ISO 27001 platforms.",
   image = "/og-image.svg",
   type = "website"
 } = Astro.props;
@@ -54,11 +54,11 @@ const socialImage = new URL(image, Astro.site);
 				},
 				optional: {
 					description: description,
-					siteName: "Aaron D'silva Portfolio",
+					siteName: "Aaron Dsilva Portfolio",
 					locale: "en_US"
 				},
 				image: {
-					alt: "Aaron D'silva - Mobile & Web Developer Portfolio",
+					alt: "Aaron Dsilva - Tech Lead & CTO | AI, Security & Full-Stack Engineering",
 					width: 1200,
 					height: 630,
 					type: "image/jpeg"
@@ -71,7 +71,7 @@ const socialImage = new URL(image, Astro.site);
 				title: title,
 				description: description,
 				image: socialImage.href,
-				imageAlt: "Aaron D'silva - Mobile & Web Developer Portfolio"
+				imageAlt: "Aaron Dsilva - Tech Lead & CTO | AI, Security & Full-Stack Engineering"
 			}}
 			extend={{
 				link: [
