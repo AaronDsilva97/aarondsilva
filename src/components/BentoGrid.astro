@@ -63,6 +63,11 @@
       <slot name="certifications" />
     </div>
 
+    <!-- Aplify E-commerce Platform -->
+    <div class="bento-item aplify">
+      <slot name="aplify" />
+    </div>
+
     <!-- Itihaas Heritage Platform -->
     <div class="bento-item itihaas">
       <slot name="itihaas" />
@@ -82,14 +87,14 @@
     grid-template-rows: auto;
     gap: 1.5rem;
     grid-template-areas:
-      "hero hero hero metrics"
-      "healthcare-expertise healthcare-expertise ai-expertise ai-expertise"
-      "security-expertise security-expertise github-stats github-stats"
+      "hero hero hero github-stats"
+      "aplify aplify itihaas itihaas"
       "testimonials testimonials testimonials testimonials"
+      "healthcare-expertise healthcare-expertise ai-expertise ai-expertise"
+      "security-expertise security-expertise metrics metrics"
       "current-project current-project availability command-hint"
       "tech-stack tech-stack certifications certifications"
-      "recent-posts recent-posts recent-posts recent-posts"
-      "itihaas itihaas itihaas itihaas";
+      "recent-posts recent-posts recent-posts recent-posts";
   }
 
   /* Light mode bento item */
@@ -224,6 +229,13 @@
     min-height: 140px;
   }
 
+  .aplify {
+    grid-area: aplify;
+    min-height: 140px;
+    padding: 0;
+    overflow: hidden;
+  }
+
   .itihaas {
     grid-area: itihaas;
     min-height: 140px;
@@ -242,14 +254,14 @@
       grid-template-columns: repeat(4, 1fr);
       gap: 1.25rem;
       grid-template-areas:
-        "hero hero hero metrics"
-        "healthcare-expertise healthcare-expertise ai-expertise ai-expertise"
-        "security-expertise security-expertise github-stats github-stats"
+        "hero hero hero github-stats"
+        "aplify aplify itihaas itihaas"
         "testimonials testimonials testimonials testimonials"
+        "healthcare-expertise healthcare-expertise ai-expertise ai-expertise"
+        "security-expertise security-expertise metrics metrics"
         "current-project current-project availability command-hint"
         "tech-stack tech-stack certifications certifications"
-        "recent-posts recent-posts recent-posts recent-posts"
-        "itihaas itihaas itihaas itihaas";
+        "recent-posts recent-posts recent-posts recent-posts";
     }
   }
 
@@ -258,18 +270,19 @@
       grid-template-columns: 1fr;
       grid-template-areas:
         "hero"
-        "metrics"
+        "github-stats"
+        "aplify"
+        "itihaas"
+        "testimonials"
         "healthcare-expertise"
         "ai-expertise"
         "security-expertise"
-        "github-stats"
+        "metrics"
         "availability"
-        "testimonials"
         "current-project"
         "tech-stack"
         "certifications"
         "recent-posts"
-        "itihaas"
         "command-hint";
       gap: 1rem;
     }

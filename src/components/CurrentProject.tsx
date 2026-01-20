@@ -8,20 +8,20 @@ interface ProjectProgress {
 
 export default function CurrentProject() {
   const [project] = useState({
-    name: 'The Lean Product Studio',
-    description: 'Co-founded product studio building mobile, web & cloud products. Leading a distributed team of 10 engineers across multiple client projects.',
+    name: 'CTO @ Aplify® + Co-Founder @ TLPS',
+    description: 'Leading technology strategy for e-commerce SaaS platform while building secure, AI-powered systems for healthcare, e-commerce, and security clients. Distributed team of 10 engineers across time zones.',
     status: 'Active',
     progress: 100,
-    tech: ['Flutter', 'React Native', 'Node.js', 'Laravel', 'AWS'],
+    tech: ['React Native', 'Flutter', 'Node.js', 'Python', 'AWS', 'Neo4j'],
     highlights: [
-      { label: 'Products Shipped', value: '5' },
+      { label: 'Products Shipped', value: '6+' },
       { label: 'Team Size', value: '10' },
-      { label: 'Markets', value: 'US, UK, India' },
+      { label: 'Markets', value: 'Global' },
     ],
     updates: [
-      { date: 'Current', update: 'Building AI features with RAG pipelines & LLM APIs' },
-      { date: 'Recent', update: 'Reduced client AWS costs by 33% ($1M savings)' },
-      { date: 'Ongoing', update: 'Healthcare & security compliance projects' },
+      { date: 'Current', update: 'CTO at Aplify® architecting multi-vendor e-commerce platform' },
+      { date: 'Recent', update: 'Reduced client AWS costs by 33% ($1M+ annual savings)' },
+      { date: 'Ongoing', update: 'RAG pipelines (Neo4j, Pinecone, Claude API) for healthcare AI' },
     ]
   });
 

@@ -13,8 +13,8 @@ interface Metric {
 }
 
 const metrics: Metric[] = [
-  { label: 'Production Systems', value: 10, suffix: '+', color: 'text-emerald-400', subtext: 'Multi-domain' },
-  { label: 'Organizations Served', value: 100, suffix: '+', color: 'text-blue-400', subtext: 'US, EU, India' },
+  { label: 'Products Shipped', value: 6, suffix: '+', color: 'text-emerald-400', subtext: 'Healthcare, E-com, Security' },
+  { label: 'Organizations Served', value: 100, suffix: '+', color: 'text-blue-400', subtext: 'US, EU, Africa, India' },
   { label: 'RAG Systems Built', value: 4, suffix: '+', color: 'text-purple-400', subtext: 'AI-powered' },
   { label: 'Cost Savings', value: 1, prefix: '$', suffix: 'M+', color: 'text-pink-400', subtext: 'AWS optimization' }
 ];

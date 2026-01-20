@@ -40,8 +40,8 @@ export default function AvailabilityWidget() {
         timezone: 'IST',
         available: isWorkingHours,
         status: isWorkingHours
-          ? 'Available for healthcare & compliance projects'
-          : 'Currently offline • Open to interesting projects',
+          ? 'Available for CTO/Head of Engineering roles & consulting'
+          : 'Currently offline • Open to CTO/technical leadership roles',
       }));
     };
 

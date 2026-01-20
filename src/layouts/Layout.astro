@@ -11,8 +11,8 @@ export interface Props {
 }
 
 const {
-  title = "Aaron Dsilva • Tech Lead & CTO | AI, Security & Full-Stack",
-  description = "Tech Lead & CTO building secure, AI-powered systems across healthcare, SaaS & e-commerce. 8 years shipping production systems with FDA/HIPAA compliance, RAG pipelines, and AWS infrastructure. 100+ hospitals, multi-vendor marketplaces, ISO 27001 platforms.",
+  title = "Aaron Dsilva — CTO & Head of Engineering | Healthcare AI, E-commerce, Security | AWS Solutions Architect",
+  description = "CTO with 8 years building HIPAA-compliant healthcare systems (100+ hospitals) and e-commerce platforms. $1M AWS savings, zero security incidents. AWS Certified.",
   image = "/og-image.svg",
   type = "website"
 } = Astro.props;
@@ -111,23 +111,39 @@ const socialImage = new URL(image, Astro.site);
 					"image": {
 						"@type": "ImageObject",
 						"url": socialImage.href,
-						"caption": "Aaron D'silva - Mobile & Web Developer"
+						"caption": "Aaron D'silva - CTO & Technical Lead"
 					},
-					"description": "Mobile & Web Developer at The Lean Product Studio specializing in React Native, Flutter, and modern web technologies",
-					"jobTitle": "Mobile & Web Developer",
-					"worksFor": {
-						"@type": "Organization",
-						"name": "The Lean Product Studio",
-						"url": "https://theleanproductstudio.com"
-					},
+					"description": "CTO and Technical Lead with 8 years building secure, AI-powered production systems across healthcare (100+ hospitals, HIPAA/FDA/SOC2), e-commerce platforms, and security architecture",
+					"jobTitle": "Chief Technology Officer",
+					"worksFor": [
+						{
+							"@type": "Organization",
+							"name": "Aplify®",
+							"description": "E-commerce SaaS Platform"
+						},
+						{
+							"@type": "Organization",
+							"name": "The Lean Product Studio",
+							"url": "https://theleanproduct.studio"
+						}
+					],
 					"knowsAbout": [
+						"Healthcare AI Systems",
+						"RAG Pipelines",
+						"HIPAA Compliance",
+						"FDA Compliance",
+						"SOC2 Compliance",
+						"ISO 27001",
+						"AWS Solutions Architecture",
 						"React Native Development",
 						"Flutter Development",
-						"JavaScript",
-						"TypeScript",
-						"Mobile App Development",
-						"Web Development",
-						"Cross-platform Development"
+						"Node.js",
+						"Python",
+						"Neo4j",
+						"Pinecone",
+						"Security Architecture",
+						"E-commerce Platforms",
+						"Multi-Tenant SaaS"
 					],
 					"sameAs": [
 						"https://github.com/AaronDsilva97",
