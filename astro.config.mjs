@@ -5,7 +5,7 @@ import mdx from '@astrojs/mdx';
 import tailwindcss from '@tailwindcss/vite';
 import sitemap from '@astrojs/sitemap';
 import partytown from '@astrojs/partytown';
-import rehypeMermaid from 'rehype-mermaid';
+import mermaid from 'astro-mermaid';
 
 // https://astro.build/config
 export default defineConfig({
@@ -14,15 +14,15 @@ export default defineConfig({
   image: {
     service: { entrypoint: 'astro/assets/services/noop' }
   },
-  integrations: [react(), mdx(), sitemap(), partytown()],
+  integrations: [react(), mdx(), mermaid(), sitemap(), partytown()],
   markdown: {
-    syntaxHighlight: false, // Disable to test if rehype-mermaid works
-    rehypePlugins: [
-      [rehypeMermaid, {
-        strategy: 'inline-svg',
-        dark: true
-      }]
-    ]
+    syntaxHighlight: 'shiki',
+    shikiConfig: {
+      themes: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+    }
   },
   vite: {
     plugins: [tailwindcss()]
