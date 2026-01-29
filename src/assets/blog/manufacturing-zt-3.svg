@@ -1,0 +1,120 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <!-- Background -->
+  <rect width="800" height="600" fill="#0a0e27"/>
+
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#60a5fa" text-anchor="middle">
+    Business Impact: From Security Project to Business Enabler
+  </text>
+
+  <!-- Timeline -->
+  <line x1="100" y1="500" x2="700" y2="500" stroke="#475569" stroke-width="3"/>
+
+  <!-- Phase markers -->
+  <g id="phase1">
+    <circle cx="150" cy="500" r="8" fill="#60a5fa"/>
+    <text x="150" y="530" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Month 0</text>
+    <text x="150" y="548" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#60a5fa" text-anchor="middle">Start</text>
+  </g>
+
+  <g id="phase2">
+    <circle cx="300" cy="500" r="8" fill="#7c3aed"/>
+    <text x="300" y="530" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Month 3</text>
+    <text x="300" y="548" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#a78bfa" text-anchor="middle">Identity</text>
+  </g>
+
+  <g id="phase3">
+    <circle cx="450" cy="500" r="8" fill="#f59e0b"/>
+    <text x="450" y="530" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Month 7</text>
+    <text x="450" y="548" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#fbbf24" text-anchor="middle">Network</text>
+  </g>
+
+  <g id="phase4">
+    <circle cx="600" cy="500" r="8" fill="#10b981"/>
+    <text x="600" y="530" font-family="Arial, sans-serif" font-size="12" fill="#94a3b8" text-anchor="middle">Month 10</text>
+    <text x="600" y="548" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#34d399" text-anchor="middle">Endpoints</text>
+  </g>
+
+  <!-- Metric boxes -->
+  <g id="metric1">
+    <rect x="70" y="80" width="180" height="140" fill="#1e293b" stroke="#34d399" stroke-width="3" rx="10"/>
+    <text x="160" y="110" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#34d399" text-anchor="middle">34%</text>
+    <text x="160" y="140" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">Remote Work</text>
+    <text x="160" y="158" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">Productivity Gain</text>
+    <text x="160" y="185" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">120,000 hours/year saved</text>
+    <text x="160" y="205" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">Engineers work anywhere</text>
+
+    <line x1="160" y1="220" x2="160" y2="490" stroke="#34d399" stroke-width="2" stroke-dasharray="5,5"/>
+  </g>
+
+  <g id="metric2">
+    <rect x="270" y="80" width="180" height="140" fill="#1e293b" stroke="#a78bfa" stroke-width="3" rx="10"/>
+    <text x="360" y="110" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#a78bfa" text-anchor="middle">3 weeks</text>
+    <text x="360" y="128" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#a78bfa" text-anchor="middle">→ 1 day</text>
+    <text x="360" y="155" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">Supplier</text>
+    <text x="360" y="173" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">Onboarding</text>
+    <text x="360" y="200" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">40% faster RFQ response</text>
+
+    <line x1="360" y1="220" x2="360" y2="490" stroke="#a78bfa" stroke-width="2" stroke-dasharray="5,5"/>
+  </g>
+
+  <g id="metric3">
+    <rect x="470" y="80" width="180" height="140" fill="#1e293b" stroke="#fbbf24" stroke-width="3" rx="10"/>
+    <text x="560" y="110" font-family="Arial, sans-serif" font-size="48" font-weight="bold" fill="#fbbf24" text-anchor="middle">78%</text>
+    <text x="560" y="140" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">Faster Incident</text>
+    <text x="560" y="158" font-family="Arial, sans-serif" font-size="14" fill="#fff" text-anchor="middle">Response</text>
+    <text x="560" y="185" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">6-8 hrs → 22 minutes</text>
+    <text x="560" y="205" font-family="Arial, sans-serif" font-size="11" fill="#94a3b8" text-anchor="middle">85% fewer false positives</text>
+
+    <line x1="560" y1="220" x2="560" y2="490" stroke="#fbbf24" stroke-width="2" stroke-dasharray="5,5"/>
+  </g>
+
+  <!-- ROI Box -->
+  <g id="roi">
+    <rect x="50" y="260" width="700" height="100" fill="#7c3aed" stroke="#a78bfa" stroke-width="3" rx="15"/>
+
+    <text x="400" y="290" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#fff" text-anchor="middle">
+      Financial Impact - Year 1
+    </text>
+
+    <g id="investment">
+      <text x="200" y="320" font-family="Arial, sans-serif" font-size="16" fill="#fbbf24" text-anchor="middle">Investment</text>
+      <text x="200" y="345" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#fff" text-anchor="middle">€1.62M</text>
+    </g>
+
+    <text x="400" y="335" font-family="Arial, sans-serif" font-size="32" fill="#fff" text-anchor="middle">→</text>
+
+    <g id="returns">
+      <text x="600" y="320" font-family="Arial, sans-serif" font-size="16" fill="#34d399" text-anchor="middle">Returns</text>
+      <text x="600" y="345" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="#34d399" text-anchor="middle">€2.195M</text>
+    </g>
+
+    <line x1="350" y1="330" x2="450" y2="330" stroke="#fff" stroke-width="2" marker-end="url(#arrowwhite)"/>
+  </g>
+
+  <!-- ROI Result -->
+  <g id="roi-result">
+    <rect x="250" y="380" width="300" height="60" fill="#10b981" stroke="#34d399" stroke-width="3" rx="10"/>
+    <text x="400" y="410" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#fff" text-anchor="middle">
+      ROI: 135% Year 1
+    </text>
+    <text x="400" y="432" font-family="Arial, sans-serif" font-size="12" fill="#d1fae5" text-anchor="middle">
+      Plus: Competitive advantage from faster operations
+    </text>
+  </g>
+
+  <!-- Key insight box -->
+  <g id="insight">
+    <rect x="50" y="560" width="700" height="30" fill="#1e293b" stroke="#60a5fa" stroke-width="2" rx="5"/>
+    <text x="400" y="582" font-family="Arial, sans-serif" font-size="14" font-style="italic" fill="#94a3b8" text-anchor="middle">
+      "The real value isn't cost savings. It's that we can move faster than our competitors." - CFO
+    </text>
+  </g>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowwhite" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#fff"/>
+    </marker>
+  </defs>
+</svg>

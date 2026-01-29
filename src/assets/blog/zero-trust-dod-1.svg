@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4f46e5;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#7c3aed;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGradient)"/>
+
+  <!-- Title -->
+  <text x="400" y="60" font-family="Arial, sans-serif" font-size="32" font-weight="bold" fill="#fff" text-anchor="middle">DoD Zero Trust Architecture</text>
+  <text x="400" y="95" font-family="Arial, sans-serif" font-size="18" fill="#94a3b8" text-anchor="middle">7 Pillars Framework</text>
+
+  <!-- Central Shield -->
+  <path d="M 400 150 L 460 180 L 460 280 Q 460 320 400 350 Q 340 320 340 280 L 340 180 Z"
+        fill="url(#shieldGradient)" opacity="0.9"/>
+  <text x="400" y="260" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">ZERO</text>
+  <text x="400" y="280" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">TRUST</text>
+
+  <!-- 7 Pillars arranged in circle -->
+  <!-- Pillar 1: User -->
+  <circle cx="400" cy="430" r="45" fill="#0ea5e9" opacity="0.2"/>
+  <circle cx="400" cy="430" r="35" fill="#0ea5e9" opacity="0.6"/>
+  <text x="400" y="435" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">User</text>
+
+  <!-- Pillar 2: Device -->
+  <circle cx="570" cy="390" r="45" fill="#10b981" opacity="0.2"/>
+  <circle cx="570" cy="390" r="35" fill="#10b981" opacity="0.6"/>
+  <text x="570" y="395" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Device</text>
+
+  <!-- Pillar 3: Network -->
+  <circle cx="620" cy="250" r="45" fill="#f59e0b" opacity="0.2"/>
+  <circle cx="620" cy="250" r="35" fill="#f59e0b" opacity="0.6"/>
+  <text x="620" y="255" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Network</text>
+
+  <!-- Pillar 4: Application -->
+  <circle cx="520" cy="130" r="45" fill="#ec4899" opacity="0.2"/>
+  <circle cx="520" cy="130" r="35" fill="#ec4899" opacity="0.6"/>
+  <text x="520" y="135" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">App &amp;</text>
+  <text x="520" y="150" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#fff" text-anchor="middle">Workload</text>
+
+  <!-- Pillar 5: Data -->
+  <circle cx="280" cy="130" r="45" fill="#8b5cf6" opacity="0.2"/>
+  <circle cx="280" cy="130" r="35" fill="#8b5cf6" opacity="0.6"/>
+  <text x="280" y="135" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#fff" text-anchor="middle">Data</text>
+
+  <!-- Pillar 6: Visibility -->
+  <circle cx="180" cy="250" r="45" fill="#06b6d4" opacity="0.2"/>
+  <circle cx="180" cy="250" r="35" fill="#06b6d4" opacity="0.6"/>
+  <text x="180" y="250" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Visibility &amp;</text>
+  <text x="180" y="265" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Analytics</text>
+
+  <!-- Pillar 7: Automation -->
+  <circle cx="230" cy="390" r="45" fill="#14b8a6" opacity="0.2"/>
+  <circle cx="230" cy="390" r="35" fill="#14b8a6" opacity="0.6"/>
+  <text x="230" y="390" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">Automation</text>
+  <text x="230" y="405" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#fff" text-anchor="middle">&amp; Orchestr.</text>
+
+  <!-- Connecting lines -->
+  <line x1="400" y1="350" x2="400" y2="385" stroke="#4f46e5" stroke-width="2" opacity="0.3"/>
+  <line x1="440" y1="330" x2="535" y2="365" stroke="#4f46e5" stroke-width="2" opacity="0.3"/>
+  <line x1="455" y1="270" x2="585" y2="265" stroke="#4f46e5" stroke-width="2" opacity="0.3"/>
+  <line x1="450" y1="200" x2="500" y2="155" stroke="#4f46e5" stroke-width="2" opacity="0.3"/>
+  <line x1="365" y1="180" x2="305" y2="155" stroke="#4f46e5" stroke-width="2" opacity="0.3"/>
+  <line x1="345" y1="270" x2="215" y2="265" stroke="#4f46e5" stroke-width="2" opacity="0.3"/>
+  <line x1="360" y1="330" x2="265" y2="365" stroke="#4f46e5" stroke-width="2" opacity="0.3"/>
+
+  <!-- Stats -->
+  <rect x="50" y="520" width="700" height="60" fill="#1e293b" opacity="0.8" rx="10"/>
+  <text x="400" y="550" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#fff" text-anchor="middle">$14.5B FY2025 Budget • $977M Zero Trust Investment • 152 Activities • 2027 Target Deadline</text>
+</svg>

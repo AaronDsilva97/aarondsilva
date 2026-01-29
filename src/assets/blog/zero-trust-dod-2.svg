@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0f172a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e293b;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="url(#bgGrad)"/>
+
+  <!-- Title -->
+  <text x="400" y="50" font-family="Arial, sans-serif" font-size="28" font-weight="bold" fill="#fff" text-anchor="middle">Implementation Timeline</text>
+  <text x="400" y="80" font-family="Arial, sans-serif" font-size="16" fill="#94a3b8" text-anchor="middle">DoD Zero Trust Roadmap to 2032</text>
+
+  <!-- Timeline -->
+  <line x1="100" y1="300" x2="700" y2="300" stroke="#475569" stroke-width="4"/>
+
+  <!-- 2022 - Strategy Release -->
+  <circle cx="150" cy="300" r="12" fill="#ef4444"/>
+  <rect x="100" y="150" width="120" height="100" fill="#1e293b" stroke="#ef4444" stroke-width="2" rx="8"/>
+  <text x="160" y="180" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#ef4444" text-anchor="middle">2022</text>
+  <text x="160" y="205" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Zero Trust</text>
+  <text x="160" y="225" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Strategy</text>
+  <text x="160" y="245" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Published</text>
+  <line x1="150" y1="250" x2="150" y2="288" stroke="#ef4444" stroke-width="2"/>
+
+  <!-- 2024 - Civilian Deadline -->
+  <circle cx="320" cy="300" r="12" fill="#f59e0b"/>
+  <rect x="270" y="350" width="120" height="100" fill="#1e293b" stroke="#f59e0b" stroke-width="2" rx="8"/>
+  <text x="330" y="380" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#f59e0b" text-anchor="middle">FY 2024</text>
+  <text x="330" y="405" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Civilian</text>
+  <text x="330" y="425" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Agency</text>
+  <text x="330" y="445" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Deadline</text>
+  <line x1="320" y1="312" x2="320" y2="350" stroke="#f59e0b" stroke-width="2"/>
+
+  <!-- 2026 - Implementation Guidelines -->
+  <circle cx="490" cy="300" r="12" fill="#10b981"/>
+  <rect x="440" y="150" width="120" height="100" fill="#1e293b" stroke="#10b981" stroke-width="2" rx="8"/>
+  <text x="500" y="180" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#10b981" text-anchor="middle">Jan 2026</text>
+  <text x="500" y="205" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">ZIG Primer</text>
+  <text x="500" y="225" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">&amp; Discovery</text>
+  <text x="500" y="245" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Released</text>
+  <line x1="490" y1="250" x2="490" y2="288" stroke="#10b981" stroke-width="2"/>
+
+  <!-- 2027 - Target Level -->
+  <circle cx="600" cy="300" r="12" fill="#3b82f6"/>
+  <rect x="550" y="350" width="120" height="100" fill="#1e293b" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="610" y="380" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#3b82f6" text-anchor="middle">FY 2027</text>
+  <text x="610" y="405" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">DoD Target</text>
+  <text x="610" y="425" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Level Zero</text>
+  <text x="610" y="445" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Trust</text>
+  <line x1="600" y1="312" x2="600" y2="350" stroke="#3b82f6" stroke-width="2"/>
+
+  <!-- 2032 - Advanced Level -->
+  <circle cx="700" cy="300" r="12" fill="#8b5cf6"/>
+  <rect x="630" y="150" width="140" height="100" fill="#1e293b" stroke="#8b5cf6" stroke-width="2" rx="8"/>
+  <text x="700" y="180" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#8b5cf6" text-anchor="middle">FY 2032</text>
+  <text x="700" y="205" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Advanced</text>
+  <text x="700" y="225" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Level Zero</text>
+  <text x="700" y="245" font-family="Arial, sans-serif" font-size="12" fill="#cbd5e1" text-anchor="middle">Trust</text>
+  <line x1="700" y1="250" x2="700" y2="288" stroke="#8b5cf6" stroke-width="2"/>
+
+  <!-- Current marker -->
+  <polygon points="490,320 480,340 500,340" fill="#10b981"/>
+  <text x="490" y="365" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981" text-anchor="middle">YOU ARE HERE</text>
+
+  <!-- Stats box -->
+  <rect x="50" y="510" width="700" height="70" fill="#1e293b" opacity="0.9" rx="10"/>
+  <text x="400" y="540" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">91 Cybersecurity Capability Outcomes</text>
+  <text x="400" y="565" font-family="Arial, sans-serif" font-size="14" fill="#94a3b8" text-anchor="middle">152 Zero Trust Activities | 45 Capabilities | 7 Pillars</text>
+</svg>
