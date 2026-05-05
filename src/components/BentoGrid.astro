@@ -63,6 +63,11 @@
       <slot name="certifications" />
     </div>
 
+    <!-- Clinvo Healthcare Platform -->
+    <div class="bento-item clinvo">
+      <slot name="clinvo" />
+    </div>
+
     <!-- Aplify E-commerce Platform -->
     <div class="bento-item aplify">
       <slot name="aplify" />
@@ -88,6 +93,7 @@
     gap: 1.5rem;
     grid-template-areas:
       "hero hero hero github-stats"
+      "clinvo clinvo clinvo clinvo"
       "aplify aplify itihaas itihaas"
       "testimonials testimonials testimonials testimonials"
       "healthcare-expertise healthcare-expertise ai-expertise ai-expertise"
@@ -229,6 +235,13 @@
     min-height: 140px;
   }
 
+  .clinvo {
+    grid-area: clinvo;
+    min-height: 200px;
+    padding: 0;
+    overflow: hidden;
+  }
+
   .aplify {
     grid-area: aplify;
     min-height: 140px;
@@ -255,6 +268,7 @@
       gap: 1.25rem;
       grid-template-areas:
         "hero hero hero github-stats"
+        "clinvo clinvo clinvo clinvo"
         "aplify aplify itihaas itihaas"
         "testimonials testimonials testimonials testimonials"
         "healthcare-expertise healthcare-expertise ai-expertise ai-expertise"
@@ -271,6 +285,7 @@
       grid-template-areas:
         "hero"
         "github-stats"
+        "clinvo"
         "aplify"
         "itihaas"
         "testimonials"

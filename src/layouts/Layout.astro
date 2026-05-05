@@ -245,7 +245,7 @@ const socialImage = new URL(image, Astro.site);
 
 		<!-- Auto-hide controls after inactivity -->
 		<script>
-			let hideTimeout;
+			let hideTimeout: ReturnType<typeof setTimeout> | undefined;
 			const HIDE_DELAY = 4000; // 4 seconds
 
 			function showControls() {

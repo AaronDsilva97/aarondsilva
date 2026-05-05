@@ -31,7 +31,7 @@ export default function Itihaas() {
         <div className="flex-1 flex flex-col justify-between">
           <div className="space-y-2">
             <p className="text-sm text-slate-900 dark:text-slate-100 leading-relaxed">
-              Explore <span className="font-semibold text-purple-600 dark:text-purple-400">5,000 years</span> of Indian history — from the Indus Valley to Independence.
+              Explore <span className="font-semibold text-purple-600 dark:text-purple-400">5,000 years</span> of Indian history, from the Indus Valley to Independence.
             </p>
             <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
               A comprehensive platform documenting India's epic story through 15+ interconnected categories.
@@ -74,23 +74,20 @@ export default function Itihaas() {
         </div>
       </div>
 
-      <style jsx>{`
-        @keyframes ken-burns {
-          0% {
-            transform: scale(1) translateX(0) translateY(0);
-          }
-          50% {
-            transform: scale(1.1) translateX(-2%) translateY(-2%);
-          }
-          100% {
-            transform: scale(1) translateX(0) translateY(0);
-          }
-        }
-
-        .animate-ken-burns {
-          animation: ken-burns 20s ease-in-out infinite;
-        }
-      `}</style>
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            @keyframes ken-burns {
+              0% { transform: scale(1) translateX(0) translateY(0); }
+              50% { transform: scale(1.1) translateX(-2%) translateY(-2%); }
+              100% { transform: scale(1) translateX(0) translateY(0); }
+            }
+            .animate-ken-burns {
+              animation: ken-burns 20s ease-in-out infinite;
+            }
+          `,
+        }}
+      />
     </div>
   );
 }

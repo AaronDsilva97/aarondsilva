@@ -23,7 +23,7 @@ export default function Aplify() {
         <div className="flex-1 flex flex-col justify-between">
           <div className="space-y-2">
             <p className="text-sm text-slate-900 dark:text-slate-100 leading-relaxed">
-              Building scalable <span className="font-semibold text-purple-600 dark:text-purple-400">multi-vendor marketplace</span> infrastructure — leading technical strategy and engineering.
+              Leading technical strategy and engineering for a scalable <span className="font-semibold text-purple-600 dark:text-purple-400">multi-vendor marketplace</span>.
             </p>
             <p className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
               Cloud-native architecture with real-time operations, vendor management, and mission-critical uptime.
