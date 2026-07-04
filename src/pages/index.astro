@@ -1,45 +1,51 @@
 ---
+import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import BentoGrid from '../components/BentoGrid.astro';
-import HeroIntro from '../components/HeroIntro.tsx';
-import AvailabilityWidget from '../components/AvailabilityWidget.tsx';
-import CommandHint from '../components/CommandHint.astro';
-import CurrentProject from '../components/CurrentProject.tsx';
-import ConnectCard from '../components/ConnectCard.astro';
-import RecentProjects from '../components/RecentProjects.astro';
-import TechStack from '../components/TechStack.astro';
-import RecentPosts from '../components/RecentPosts.astro';
-import CommandPalette from '../components/CommandPalette.tsx';
-import MetricsCard from '../components/MetricsCard.tsx';
-import HealthcareExpertise from '../components/HealthcareExpertise.tsx';
-import AIExpertise from '../components/AIExpertise.tsx';
-import SecurityExpertise from '../components/SecurityExpertise.tsx';
-import Itihaas from '../components/Itihaas.tsx';
-import Aplify from '../components/Aplify.tsx';
-import Clinvo from '../components/Clinvo.tsx';
-import CertificationsCard from '../components/CertificationsCard.tsx';
-import InteractiveBackground from '../components/InteractiveBackground.tsx';
+import Intro from '../components/Intro.astro';
+import IndexRow from '../components/IndexRow.astro';
+import { flagship } from '../data/projects';
+const posts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.publishDate.valueOf() - a.data.publishDate.valueOf())
+  .slice(0, 5);
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' }).toLowerCase();
 ---
-
 <Layout>
-  <InteractiveBackground client:load />
-  <BentoGrid>
-    <HeroIntro slot="hero" client:load />
-    <AvailabilityWidget slot="availability" client:load />
-    <CommandHint slot="command-hint" />
-    <CurrentProject slot="current-project" client:load />
-    <ConnectCard slot="github-stats" />
-    <CertificationsCard slot="certifications" client:load />
-    <TechStack slot="tech-stack" />
-    <RecentPosts slot="recent-posts" />
-    <MetricsCard slot="metrics" client:load />
-    <HealthcareExpertise slot="healthcare-expertise" client:load />
-    <AIExpertise slot="ai-expertise" client:load />
-    <SecurityExpertise slot="security-expertise" client:load />
-    <Clinvo slot="clinvo" client:load />
-    <Aplify slot="aplify" client:load />
-    <Itihaas slot="itihaas" client:load />
-    <RecentProjects slot="testimonials" data-section="projects" />
-  </BentoGrid>
-  <CommandPalette client:load />
+  <Intro />
+  <section class="px-6 sm:px-10 pt-20 sm:pt-32 pb-24 max-w-4xl">
+    <p class="meta mb-8">CTO · Healthcare — Commerce — Security</p>
+    <h1 class="text-4xl sm:text-6xl font-medium tracking-tight leading-[1.06]">
+      Hi, I'm Aaron.<br />I help turn ambitious ideas<br />into products people <em class="font-serif italic font-normal">trust</em>.
+    </h1>
+    <p class="mt-8 text-lg sm:text-xl leading-relaxed text-fg max-w-2xl">
+      Through thoughtful engineering, product thinking, and a lot of shipping.
+    </p>
+    <p class="mt-6 text-lg leading-relaxed text-muted max-w-xl">
+      Co-founder of The Lean Product Studio and CTO at Aplify. I lead a team of ten
+      engineers, still write code every day, and spend most of my energy on Clinvo,
+      an AI-native EHR for modern clinics.
+    </p>
+    <a href="/contact" class="mt-8 inline-flex items-center gap-2 meta text-sage hover:text-fg transition-colors">
+      <span class="w-1.5 h-1.5 rounded-full bg-sage"></span>Open to advisory work · Get in touch →
+    </a>
+  </section>
+
+  <section>
+    <div class="hairline flex justify-between px-6 sm:px-10 py-3">
+      <span class="meta">Selected work</span>
+      <a href="/work" class="meta hover:text-fg transition-colors">All work →</a>
+    </div>
+    {flagship.map(p => (
+      <IndexRow href={p.url} external title={p.name} meta={`${p.role.toLowerCase()} · ${p.domain.toLowerCase()} · ${p.year}`} />
+    ))}
+  </section>
+
+  <section class="mt-24">
+    <div class="hairline flex justify-between px-6 sm:px-10 py-3">
+      <span class="meta">Writing</span>
+      <a href="/blog" class="meta hover:text-fg transition-colors">All writing →</a>
+    </div>
+    {posts.map(p => (
+      <IndexRow href={`/blog/${p.slug}/`} title={p.data.title} meta={fmt(p.data.publishDate)} />
+    ))}
+  </section>
 </Layout>

@@ -10,7 +10,7 @@ seo:
 
 I've shipped healthcare apps in both. Here's what nobody tells you in comparison articles.
 
-Most React Native vs Flutter posts are written by people who've only shipped one, or worse, neither. I've built a hospital management app serving 100+ US hospitals in React Native (HIPAA compliant) and a breast cancer screening app for the UK market in Flutter (GDPR compliant, multi-language). Here's what actually matters when you're dealing with real patient data.
+Most React Native vs Flutter posts are written by people who've only shipped one, or worse, neither. I've built a hospital management app used by hospital organizations across the US and India in React Native (HIPAA compliant) and a breast cancer screening app for the UK market in Flutter (GDPR compliant, multi-language). Here's what actually matters when you're dealing with real patient data.
 
 ## Quick Answer (For the Impatient)
 
@@ -89,6 +89,6 @@ If I'm starting a new healthcare app today? I pick based on this decision tree:
 - **Tight budget + need developers quickly in US** = React Native
 - **Performance-critical + image-heavy + need predictable behavior** = Flutter
 
-Personally? I'm leaning Flutter for new projects. The development experience is better, the performance is more predictable, and the code I write today will be more maintainable in three years. But I wouldn't rewrite the hospital app. React Native is serving 100+ hospitals just fine, and the ecosystem advantage for healthcare integrations is real.
+Personally? I'm leaning Flutter for new projects. The development experience is better, the performance is more predictable, and the code I write today will be more maintainable in three years. But I wouldn't rewrite the hospital app. React Native is serving hospital organizations across the US and India just fine, and the ecosystem advantage for healthcare integrations is real.
 
 The unsexy truth: both are good enough. Your choice should depend more on your team, your integrations, and your market than on framework benchmarks.

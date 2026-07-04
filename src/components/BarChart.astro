@@ -1,0 +1,26 @@
+---
+interface Props {
+  data: { label: string; value: number; color?: string }[];
+  maxValue?: number;
+  height?: string;
+  title?: string;
+}
+const { data, maxValue, title } = Astro.props;
+const max = maxValue || Math.max(...data.map((d) => d.value));
+---
+<figure class="my-8 not-prose">
+  {title && <figcaption class="meta mb-4">{title}</figcaption>}
+  <div class="space-y-4">
+    {data.map((d) => (
+      <div>
+        <div class="flex items-baseline justify-between gap-4 mb-2">
+          <span class="text-sm font-medium tracking-tight">{d.label}</span>
+          <span class="meta shrink-0">{d.value}%</span>
+        </div>
+        <div class="h-1.5 bg-raised overflow-hidden">
+          <div class="h-full bg-accent" style={`width:${(d.value / max) * 100}%`}></div>
+        </div>
+      </div>
+    ))}
+  </div>
+</figure>

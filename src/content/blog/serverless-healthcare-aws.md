@@ -10,7 +10,7 @@ seo:
 
 Serverless sounds great until an auditor asks "where does the patient data actually live?" Here's how to answer confidently.
 
-I manage AWS infrastructure for healthcare systems serving 100+ hospitals. When I first proposed serverless, our compliance team looked at me like I'd suggested storing patient records in a public S3 bucket. Three years and multiple successful audits later, here's what actually works.
+I manage AWS infrastructure for healthcare systems serving hospital organizations across the US and India. When I first proposed serverless, our compliance team looked at me like I'd suggested storing patient records in a public S3 bucket. Three years and multiple successful audits later, here's what actually works.
 
 ## Serverless Healthcare Architecture Overview
 
@@ -112,4 +112,4 @@ Three years in, I'd make the same choice. Audit findings are down, development v
 
 ---
 
-*Aaron Dsilva manages AWS serverless infrastructure for healthcare systems serving 100+ hospitals. He's passed multiple HIPAA and SOC2 audits with serverless architectures.*
+*Aaron Dsilva is a CTO and technical lead who has spent eight years building secure, AI-powered production systems across healthcare, e-commerce, and security. He is co-founder of The Lean Product Studio and CTO at Aplify.*

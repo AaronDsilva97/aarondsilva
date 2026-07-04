@@ -1,0 +1,52 @@
+---
+import Layout from '../layouts/Layout.astro';
+import IndexRow from '../components/IndexRow.astro';
+import { flagship, clientWork } from '../data/projects';
+---
+<Layout title="Work — Aaron Dsilva" description="Products and client systems: healthcare, e-commerce, security.">
+  <section class="px-6 sm:px-10 pt-20 sm:pt-32 pb-16 sm:pb-24 max-w-4xl">
+    <p class="meta mb-8">Work</p>
+    <h1 class="text-4xl sm:text-6xl font-medium tracking-tight leading-[1.06]">Products and client systems</h1>
+    <p class="mt-8 text-base leading-relaxed text-muted max-w-xl">
+      I've led these products from the ground up, and delivered client systems across healthcare, e-commerce, and security compliance.
+    </p>
+  </section>
+
+  <section>
+    <div class="hairline px-6 sm:px-10 py-3">
+      <span class="meta">Flagship products</span>
+    </div>
+    {flagship.map(p => (
+      <div>
+        <IndexRow href={p.url} external title={p.name} meta={`${p.role.toLowerCase()} · ${p.domain.toLowerCase()} · ${p.year}`} />
+        <p class="px-6 sm:px-10 pb-6 pt-1 text-base leading-relaxed text-muted max-w-2xl">{p.description}</p>
+      </div>
+    ))}
+  </section>
+
+  <section class="mt-24">
+    <div class="hairline px-6 sm:px-10 py-3">
+      <span class="meta">Client work</span>
+    </div>
+    {clientWork.map(c => (
+      <div class="hairline px-6 sm:px-10 py-6">
+        <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <h3 class="text-lg sm:text-xl font-medium tracking-tight">
+            {c.url ? (
+              <a href={c.url} target="_blank" rel="noopener" class="hover:text-accent transition-colors">
+                {c.name}<span class="text-accent text-sm ml-1">↗</span>
+              </a>
+            ) : (
+              c.name
+            )}
+          </h3>
+          <span class="meta shrink-0">
+            {c.region.toLowerCase()}{c.compliance.length > 0 && ` · ${c.compliance.map(tag => tag.toLowerCase()).join(' · ')}`}
+          </span>
+        </div>
+        <p class="mt-3 text-base leading-relaxed text-muted max-w-2xl">{c.description}</p>
+        <p class="mt-3 font-mono text-xs text-soft">{c.stack.join(' · ')}</p>
+      </div>
+    ))}
+  </section>
+</Layout>

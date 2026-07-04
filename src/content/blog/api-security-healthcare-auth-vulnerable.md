@@ -12,7 +12,7 @@ seo:
 
 Your API has auth. Great. It's probably still vulnerable. Let me show you what attackers actually target.
 
-I've spent the last few years building healthcare APIs that serve 100+ hospitals. Every system starts with "we have OAuth" and ends with "wait, how did they access that patient record?" Basic authentication is table stakes. The real work starts after you verify identity.
+I've spent the last few years building healthcare APIs that serve hospital organizations across the US and India. Every system starts with "we have OAuth" and ends with "wait, how did they access that patient record?" Basic authentication is table stakes. The real work starts after you verify identity.
 
 ## Healthcare APIs: Why Attackers Care
 

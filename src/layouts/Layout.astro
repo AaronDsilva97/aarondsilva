@@ -1,7 +1,7 @@
 ---
-import { SEO } from "astro-seo";
-import "../styles/global.css";
-import ThemeToggle from "../components/ThemeToggle.tsx";
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import SiteFooter from '../components/SiteFooter.astro';
 
 export interface Props {
   title?: string;
@@ -11,10 +11,10 @@ export interface Props {
 }
 
 const {
-  title = "Aaron Dsilva — CTO & Head of Engineering | Healthcare AI, E-commerce, Security | AWS Solutions Architect",
-  description = "CTO and Technical Lead with 8 years building secure, AI-powered production systems across healthcare (100+ hospitals, HIPAA/FDA/SOC2), e-commerce platforms, and security architecture. Currently CTO at Aplify® (e-commerce) and Co-Founder at The Lean Product Studio.",
-  image = "/og-image.svg",
-  type = "website"
+  title = 'Aaron Dsilva — CTO | Secure, AI-Powered Systems',
+  description = 'CTO and technical lead with 8 years building secure, AI-powered production systems across healthcare, e-commerce, and security. Co-founder of The Lean Product Studio and CTO at Aplify.',
+  image = '/og-image.png',
+  type = 'website',
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -23,457 +23,189 @@ const socialImage = new URL(image, Astro.site);
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<!-- Theme detection - runs before page renders to prevent FOUC -->
-		<script is:inline>
-			(function() {
-				const stored = localStorage.getItem('theme');
-				// Default to dark mode - only show light if explicitly set to 'light'
-				const isDark = stored !== 'light';
-				if (isDark) {
-					document.documentElement.classList.add('dark');
-				}
-				// Update theme-color meta tag
-				const metaTheme = document.querySelector('meta[name="theme-color"]');
-				if (metaTheme) {
-					metaTheme.content = isDark ? '#0f172a' : '#ffffff';
-				}
-			})();
-		</script>
-		<SEO
-			title={title}
-			description={description}
-			canonical={canonicalURL.href}
-			charset="UTF-8"
-			openGraph={{
-				basic: {
-					title: title,
-					type: type,
-					image: socialImage.href,
-					url: canonicalURL.href
-				},
-				optional: {
-					description: description,
-					siteName: "Aaron Dsilva Portfolio",
-					locale: "en_US"
-				},
-				image: {
-					alt: "Aaron Dsilva - Tech Lead & CTO | AI, Security & Full-Stack Engineering",
-					width: 1200,
-					height: 630,
-					type: "image/jpeg"
-				}
-			}}
-			twitter={{
-				card: "summary_large_image",
-				site: "@aarondsilva97",
-				creator: "@aarondsilva97",
-				title: title,
-				description: description,
-				image: socialImage.href,
-				imageAlt: "Aaron Dsilva - Tech Lead & CTO | AI, Security & Full-Stack Engineering"
-			}}
-			extend={{
-				link: [
-					{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" },
-					{ rel: "icon", type: "image/png", sizes: "32x32", href: "/favicon-32x32.png" },
-					{ rel: "icon", type: "image/png", sizes: "16x16", href: "/favicon-16x16.png" },
-					{ rel: "apple-touch-icon", sizes: "180x180", href: "/apple-touch-icon.png" },
-					{ rel: "manifest", href: "/site.webmanifest" },
-					{ rel: "sitemap", href: "/sitemap-index.xml" },
-					{ rel: "alternate", type: "application/rss+xml", href: "/rss.xml" }
-				],
-				meta: [
-					{ name: "viewport", content: "width=device-width, initial-scale=1.0" },
-					{ name: "generator", content: Astro.generator },
-					{ name: "author", content: "Aaron D'silva" },
-					{ name: "theme-color", content: "#8b5cf6" },
-					{ name: "apple-mobile-web-app-capable", content: "yes" },
-					{ name: "apple-mobile-web-app-status-bar-style", content: "default" },
-					{ name: "msapplication-TileColor", content: "#8b5cf6" },
-					{ property: "profile:first_name", content: "Aaron" },
-					{ property: "profile:last_name", content: "D'silva" },
-					{ property: "profile:username", content: "aarondsilva97" },
-					{ property: "article:author", content: "https://github.com/AaronDsilva97" }
-				]
-			}}
-		/>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL.href} />
 
-		<!-- Structured Data (JSON-LD) -->
-		<script type="application/ld+json" set:html={JSON.stringify({
-			"@context": "https://schema.org",
-			"@graph": [
-				{
-					"@type": "Person",
-					"@id": "https://aarondsilva.me/#person",
-					"name": "Aaron D'silva",
-					"url": "https://aarondsilva.me",
-					"image": {
-						"@type": "ImageObject",
-						"url": socialImage.href,
-						"caption": "Aaron D'silva - CTO & Technical Lead"
-					},
-					"description": "CTO and Technical Lead with 8 years building secure, AI-powered production systems across healthcare (100+ hospitals, HIPAA/FDA/SOC2), e-commerce platforms, and security architecture",
-					"jobTitle": "Chief Technology Officer",
-					"worksFor": [
-						{
-							"@type": "Organization",
-							"name": "Aplify®",
-							"description": "E-commerce SaaS Platform"
-						},
-						{
-							"@type": "Organization",
-							"name": "The Lean Product Studio",
-							"url": "https://theleanproduct.studio"
-						}
-					],
-					"knowsAbout": [
-						"Healthcare AI Systems",
-						"RAG Pipelines",
-						"HIPAA Compliance",
-						"FDA Compliance",
-						"SOC2 Compliance",
-						"ISO 27001",
-						"AWS Solutions Architecture",
-						"React Native Development",
-						"Flutter Development",
-						"Node.js",
-						"Python",
-						"Neo4j",
-						"Pinecone",
-						"Security Architecture",
-						"E-commerce Platforms",
-						"Multi-Tenant SaaS"
-					],
-					"sameAs": [
-						"https://github.com/AaronDsilva97",
-						"https://www.linkedin.com/in/aaronxdsilva/"
-					]
-				},
-				{
-					"@type": "WebSite",
-					"@id": "https://aarondsilva.me/#website",
-					"url": "https://aarondsilva.me",
-					"name": "Aaron D'silva Portfolio",
-					"description": "Portfolio website of Aaron D'silva, showcasing mobile and web development projects",
-					"publisher": {
-						"@id": "https://aarondsilva.me/#person"
-					},
-					"inLanguage": "en-US"
-				},
-				{
-					"@type": "WebPage",
-					"@id": canonicalURL.href + "#webpage",
-					"url": canonicalURL.href,
-					"name": title,
-					"description": description,
-					"isPartOf": {
-						"@id": "https://aarondsilva.me/#website"
-					},
-					"about": {
-						"@id": "https://aarondsilva.me/#person"
-					},
-					"datePublished": "2024-01-01T00:00:00.000Z",
-					"dateModified": new Date().toISOString(),
-					"breadcrumb": {
-						"@type": "BreadcrumbList",
-						"itemListElement": [
-							{
-								"@type": "ListItem",
-								"position": 1,
-								"name": "Home",
-								"item": "https://aarondsilva.me"
-							}
-						]
-					}
-				}
-			]
-		})} />
+    <!-- Self-hosted fonts -->
+    <link rel="preload" href="/fonts/Satoshi-Variable.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/JetBrainsMono-Regular.woff2" as="font" type="font/woff2" crossorigin />
 
-		<!-- Preload modern fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Theme detection - runs before render to prevent FOUC -->
+    <script is:inline>
+      const t = localStorage.theme ?? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      document.documentElement.classList.toggle('dark', t === 'dark');
+    </script>
 
-	</head>
-	<body class="bg-gradient-to-br from-slate-50 via-slate-100 to-white dark:from-slate-950 dark:via-slate-900 dark:to-slate-950 text-slate-900 dark:text-slate-100 font-sans antialiased relative overflow-x-hidden transition-colors duration-300">
-		<!-- Animated background elements -->
-		<div class="fixed inset-0 pointer-events-none">
-			<div class="absolute top-0 -left-4 w-72 h-72 bg-purple-500/5 dark:bg-purple-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob"></div>
-			<div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-500/5 dark:bg-yellow-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-2000"></div>
-			<div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500/5 dark:bg-pink-500/10 rounded-full mix-blend-multiply filter blur-3xl animate-blob animation-delay-4000"></div>
-		</div>
+    <!-- Icons, manifest, sitemap, RSS -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="alternate" type="application/rss+xml" href="/rss.xml" />
 
-		<div class="min-h-screen relative z-10">
-			<slot />
-		</div>
+    <!-- Meta -->
+    <meta name="generator" content={Astro.generator} />
+    <meta name="author" content="Aaron Dsilva" />
+    <meta name="theme-color" content="#F0ECE3" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="msapplication-TileColor" content="#F0ECE3" />
+    <meta property="profile:first_name" content="Aaron" />
+    <meta property="profile:last_name" content="Dsilva" />
+    <meta property="profile:username" content="aarondsilva97" />
+    <meta property="article:author" content="https://github.com/AaronDsilva97" />
 
-		<!-- Command Palette -->
-		<div id="command-palette-root"></div>
+    <!-- Open Graph -->
+    <meta property="og:title" content={title} />
+    <meta property="og:type" content={type} />
+    <meta property="og:url" content={canonicalURL.href} />
+    <meta property="og:image" content={socialImage.href} />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:alt" content="Aaron Dsilva — CTO" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content="Aaron Dsilva" />
+    <meta property="og:locale" content="en_US" />
 
-		<!-- Theme Toggle -->
-		<div id="theme-toggle-container" class="fixed top-3 right-3 z-50 transition-opacity duration-500">
-			<ThemeToggle client:load />
-		</div>
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@aarondsilva97" />
+    <meta name="twitter:creator" content="@aarondsilva97" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={socialImage.href} />
+    <meta name="twitter:image:alt" content="Aaron Dsilva — CTO" />
 
-		<!-- Command palette trigger hint -->
-		<div id="command-hint" class="fixed bottom-4 right-4 text-xs text-slate-500 dark:text-slate-400 pointer-events-none z-20 backdrop-blur-sm bg-white/50 dark:bg-slate-900/30 rounded-lg px-3 py-2 border border-slate-200 dark:border-slate-700/50 hidden md:block transition-colors duration-300">
-			Press <kbd class="px-1.5 py-0.5 bg-slate-100 dark:bg-slate-800/80 rounded border border-slate-300 dark:border-slate-600 text-slate-600 dark:text-slate-300 font-mono transition-colors duration-300">⌘K</kbd> for commands
-		</div>
-
-		<!-- Dynamic keyboard shortcut detection -->
-		<script>
-			// Update keyboard shortcut hint based on platform
-			document.addEventListener('DOMContentLoaded', function() {
-				const hint = document.getElementById('command-hint');
-				const kbd = hint?.querySelector('kbd');
-
-				if (kbd) {
-					const isMac = navigator.platform.toLowerCase().includes('mac');
-					const isWindows = navigator.platform.toLowerCase().includes('win');
-
-					if (isMac) {
-						kbd.textContent = '⌘K';
-					} else if (isWindows || navigator.platform.toLowerCase().includes('linux')) {
-						kbd.textContent = 'Ctrl+K';
-					} else {
-						kbd.textContent = 'Ctrl+K';
-					}
-				}
-			});
-		</script>
-
-		<!-- Auto-hide controls after inactivity -->
-		<script>
-			let hideTimeout: ReturnType<typeof setTimeout> | undefined;
-			const HIDE_DELAY = 4000; // 4 seconds
-
-			function showControls() {
-				const themeToggle = document.getElementById('theme-toggle-container');
-				const searchButton = document.getElementById('search-button');
-
-				if (themeToggle) {
-					themeToggle.style.opacity = '1';
-					themeToggle.style.pointerEvents = 'auto';
-				}
-				if (searchButton) {
-					searchButton.style.opacity = '1';
-					searchButton.style.pointerEvents = 'auto';
-				}
-
-				// Clear existing timeout
-				clearTimeout(hideTimeout);
-
-				// Set new timeout to hide
-				hideTimeout = setTimeout(() => {
-					if (themeToggle) {
-						themeToggle.style.opacity = '0';
-						themeToggle.style.pointerEvents = 'none';
-					}
-					if (searchButton) {
-						searchButton.style.opacity = '0';
-						searchButton.style.pointerEvents = 'none';
-					}
-				}, HIDE_DELAY);
-			}
-
-			document.addEventListener('DOMContentLoaded', function() {
-				// Show controls initially
-				showControls();
-
-				// Show on mouse movement (desktop)
-				document.addEventListener('mousemove', showControls);
-
-				// Show on scroll
-				document.addEventListener('scroll', showControls);
-
-				// Show on touch (mobile)
-				document.addEventListener('touchstart', showControls);
-
-				// Show on keyboard activity
-				document.addEventListener('keydown', showControls);
-			});
-		</script>
-	</body>
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Person",
+          "@id": "https://aarondsilva.me/#person",
+          "name": "Aaron Dsilva",
+          "url": "https://aarondsilva.me",
+          "image": {
+            "@type": "ImageObject",
+            "url": socialImage.href,
+            "caption": "Aaron Dsilva — CTO & Technical Lead"
+          },
+          "description": description,
+          "jobTitle": "Chief Technology Officer",
+          "worksFor": [
+            {
+              "@type": "Organization",
+              "name": "Aplify®",
+              "description": "E-commerce SaaS Platform"
+            },
+            {
+              "@type": "Organization",
+              "name": "The Lean Product Studio",
+              "url": "https://theleanproduct.studio"
+            }
+          ],
+          "knowsAbout": [
+            "Healthcare AI Systems",
+            "RAG Pipelines",
+            "HIPAA Compliance",
+            "FDA Compliance",
+            "SOC2 Compliance",
+            "ISO 27001",
+            "AWS Solutions Architecture",
+            "React Native Development",
+            "Flutter Development",
+            "Node.js",
+            "Python",
+            "Neo4j",
+            "Pinecone",
+            "Security Architecture",
+            "E-commerce Platforms",
+            "Multi-Tenant SaaS"
+          ],
+          "sameAs": [
+            "https://github.com/AaronDsilva97",
+            "https://www.linkedin.com/in/aaronxdsilva/"
+          ]
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://aarondsilva.me/#website",
+          "url": "https://aarondsilva.me",
+          "name": "Aaron Dsilva Portfolio",
+          "description": "Portfolio website of Aaron Dsilva, showcasing secure, AI-powered production systems.",
+          "publisher": {
+            "@id": "https://aarondsilva.me/#person"
+          },
+          "inLanguage": "en-US"
+        },
+        {
+          "@type": "WebPage",
+          "@id": canonicalURL.href + "#webpage",
+          "url": canonicalURL.href,
+          "name": title,
+          "description": description,
+          "isPartOf": {
+            "@id": "https://aarondsilva.me/#website"
+          },
+          "about": {
+            "@id": "https://aarondsilva.me/#person"
+          },
+          "datePublished": "2024-01-01T00:00:00.000Z",
+          "dateModified": new Date().toISOString(),
+          "breadcrumb": {
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://aarondsilva.me"
+              }
+            ]
+          }
+        }
+      ]
+    })} />
+  </head>
+  <body class="grain">
+    <div class="mx-auto max-w-6xl min-h-screen flex flex-col">
+      <SiteHeader />
+      <main class="flex-1"><slot /></main>
+      <SiteFooter />
+    </div>
+    <script>
+      import Lenis from 'lenis';
+      if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        new Lenis({ autoRaf: true, lerp: 0.12 });
+      }
+    </script>
+    <script is:inline>
+      document.addEventListener('click', (e) => {
+        if (!e.target.closest('[data-theme-toggle]')) return;
+        const flip = () => {
+          const dark = document.documentElement.classList.toggle('dark');
+          localStorage.theme = dark ? 'dark' : 'light';
+        };
+        if (matchMedia('(prefers-reduced-motion: reduce)').matches) { flip(); return; }
+        const b = document.body;
+        b.classList.remove('grain-settle', 'grain-flash');
+        void b.offsetWidth;
+        b.classList.add('grain-flash', 'theme-anim');
+        setTimeout(flip, 500);
+        setTimeout(() => b.classList.remove('grain-flash', 'theme-anim'), 1650);
+      });
+      const tick = () => {
+        const t = new Intl.DateTimeFormat('en-GB', { hour: '2-digit', minute: '2-digit', timeZone: 'Asia/Kolkata' }).format(new Date());
+        document.querySelectorAll('[data-clock]').forEach(el => el.textContent = t);
+      };
+      tick(); setInterval(tick, 30000);
+    </script>
+  </body>
 </html>
-
-<style is:global>
-	:root {
-		--font-inter: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-		--font-mono: 'JetBrains Mono', 'SF Mono', 'Monaco', 'Consolas', monospace;
-		--gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-		--gradient-accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-		--glow-primary: 0 0 20px rgba(102, 126, 234, 0.3);
-		--glow-secondary: 0 0 20px rgba(245, 87, 108, 0.3);
-	}
-
-	html {
-		font-family: var(--font-inter);
-		scroll-behavior: smooth;
-	}
-
-	body {
-		margin: 0;
-		line-height: 1.6;
-		-webkit-font-smoothing: antialiased;
-		-moz-osx-font-smoothing: grayscale;
-	}
-
-	/* Animated background blobs */
-	@keyframes blob {
-		0% {
-			transform: translate(0px, 0px) scale(1);
-		}
-		33% {
-			transform: translate(30px, -50px) scale(1.1);
-		}
-		66% {
-			transform: translate(-20px, 20px) scale(0.9);
-		}
-		100% {
-			transform: translate(0px, 0px) scale(1);
-		}
-	}
-
-	.animate-blob {
-		animation: blob 7s infinite;
-	}
-
-	.animation-delay-2000 {
-		animation-delay: 2s;
-	}
-
-	.animation-delay-4000 {
-		animation-delay: 4s;
-	}
-
-	/* Fade in animation */
-	@keyframes fadeIn {
-		from {
-			opacity: 0;
-			transform: translateY(20px);
-		}
-		to {
-			opacity: 1;
-			transform: translateY(0);
-		}
-	}
-
-	.animate-fade-in {
-		animation: fadeIn 0.6s ease-out forwards;
-	}
-
-	/* Glow effect */
-	.glow-effect {
-		box-shadow: var(--glow-primary);
-	}
-
-	.glow-accent {
-		box-shadow: var(--glow-secondary);
-	}
-
-	/* Custom scrollbar - Light mode */
-	::-webkit-scrollbar {
-		width: 6px;
-	}
-
-	::-webkit-scrollbar-track {
-		background: #f1f5f9;
-	}
-
-	::-webkit-scrollbar-thumb {
-		background: linear-gradient(to bottom, #94a3b8, #64748b);
-		border-radius: 3px;
-	}
-
-	::-webkit-scrollbar-thumb:hover {
-		background: linear-gradient(to bottom, #64748b, #475569);
-	}
-
-	/* Custom scrollbar - Dark mode */
-	.dark ::-webkit-scrollbar-track {
-		background: #0f172a;
-	}
-
-	.dark ::-webkit-scrollbar-thumb {
-		background: linear-gradient(to bottom, #667eea, #764ba2);
-	}
-
-	.dark ::-webkit-scrollbar-thumb:hover {
-		background: linear-gradient(to bottom, #5a6fd8, #6a4190);
-	}
-
-	/* Focus styles */
-	*:focus {
-		outline: 2px solid #667eea;
-		outline-offset: 2px;
-	}
-
-	*:focus:not(:focus-visible) {
-		outline: none;
-	}
-
-	/* Selection styles */
-	::selection {
-		background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-		color: #ffffff;
-	}
-
-	/* Smooth animations for theme changes - only color properties */
-	*, *::before, *::after {
-		transition-property: color, background-color, border-color, fill, stroke, box-shadow;
-		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-		transition-duration: 300ms;
-	}
-
-	/* Hover effects */
-	.hover-lift:hover {
-		transform: translateY(-2px);
-	}
-
-	.hover-glow:hover {
-		box-shadow: var(--glow-primary);
-	}
-
-	/* Glass effect - Light mode */
-	.glass-effect {
-		background: rgba(255, 255, 255, 0.7);
-		backdrop-filter: blur(10px);
-		border: 1px solid rgba(0, 0, 0, 0.1);
-	}
-
-	/* Glass effect - Dark mode */
-	.dark .glass-effect {
-		background: rgba(255, 255, 255, 0.05);
-		border: 1px solid rgba(255, 255, 255, 0.1);
-	}
-
-	/* Code styling */
-	code, kbd, .font-mono {
-		font-family: var(--font-mono);
-	}
-
-	/* Interactive element styles */
-	.interactive-card {
-		transition: transform 0.2s ease, box-shadow 0.2s ease;
-	}
-
-	.interactive-card:hover {
-		transform: translateY(-4px) scale(1.02);
-		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3), var(--glow-primary);
-	}
-
-	/* Pulse animation for active elements */
-	@keyframes pulse {
-		0%, 100% {
-			opacity: 1;
-		}
-		50% {
-			opacity: 0.5;
-		}
-	}
-
-	.animate-pulse-slow {
-		animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-	}
-</style>

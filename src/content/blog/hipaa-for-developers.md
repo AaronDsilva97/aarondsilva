@@ -1,6 +1,6 @@
 ---
 title: "HIPAA for Developers: What Actually Matters (From Someone Who's Passed the Audits)"
-description: "A practical guide to HIPAA compliance from a developer who's built healthcare systems for 100+ hospitals and survived the audits."
+description: "A practical guide to HIPAA compliance from a developer who's built healthcare systems for hospital organizations across the US and India and survived the audits."
 publishDate: 2025-07-22
 author: "Aaron Dsilva"
 tags: ["healthcare", "compliance", "security", "backend", "mobile"]
@@ -8,7 +8,7 @@ seo:
   keywords: ["HIPAA compliance developer", "HIPAA technical requirements", "PHI encryption", "healthcare app security", "HIPAA audit", "HIPAA mobile app", "React Native HIPAA", "healthcare security checklist", "BAA requirements"]
 ---
 
-I've built systems for 100+ hospitals. I've also seen apps fail audits spectacularly.
+I've built systems for hospital organizations across the US and India. I've also seen apps fail audits spectacularly.
 
 Most HIPAA guides are written by lawyers. This one's written by someone who writes the code.
 
@@ -155,4 +155,4 @@ Build secure systems. Protect patient data. Pass your audits.
 
 ---
 
-*Aaron Dsilva is a Senior Full Stack Developer with 7 years of experience building healthcare systems. He's helped 100+ hospitals achieve HIPAA, SOC2, and ISO 27001 compliance while maintaining developer sanity.*
+*Aaron Dsilva is a CTO and technical lead who has spent eight years building secure, AI-powered production systems across healthcare, e-commerce, and security. He is co-founder of The Lean Product Studio and CTO at Aplify.*

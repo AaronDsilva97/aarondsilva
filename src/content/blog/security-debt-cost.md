@@ -141,4 +141,4 @@ The companies I work with aren't bad at engineering. They're good engineers who 
 
 ---
 
-*Aaron Dsilva rebuilds broken v1 systems into secure, scalable v2s. He's seen what goes wrong and helps teams fix it before it becomes a crisis.*
+*Aaron Dsilva is a CTO and technical lead who has spent eight years building secure, AI-powered production systems across healthcare, e-commerce, and security. He is co-founder of The Lean Product Studio and CTO at Aplify.*

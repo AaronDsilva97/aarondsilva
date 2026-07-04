@@ -8,63 +8,49 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - `pnpm build` - Build production site to `./dist/`
 - `pnpm preview` - Preview build locally
 - `pnpm astro check` - Run TypeScript type checking
+- `node scripts/og-image.mjs` - Regenerate `public/og-image.png` (run after brand color changes)
 
 ## Project Architecture
 
 ### Tech Stack
-- **Astro 5.x** with static output, deployed to Cloudflare
-- **React 19** for interactive components (via `@astrojs/react`)
-- **Tailwind CSS v4** using the Vite plugin (`@tailwindcss/vite`)
+- **Astro 5.x** static output, deployed to Cloudflare Pages
+- **Tailwind CSS v4** via the Vite plugin (`@tailwindcss/vite`)
 - **MDX** for blog content with content collections
-- **Motion** (Framer Motion) for animations in React components
+- **Zero JavaScript frameworks** — no React. All interactivity is small inline vanilla scripts. The only site-wide external script is astro-mermaid's lazy loader (~6.4KB); Mermaid itself loads only on posts containing diagrams.
 
-### Key Architectural Patterns
+### Design System ("minimalist premium")
+Semantic color tokens are CSS variables in `src/styles/global.css` (`:root` for light, `.dark` overrides), mapped to Tailwind utilities via `@theme inline`: `bg-bg`, `text-fg`, `text-muted`, `text-soft`, `border-line`, `text-accent`, `text-sage`, `bg-raised`. Never hardcode hex values in components. All token pairs are WCAG AA-verified in both themes — check contrast before changing any token.
 
-**Hybrid Component Model**: The project uses both Astro (`.astro`) and React (`.tsx`) components:
-- Astro components: Static content, layouts, slots-based composition
-- React components: Interactive widgets with `client:load` directive for hydration
+Type system (self-hosted subset woff2 in `public/fonts/`):
+- **Satoshi Variable** — everything (headlines weight 500, tight tracking)
+- **JetBrains Mono** — `.meta` class: uppercase metadata labels, dates, statuses
+- **Instrument Serif italic** — rare emphasis words only (`font-serif italic`)
 
-**Bento Grid Layout**: The homepage uses a CSS Grid-based bento layout (`BentoGrid.astro`) with named grid areas and slots:
-```astro
-<BentoGrid>
-  <HeroIntro slot="hero" client:load />
-  <AvailabilityWidget slot="availability" client:load />
-  <!-- ... more slots -->
-</BentoGrid>
-```
+Fonts are subset to latin + punctuation + box-drawing. If content adds new scripts/glyphs, re-subset or they render via system fallback.
 
-**Content Collections**: Blog posts are in `src/content/blog/` as MDX files with frontmatter schema defined in `src/content/config.ts`:
-- Required: `title`, `description`, `publishDate`
-- Optional: `author`, `tags[]`, `draft`, `seo.keywords[]`
+Signature motion (all CSS-first, reduced-motion safe):
+- **Intro** (`src/components/Intro.astro`, homepage only): multilingual greeting cycle → curtain lift → page de-rez reveal (SVG displacement filter on `main`, held during curtain, heals after) → grain settle. Plays on every homepage load.
+- **Film grain**: animated overlay on `body.grain::after` (jittered `steps()` noise). `grain-settle` = post-intro arc; `grain-flash` + `theme-anim` = theme-toggle transition (grain surge masks a site-wide 0.8s color cross-fade).
+- **View transitions**: CSS `@view-transition` (zero JS).
+
+### Performance Contract
+Lighthouse 100×4 (mobile) on `/`, `/blog/`, a post, `/cv/` is a hard requirement. Total non-Mermaid JS < 10KB. Fonts preloaded; CSS fully inlined (`build.inlineStylesheets: 'always'`); sharp image service enabled.
 
 ### Directory Structure
 ```
 src/
-├── assets/blog/    # Blog post images (SVGs)
-├── components/     # Mixed Astro (.astro) and React (.tsx) components
-├── content/        # Content collections (blog posts as MDX)
-├── layouts/        # Layout.astro with SEO, structured data, global styles
-├── pages/          # File-based routing including blog/[...slug].astro
-└── styles/         # global.css with Tailwind v4 @theme configuration
+├── assets/         # profile photo (About), blog SVGs
+├── components/     # Astro only: SiteHeader, SiteFooter, Intro, IndexRow, BarChart
+├── content/blog/   # MDX/MD posts (schema in src/content/config.ts)
+├── data/           # projects.ts, certifications.ts, experience.ts — typed content arrays
+├── layouts/        # Layout.astro: verified meta/JSON-LD, theme + clock scripts, page frame
+├── pages/          # index, work, about, cv, contact, 404, blog/, rss.xml.ts
+└── styles/         # global.css: tokens, fonts, grain/motion keyframes
 ```
 
-### Styling System
-- **Tailwind v4**: Configured via `@theme` directive in `src/styles/global.css` with custom color palette and design tokens
-- **Scoped styles**: Component-specific CSS using `<style>` tags in Astro
-- **Global animations**: Custom keyframes for blob, float, glow effects in Layout.astro
-- **Glass morphism**: `.glass` utility class and backdrop-filter effects throughout
+Pages follow a shared idiom: `.meta` kicker → large `tracking-tight` heading → `.hairline` full-width index rows (`IndexRow`) or hairline blocks. No cards, no gradients, no glass.
 
-### React Component Patterns
-Interactive React components use:
-- `client:load` for immediate hydration
-- Motion library for enter/exit animations
-- Consistent styling with Tailwind classes matching the dark theme
+### Content Integrity (IMPORTANT)
+Every quantified claim on this site passed a manual audit (2026-07). Do not add or restore: "100+ hospitals", "$1M savings", "50% reduction", "20+ hospitals deployment". King's College London / Johnson & Johnson must be phrased as third-party/technical-partner work, never "clients". The clinical documentation system (Clinvo) is pre-deployment — no deployment or outcome metrics. Canonical email: `contact@aarondsilva.me`. When editing copy, grep for banned patterns before committing (use `rtk proxy grep` — the rtk hook can silently drop matches).
 
-## Environment Variables
-
-For the Spotify "Now Playing" widget:
-```bash
-SPOTIFY_CLIENT_ID=your_spotify_client_id
-SPOTIFY_CLIENT_SECRET=your_spotify_client_secret
-SPOTIFY_REFRESH_TOKEN=your_spotify_refresh_token
-```
+Blog post URLs are load-bearing (SEO) — never rename slugs. `public/_redirects` handles the deleted post and stale CV PDF. `public/llm.txt` + `llms.txt` (identical copies) must be kept in sync with site structure and the claims rules.

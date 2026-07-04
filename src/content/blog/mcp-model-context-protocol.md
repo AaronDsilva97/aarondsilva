@@ -134,4 +134,4 @@ The [modelcontextprotocol.io](https://modelcontextprotocol.io) docs are decent. 
 
 ---
 
-*Aaron Dsilva is a Senior Full Stack Developer building AI-integrated healthcare systems. He works with RAG pipelines, LLM integrations, and loves when new standards actually solve real problems.*
+*Aaron Dsilva is a CTO and technical lead who has spent eight years building secure, AI-powered production systems across healthcare, e-commerce, and security. He is co-founder of The Lean Product Studio and CTO at Aplify.*

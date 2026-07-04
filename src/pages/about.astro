@@ -1,0 +1,176 @@
+---
+import { Image } from 'astro:assets';
+import Layout from '../layouts/Layout.astro';
+import { experience } from '../data/experience';
+import { certifications } from '../data/certifications';
+import profile from '../assets/profile.png';
+
+const featured = certifications.filter(c => c.featured);
+const rest = certifications.filter(c => !c.featured);
+
+const toolbox = [
+  { label: 'AI & Machine Learning', items: 'RAG Pipelines, Neo4j (Knowledge Graphs), Pinecone (Vector DB), LangChain, Claude API, Gemini, OpenAI, AWS Comprehend Medical, Embeddings, MCP (Model Context Protocol)' },
+  { label: 'Security & Compliance', items: 'HIPAA, FDA 510(k), SOC 2 Type II, ISO 27001, GDPR, Pen Testing Remediation, Encryption (AES-256), RBAC, Audit Logging' },
+  { label: 'Backend & APIs', items: 'Node.js (Express, NestJS), Ruby on Rails, Laravel (PHP), Flask (Python), RESTful APIs, GraphQL, WebSockets, Microservices, Serverless (AWS Lambda)' },
+  { label: 'Cloud & Infrastructure', items: 'AWS (EC2, Lambda, RDS, S3, CloudFront, API Gateway, CloudWatch, Comprehend Medical), Infrastructure as Code, CI/CD Pipelines, Docker, Kubernetes' },
+  { label: 'Databases', items: 'PostgreSQL (Row-Level Security), MongoDB, Neo4j (Graph DB), Pinecone (Vector DB), Redis (Caching), MySQL, SQLite (Offline Mobile)' },
+  { label: 'Mobile Development', items: 'React Native, Flutter (Dart), Offline-First Architecture, Real-Time Sync, iOS/Android Deployment, App Store Optimization' },
+  { label: 'Languages', items: 'JavaScript/TypeScript, Python, Dart/Flutter, Ruby, PHP, SQL' },
+];
+
+const education = [
+  { degree: 'Bachelor of Engineering — Mechanical Engineering', school: "Modern Education Society's College of Engineering, Pune", period: '2014 — 2018' },
+  { degree: 'HSC, Science', school: "Modern Education Society's Nowrosjee Wadia College, Pune", period: '2012 — 2014' },
+];
+---
+<Layout title="About — Aaron Dsilva" description="CTO based in Pune, India. Eight years building production systems in healthcare, e-commerce, and security.">
+  <section class="px-6 sm:px-10 pt-20 sm:pt-32 pb-16 sm:pb-24">
+    <p class="meta mb-8">CTO · Healthcare — Commerce — Security</p>
+    <div class="flex flex-col sm:flex-row gap-10 sm:gap-16">
+      <div class="flex-1 max-w-2xl">
+        <h1 class="text-4xl sm:text-6xl font-medium tracking-tight leading-[1.06]">About</h1>
+        <div class="mt-10 space-y-5 text-base sm:text-lg leading-relaxed text-muted">
+          <p>I'm Aaron Dsilva, a CTO based in Pune, India. I've spent eight years building production systems in places where mistakes are expensive: healthcare, e-commerce, and security.</p>
+          <p>Right now I run The Lean Product Studio with a distributed team of ten engineers, and lead engineering at Aplify, a multi-vendor e-commerce platform. Before that I built HIPAA-grade healthcare systems used by hospital organizations across the US and India, and mobile health products for the UK, Europe, and Africa.</p>
+          <p>As a technical partner, I've delivered systems used by teams at King's College London and Johnson & Johnson. I've passed FDA, HIPAA, SOC 2, and ISO 27001 audits without a security incident. These days most of my time goes into AI: I've shipped four production RAG systems and I'm currently building Clinvo, an AI-native EHR.</p>
+        </div>
+      </div>
+      <figure class="shrink-0 sm:w-80 lg:w-96">
+        <Image
+          src={profile}
+          alt="Aaron Dsilva"
+          width={800}
+          class="w-full aspect-[4/5] object-cover rounded-lg"
+        />
+        <figcaption class="meta mt-4">Pune, India</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <div class="hairline px-6 sm:px-10 py-3">
+      <span class="meta">Timeline</span>
+    </div>
+    {experience.map(role => (
+      <div class="hairline px-6 sm:px-10 py-6">
+        <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+          <h2 class="text-lg sm:text-xl font-medium tracking-tight">
+            {role.org}<span class="text-muted font-normal"> · {role.title}</span>
+          </h2>
+          <span class="meta shrink-0">{role.period}</span>
+        </div>
+        <p class="meta mt-1">{role.location}</p>
+        <ul class="mt-4 space-y-2 text-sm leading-relaxed text-muted max-w-2xl">
+          {role.bullets.map(b => (
+            <li class="flex gap-3">
+              <span class="text-soft select-none">—</span>
+              <span>{b}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    ))}
+  </section>
+
+  <section class="mt-24">
+    <div class="hairline px-6 sm:px-10 py-3">
+      <span class="meta">Certifications</span>
+    </div>
+    {featured.map(c => (
+      <div class="hairline flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-6 sm:px-10 py-4">
+        <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+          <span class="text-base sm:text-lg font-medium tracking-tight">
+            {c.url ? (
+              <a href={c.url} target="_blank" rel="noopener" class="hover:text-accent transition-colors">{c.name}<span class="text-accent text-sm ml-1">↗</span></a>
+            ) : c.name}
+          </span>
+          <span class="meta">{c.issuer}</span>
+        </div>
+        <span class="meta shrink-0">{c.date}</span>
+      </div>
+    ))}
+    <details class="disclosure hairline px-6 sm:px-10 py-4">
+      <summary class="meta">Also completed ({rest.length})</summary>
+      <div class="mt-5 space-y-3">
+        {rest.map(c => (
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <div class="flex flex-wrap items-baseline gap-x-3 gap-y-1">
+              <span class="text-base">
+                {c.url ? (
+                  <a href={c.url} target="_blank" rel="noopener" class="hover:text-accent transition-colors">{c.name}<span class="text-accent text-sm ml-1">↗</span></a>
+                ) : c.name}
+              </span>
+              <span class="meta">{c.issuer}</span>
+            </div>
+            <span class="meta shrink-0">{c.date}</span>
+          </div>
+        ))}
+      </div>
+    </details>
+  </section>
+
+  <section class="mt-24">
+    <div class="hairline px-6 sm:px-10 py-3">
+      <span class="meta">Toolbox</span>
+    </div>
+    <div class="px-6 sm:px-10 py-6 space-y-6 max-w-3xl">
+      {toolbox.map(group => (
+        <div>
+          <p class="meta">{group.label}</p>
+          <p class="mt-2 text-base leading-relaxed text-muted">{group.items}</p>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <section class="mt-24">
+    <div class="hairline px-6 sm:px-10 py-3">
+      <span class="meta">Education</span>
+    </div>
+    {education.map(e => (
+      <div class="hairline flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 px-6 sm:px-10 py-4">
+        <div>
+          <span class="text-base sm:text-lg font-medium tracking-tight">{e.degree}</span>
+          <span class="meta block sm:inline sm:ml-3 mt-1 sm:mt-0">{e.school}</span>
+        </div>
+        <span class="meta shrink-0">{e.period}</span>
+      </div>
+    ))}
+  </section>
+
+  <section class="mt-24">
+    <div class="hairline px-6 sm:px-10 py-3">
+      <span class="meta">Partnership</span>
+    </div>
+    <div class="px-6 sm:px-10 py-10 max-w-2xl">
+      <p class="text-xl sm:text-2xl font-medium tracking-tight leading-snug">
+        I'm open to co-founding conversations for the right product. If you're building something in healthcare or AI, get in touch.
+      </p>
+      <a href="mailto:contact@aarondsilva.me?subject=Co-founding%20conversation"
+         class="mt-8 inline-flex items-center gap-2 meta text-fg hover:text-accent transition-colors">
+        Start a conversation
+        <span class="text-accent">↗</span>
+      </a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .disclosure > summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    list-style: none;
+    transition: color 0.2s ease;
+  }
+  .disclosure > summary::-webkit-details-marker { display: none; }
+  .disclosure > summary:hover { color: var(--fg); }
+  .disclosure > summary::after {
+    content: '+';
+    font-family: var(--font-mono);
+    font-size: 0.875rem;
+    line-height: 1;
+  }
+  .disclosure[open] > summary::after { content: '\2212'; }
+</style>

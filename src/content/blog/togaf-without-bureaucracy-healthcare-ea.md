@@ -14,7 +14,7 @@ TOGAF gets a bad rap. Mention it in a room of engineers and watch eyes glaze ove
 
 It doesn't have to be that way.
 
-I've used TOGAF to architect systems across 100+ hospitals. The key? Use what works, skip what doesn't, and remember that shipping working software beats perfect documentation every time.
+I've used TOGAF to architect systems across hospital organizations in the US and India. The key? Use what works, skip what doesn't, and remember that shipping working software beats perfect documentation every time.
 
 ## TOGAF in 10 Minutes
 

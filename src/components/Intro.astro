@@ -1,0 +1,51 @@
+<div id="intro" class="fixed inset-0 z-50 bg-[#141412] flex items-center justify-center" aria-hidden="true">
+  <p id="intro-text" class="text-[#F4F2ED] text-6xl sm:text-8xl font-medium tracking-tight">
+    <span id="intro-word">नमस्ते!</span>
+  </p>
+</div>
+<svg class="fixed w-0 h-0" aria-hidden="true">
+  <filter id="derez">
+    <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="1" result="n" />
+    <feDisplacementMap in="SourceGraphic" in2="n" xChannelSelector="R" yChannelSelector="G" scale="0" />
+  </filter>
+</svg>
+<script is:inline>
+  (() => {
+    const el = document.getElementById('intro');
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) { el.remove(); return; }
+    document.body.appendChild(el);
+    const words = ['नमस्ते!', 'नमस्कार!', 'வணக்கம்!', 'নমস্কার!', 'Olá!', 'こんにちは!', 'Bonjour!', 'Hello!'];
+    const w = document.getElementById('intro-word');
+    const STEP = 260;
+    let i = 0;
+    const iv = setInterval(() => { i++; if (i < words.length) w.textContent = words[i]; }, STEP);
+    setTimeout(() => {
+      clearInterval(iv);
+      el.style.willChange = 'transform';
+      el.style.transition = 'transform 1.6s cubic-bezier(0.76, 0, 0.16, 1)';
+      el.style.transform = 'translateY(-100%)';
+      el.style.borderRadius = '0 0 50% 50% / 0 0 10vh 10vh';
+      const dm = document.querySelector('#derez feDisplacementMap');
+      const main = document.querySelector('main');
+      if (dm && main) {
+        dm.setAttribute('scale', '55');
+        main.style.filter = 'url(#derez)';
+      }
+      setTimeout(() => {
+        el.remove();
+        document.body.classList.add('grain-settle');
+        if (!dm || !main) return;
+        const D = 2400, S0 = 55;
+        let t0;
+        requestAnimationFrame(function frame(t) {
+          if (t0 === undefined) t0 = t;
+          const p = Math.min((t - t0) / D, 1);
+          const ease = 1 - Math.pow(1 - p, 3);
+          dm.setAttribute('scale', String(S0 * (1 - ease)));
+          if (p < 1) requestAnimationFrame(frame);
+          else main.style.filter = '';
+        });
+      }, 1650);
+    }, words.length * STEP + 60);
+  })();
+</script>

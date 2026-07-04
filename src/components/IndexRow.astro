@@ -1,0 +1,11 @@
+---
+interface Props { href: string; title: string; meta: string; external?: boolean; }
+const { href, title, meta, external = false } = Astro.props;
+---
+<a href={href} {...external ? { target: '_blank', rel: 'noopener' } : {}}
+   class="group hairline flex items-baseline justify-between gap-4 px-6 sm:px-10 py-5 hover:bg-raised transition-colors">
+  <span class="text-lg sm:text-xl font-medium tracking-tight">
+    {title}{external && <span class="text-accent text-sm ml-1">↗</span>}
+  </span>
+  <span class="meta shrink-0 group-hover:text-muted transition-colors">{meta}</span>
+</a>

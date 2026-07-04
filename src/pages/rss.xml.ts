@@ -9,8 +9,8 @@ export async function GET(context: APIContext) {
   );
 
   return rss({
-    title: "Aaron D'silva - Technical Blog",
-    description: "Healthcare tech, AWS infrastructure, AI integration, and security compliance insights from a senior full-stack developer.",
+    title: "Aaron Dsilva — Writing",
+    description: "Notes on healthcare tech, AWS, AI, and security compliance from production experience.",
     site: context.site!,
     items: sortedPosts.map((post) => ({
       title: post.data.title,
