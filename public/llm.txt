@@ -1,6 +1,6 @@
-# Aaron Dsilva - CTO | AI-Native, Security-First Systems | Healthcare, E-commerce, Security
+# Aaron Dsilva - Hands on CTO | Architecture, Build, Team, Security, Delivery
 
-> I'm a CTO building AI-native, security-first systems. Currently co-founder of The Lean Product Studio and CTO at Aplify (multi-vendor e-commerce SaaS). Eight years shipping production systems across healthcare (hospital organizations across the US and India, FDA/HIPAA), e-commerce, and security (ISO 27001 platforms). Based in Pune, India.
+> I own the whole technology problem, from architecture down to the code. Architecture, production code, hiring and leading teams, security and compliance, and delivery. Currently co-founder of The Lean Product Studio and CTO at Aplify (multi-vendor e-commerce SaaS), building Clinvo. Eight years shipping production systems across healthcare (hospital organizations across the US and India, FDA/HIPAA), e-commerce, and security (ISO 27001 platforms). Based in Pune, India.
 
 I write code, architect infrastructure, lead teams, and ship products that work. I implement AI/RAG systems (Neo4j, Pinecone, Claude API) into production, fix security issues from pen tests (actual code, not reports), and build systems that pass audits: HIPAA, SOC2, GDPR, FDA, ISO 27001. As a technical partner, I've delivered systems used by teams at King's College London, Johnson & Johnson, and European hospital networks across the US, Europe, and India.
 
