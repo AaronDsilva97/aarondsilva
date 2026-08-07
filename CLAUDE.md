@@ -21,20 +21,39 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ### Design System ("minimalist premium")
 Semantic color tokens are CSS variables in `src/styles/global.css` (`:root` for light, `.dark` overrides), mapped to Tailwind utilities via `@theme inline`: `bg-bg`, `text-fg`, `text-muted`, `text-soft`, `border-line`, `text-accent`, `text-sage`, `bg-raised`. Never hardcode hex values in components. All token pairs are WCAG AA-verified in both themes — check contrast before changing any token.
 
-Type system (self-hosted subset woff2 in `public/fonts/`):
-- **Satoshi Variable** — everything (headlines weight 500, tight tracking)
-- **JetBrains Mono** — `.meta` class: uppercase metadata labels, dates, statuses
-- **Instrument Serif italic** — rare emphasis words only (`font-serif italic`)
+Palette is **Selenium** (2026-08), anchored to a selenium-toned gelatin print — chosen so the color and the film-grain motion identity come from the same reference. It is derived, not hand-picked: every neutral (`bg`, `raised`, `line`, `fg`, `muted`, `soft`, `code-bg`) sits on the ground hue — **308°** light, **305°** dark — so the tint reads as one material rather than grey with a color dropped on it. Ground chroma is ~0.0115 (light) / 0.0180 (dark); below ~0.010 a tint stops being visible at all, which is what makes a palette read generic. Text tokens are solved to fixed contrast ratios against their own ground (fg ~15.5:1, muted ~6.4, soft ~5.2, accent ≥4.9, sage ~5.6-7.0), not to the 4.5 floor — pinning them all to the floor flattens the text hierarchy. `--accent` must stay ≥4.5:1: the previous terracotta was **3.51:1** in light and failed AA on blog prose links (`src/pages/blog/[...slug].astro`). Non-token hexes that must be kept in sync: `theme-color`/`msapplication-TileColor` in `Layout.astro`, the intro curtain in `Intro.astro`, and `scripts/og-image.mjs`.
 
-Fonts are subset to latin + punctuation + box-drawing. If content adds new scripts/glyphs, re-subset or they render via system fallback.
+Type system (self-hosted woff2 in `public/fonts/`, 77 KB total), replaced 2026-08:
+- **Sentient** (Indian Type Foundry) — display: `h1/h2/h3` + `.display`, weight 500. Also the `font-serif italic` emphasis role. Only Medium and Italic ship — requesting any other weight gets a synthesised face.
+- **Familjen Grotesk** — body and UI (`--font-sans`), variable 400–700
+- **IBM Plex Mono** — `.meta` class: uppercase labels, dates, statuses, and all code blocks
+
+⚠️ **Sentient is NOT OFL.** It is under the Fontshare Free Font EULA, whose clause 26 forbids modification. `Sentient-*.woff2` are ITF's own webfonts, shipped byte-for-byte — **never subset, re-encode, or instance them.** (The previous Satoshi was subset to 237 of ~800 glyphs under this same EULA, i.e. in breach; that is why it was removed rather than kept.) Familjen Grotesk and IBM Plex Mono are OFL and *are* subset.
+
+Subset charset for the OFL faces is ASCII + the 20 non-ASCII glyphs the site actually uses (see `EXTRA` in the build script) — em/en dash, arrows, middle dot, box-drawing, curly quotes, accented latin. **IBM Plex Mono is the only candidate mono that covers box-drawing** (`─└├│`, used in a blog code fence) *and* arrows; Chivo/Spline/Martian Mono do not — verify coverage before swapping it. `◐` (theme toggle) has never been in any bundled face and falls back to system. Devanagari/Tamil/Bengali/Hiragana in the intro greetings are intentionally system-fallback.
+
+`Familjen-fallback` metrics (`size-adjust: 109.5%`, `ascent-override: 93.6%`) are derived from Familjen's own average lowercase advance vs Arial's. Recompute if the body face changes, or CLS regresses.
 
 Signature motion (all CSS-first, reduced-motion safe):
-- **Intro** (`src/components/Intro.astro`, homepage only): multilingual greeting cycle → curtain lift → page de-rez reveal (SVG displacement filter on `main`, held during curtain, heals after) → grain settle. Plays on every homepage load.
+- **Intro** (`src/components/Intro.astro`, homepage only): multilingual greeting cycle → curtain lift → page de-rez reveal (SVG displacement filter on `main`, held during curtain, heals after) → grain settle. Plays on every homepage load. Timing budget: greeting 2140ms (8 words × 260ms `STEP`) → curtain 1650ms → de-rez heal **520ms** (`D`). The greeting and curtain are deliberate and should not be shortened — only the de-rez heal was slow (it was 2400ms until 2026-08, which read as the page being stuck blurry).
 - **Film grain**: animated overlay on `body.grain::after` (jittered `steps()` noise). `grain-settle` = post-intro arc; `grain-flash` + `theme-anim` = theme-toggle transition (grain surge masks a site-wide 0.8s color cross-fade).
 - **View transitions**: CSS `@view-transition` (zero JS).
 
 ### Performance Contract
-Lighthouse 100×4 (mobile) on `/`, `/blog/`, a post, `/cv/` is a hard requirement. Total non-Mermaid JS < 10KB. Fonts preloaded; CSS fully inlined (`build.inlineStylesheets: 'always'`); sharp image service enabled.
+Lighthouse 100×4 (mobile) on `/`, `/blog/`, a post, `/cv/` is the target. Fonts preloaded; CSS fully inlined (`build.inlineStylesheets: 'always'`); sharp image service enabled.
+
+**Measured 2026-08** (mobile, local static server on `127.0.0.1` — never audit via `astro preview`, its dev toolbar injects a Vite 504 and a non-descriptive link that cost ~10 points of Best-Practices/SEO). Performance only; a11y/best-practices/SEO are 100 everywhere:
+
+| page | before (Satoshi) | after (Sentient) |
+|---|---|---|
+| `/` | 90 | **95** |
+| `/blog/` | 99 | **100** |
+| `/blog/<post>` | 67 | **77** |
+| `/cv/` | 99 | **99** |
+
+So 100×4 is **not currently met and was not met before** — treat the line above as a goal, not a description. Two known causes, both pre-existing:
+- **Mermaid posts are the main gap.** A post with one diagram pulls `mermaid.core.js` (480KB) + a diagram chunk (~59KB), giving LCP ~4.2s and TBT ~270ms. Everything else scores 99–100.
+- **`lenis` (18.1KB) is bundled into the site-wide Layout script** via `src/layouts/Layout.astro:185` for smooth scroll. This contradicts the old "only site-wide script is astro-mermaid, non-Mermaid JS < 10KB" claim. It costs no measurable TBT on non-Mermaid pages, so it is a docs/soft-budget issue rather than a live perf problem — but the budget line was wrong and is removed.
 
 ### Directory Structure
 ```

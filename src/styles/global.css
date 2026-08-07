@@ -2,56 +2,72 @@
 
 @custom-variant dark (&:where(.dark, .dark *));
 
+/* Sentient (Indian Type Foundry) is licensed under the Fontshare Free Font
+   EULA, NOT the OFL. Clause 26 forbids modification, so these two files are
+   ITF's own webfonts shipped byte-for-byte — do not subset or re-encode them. */
 @font-face {
-  font-family: 'Satoshi';
-  src: url('/fonts/Satoshi-Variable.woff2') format('woff2-variations');
-  font-weight: 300 900;
+  font-family: 'Sentient';
+  src: url('/fonts/Sentient-Medium.woff2') format('woff2');
+  font-weight: 500;
   font-display: swap;
 }
 @font-face {
-  font-family: 'JetBrains Mono';
-  src: url('/fonts/JetBrainsMono-Regular.woff2') format('woff2');
-  font-weight: 400;
-  font-display: swap;
-}
-@font-face {
-  font-family: 'Instrument Serif';
-  src: url('/fonts/InstrumentSerif-Italic.woff2') format('woff2');
+  font-family: 'Sentient';
+  src: url('/fonts/Sentient-Italic.woff2') format('woff2');
   font-style: italic;
   font-weight: 400;
   font-display: swap;
 }
-/* CLS-safe fallback metrics for Satoshi */
+/* OFL — safe to subset */
 @font-face {
-  font-family: 'Satoshi-fallback';
+  font-family: 'Familjen Grotesk';
+  src: url('/fonts/FamiljenGrotesk-Variable.woff2') format('woff2-variations');
+  font-weight: 400 700;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'IBM Plex Mono';
+  src: url('/fonts/IBMPlexMono-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-display: swap;
+}
+/* CLS-safe fallback metrics for Familjen Grotesk (derived from its own
+   avg lowercase advance vs Arial's — see docs before changing) */
+@font-face {
+  font-family: 'Familjen-fallback';
   src: local('Helvetica Neue'), local('Arial');
-  size-adjust: 98%;
-  ascent-override: 100%;
+  size-adjust: 109.5%;
+  ascent-override: 93.6%;
+  descent-override: 20.5%;
 }
 
+/* Selenium: a selenium-toned gelatin print. Every neutral sits on the ground
+   hue (308deg light / 305deg dark) so the tint reads as one material rather
+   than grey with a colour on top. Text tokens are solved to fixed contrast
+   ratios against their own ground -- see docs before changing any value. */
 :root {
-  --bg: #F0ECE3;
-  --fg: #161614;
-  --line: #DFD9CC;
-  --line-strong: #161614;
-  --muted: #57544C;
-  --soft: #64615A;
-  --accent: #BC6540;
-  --sage: #2C6A40;
-  --raised: #E8E3D7;
-  --code-bg: #F6F3EB;
+  --bg: #F3EFF7;
+  --fg: #1A1420;
+  --line: #D9D3DF;
+  --line-strong: #1A1420;
+  --muted: #5A5560;
+  --soft: #68626D;
+  --accent: #935479;
+  --sage: #3E6856;
+  --raised: #EAE6EF;
+  --code-bg: #F8F5FA;
 }
 .dark {
-  --bg: #101010;
-  --fg: #ECEAE5;
-  --line: #242420;
-  --line-strong: #ECEAE5;
-  --muted: #8F8D85;
-  --soft: #848179;
-  --accent: #D98B66;
-  --sage: #4ADE80;
-  --raised: #181815;
-  --code-bg: #181815;
+  --bg: #141019;
+  --fg: #EBE8EE;
+  --line: #231D2A;
+  --line-strong: #EBE8EE;
+  --muted: #918C98;
+  --soft: #85808B;
+  --accent: #C590AD;
+  --sage: #7CA793;
+  --raised: #1A1520;
+  --code-bg: #1A1520;
 }
 
 @theme inline {
@@ -64,9 +80,10 @@
   --color-accent: var(--accent);
   --color-sage: var(--sage);
   --color-raised: var(--raised);
-  --font-sans: 'Satoshi', 'Satoshi-fallback', 'Helvetica Neue', Arial, sans-serif;
-  --font-mono: 'JetBrains Mono', ui-monospace, Menlo, monospace;
-  --font-serif: 'Instrument Serif', Georgia, serif;
+  --font-sans: 'Familjen Grotesk', 'Familjen-fallback', 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  --font-serif: 'Sentient', Georgia, serif;
+  --font-display: 'Sentient', Georgia, serif;
 }
 
 @view-transition { navigation: auto; }
@@ -81,6 +98,15 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Sentient carries display; Familjen Grotesk carries text. `.display` is for
+   display-scale text that isn't a heading element (the footer email, index
+   row titles). Sentient ships only Medium + Italic — do not request other
+   weights or the browser will synthesise them. */
+h1, h2, h3, .display {
+  font-family: var(--font-display);
+  font-weight: 500;
 }
 
 /* animated film grain: oversized grayscale noise layer, jittered with steps() */
