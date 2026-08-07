@@ -135,6 +135,11 @@ h1, h2, h3, .display {
 
 .hairline { border-top: 1px solid var(--line); }
 
+/* Diagrams are pre-rendered to SVG at build time (scripts/prerender-mermaid.mjs),
+   so no mermaid runtime ships. Single theme by design — see the script header. */
+.mermaid-figure { margin: 2rem 0; overflow-x: auto; }
+.mermaid-figure svg { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+
 @keyframes grain-settle {
   0% { opacity: 0.032; }
   8% { opacity: 0.4; }

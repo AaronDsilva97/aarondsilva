@@ -16,7 +16,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - **Astro 5.x** static output, deployed to Cloudflare Pages
 - **Tailwind CSS v4** via the Vite plugin (`@tailwindcss/vite`)
 - **MDX** for blog content with content collections
-- **Zero JavaScript frameworks** — no React. All interactivity is small inline vanilla scripts. The only site-wide external script is astro-mermaid's lazy loader (~6.4KB); Mermaid itself loads only on posts containing diagrams.
+- **Zero JavaScript frameworks** — no React. All interactivity is small inline vanilla scripts. Total JS shipped is **18 KB** across the whole site: the Layout script (theme toggle, clock, `lenis` smooth scroll). Mermaid diagrams are pre-rendered to SVG at build time, so no diagram runtime ships at all.
 
 ### Design System ("minimalist premium")
 Semantic color tokens are CSS variables in `src/styles/global.css` (`:root` for light, `.dark` overrides), mapped to Tailwind utilities via `@theme inline`: `bg-bg`, `text-fg`, `text-muted`, `text-soft`, `border-line`, `text-accent`, `text-sage`, `bg-raised`. Never hardcode hex values in components. All token pairs are WCAG AA-verified in both themes — check contrast before changing any token.
@@ -51,9 +51,25 @@ Lighthouse 100×4 (mobile) on `/`, `/blog/`, a post, `/cv/` is the target. Fonts
 | `/blog/<post>` | 67 | **77** |
 | `/cv/` | 99 | **99** |
 
-So 100×4 is **not currently met and was not met before** — treat the line above as a goal, not a description. Two known causes, both pre-existing:
-- **Mermaid posts are the main gap.** A post with one diagram pulls `mermaid.core.js` (480KB) + a diagram chunk (~59KB), giving LCP ~4.2s and TBT ~270ms. Everything else scores 99–100.
-- **`lenis` (18.1KB) is bundled into the site-wide Layout script** via `src/layouts/Layout.astro:185` for smooth scroll. This contradicts the old "only site-wide script is astro-mermaid, non-Mermaid JS < 10KB" claim. It costs no measurable TBT on non-Mermaid pages, so it is a docs/soft-budget issue rather than a live perf problem — but the budget line was wrong and is removed.
+After pre-rendering diagrams (below), a 4-diagram post scores 98 and the single-diagram post went **45 → 99** (LCP 6.0s → 2.0s, TBT 120ms → 0ms). Total JS in `dist/` is **18 KB**, down from 2582 KB.
+
+`lenis` (18.1KB) is bundled into that site-wide Layout script via `src/layouts/Layout.astro:185` for smooth scroll. It is now essentially all the JS the site ships. It costs no measurable TBT; removing it would change the scroll feel, so it is a deliberate keep, not an oversight.
+
+### Diagrams (pre-rendered, no mermaid runtime)
+
+```bash
+pnpm prerender:mermaid   # after adding or editing any ```mermaid fence
+```
+
+`scripts/prerender-mermaid.mjs` renders every fence to SVG into `src/generated/mermaid/`, keyed by a content hash. A remark plugin in `astro.config.mjs` inlines them at build time and **throws on a cache miss**, so a forgotten re-render fails the build loudly instead of shipping a stale diagram. The cache is committed, so CI never launches a browser.
+
+Four things here are load-bearing and were each found the hard way:
+- **`htmlLabels: false` must be top-level** in the mermaid config. `flowchart.htmlLabels` alone is silently ignored. With `foreignObject` labels the SVG inherits page CSS and its `<br/>` is mangled when the inlined SVG is re-parsed by the HTML parser, so multi-line labels lose every line after the first.
+- **`securityLevel` must be `'loose'`.** `'strict'` drops all edge labels and `<br/>` content.
+- **The Astro content cache must be cleared** when SVGs change (the script does this). Post source is unchanged, so Astro will otherwise rebuild happily against the *previous* SVGs.
+- **Single theme on purpose.** `astro-mermaid`'s `autoTheme` never actually swapped palettes — the original rendered mermaid's `default` theme in dark mode too. Several diagrams also hardcode pastel fills (`style X fill:#FFF9C4`), so a dark variant puts light label text on a pale ground and is unreadable. Do not "fix" this by adding one.
+
+Verify after changes: every label in the fence source should appear in the built HTML (word-level — native SVG splits multi-line labels across `<tspan>`s, so substring matching gives false negatives).
 
 ### Directory Structure
 ```
