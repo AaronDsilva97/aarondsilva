@@ -84,6 +84,11 @@
   --font-mono: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
   --font-serif: 'Sentient', Georgia, serif;
   --font-display: 'Sentient', Georgia, serif;
+  /* Tailwind's default tracking-tight (-0.025em) was picked for Satoshi, a
+     grotesque. Sentient is a serif, whose serifs already create optical
+     connection between letters, so the same value reads cramped. All 25 uses
+     of tracking-tight are display type, so retuning the token is the fix. */
+  --tracking-tight: -0.02em;
 }
 
 @view-transition { navigation: auto; }
@@ -174,9 +179,13 @@ h1, h2, h3, .display {
 }
 
 /* mono metadata label */
+/* 0.72rem (11.52px), not 0.6875rem (11px): IBM Plex Mono's cap-height is 4.4%
+   smaller than JetBrains Mono's, so the old value rendered these labels
+   optically smaller after the font swap. 11 x (0.730/0.698) = 11.5, so this
+   restores the original optical size rather than growing them. */
 .meta {
   font-family: var(--font-mono);
-  font-size: 0.6875rem;
+  font-size: 0.72rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: var(--soft);
