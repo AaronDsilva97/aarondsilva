@@ -24,6 +24,9 @@ Multi-vendor e-commerce SaaS platform. Role: CTO. Took the platform from constan
 ### Itihaas (https://itihaas.ai)
 Where tech meets heritage: 5,000 years of Indian history across 15+ interconnected categories. Role: creator.
 
+### The Ink-Credible Store (https://theinkcrediblestore.com)
+Storefront for fountain pen ink samples in India, sold in packs of three, six, or twelve 2ml vials so buyers can try an ink before committing to a bottle. Role: creator.
+
 ## Technical Blog
 
 Articles on healthcare tech, AWS, AI/ML, and compliance from real production experience.

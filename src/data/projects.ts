@@ -23,6 +23,8 @@ export const flagship = [
     description: 'A multi-vendor e-commerce SaaS platform where I lead technical strategy and engineering. Took it from constant crashes to 100% uptime with a complete Flutter and Node.js rewrite: new flows for ads, auctions, carpool, and chat, admin panels for vendor management, and real-time inventory.' },
   { name: 'Itihaas', role: 'Creator', domain: 'Heritage', year: '2024', url: 'https://itihaas.ai',
     description: 'Where tech meets heritage: a platform documenting 5,000 years of Indian history, from the Indus Valley to Independence. People, dynasties, monuments, and trade routes across 15+ interconnected categories.' },
+  { name: 'The Ink-Credible Store', role: 'Creator', domain: 'E-commerce', year: '2026', url: 'https://theinkcrediblestore.com/',
+    description: 'A small storefront for fountain pen ink samples in India, built so people can try an ink before buying a whole bottle. Sold in packs of three, six, or twelve 2ml vials, with every swatch shot on the same nib, paper, and lighting so the colours can actually be compared, plus notes on flow, dry time, shading, and sheen.' },
 ] as const;
 
 export const clientWork: ClientProject[] = [
