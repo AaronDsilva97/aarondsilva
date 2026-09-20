@@ -547,10 +547,10 @@ Or stay with the 94% still struggling?
 
 ## Series Navigation
 
-1. [Part 1: Why 94% of Companies Struggle with AI](./state-of-ai-2025-why-94-percent-fail)
-2. [Part 2: The GenAI Paradox](./genai-paradox-37b-spent-95-percent-fail)
-3. [Part 3: AI Governance is No Longer Optional](./ai-governance-eu-ai-act-compliance-guide)
-4. [Part 4: From MLOps to LLMOps](./mlops-to-llmops-modern-ai-infrastructure)
-5. [Part 5: The Rise of the Chief AI Officer](./chief-ai-officer-rise-organizational-models)
-6. [Part 6: Scaling AI - Why Technology Isn't the Bottleneck](./scaling-ai-organizational-barriers-not-technology)
+1. [Part 1: Why 94% of Companies Struggle with AI](/blog/state-of-ai-2025-why-94-percent-fail/)
+2. [Part 2: The GenAI Paradox](/blog/genai-paradox-37b-spent-95-percent-fail/)
+3. [Part 3: AI Governance is No Longer Optional](/blog/ai-governance-eu-ai-act-compliance-guide/)
+4. [Part 4: From MLOps to LLMOps](/blog/mlops-to-llmops-modern-ai-infrastructure/)
+5. [Part 5: The Rise of the Chief AI Officer](/blog/chief-ai-officer-rise-organizational-models/)
+6. [Part 6: Scaling AI - Why Technology Isn't the Bottleneck](/blog/scaling-ai-organizational-barriers-not-technology/)
 7. **Part 7: AI Transparency and the Innovation Debate** ← You are here (SERIES COMPLETE)

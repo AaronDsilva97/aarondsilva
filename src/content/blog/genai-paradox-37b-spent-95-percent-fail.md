@@ -150,7 +150,7 @@ Now let me break down each one:
 
 **Adoption**: 50% of developers now use AI coding assistants
 
-**ROI**: [55% faster task completion](https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-in-the-enterprise/) (GitHub's study)
+**ROI**: [55% faster task completion](https://github.blog/news-insights/research/research-quantifying-github-copilots-impact-in-the-enterprise-with-accenture/) (GitHub's study)
 
 **The catch**: Initial productivity dip for first 30 days, then compound gains
 
@@ -190,7 +190,7 @@ This is the most proven GenAI use case. But even here, you need to measure beyon
 
 ### 4. Legal Document Review
 
-**Adoption**: [77% of legal professionals](https://www.thomsonreuters.com/en-us/posts/legal/generative-ai-legal-profession/) use GenAI
+**Adoption**: [41% of law firms and 47% of corporate legal departments](https://legal.thomsonreuters.com/blog/how-ai-is-transforming-the-legal-profession/) say their legal teams use GenAI, up from 28% and 23% a year earlier
 
 **Impact**: 70-90% time savings on template-based tasks
 
@@ -529,16 +529,16 @@ The choice is yours.
 
 In Part 3, I'll cover something most companies are ignoring until it's too late: **AI Governance**. The EU AI Act is actively enforced as of February 2025. Penalties go up to €35 million or 7% of global revenue. And most companies have no idea if they're compliant.
 
-**Read Part 3**: [AI Governance is No Longer Optional](./ai-governance-eu-ai-act-compliance-guide)
+**Read Part 3**: [AI Governance is No Longer Optional](/blog/ai-governance-eu-ai-act-compliance-guide/)
 
 ---
 
 ## Series Navigation
 
-1. [Part 1: Why 94% of Companies Struggle with AI](./state-of-ai-2025-why-94-percent-fail)
+1. [Part 1: Why 94% of Companies Struggle with AI](/blog/state-of-ai-2025-why-94-percent-fail/)
 2. **Part 2: The GenAI Paradox** ← You are here
-3. [Part 3: AI Governance is No Longer Optional](./ai-governance-eu-ai-act-compliance-guide)
-4. [Part 4: From MLOps to LLMOps](./mlops-to-llmops-modern-ai-infrastructure)
-5. [Part 5: The Rise of the Chief AI Officer](./chief-ai-officer-rise-organizational-models)
-6. [Part 6: Scaling AI - Why Technology Isn't the Bottleneck](./scaling-ai-organizational-barriers-not-technology)
-7. [Part 7: AI Transparency and the Innovation Debate](./ai-transparency-innovation-debate-whats-next)
+3. [Part 3: AI Governance is No Longer Optional](/blog/ai-governance-eu-ai-act-compliance-guide/)
+4. [Part 4: From MLOps to LLMOps](/blog/mlops-to-llmops-modern-ai-infrastructure/)
+5. [Part 5: The Rise of the Chief AI Officer](/blog/chief-ai-officer-rise-organizational-models/)
+6. [Part 6: Scaling AI - Why Technology Isn't the Bottleneck](/blog/scaling-ai-organizational-barriers-not-technology/)
+7. [Part 7: AI Transparency and the Innovation Debate](/blog/ai-transparency-innovation-debate-whats-next/)

@@ -278,9 +278,9 @@ Obviously, you don't train from scratch. You use pre-trained models.
 - Maintenance: $30K-50K/year
 - Staffing: $200K+/year (ML Ops engineers)
 
-**TCO analysis** ([industry data](https://www.databricks.com/blog/announcing-databricks-mosaic-ai-training)):
-- **Cloud**: Higher OpEx, lower CapEx, easier to start
-- **On-premise**: 35% lower TCO over 5 years, 70% lower OpEx
+**TCO shape**:
+- **Cloud**: higher OpEx, lower CapEx, easier to start
+- **On-premise**: heavy CapEx up front, cheaper per unit of compute once utilisation is sustained
 
 **Tipping point**: If you're spending >$50K/month on cloud AI, on-premise starts making financial sense.
 
@@ -450,7 +450,7 @@ After talking to teams running LLMs in production, here are the tools that matte
 
 ## The infrastructure cost explosion nobody talks about
 
-AI infrastructure spending will hit **$450+ billion by 2026** ([source](https://www.databricks.com/blog/announcing-databricks-mosaic-ai-training)).
+Capex at the 14 largest data centre operators is heading for **nearly $750 billion in 2026**, up from just under $450 billion in 2025 ([BloombergNEF](https://about.bnef.com/insights/data-centers/ai-data-center-build-advances-at-full-speed-five-things-to-know/)).
 
 The bottleneck isn't compute. It's **power**.
 
@@ -472,7 +472,7 @@ Data centers are hitting physical limits:
 
 ### Inference Will Dominate Spending
 
-Right now, training gets the headlines. But [inference will be 80-90% of AI compute spend by 2027](https://www.databricks.com/blog/announcing-databricks-mosaic-ai-training).
+Right now, training gets the headlines. But inference already outspends it: [55% of AI-optimised IaaS spending goes to inference in 2026, rising to 59% in 2027](https://www.gartner.com/en/newsroom/press-releases/2026-08-10-gartner-forecasts-worldwide-artificial-intelligence-optimized-iaas-spending-to-grow-96-percent-in-2026) — $23.3B against $19B for training, per Gartner.
 
 Why? Every customer query hits inference. Training happens once.
 
@@ -617,16 +617,16 @@ It's organizational capability—which is what Part 6 will cover.
 
 In Part 5, I'll cover the fastest-growing executive role in tech: the Chief AI Officer. 40% of Fortune 500 companies will have a CAIO by 2026. Organizations with CAIOs see 10% higher ROI on AI spend. And centralized operating models deliver 36% better returns than decentralized ones. Here's what the data shows about structuring AI organizations.
 
-**Read Part 5**: [The Rise of the Chief AI Officer](./chief-ai-officer-rise-organizational-models)
+**Read Part 5**: [The Rise of the Chief AI Officer](/blog/chief-ai-officer-rise-organizational-models/)
 
 ---
 
 ## Series Navigation
 
-1. [Part 1: Why 94% of Companies Struggle with AI](./state-of-ai-2025-why-94-percent-fail)
-2. [Part 2: The GenAI Paradox](./genai-paradox-37b-spent-95-percent-fail)
-3. [Part 3: AI Governance is No Longer Optional](./ai-governance-eu-ai-act-compliance-guide)
+1. [Part 1: Why 94% of Companies Struggle with AI](/blog/state-of-ai-2025-why-94-percent-fail/)
+2. [Part 2: The GenAI Paradox](/blog/genai-paradox-37b-spent-95-percent-fail/)
+3. [Part 3: AI Governance is No Longer Optional](/blog/ai-governance-eu-ai-act-compliance-guide/)
 4. **Part 4: From MLOps to LLMOps** ← You are here
-5. [Part 5: The Rise of the Chief AI Officer](./chief-ai-officer-rise-organizational-models)
-6. [Part 6: Scaling AI - Why Technology Isn't the Bottleneck](./scaling-ai-organizational-barriers-not-technology)
-7. [Part 7: AI Transparency and the Innovation Debate](./ai-transparency-innovation-debate-whats-next)
+5. [Part 5: The Rise of the Chief AI Officer](/blog/chief-ai-officer-rise-organizational-models/)
+6. [Part 6: Scaling AI - Why Technology Isn't the Bottleneck](/blog/scaling-ai-organizational-barriers-not-technology/)
+7. [Part 7: AI Transparency and the Innovation Debate](/blog/ai-transparency-innovation-debate-whats-next/)

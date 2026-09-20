@@ -8,8 +8,6 @@ seo:
   keywords: ["SOC2 vs HIPAA", "ISO 27001 vs SOC2", "compliance framework comparison", "HIPAA compliance developer", "SOC2 Type 2", "ISO 27001 certification", "healthcare compliance", "enterprise security compliance", "SaaS compliance"]
 ---
 
-# SOC2 vs HIPAA vs ISO 27001: A Developer's Guide to Not Losing Your Mind
-
 A client once asked if they needed SOC2, HIPAA, and ISO 27001 compliance. Short answer: probably not all three.
 
 The compliance alphabet soup is genuinely confusing. I've built healthcare apps for US markets (HIPAA), European enterprises (ISO 27001), and SaaS products for Fortune 500s (SOC2). Let me cut through the consultant speak and give you the developer's perspective.

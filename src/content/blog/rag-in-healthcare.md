@@ -8,8 +8,6 @@ seo:
   keywords: ["RAG healthcare", "RAG pipeline HIPAA", "LLM healthcare compliance", "medical AI", "healthcare LLM integration", "RAG architecture", "vector database healthcare", "de-identification PHI", "clinical AI"]
 ---
 
-# RAG in Healthcare: How to Build AI Features Without Violating Every Compliance Framework
-
 Everyone wants AI in their healthcare app. Few want to explain to auditors why patient data ended up somewhere it shouldn't.
 
 I've spent the last couple years implementing AI features in healthcare systems, and the conversation always starts the same way: "Can we add ChatGPT to help doctors search patient records?" Sure. Right after we get a Business Associate Agreement from OpenAI, implement proper de-identification, set up audit logging, and convince your security team that yes, we actually know what we're doing.

@@ -506,16 +506,16 @@ Or you can build organizational capability first. And join the 6% capturing real
 
 In Part 7 (the final part), I'll cover AI transparency and the innovation debate. Anthropic's mechanistic interpretability breakthrough was named MIT Technology Review's breakthrough of 2026. But is AI innovation slowing down or just maturing? Expert predictions range from "AGI in 2026" (Dario Amodei) to "decades away" (Gary Marcus). Here's what the data actually shows.
 
-**Read Part 7**: [AI Transparency and the Innovation Debate](./ai-transparency-innovation-debate-whats-next)
+**Read Part 7**: [AI Transparency and the Innovation Debate](/blog/ai-transparency-innovation-debate-whats-next/)
 
 ---
 
 ## Series Navigation
 
-1. [Part 1: Why 94% of Companies Struggle with AI](./state-of-ai-2025-why-94-percent-fail)
-2. [Part 2: The GenAI Paradox](./genai-paradox-37b-spent-95-percent-fail)
-3. [Part 3: AI Governance is No Longer Optional](./ai-governance-eu-ai-act-compliance-guide)
-4. [Part 4: From MLOps to LLMOps](./mlops-to-llmops-modern-ai-infrastructure)
-5. [Part 5: The Rise of the Chief AI Officer](./chief-ai-officer-rise-organizational-models)
+1. [Part 1: Why 94% of Companies Struggle with AI](/blog/state-of-ai-2025-why-94-percent-fail/)
+2. [Part 2: The GenAI Paradox](/blog/genai-paradox-37b-spent-95-percent-fail/)
+3. [Part 3: AI Governance is No Longer Optional](/blog/ai-governance-eu-ai-act-compliance-guide/)
+4. [Part 4: From MLOps to LLMOps](/blog/mlops-to-llmops-modern-ai-infrastructure/)
+5. [Part 5: The Rise of the Chief AI Officer](/blog/chief-ai-officer-rise-organizational-models/)
 6. **Part 6: Scaling AI - Why Technology Isn't the Bottleneck** ← You are here
-7. [Part 7: AI Transparency and the Innovation Debate](./ai-transparency-innovation-debate-whats-next)
+7. [Part 7: AI Transparency and the Innovation Debate](/blog/ai-transparency-innovation-debate-whats-next/)

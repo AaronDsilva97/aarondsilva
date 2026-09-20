@@ -8,8 +8,6 @@ seo:
   keywords: ["TOGAF healthcare", "enterprise architecture healthcare", "TOGAF ADM", "healthcare system design", "TOGAF 10", "healthcare digital transformation", "HL7 FHIR architecture", "hospital system modernization", "healthcare IT architecture"]
 ---
 
-# TOGAF Without the Bureaucracy: Enterprise Architecture for Healthcare That Actually Ships
-
 TOGAF gets a bad rap. Mention it in a room of engineers and watch eyes glaze over. People think massive documents, endless stakeholder meetings, and diagrams that are obsolete before you finish drawing them.
 
 It doesn't have to be that way.
