@@ -18,9 +18,9 @@ export type ClientProject = {
 
 export const flagship = [
   { name: 'Clinvo', role: 'Technical creator', domain: 'Healthcare', year: '2026', url: 'https://clinvo.health/',
-    description: 'An AI-native EHR and PHR for modern clinics: ambient scribing, smart prescriptions, and specialty-aware workflows for doctors and patients. Built on a HIPAA-compliant ambient listening RAG pipeline: AWS Comprehend Medical for entity extraction, Claude for clinical summarization, and Neo4j knowledge graphs for medical relationship mapping.' },
-  { name: 'Aplify', role: 'CTO', domain: 'E-commerce', year: '2025', url: 'https://www.aplify.in/',
-    description: 'A multi-vendor e-commerce SaaS platform where I lead technical strategy and engineering. Took it from constant crashes to 100% uptime with a complete Flutter and Node.js rewrite: new flows for ads, auctions, carpool, and chat, admin panels for vendor management, and real-time inventory.' },
+    description: 'An AI-native EHR and PHR for modern clinics, live with clinics in India: ambient scribing, smart prescriptions, and specialty-aware workflows for doctors and patients. Built on a HIPAA-compliant ambient listening RAG pipeline: AWS Comprehend Medical for entity extraction, Claude for clinical summarization, and Neo4j knowledge graphs for medical relationship mapping.' },
+  { name: 'Aplify', role: 'CTO', domain: 'Marketplace', year: '2025', url: 'https://www.aplify.in/',
+    description: 'An Indian classifieds and auctions marketplace — buy, sell, bid, and carpool — where I lead technical strategy and engineering. Took it from constant crashes to 100% uptime with a complete Flutter and Node.js rewrite: new flows for ads, auctions, carpool, and chat, admin panels for vendor management, and real-time inventory.' },
   { name: 'Itihaas', role: 'Creator', domain: 'Heritage', year: '2024', url: 'https://itihaas.ai',
     description: 'Where tech meets heritage: a platform documenting 5,000 years of Indian history, from the Indus Valley to Independence. People, dynasties, monuments, and trade routes across 15+ interconnected categories.' },
   { name: 'The Ink-Credible Store', role: 'Creator', domain: 'E-commerce', year: '2026', url: 'https://theinkcrediblestore.com/',

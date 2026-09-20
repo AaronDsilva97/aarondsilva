@@ -2,6 +2,7 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import IndexRow from '../../components/IndexRow.astro';
+import { getTagIndex } from '../../data/tagIndex';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -37,6 +38,11 @@ const relatedPosts = allPosts
   .slice(0, 3);
 
 const readingTime = Math.ceil(post.body.split(/\s+/).length / 200);
+
+const tagIndex = await getTagIndex();
+const linkableTags = new Set(
+  [...tagIndex.values()].filter((t) => t.posts.length >= 2).map((t) => t.slug),
+);
 ---
 
 <Layout
@@ -44,6 +50,8 @@ const readingTime = Math.ceil(post.body.split(/\s+/).length / 200);
   description={post.data.description}
   type="article"
   image={post.data.image || "/og-image.png"}
+  publishDate={post.data.publishDate}
+  updatedDate={post.data.updatedDate}
 >
   <article>
     <header class="px-6 sm:px-10 pt-20 sm:pt-32 pb-12 max-w-4xl">
@@ -53,6 +61,11 @@ const readingTime = Math.ceil(post.body.split(/\s+/).length / 200);
 
       <p class="meta mb-6">
         <time datetime={post.data.publishDate.toISOString()}>{formatDate(post.data.publishDate)}</time>
+        {post.data.updatedDate && (
+          <>
+            <span class="mx-2">·</span>Updated <time datetime={post.data.updatedDate.toISOString()}>{formatDate(post.data.updatedDate)}</time>
+          </>
+        )}
         <span class="mx-2">·</span>{readingTime} min read
       </p>
 
@@ -65,7 +78,14 @@ const readingTime = Math.ceil(post.body.split(/\s+/).length / 200);
       </p>
 
       {post.data.tags.length > 0 && (
-        <p class="mt-8 font-mono text-xs text-soft">{post.data.tags.join(' · ')}</p>
+        <p class="mt-8 font-mono text-xs text-soft">
+          {post.data.tags.map((tag, i) => [
+            i > 0 && ' · ',
+            linkableTags.has(tag.toLowerCase())
+              ? <a href={`/blog/tags/${tag.toLowerCase()}/`} class="hover:text-fg transition-colors">{tag}</a>
+              : <span>{tag}</span>,
+          ])}
+        </p>
       )}
     </header>
 
@@ -112,23 +132,12 @@ const readingTime = Math.ceil(post.body.split(/\s+/).length / 200);
     "description": post.data.description,
     "image": post.data.image ? new URL(post.data.image, Astro.site).href : new URL("/og-image.png", Astro.site).href,
     "datePublished": post.data.publishDate.toISOString(),
-    "dateModified": post.data.publishDate.toISOString(),
-    "author": {
-      "@type": "Person",
-      "name": post.data.author || "Aaron Dsilva",
-      "url": "https://aarondsilva.me"
-    },
-    "publisher": {
-      "@type": "Person",
-      "name": "Aaron Dsilva",
-      "logo": {
-        "@type": "ImageObject",
-        "url": new URL("/favicon.svg", Astro.site).href
-      }
-    },
+    "dateModified": (post.data.updatedDate ?? post.data.publishDate).toISOString(),
+    "author": { "@id": "https://aarondsilva.me/#person" },
+    "publisher": { "@id": "https://aarondsilva.me/#person" },
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": new URL(`/blog/${post.slug}`, Astro.site).href
+      "@id": new URL(`/blog/${post.slug}/`, Astro.site).href
     },
     "keywords": post.data.tags.join(", "),
     "articleSection": "Technology",

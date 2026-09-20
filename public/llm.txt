@@ -1,6 +1,6 @@
 # Aaron Dsilva - Hands on CTO | Architecture, Build, Team, Security, Delivery
 
-> I own the whole technology problem, from architecture down to the code. Architecture, production code, hiring and leading teams, security and compliance, and delivery. Currently co-founder of The Lean Product Studio and CTO at Aplify (multi-vendor e-commerce SaaS), building Clinvo. Eight years shipping production systems across healthcare (hospital organizations across the US and India, FDA/HIPAA), e-commerce, and security (ISO 27001 platforms). Based in Pune, India.
+> I own the whole technology problem, from architecture down to the code. Architecture, production code, hiring and leading teams, security and compliance, and delivery. Currently co-founder of The Lean Product Studio and CTO at Aplify (Indian classifieds and auctions marketplace), building Clinvo. Eight years shipping production systems across healthcare (hospital organizations across the US and India, FDA/HIPAA), e-commerce, and security (ISO 27001 platforms). Based in Pune, India.
 
 I write code, architect infrastructure, lead teams, and ship products that work. I implement AI/RAG systems (Neo4j, Pinecone, Claude API) into production, fix security issues from pen tests (actual code, not reports), and build systems that pass audits: HIPAA, SOC2, GDPR, FDA, ISO 27001. As a technical partner, I've delivered systems used by teams at King's College London, Johnson & Johnson, and European hospital networks across the US, Europe, and India.
 
@@ -16,10 +16,10 @@ I write code, architect infrastructure, lead teams, and ship products that work.
 ## Flagship Products
 
 ### Clinvo (https://clinvo.health)
-AI-native EHR and PHR for modern clinics: ambient scribing, smart prescriptions, specialty-aware workflows. Built on a HIPAA-compliant ambient listening RAG pipeline (AWS Comprehend Medical, Claude, Neo4j). Role: technical creator. In active development.
+AI-native EHR and PHR for modern clinics: ambient scribing, smart prescriptions, specialty-aware workflows. Built on a HIPAA-compliant ambient listening RAG pipeline (AWS Comprehend Medical, Claude, Neo4j). Role: technical creator. Live with clinics in India.
 
 ### Aplify (https://www.aplify.in)
-Multi-vendor e-commerce SaaS platform. Role: CTO. Took the platform from constant crashes to 100% uptime with a complete Flutter and Node.js rewrite, plus admin panels and real-time inventory.
+Indian classifieds and auctions marketplace — buy, sell, bid, carpool. Role: CTO. Took the platform from constant crashes to 100% uptime with a complete Flutter and Node.js rewrite, plus admin panels and real-time inventory.
 
 ### Itihaas (https://itihaas.ai)
 Where tech meets heritage: 5,000 years of Indian history across 15+ interconnected categories. Role: creator.
@@ -29,34 +29,53 @@ Storefront for fountain pen ink samples in India, sold in packs of three, six, o
 
 ## Technical Blog
 
-Articles on healthcare tech, AWS, AI/ML, and compliance from real production experience.
+Articles on healthcare tech, AWS, AI/ML, zero trust, and compliance from real production experience.
+
+### AI Strategy & Governance (7-part series)
+
+- [Part 1 — The State of AI 2025: Why 94% of Companies Are Still Struggling](/blog/state-of-ai-2025-why-94-percent-fail): 88% of companies use AI, only 6% see real returns
+- [Part 2 — The GenAI Paradox: $37B Spent, 95% Failure Rate](/blog/genai-paradox-37b-spent-95-percent-fail): why MIT's 95% failure rate and Wharton's $3.71 return are both right
+- [Part 3 — AI Governance is No Longer Optional: EU AI Act Survival Guide](/blog/ai-governance-eu-ai-act-compliance-guide): enforcement, €35M penalties, and what compliance actually requires
+- [Part 4 — From MLOps to LLMOps: The Modern AI Infrastructure Stack](/blog/mlops-to-llmops-modern-ai-infrastructure): how production LLM infrastructure changed between 2020 and 2025
+- [Part 5 — The Rise of the Chief AI Officer](/blog/chief-ai-officer-rise-organizational-models): CAIO adoption, organizational models, and what the role actually does
+- [Part 6 — Scaling AI: Why Technology Isn't the Bottleneck](/blog/scaling-ai-organizational-barriers-not-technology): culture, resistance, and workflow redesign as the real constraint
+- [Part 7 — AI Transparency and the Innovation Debate](/blog/ai-transparency-innovation-debate-whats-next): interpretability, patents, benchmark saturation, and whether progress is slowing
+
+### Zero Trust Architecture
+
+- [Zero Trust in Action: 5 Real-World Case Studies](/blog/zero-trust-case-studies-2025-2026): implementations and outcomes across five organizations
+- [Inside the Pentagon's $977M Zero Trust Transformation](/blog/zero-trust-dod-case-study-2026): what the DoD blueprint reveals about enterprise-scale rollout
+- [How Main Line Health Deployed Zero Trust in 3 Weeks](/blog/zero-trust-healthcare-hipaa-compliance): healthcare zero trust under ransomware pressure
+- [Datavault AI's Nationwide Zero Trust Deployment](/blog/zero-trust-saas-platform-nationwide-deployment): cloud-native security at 100-city scale
+- [How Clarity AI Secured a Global Remote Workforce Without VPNs](/blog/zero-trust-clarity-ai-remote-workforce): distributed teams, no VPN, no productivity tax
+- [From Factory Floor to Cloud: Zero Trust in Manufacturing](/blog/zero-trust-manufacturing-digital-transformation): OT security as part of digital transformation
 
 ### AI & LLM Integration
 
-- [MCP: Model Context Protocol Guide](/blog/mcp-model-context-protocol): Building AI integrations with MCP servers
-- [RAG in Healthcare](/blog/rag-in-healthcare): Compliant RAG pipelines for healthcare systems
-
-### AWS & Cloud
-
-- [Serverless Healthcare on AWS](/blog/serverless-healthcare-aws): HIPAA-compliant serverless architecture
+- [MCP: Model Context Protocol Guide](/blog/mcp-model-context-protocol): what MCP is, how to build servers, and security considerations
+- [RAG in Healthcare](/blog/rag-in-healthcare): compliant RAG pipelines under HIPAA and GDPR
 
 ### Healthcare Compliance
 
-- [HIPAA for Developers](/blog/hipaa-for-developers): Technical guide to HIPAA compliance
-- [SOC2 vs HIPAA vs ISO 27001](/blog/soc2-vs-hipaa-vs-iso27001): Compliance framework comparison
-- [API Security for Healthcare](/blog/api-security-healthcare-auth-vulnerable): Beyond basic authentication
+- [HIPAA for Developers](/blog/hipaa-for-developers): technical guide from someone who has passed the audits
+- [SOC2 vs HIPAA vs ISO 27001](/blog/soc2-vs-hipaa-vs-iso27001): compliance framework comparison for developers
+- [API Security for Healthcare](/blog/api-security-healthcare-auth-vulnerable): what attackers target after authentication
+
+### AWS & Cloud
+
+- [Serverless Healthcare on AWS](/blog/serverless-healthcare-aws): HIPAA-compliant serverless architecture that passes audits
 
 ### Mobile Development
 
-- [React Native vs Flutter for Healthcare](/blog/react-native-vs-flutter-healthcare-apps): Real comparison from shipping both
+- [React Native vs Flutter for Healthcare](/blog/react-native-vs-flutter-healthcare-apps): comparison from shipping both
 
 ### Enterprise Architecture
 
-- [TOGAF for Healthcare](/blog/togaf-without-bureaucracy-healthcare-ea): Practical enterprise architecture
+- [TOGAF Without the Bureaucracy](/blog/togaf-without-bureaucracy-healthcare-ea): practical enterprise architecture for healthcare
 
 ### Security
 
-- [The Cost of Skipping Security](/blog/security-debt-cost): Lessons from fixing security debt
+- [The Real Cost of Security Debt](/blog/security-debt-cost): production war stories from fixing security debt
 
 ## Expertise
 
@@ -129,7 +148,7 @@ Built web application connecting penetration testers to developers. NestJS backe
 - **Market**: Global
 - **Impact**: Centralized security workflow, regression tracking, faster pen test remediation
 
-### Aplify — Multi-Vendor Marketplace V2 (https://www.aplify.in)
+### Aplify — Classifieds & Auctions Marketplace V2 (https://www.aplify.in)
 Rebuilt from scratch using Flutter + Node.js + MongoDB: platform with advertisements, auctions, carpool features, and real-time chat. Fixed constant server downtime issues and completely broken UI/UX flows. Achieved 100% uptime, optimized UI, reduced bugs, built comprehensive admin panels. Now serving as CTO.
 
 - **Tech**: Flutter, Node.js, MongoDB, AWS

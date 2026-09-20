@@ -14,9 +14,9 @@ export const experience: Role[] = [
     period: 'Sep 2025 - Present',
     location: 'Remote',
     bullets: [
-      'Architect scalable e-commerce platform infrastructure supporting a multi-vendor marketplace model with real-time inventory, payments, and vendor management systems',
+      'Architect scalable marketplace infrastructure for classifieds, auctions, and carpool: real-time listings, payments, and seller management',
       'Lead technical roadmap and engineering team structure, establishing development processes, CI/CD pipelines, and quality assurance standards',
-      'Build cloud-native architecture on AWS with a focus on cost optimization, security, and 99.9% uptime SLA for mission-critical e-commerce operations',
+      'Build cloud-native architecture on AWS with a focus on cost optimization, security, and 99.9% uptime SLA for mission-critical marketplace operations',
       'Drive technical decision-making for mobile (React Native/Flutter), backend (Node.js), database (MongoDB/PostgreSQL), and cloud infrastructure choices',
     ],
     stack: ['React Native', 'Flutter', 'Node.js', 'MongoDB', 'PostgreSQL', 'AWS', 'CI/CD'],
@@ -29,8 +29,8 @@ export const experience: Role[] = [
     bullets: [
       'Shipped products used by teams at King’s College London and European hospital networks, delivered as a technical partner',
       'Cut a client’s AWS bill by 33% through architecture and instance-level optimization: right-sizing EC2 instances, auto-scaling, and RDS optimization',
-      'Building a HIPAA-compliant AI ambient listening system for clinical documentation, currently in pre-deployment with hospital teams in the US and Europe: AWS Comprehend Medical for PHI extraction/anonymization, Claude API for summarization, Neo4j knowledge graphs for relationship mapping',
-      'Rebuilt a failing multi-vendor e-commerce marketplace from constant crashes to 100% uptime: complete Flutter mobile app rewrite, Node.js backend with MongoDB, vendor management dashboards, real-time inventory sync',
+      'Built Clinvo, a HIPAA-compliant AI ambient listening system for clinical documentation, now live with clinics in India: AWS Comprehend Medical for PHI extraction/anonymization, Claude API for summarization, Neo4j knowledge graphs for relationship mapping',
+      'Rebuilt a failing classifieds and auctions marketplace from constant crashes to 100% uptime: complete Flutter mobile app rewrite, Node.js backend with MongoDB, vendor management dashboards, real-time inventory sync',
       'Developed an ISO 27001-compliant pen testing workflow platform connecting security testers to development teams: NestJS backend, centralized vulnerability tracking, regression testing, remediation verification for enterprise clients',
       'Created an MCP (Model Context Protocol) server for healthcare research, delivered as a technical partner to King’s College London and European hospital networks: real-time analytics, HIPAA-compliant data handling, GDPR consent management',
       'Rebuilt a women’s health platform V2 (UK/Africa markets) in Flutter: cycle tracking, telemedicine provider connections, multi-language support (English, French, Swahili), GDPR compliance with right-to-be-forgotten implementation',

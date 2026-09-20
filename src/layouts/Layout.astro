@@ -8,6 +8,8 @@ export interface Props {
   description?: string;
   image?: string;
   type?: string;
+  publishDate?: Date;
+  updatedDate?: Date;
 }
 
 const {
@@ -15,6 +17,8 @@ const {
   description = 'Hands on CTO covering architecture, engineering, team, security and delivery. Eight years shipping production systems across healthcare, e-commerce and security. Currently building Clinvo.',
   image = '/og-image.png',
   type = 'website',
+  publishDate,
+  updatedDate,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -92,6 +96,8 @@ const socialImage = new URL(image, Astro.site);
           "@type": "Person",
           "@id": "https://aarondsilva.me/#person",
           "name": "Aaron Dsilva",
+          "givenName": "Aaron",
+          "familyName": "Dsilva",
           "url": "https://aarondsilva.me",
           "image": {
             "@type": "ImageObject",
@@ -99,17 +105,57 @@ const socialImage = new URL(image, Astro.site);
             "caption": "Aaron Dsilva — CTO & Technical Lead"
           },
           "description": description,
-          "jobTitle": "Chief Technology Officer",
+          "email": "contact@aarondsilva.me",
+          "telephone": "+919730659141",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Pune",
+            "addressRegion": "Maharashtra",
+            "addressCountry": "IN"
+          },
+          "jobTitle": ["Chief Technology Officer", "Co-Founder"],
           "worksFor": [
             {
               "@type": "Organization",
-              "name": "Aplify®",
-              "description": "E-commerce SaaS Platform"
+              "name": "Aplify",
+              "legalName": "Dawnlight Business Services Pvt Ltd",
+              "url": "https://aplify.in",
+              "description": "Indian classifieds and auctions marketplace"
             },
             {
               "@type": "Organization",
               "name": "The Lean Product Studio",
               "url": "https://theleanproduct.studio"
+            },
+            {
+              "@type": "Organization",
+              "name": "OpsFuse Technologies Pvt. Ltd."
+            }
+          ],
+          "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "Modern Education Society's College of Engineering, Pune"
+          },
+          "hasCredential": [
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "AWS Certified Solutions Architect – Associate",
+              "credentialCategory": "certification",
+              "recognizedBy": {
+                "@type": "Organization",
+                "name": "Amazon Web Services Training and Certification"
+              },
+              "url": "https://www.credly.com/badges/1b573241-4619-453f-96da-504d21e036a7/public_url"
+            },
+            {
+              "@type": "EducationalOccupationalCredential",
+              "name": "Professional Scrum Master I (PSM I)",
+              "credentialCategory": "certification",
+              "recognizedBy": {
+                "@type": "Organization",
+                "name": "Scrum.org"
+              },
+              "url": "https://www.credly.com/badges/59b7db24-3ce5-4040-b386-df0530e0bd3e"
             }
           ],
           "knowsAbout": [
@@ -132,7 +178,8 @@ const socialImage = new URL(image, Astro.site);
           ],
           "sameAs": [
             "https://github.com/AaronDsilva97",
-            "https://www.linkedin.com/in/aaronxdsilva/"
+            "https://www.linkedin.com/in/aaronxdsilva/",
+            "https://x.com/aarondsilva97"
           ]
         },
         {
@@ -158,9 +205,10 @@ const socialImage = new URL(image, Astro.site);
           "about": {
             "@id": "https://aarondsilva.me/#person"
           },
-          "datePublished": "2024-01-01T00:00:00.000Z",
-          "dateModified": new Date().toISOString(),
-          "breadcrumb": {
+          "datePublished": publishDate?.toISOString(),
+          "dateModified": (updatedDate ?? publishDate)?.toISOString(),
+          // Article pages emit their own full breadcrumb; two on a page conflict.
+          "breadcrumb": type === 'article' ? undefined : {
             "@type": "BreadcrumbList",
             "itemListElement": [
               {
