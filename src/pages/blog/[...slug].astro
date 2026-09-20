@@ -46,7 +46,7 @@ const linkableTags = new Set(
 ---
 
 <Layout
-  title={`${post.data.title} | Aaron Dsilva`}
+  title={post.data.title.length > 45 ? post.data.title : `${post.data.title} | Aaron Dsilva`}
   description={post.data.description}
   type="article"
   image={post.data.image || "/og-image.png"}

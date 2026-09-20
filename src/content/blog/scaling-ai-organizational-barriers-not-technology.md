@@ -288,8 +288,8 @@ The rest are **human skills** that complement AI.
 - Measurable reductions in external training costs
 
 **Google Career Certificates**:
-- [1 million+ graduates globally](https://grow.google/employers/)
-- [70%+ report positive career outcomes](https://grow.google/employers/) within 6 months (new job, promotion, or raise)
+- [1 million+ graduates globally](https://blog.google/company-news/outreach-and-initiatives/grow-with-google/google-career-certificate-graduates-reach-1-million/)
+- [70%+ report positive career outcomes](https://grow.google/certificates) within 6 months (new job, promotion, or raise)
 
 **The pattern**: Structured programs with credentials work better than ad-hoc training.
 
