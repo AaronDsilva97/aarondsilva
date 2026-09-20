@@ -1,0 +1,32 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import IndexRow from '../../../components/IndexRow.astro';
+import { getTagIndex } from '../../../data/tagIndex';
+
+const index = await getTagIndex();
+const tags = [...index.values()]
+  .filter((tag) => tag.posts.length >= 2)
+  .sort((a, b) => b.posts.length - a.posts.length || a.label.localeCompare(b.label));
+---
+
+<Layout
+  title="Topics | Aaron Dsilva"
+  description="Browse writing by topic — AI, healthcare, zero trust, compliance, and more."
+>
+  <section class="px-6 sm:px-10 pt-20 sm:pt-32 pb-16 sm:pb-24 max-w-4xl">
+    <a href="/blog/" class="meta inline-flex items-center gap-2 mb-10 hover:text-fg transition-colors">
+      <span aria-hidden="true">←</span> Writing
+    </a>
+    <p class="meta mb-8">Writing</p>
+    <h1 class="text-4xl sm:text-6xl font-medium tracking-tight leading-[1.06]">Topics</h1>
+  </section>
+
+  <section>
+    <div class="hairline px-6 sm:px-10 py-3">
+      <span class="meta">{tags.length} topics</span>
+    </div>
+    {tags.map((tag) => (
+      <IndexRow href={`/blog/tags/${tag.slug}/`} title={tag.label} meta={`${tag.posts.length} posts`} />
+    ))}
+  </section>
+</Layout>

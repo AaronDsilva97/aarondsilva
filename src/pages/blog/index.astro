@@ -25,6 +25,9 @@ const years = [...new Set(posts.map((post) => post.data.publishDate.getFullYear(
     <p class="mt-8 text-base leading-relaxed text-muted max-w-xl">
       Practical notes on healthcare tech, AWS, AI, and security compliance, from production experience.
     </p>
+    <a href="/blog/tags/" class="meta mt-8 inline-flex items-center gap-2 hover:text-fg transition-colors">
+      Browse by topic <span aria-hidden="true">→</span>
+    </a>
   </section>
 
   {years.map((year) => (

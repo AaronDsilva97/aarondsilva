@@ -1,0 +1,47 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import IndexRow from '../../../components/IndexRow.astro';
+import { getTagIndex, type TagEntry } from '../../../data/tagIndex';
+
+export async function getStaticPaths() {
+  const index = await getTagIndex();
+  return [...index.values()]
+    .filter((tag) => tag.posts.length >= 2)
+    .map((tag) => ({
+      params: { tag: tag.slug },
+      props: { tag },
+    }));
+}
+
+type Props = { tag: TagEntry };
+
+const { tag } = Astro.props;
+
+const posts = [...tag.posts].sort(
+  (a, b) => b.data.publishDate.getTime() - a.data.publishDate.getTime(),
+);
+
+const fmt = (d: Date) => d.toLocaleDateString('en-GB', { month: 'short', year: 'numeric' }).toLowerCase();
+---
+
+<Layout
+  title={`${tag.label} | Writing | Aaron Dsilva`}
+  description={`${posts.length} posts on ${tag.label} — practical notes from production experience in healthcare tech, AI, and security compliance.`}
+>
+  <section class="px-6 sm:px-10 pt-20 sm:pt-32 pb-16 sm:pb-24 max-w-4xl">
+    <a href="/blog/tags/" class="meta inline-flex items-center gap-2 mb-10 hover:text-fg transition-colors">
+      <span aria-hidden="true">←</span> Topics
+    </a>
+    <p class="meta mb-8">Topic</p>
+    <h1 class="text-4xl sm:text-6xl font-medium tracking-tight leading-[1.06]">{tag.label}</h1>
+  </section>
+
+  <section>
+    <div class="hairline px-6 sm:px-10 py-3">
+      <span class="meta">{posts.length} posts</span>
+    </div>
+    {posts.map((post) => (
+      <IndexRow href={`/blog/${post.slug}/`} title={post.data.title} meta={fmt(post.data.publishDate)} />
+    ))}
+  </section>
+</Layout>
