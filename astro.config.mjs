@@ -6,6 +6,17 @@ import sitemap from '@astrojs/sitemap';
 import fs from 'node:fs';
 import { keyFor } from './scripts/prerender-mermaid.mjs';
 
+// Sitemap <lastmod> for posts, from frontmatter (collections aren't available in config)
+const BLOG = 'src/content/blog';
+/** @type {Record<string, string | undefined>} */
+const postLastmod = Object.fromEntries(
+  fs.readdirSync(BLOG).map((f) => {
+    const src = fs.readFileSync(`${BLOG}/${f}`, 'utf8');
+    const date = /** @param {string} k */ (k) => src.match(new RegExp(`^${k}:\\s*(\\S+)`, 'm'))?.[1];
+    return [f.replace(/\.mdx?$/, ''), date('updatedDate') ?? date('publishDate')];
+  }),
+);
+
 // Swap ```mermaid fences for the SVGs pre-rendered by scripts/prerender-mermaid.mjs.
 // Both themes are inlined and CSS picks one, so the theme toggle keeps working
 // without shipping the mermaid runtime. A cache miss throws — run the script.
@@ -62,7 +73,15 @@ function rehypeCheckboxLabels() {
 export default defineConfig({
   site: 'https://aarondsilva.me',
   output: 'static',
-  integrations: [mdx(), sitemap()],
+  integrations: [
+    mdx(),
+    sitemap({
+      serialize(item) {
+        const d = postLastmod[item.url.match(/\/blog\/([^/]+)\/$/)?.[1] ?? ''];
+        return d ? { ...item, lastmod: new Date(d).toISOString() } : item;
+      },
+    }),
+  ],
   build: {
     inlineStylesheets: 'always',
   },

@@ -1,6 +1,6 @@
 ---
-title: "The GenAI Paradox: $37B Spent, 95% Failure Rate—Yet Some See $3.71 Return Per Dollar"
-description: "MIT says 95% of GenAI projects fail. Wharton says they return $3.71 per dollar. Both are right. Here's why—and what it means for your AI strategy."
+title: "The GenAI Paradox: Why AI ROI Follows a J-Curve (and 8 Use Cases That Pay)"
+description: "MIT and Wharton disagree on GenAI returns because they measure at different points on the J-curve. Where the $37B went, the 8 use cases that pay, and when."
 publishDate: 2026-01-24
 author: "Aaron Dsilva"
 tags: ["AI", "GenAI", "AI-ROI", "enterprise-AI", "ChatGPT", "LLM", "AI-investment", "business-value"]

@@ -26,7 +26,7 @@ const fmt = (d: Date) => d.toLocaleDateString('en-GB', { month: 'short', year: '
       engineers, still write code every day, and spend most of my energy on Clinvo,
       an AI-native EHR for modern clinics.
     </p>
-    <a href="/contact" class="mt-8 inline-flex items-center gap-2 meta text-sage hover:text-fg transition-colors">
+    <a href="/contact/" class="mt-8 inline-flex items-center gap-2 meta text-sage hover:text-fg transition-colors">
       <span class="w-1.5 h-1.5 rounded-full bg-sage"></span>Open to advisory work · Get in touch →
     </a>
   </section>
@@ -34,7 +34,7 @@ const fmt = (d: Date) => d.toLocaleDateString('en-GB', { month: 'short', year: '
   <section>
     <div class="hairline flex justify-between px-6 sm:px-10 py-3">
       <span class="meta">Selected work</span>
-      <a href="/work" class="meta hover:text-fg transition-colors">All work →</a>
+      <a href="/work/" class="meta hover:text-fg transition-colors">All work →</a>
     </div>
     {flagship.map(p => (
       <IndexRow href={p.url} external title={p.name} meta={`${p.role.toLowerCase()} · ${p.domain.toLowerCase()} · ${p.year}`} />
@@ -44,7 +44,7 @@ const fmt = (d: Date) => d.toLocaleDateString('en-GB', { month: 'short', year: '
   <section class="mt-24">
     <div class="hairline flex justify-between px-6 sm:px-10 py-3">
       <span class="meta">Writing</span>
-      <a href="/blog" class="meta hover:text-fg transition-colors">All writing →</a>
+      <a href="/blog/" class="meta hover:text-fg transition-colors">All writing →</a>
     </div>
     {posts.map(p => (
       <IndexRow href={`/blog/${p.slug}/`} title={p.data.title} meta={fmt(p.data.publishDate)} />

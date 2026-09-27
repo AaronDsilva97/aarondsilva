@@ -206,19 +206,7 @@ const socialImage = new URL(image, Astro.site);
             "@id": "https://aarondsilva.me/#person"
           },
           "datePublished": publishDate?.toISOString(),
-          "dateModified": (updatedDate ?? publishDate)?.toISOString(),
-          // Article pages emit their own full breadcrumb; two on a page conflict.
-          "breadcrumb": type === 'article' ? undefined : {
-            "@type": "BreadcrumbList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://aarondsilva.me"
-              }
-            ]
-          }
+          "dateModified": (updatedDate ?? publishDate)?.toISOString()
         }
       ]
     })} />

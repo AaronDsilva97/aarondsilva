@@ -34,7 +34,7 @@ Articles on healthcare tech, AWS, AI/ML, zero trust, and compliance from real pr
 ### AI Strategy & Governance (7-part series)
 
 - [Part 1 — The State of AI 2025: Why 94% of Companies Are Still Struggling](/blog/state-of-ai-2025-why-94-percent-fail): 88% of companies use AI, only 6% see real returns
-- [Part 2 — The GenAI Paradox: $37B Spent, 95% Failure Rate](/blog/genai-paradox-37b-spent-95-percent-fail): why MIT's 95% failure rate and Wharton's $3.71 return are both right
+- [Part 2 — The GenAI Paradox: Why AI ROI Follows a J-Curve](/blog/genai-paradox-37b-spent-95-percent-fail/): why MIT's 95% failure rate and Wharton's $3.71 return are both right
 - [Part 3 — AI Governance is No Longer Optional: EU AI Act Survival Guide](/blog/ai-governance-eu-ai-act-compliance-guide): enforcement, €35M penalties, and what compliance actually requires
 - [Part 4 — From MLOps to LLMOps: The Modern AI Infrastructure Stack](/blog/mlops-to-llmops-modern-ai-infrastructure): how production LLM infrastructure changed between 2020 and 2025
 - [Part 5 — The Rise of the Chief AI Officer](/blog/chief-ai-officer-rise-organizational-models): CAIO adoption, organizational models, and what the role actually does
@@ -43,7 +43,7 @@ Articles on healthcare tech, AWS, AI/ML, zero trust, and compliance from real pr
 
 ### Zero Trust Architecture
 
-- [Zero Trust in Action: 5 Real-World Case Studies](/blog/zero-trust-case-studies-2025-2026): implementations and outcomes across five organizations
+- [Zero Trust Case Studies: 5 Real Implementations (2026)](/blog/zero-trust-case-studies-2025-2026/): implementations and outcomes across five organizations
 - [Inside the Pentagon's $977M Zero Trust Transformation](/blog/zero-trust-dod-case-study-2026): what the DoD blueprint reveals about enterprise-scale rollout
 - [How Main Line Health Deployed Zero Trust in 3 Weeks](/blog/zero-trust-healthcare-hipaa-compliance): healthcare zero trust under ransomware pressure
 - [Datavault AI's Nationwide Zero Trust Deployment](/blog/zero-trust-saas-platform-nationwide-deployment): cloud-native security at 100-city scale
